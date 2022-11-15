@@ -1,0 +1,198 @@
+---
+title: "RMarkdown"
+subtitle: "Postgrau d'Analista de Dades (UB)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "RMarkdown - Postgrau d'Analista de Dades (UB)"
+logo: ub-logo.png
+format: 
+  revealjs:
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: visual
+---
+
+## Sumari
+
+```{r}
+library(tidyverse)
+```
+
+1.  Què és RMarkdown?
+2.  Repàs R
+3.  etc.
+
+# Què és RMarkdown?
+
+## Un paquet d'R
+
+S'instal·la com qualsevol altre.
+
+![](img/rmd-package.png){style="float:right;" fig-alt="RMarkdown logo." width="300"}
+
+```{r echo = T, eval = F}
+install.packages(c("rmarkdown",
+                   "knitr", 
+                   "DT"))
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
+## Un llenguatge (o una prosa) {.scrollable}
+
+![](img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
+
+::: columns
+::: {.column width="50%"}
+-   John **Gruber**, 2004.
+-   Un format més **fàcil de llegir** i d'escriure que la majoria de llenguatges web com l'Html.
+-   **Convertible** fàcilment a Html, Pdf...
+:::
+
+::: {.column width="40%"}
+:::
+
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/html-code.png")
+```
+:::
+
+## Eina per a presentar resultats {.scrollable}
+
+::: columns
+::: {.column width="50%"}
+-   Imprescindible per a un bon analista de dades.
+-   Permet transformar en un ampli rang de formats el codi d'R.
+-   Exemples:
+:::
+
+::: {.column width="40%"}
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/rmd-formats.png")
+```
+:::
+:::
+
+::: smaller
+-   [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html){target="_blank"}
+-   [https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/){target="_blank"}
+-   [https://www.jordimas.cat/](https://www.jordimas.cat/){target="_blank"}
+:::
+
+# Repàs primeres sessions
+
+## RStudio
+
+::: incremental
+-   Crear projecte\
+-   Diferència entre instal·lar i carregar paquets
+-   Utilitzar l'Environment
+-   Importar arxius: csv, csv2, xlsx, dta, sav...
+:::
+
+## RMarkdown
+
+Interfície: YAML - Text - Chunk
+
+![](img/rmd.png){style="float:left;" fig-alt="RMarkdown logo." width="290"}
+
+## Tutorial
+
+<https://www.jordimas.cat/files/Tutorial_Rmd_Polity.zip>
+
+## Slide with a pause
+
+content before the pause
+
+. . .
+
+content after the pause
+
+## Slide Title {.smaller}
+
+Holi holi
+
+## Slide Title {.scrollable}
+
+## Footers
+
+-   Green [^1]
+-   Brown
+-   Purple
+
+[^1]: A footnote
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+::: footer
+Custom footer text
+:::
+
+## Code
+
+``` {.r code-line-numbers="2-3"}
+install.packages(c("rmarkdown",
+                   "knitr", 
+                   "DT"))
+```
+
+Holi
+
+``` {.r code-line-numbers="2,4"}
+install.packages(c("rmarkdown",
+                   "dplyr",
+                   "ggplot2",
+                   "knitr", 
+                   "DT"))
+```
+
+Holi
+
+``` {.r code-line-numbers="|2|4"}
+install.packages(c("rmarkdown",
+                   "dplyr",
+                   "ggplot2",
+                   "knitr", 
+                   "DT"))
+```
+
+## Executable code
+
+```{r echo = TRUE}
+#| code-line-numbers: "|2|4"
+starwars |> 
+  select(name:last_col()) |> 
+  filter(hair_color == "blond") |> 
+  arrange(height)
+```
+
+## Tabsets
+
+::: panel-tabset
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+:::
+
+## Slide Title {background-color="aquamarine"}
+
+## Video {background-video="https://www.youtube.com/watch?v=iXU-zxvlY_4" background-video-loop="true" background-video-muted="true"}
+
+## El món de l'endemà
+
+::: columns
+::: {.column width="50%"}
+[Quarto](www.quarto.org) ![](img/quarto.png)
+:::
+
+::: {.column width="50%"}
+[Posit](www.posit.co) ![](img/posit.png)
+:::
+:::
