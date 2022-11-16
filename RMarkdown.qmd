@@ -185,6 +185,181 @@ Content for `Tab B`
 
 ## Video {background-video="https://www.youtube.com/watch?v=iXU-zxvlY_4" background-video-loop="true" background-video-muted="true"}
 
+
+## RMarkdown avançat
+
+En aquest apartat s'expliquen funcionalitats avançades de RMarkdown. Els elements essencials ja els hem vist en els anteriors apartats, pel qual llegir aquesta secció és opcional i només recomanada per qui tingui interès a descobrir algunes funcionalitats addicionals. També podreu trobar informació addicional als següents enllaços:
+
+- [Guia ràpida de RMarkdown a la web de RStudio.](https://rmarkdown.rstudio.com/lesson-1.html){target="_blank"}
+- [Cheatsheet RMarkdown.](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}
+- [Capítol de RMarkdown al llibre _R para ciencia de datos_](https://es.r4ds.hadley.nz/r-markdown.html){target="_blank"} [@Grolemund2020].
+- [El llibre complet: _RMarkdown: The Definitive Guide_](https://bookdown.org/yihui/rmarkdown/html-document.html){target="_blank"} [@rmarkdown2018].
+
+
+
+### Més YAML{#yaml-plus}
+
+En el YAML podem precisar i personalitzar com es visualitzarà l'Html de RMarkdown. Per exemple:
+
+- Podem posar la data automàticament:
+```
+date: "`r Sys.Date()`"
+```
+- Podem posar una foto al costat del títol:  
+```
+title: "![Posar nom de títol](logo_uoc.jpg){width=2in}"`
+```
+
+- Podem canviar el tema visual del document i l'estil dels subratllats^[Per una llista dels diferents estils de temes i subratllats veure [aquest enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style) i per una llista amb contingut més avançat veure [aquesta llista](https://www.datadreaming.org/post/r-markdown-theme-gallery/).].
+
+```
+theme: paper
+highlight: tango
+```
+
+- Podem definir com es reproduiran per defecte alguns elements de l'Html, com les taules i gràfics.
+```
+fig_width: 6 
+fig_height: 4 
+```
+
+
+### Opcions globals
+
+És recomanable tenir un primer chunk amb el nom `setup` o similar on anotem algunes configuracions bàsiques del nostre RMarkdown. És molt útil utilitzar el següent codi per marcar les opcions per defecte de tots els chunks del document. A continuació indiquem que s'amagui el codi, els missatges i avisos de tots els chunks.
+```
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+El primer chunk també pot ser útil per carregar els paquets i objectes que necessitarem durant el document.
+
+
+
+
+### Referències al text
+
+Per referenciar una secció del document, el més adequat és posar el codi de la referència just després del títol de secció. Aquest codi el posarem entre claus i encaplaçat del coixinet. Per exemple:
+
+```
+# Introducció{#intro}
+```
+
+Llavors, en qualsevol moment del text podrem referenciar la secció d'una manera molt similar a la manera que referenciem les pàgines web: `[text](#intro)`. El text que faci la referència el posarem entre claudàtors seguit dels parèntesis, que inclouran el codi de la secció amb un coixinet davant.
+
+En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades. 
+
+
+
+### Posar bibliografia{#rmd-biblio}
+
+La manera més senzilla de posar la bibliografia a RMarkdown és a través d'un document **BibTex** (.bib). La majoria de gestors de cites bibliogràfiques, com Mendeley o Zotero, utilitzen aquest tipus de format per emmagatzemar-les. A RMarkdown, explicarem com utilitzar-los de manera que ens generi automàticament una llista de les fonts citades al final del document. Els passos que haurem de fer per crear una bibliografia són els següents:
+
+1. A RStudio, obrim un document de text (**Text file**) i el guardem com a `biblio.bib` en el directori de treball, juntament amb l'arxiu de RMarkdown. A dins el document hi guardarem el següent text, que són les referències que hauríem d'utilitzar per a la base de dades NMC que es treballa al tutorial:
+
+```
+@book{Singer1972,
+address = {New York},
+author = {Singer, J. David and Small, Melvin},
+publisher = {Wiley},
+title = {{The wages of war, 1816-1965: a statistical handbook}},
+year = {1972}
+}
+@article{Singer1987,
+author = {Singer, J. David},
+journal = {International Interactions},
+pages = {115--132},
+title = {{Reconstructing the Correlates of War Dataset on Material Capabilities of States, 1816-1985}},
+volume = {14},
+year = {1987}
+}
+```
+Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
+
+
+2. En el **YAML**, introduirem una nova línia on explicarem on es troba el document que conté la bibliografia: 
+```
+bibliography: biblio.bib
+```
+
+3. Introduirem la cita en qualsevol lloc del **text**. 
+
+  - Si l'envoltem de claudàtors `[@Singer1987]` ens posarà nom i any entre parèntesi: [@Singer1987].
+  - Si no utilitzem els claudàtors `@Singer1987` ens posarà només l'any entre parèntesi: @Singer1987.
+
+
+4. En l'última línia del document de RMarkdown, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
+
+Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
+
+
+
+
+
+
+### Canviar mida de text
+
+Una de les assignatures pendents de RMarkdown és poder canviar la mida del text d'una forma senzilla i àgil. Com que aquesta opció no hi és, per als documents d'Html haurem d'introduir directament la mida del text en codi Html. Per exemple, en aquest codi indiquem que volem la mida a 13 punts i que volem justificar els paràgrafs.
+
+```
+<style>
+body {
+font-size: 13pt;
+text-align: justify}
+</style>
+```
+
+És recomanable posar aquest codi al principi del text, just després del YAML.
+
+
+### Taules{#rmd-taules}
+
+Una altra de les assignatures pendents de RMarkdown són les taules. Imaginem-nos com creem una taula en Word: anem a "Crear taula" i simplement ens demanarà el nombre de files i columnes de la taula. En RMarkdown és molt més embolicat. Vegem un exemple. Aquest és el codi que haurem d'utilitzar per crear una taula. 
+
+```
+| Funció       | Paquet    | Descripció                                           |
+|--------------|-----------|------------------------------------------------------|
+| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+```
+
+El resultat d'aquest codi és el següent:
+
+| Funció       | Paquet    | Descripció                                           |
+|--------------|-----------|------------------------------------------------------|
+| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+
+
+Hi ha algunes opcions, més senzilles, per crear taules. La primera és construir-les a partir d'un marc de dades o una matriu de dades. La segona és utilitzar l'**Editor Visual** ([veure següent apartat](#rmd-visual-editor)). 
+
+
+
+### Editor visual{#rmd-visual-editor}
+
+L'Editor Visual va sortir en una de les actualitzacions de RMarkdown del 2020 per donar resposta a usuaris que necessitaven una interfície més semblant a Word per generar documents. Per utilitzar l'Editor Visual, heu de clicar a la rodeta del document de RMarkdown i seleccionar la primera opció:
+
+![](img/rmarkdown-visual-editor.png){width=40%}
+
+Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
+
+
+### Publicar a internet{#rmd-rpubs}
+
+Publicar un document generat amb RMarkdown a internet és molt ràpid. La forma més directa és mitjançant RPubs, encara que també es poden fer pàgines web més sofisticades, blocs o llibres.
+
+- [RPubs](https://rpubs.com/): RPubs és la manera més ràpida de publicar a la xarxa. A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
+- [Bookdown](https://bookdown.org/): Permet crear llibres com el que esteu llegint.
+- [Blogdown](https://bookdown.org/yihui/blogdown/): Permet crear blocs, com per exemple: [www.jordimas.cat](www.jordimas.cat).
+
+
+
+
+
+
 ## El món de l'endemà
 
 ::: columns
