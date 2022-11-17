@@ -634,7 +634,9 @@ Hi ha algunes opcions, més senzilles, per crear taules. La primera és construi
 
 ### Editor visual {#rmd-visual-editor}
 
+
 L'Editor Visual va sortir en una de les actualitzacions de RMarkdown del 2020 per donar resposta a usuaris que necessitaven una interfície més semblant a Word per generar documents. Per utilitzar l'Editor Visual, heu de clicar a la rodeta del document de RMarkdown i seleccionar la primera opció:
+
 
 ![](img/rmarkdown-visual-editor.png){width="40%"}
 
