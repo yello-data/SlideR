@@ -5,6 +5,9 @@ author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
 footer: "RMarkdown - Postgrau d'Analista de Dades (UB)"
 logo: ub-logo.png
+params:
+  country: "Denmark"
+  year: 2014
 format: 
   revealjs:
     slide-number: true
@@ -17,6 +20,7 @@ editor: visual
 
 ```{r}
 library(tidyverse)
+library(readxl)
 ```
 
 1.  Què és RMarkdown?
@@ -43,6 +47,8 @@ install.packages(c("rmarkdown",
 
 ## Un llenguatge/prosa {.scrollable}
 
+> "A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions"
+
 ![](img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
 
 ::: columns
@@ -54,6 +60,7 @@ install.packages(c("rmarkdown",
 
 ::: {.column width="40%"}
 :::
+
 
 ```{r eval = T, fig.align='center', fig.width=20}
 knitr::include_graphics("img/html-code.png")
@@ -226,7 +233,7 @@ date: "Última edició `r format(Sys.time(), '%d %B %Y')`"
 paste0("Última edició ", format(Sys.time(), '%d %B %Y'))
 ```
 
-## Foto
+## Foto d'encapçalament
 
 Posem una foto a la capçalera del document.
 
@@ -306,7 +313,6 @@ params:
   year: 2014
 ```
 
-
 ::: aside
 En el document, accedim als paràmetres de dues maneres:
 
@@ -321,9 +327,7 @@ En el document, accedim als paràmetres de dues maneres:
 ```{r echo = T, eval = F}
 filter(dataset, country == params$country)
 ```
-
 :::
-
 
 ## Plegar codi
 
@@ -338,7 +342,9 @@ output:
 
 ## Formats d'output
 
-Al YAML podem especificar el tipus de format^[3].
+Al YAML podem especificar el tipus de format[^3].
+
+[^3]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
 
 ``` {.r code-line-numbers="4,6,8"}
 title: "Postgrau d'Analista de Dades (UB)"
@@ -351,9 +357,8 @@ output:
   word_document:
 ```
 
-I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/).
+I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/) en diversos formats.
 
-^[3]: Per veure totes les característiques del YAML, [veure](https://bookdown.org/yihui/rmarkdown/html-document.html)
 
 # 4.2. RMarkdown avançat (text) {background-color="#e8e8e8"}
 
@@ -385,73 +390,80 @@ hist(dplyr::starwars$height)
 ```
 :::
 
+
+
+
 ## Incloure codi al text {.scrollable}
 
 En qualsevol moment podem fer referència al text sobre qualsevol dada **ja carregada** en un chunk previ.
 
 -   A. Carreguem les dades:
 
-```{r echo = T, eval = F}
-polity <- read_excel("p5v2018.xlsx")
+```{r echo = T}
+polity <- read_excel("p5v2018.xls")
 ```
 
--   B. Referenciem les dades al text de la següent manera:
+-   B. Referenciem les dades al text:
 
-```{r echo = T, eval = F}
-`r polity$country[1]`
+
+::: panel-tabset
+
+### Exemple 1
+
+En aquest gràfic veiem Estats Units en els darrers anys
+
+```{r echo = T, eval = T}
+p5_dk <- polity |> 
+  filter(country == params$country, year > 2009) |> 
+  select(country, year, polity2)
+knitr::kable(p5_dk)
 ```
 
-Exemple: El nivell de democràcia de Denmark l'any 2020 era de:
+Observem que en l'últim any de dades **r last(p5_dk$polity2)**, **r params$country** tenia un nivell de democràcia de **r last(p5_dk$polity2)**.
 
-```{r echo = T, eval = F}
-`r polity$country[polity$country == "Denmark" & year == 2020]`
+
+### Exemple 2
+
+```{r echo = T}
+polity |> 
+  group_by(country) |> 
+  summarize(duration = max(durable, na.rm = T)) |> 
+  ggplot(aes(x = duration)) +
+  geom_density()
 ```
 
-Exemple: El nivell de democràcia de r params$country l'any r params$year era de
-
-```{r echo = T, eval = F}
-polity$country[polity$country == params$country & year == params$year]
-```
-
-Exemple 1: El règim amb més durada és:
+El règim amb més durada és:
 
 ```{r eval = F, echo = T}
-`p5$country[which(p5$durable == max(p5$durable, na.rm = T))]`
+`polity$country[which(polity$durable == max(polity$durable, na.rm = T))]`
 ```
 
 
-Exemple 2: 
-
-
-```{r eval = F, echo = T}
-Com observem a la taula X, el nivell de democràcia de Dinamarca l'any `r params$year` és de `r p5$polity2`.
-```
-
+:::
 
 
 
 ## Quadres de text
 
-::: {.callout-note icon=false}
+::: {.callout-note icon="false"}
+## Avís!
 
-## Pay Attention
-
-Using callouts is an effective way to highlight content that your reader give special consideration or attention.
-
+Utilitzar quadres de text és una manera efectiva per dirigir l'atenció a determinat contingut. 
 :::
 
+    <div class="alert alert-info">
+    **Informació!** Blablabla.
+    </div>
 
-```{r echo = T, eval = F}
-<div class="alert alert-info">
-**Info!** Indicates a neutral informative change or action.
-</div>
+Tipus: 
 
-primary, secondary, success, danger, warning, info, light, dark
+- `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`.
 
-[d](https://getbootstrap.com/docs/4.0/components/alerts/)
-```
 
-## Incrustar tuits i vídeos
+
+
+
+## Incrustar vídeos i tuits
 
 Amb `vembedr` és molt fàcil.
 
@@ -459,19 +471,28 @@ Amb `vembedr` és molt fàcil.
 embed_url("https://youtu.be/hz3J6Wb5S_8")
 ```
 
-Encara més fàcil amb altres formats de Bookdown
 
-    {{< video https://youtu.be/wo9vZccmqwc >}}
+{{< video https://youtu.be/hz3J6Wb5S_8 >}}
 
-    {{< tweet 1229386394658836480 >}}
+Encara més fàcil amb altres formats de Bookdown:
+
+```{r eval = F, echo = T}
+{{< video https://youtu.be/wo9vZccmqwc >}}
+{{< tweet 1229386394658836480 >}}
+```
+
+
 
 ## Referències al text
 
-Per referenciar[^3] la secció del document:
+Per referenciar la secció del document[^5]:
 
-[^3]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
+[^5]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
 
-    # Introducció {#intro}
+```{r eval = F, echo = T}
+# Introducció {#intro}
+```
+
 
 En qualsevol moment del text, introduïm:
 
@@ -479,9 +500,9 @@ En qualsevol moment del text, introduïm:
 
 ## Referències bibliogràfiques {.scrollable}
 
-Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
+Ho farem normalment amb un document **BibTex** (`.bib`)[^6].
 
-[^4]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
+[^6]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
 
 1.  Obrim un **Text file**, el guardem com a `biblio.bib` i introduïm:
 
@@ -503,8 +524,8 @@ Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
 
 3.  Citem les referències al **text**.
 
--   Entre claudàtors `[@Singer1987]`, ens posarà (Singer 1987).
--   Sense claudàtors `@Singer1987`, ens posarà Singer (1987).
+-   Entre claudàtors `[@Marshall2020]`, ens posarà (Marshall 2020).
+-   Sense claudàtors `@Marshall2020`, ens posarà Marshall (2020).
 
 4.  En l'última línia del document de RMarkdown, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
 
@@ -516,31 +537,39 @@ Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown C
 
 ## Taules
 
-Opció Knitr
+::: panel-tabset
 
-```{r echo = T, eval = F}
-knitr::kable()
+## Opció knitr::kable
+
+```{r echo = F, eval = T}
+polity |> 
+  filter(country %in% c("Angola", "Spain", "Vietnam"),
+         year == 2014) |> 
+  select(country, scode, polity2, durable) |> 
+  knitr::kable()
 ```
 
 Arguments d'interès:
 
--   `col.names = c("Noms", "Ben", "Posats)`
--   `align = c("ccc")`
+-   `col.names = c("País", "Codi", "Democràcia", "Duració")`
+-   `align = c("llcc")`
 -   `caption = "Títol"`
 
-[^5]
+Taules de tota mena amb [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
 
-[^5]: Taules de tota mena amb [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+## Opció DT::data.table
 
-## Taules
-
-Opció DT
-
-```{r echo = T, eval = F}
-DT::data.table(dplyr::starwars)
+```{r echo = T}
+polity |> 
+  select(country, scode, polity2, durable) |> 
+  DT::datatable()
 ```
 
+:::
+
 ## Figures
+
+Varis paràmetres per establir les dimensions:
 
 -   `fig.width`: amplada en inches.
 -   `fig.height`: alçada en inches.
@@ -550,23 +579,27 @@ DT::data.table(dplyr::starwars)
 
 ## Opcions globals
 
-Opcions que son per tot el document: - posar un chunk amb include = FALSE - knitr::opts_chunk\$set(fig.align = "center", echo = TRUE)
+Opcions per defecte als chunks de tot el document:
 
-knitr::opts_chunk\$set(comment = '', fig.width = 6, fig.height = 6)
+```{r eval = F, echo = T}
+knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
+                      warning = FALSE, message = FALSE,
+                       fig.width = 6, fig.height = 6)
+```
 
-És recomanable tenir un primer chunk amb el nom `setup` o similar on anotem algunes configuracions bàsiques del nostre RMarkdown. És molt útil utilitzar el següent codi per marcar les opcions per defecte de tots els chunks del document. A continuació indiquem que s'amagui el codi, els missatges i avisos de tots els chunks.
+El primer chunk també pot ser útil per carregar els paquets i objectes que necessitarem.
 
-    knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-El primer chunk també pot ser útil per carregar els paquets i objectes que necessitarem durant el document.
 
 ## Què evitar als chunks
 
--   download.file
--   carregar bases de dades d'internet
--   funcions que carreguen bases de dades (ex. CEO)
+-   La funció `download.file()`
+-   Carregar bases de dades d'internet
+-   Funcions que carreguen bases de dades (ex. `CEOdata`)
 
 ## Canviar mida de text
+
+Un dels deutes pendents de RMarkdown.
 
 ```{r eval = F, echo = T}
     <style>
@@ -576,9 +609,9 @@ El primer chunk també pot ser útil per carregar els paquets i objectes que nec
     </style>
 ```
 
-## Taules {#rmd-taules}
+## Taules {.scrollable}
 
-Una altra de les assignatures pendents de RMarkdown són les taules. Imaginem-nos com creem una taula en Word: anem a "Crear taula" i simplement ens demanarà el nombre de files i columnes de la taula. En RMarkdown és molt més embolicat. Vegem un exemple. Aquest és el codi que haurem d'utilitzar per crear una taula.
+També una assignatura pendent de RMarkdown.
 
 ```{r eval = F, echo = T}
     | Funció       | Paquet    | Descripció                                           |
@@ -590,12 +623,12 @@ Una altra de les assignatures pendents de RMarkdown són les taules. Imaginem-no
 
 ```
 
-    | Funció       | Paquet    | Descripció                                           |
-    |--------------|-----------|------------------------------------------------------|
-    | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
-    | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
-    | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
-    | `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+| Funció       | Paquet    | Descripció                                           |
+|--------------|-----------|------------------------------------------------------|
+| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
 
 Hi ha algunes opcions, més senzilles, per crear taules. La primera és construir-les a partir d'un marc de dades o una matriu de dades. La segona és utilitzar l'**Editor Visual** ([veure següent apartat](#rmd-visual-editor)).
 
