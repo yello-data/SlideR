@@ -410,13 +410,15 @@ Jordi Mas Elias
 </div>
 <ol type="1">
 <li>Què és RMarkdown?</li>
-<li>Repàs R</li>
-<li>etc.</li>
+<li>Repàs primeres sessions</li>
+<li>Tutorial RMarkdown</li>
+<li>RMarkdown avançat</li>
+<li>Consideracions finals</li>
 </ol>
 </section>
 <section>
 <section id="què-és-rmarkdown" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>Què és RMarkdown?</h1>
+<h1>1. Què és RMarkdown?</h1>
 
 </section>
 <section id="un-paquet-dr" class="slide level2">
@@ -484,15 +486,14 @@ Jordi Mas Elias
 </div></aside></section></section>
 <section>
 <section id="repàs-primeres-sessions" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>Repàs primeres sessions</h1>
+<h1>2. Repàs primeres sessions</h1>
 
 </section>
 <section id="rstudio" class="slide level2">
 <h2>RStudio</h2>
 <div>
 <ul>
-<li class="fragment">Crear projecte<br>
-</li>
+<li class="fragment">Crear projecte</li>
 <li class="fragment">Diferència entre instal·lar i carregar paquets</li>
 <li class="fragment">Utilitzar l’Environment</li>
 <li class="fragment">Importar arxius: csv, csv2, xlsx, dta, sav…</li>
@@ -511,7 +512,7 @@ Jordi Mas Elias
 <img data-src="img/polity-map.png" class="r-stretch"></section></section>
 <section>
 <section id="tutorial-rmarkdown" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>Tutorial RMarkdown</h1>
+<h1>3. Tutorial RMarkdown</h1>
 
 </section>
 <section id="exercici-1" class="slide level2">
@@ -520,16 +521,16 @@ Jordi Mas Elias
 <ul>
 <li>Descarregar la base de dades Polity V a <a href="https://www.systemicpeace.org/inscrdata.html" class="uri">https://www.systemicpeace.org/inscrdata.html</a></li>
 <li><strong>Text</strong> amb tots els formats possibles.</li>
-<li>Un marc de dades i dos plots</li>
+<li>Un <strong>marc de dades</strong> i dos <strong>plots</strong>.</li>
 </ul>
 
 <aside><div>
 <p>Variables d’interès:</p>
 <ul>
-<li><code>country</code>: país</li>
-<li><code>year</code>: any</li>
-<li><code>polity2</code>: democràcia (-10 + 10)</li>
-<li></li>
+<li><code>country</code>: país.</li>
+<li><code>year</code>: any.</li>
+<li><code>polity2</code>: democràcia (-10 + 10).</li>
+<li><code>durable</code>: anys de durada del règim.</li>
 </ul>
 </div></aside></section>
 <section id="slide-with-a-pause" class="slide level2">
@@ -600,7 +601,7 @@ Jordi Mas Elias
 </section></section>
 <section>
 <section id="rmarkdown-avançat-yaml" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>RMarkdown avançat (YAML)</h1>
+<h1>4.1. RMarkdown avançat (YAML)</h1>
 
 </section>
 <section id="data-automàtica" class="slide level2">
@@ -626,7 +627,7 @@ Jordi Mas Elias
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>date<span class="sc">:</span> <span class="st">"Última edició `r format(Sys.Time(), '%d %B %Y')`"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>date<span class="sc">:</span> <span class="st">"Última edició `r format(Sys.time(), '%d %B %Y')`"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -639,19 +640,21 @@ Jordi Mas Elias
 <h2>Foto</h2>
 <p>Posem una foto a la capçalera del document.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>title<span class="sc">:</span> <span class="st">"![Posar nom de títol](img/polity-index.jpeg){width=2}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>title<span class="sc">:</span> <span class="st">"![Posar nom de títol](polity-index.jpeg){width=2in}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/polity-index.jpeg" width="2" class="r-stretch"></section>
 <section id="taula-de-continguts" class="slide level2">
 <h2>Taula de continguts</h2>
 <p>Customitzem elements de la taula de continguts.</p>
-<div class="sourceCode" id="cb14" data-code-line-numbers="1-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>toc<span class="sc">:</span> true</span>
-<span id="cb14-2"><a href="#cb14-2"></a>toc_depth<span class="sc">:</span> <span class="dv">2</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>number_sections<span class="sc">:</span> true</span>
-<span id="cb14-4"><a href="#cb14-4"></a>toc_float<span class="sc">:</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  collapsed<span class="sc">:</span> false</span>
-<span id="cb14-6"><a href="#cb14-6"></a>  smooth_scroll<span class="sc">:</span> false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>output<span class="sc">:</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  html_document<span class="sc">:</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>    toc<span class="sc">:</span> true</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    toc_depth<span class="sc">:</span> <span class="dv">2</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>    number_sections<span class="sc">:</span> true</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    toc_float<span class="sc">:</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>      collapsed<span class="sc">:</span> false</span>
+<span id="cb14-8"><a href="#cb14-8"></a>        smooth_scroll<span class="sc">:</span> false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <aside><div>
 <ul>
@@ -690,18 +693,20 @@ Jordi Mas Elias
 <div class="sourceCode" id="cb17" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>output<span class="sc">:</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a>  html_document<span class="sc">:</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a>fig_width<span class="sc">:</span> <span class="dv">6</span> </span>
-<span id="cb17-5"><a href="#cb17-5"></a>fig_height<span class="sc">:</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4"></a>    fig_width<span class="sc">:</span> <span class="dv">6</span> </span>
+<span id="cb17-5"><a href="#cb17-5"></a>    fig_height<span class="sc">:</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="paràmetres" class="slide level2 scrollable">
 <h2>Paràmetres</h2>
-<p>Establim uns paràmetres<sup>1</sup> al YAML que al llarg del document podrem utilitzar com a codi.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>params<span class="sc">:</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>  country<span class="sc">:</span> <span class="st">"Denmark"</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  year<span class="sc">:</span> <span class="dv">2014</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>En el document, podem accedir als paràmetres de tres maneres:</p>
+<p>Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi <sup>1</sup>.</p>
+<div class="sourceCode" id="cb18" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>author<span class="sc">:</span> <span class="st">"Jordi Mas Elias"</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>params<span class="sc">:</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  country<span class="sc">:</span> <span class="st">"Denmark"</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>  year<span class="sc">:</span> <span class="dv">2014</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<aside><div>
+<p>En el document, accedim als paràmetres de dues maneres:</p>
 <ul>
 <li>A. Al text,</li>
 </ul>
@@ -714,37 +719,32 @@ Jordi Mas Elias
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">filter</span>(dataset, country <span class="sc">==</span> params<span class="sc">$</span>country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>C. Als títols de gràfic,</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="st">"blablabla `r params$country`"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Molt útil per fer <a href="https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit">documents interactius</a> per establir els paràmetres de base.</p></li></ol></aside></section>
+</div><ol class="aside-footnotes"><li id="fn2"><p>Molt útil per fer <a href="https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit">documents interactius</a> per establir els paràmetres de base.</p></li></ol></aside></section>
 <section id="plegar-codi" class="slide level2">
 <h2>Plegar codi</h2>
 <p>Creem un desplegable per cada chunk amb codi <code>(echo = T)</code> que tinguem al document.</p>
-<div class="sourceCode" id="cb22" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>output<span class="sc">:</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  html_document<span class="sc">:</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>    code_folding<span class="sc">:</span> hide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>output<span class="sc">:</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  html_document<span class="sc">:</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>    code_folding<span class="sc">:</span> hide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formats-doutput" class="slide level2">
 <h2>Formats d’output</h2>
-<p>Al YAML podem especificar el tipus de format.</p>
-<div class="sourceCode" id="cb23" data-code-line-numbers="4,6,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>author<span class="sc">:</span> <span class="st">"Nom de l'estudiant"</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>output<span class="sc">:</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a>  html_document<span class="sc">:</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>    code_folding<span class="sc">:</span> hide</span>
-<span id="cb23-6"><a href="#cb23-6"></a>  pdf_document<span class="sc">:</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a>    toc<span class="sc">:</span> yes</span>
-<span id="cb23-8"><a href="#cb23-8"></a>  word_document<span class="sc">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>I també podem crear <a href="https://quarto.org/docs/presentations/revealjs/">diapositives</a></p>
-</section></section>
+<p>Al YAML podem especificar el tipus de format<sup>1</sup>.</p>
+<div class="sourceCode" id="cb22" data-code-line-numbers="4,6,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>title<span class="sc">:</span> <span class="st">"Postgrau d'Analista de Dades (UB)"</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>author<span class="sc">:</span> <span class="st">"Nom de l'estudiant"</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>output<span class="sc">:</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>  html_document<span class="sc">:</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>    code_folding<span class="sc">:</span> hide</span>
+<span id="cb22-6"><a href="#cb22-6"></a>  pdf_document<span class="sc">:</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>    toc<span class="sc">:</span> yes</span>
+<span id="cb22-8"><a href="#cb22-8"></a>  word_document<span class="sc">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I també podem crear <a href="https://quarto.org/docs/presentations/revealjs/">diapositives</a>.</p>
+<p><sup>2</sup>: Per veure totes les característiques del YAML, <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">veure</a></p>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>3</p></li><li id="fn4"><p>3</p></li></ol></aside></section></section>
 <section>
-<section id="text-avançat" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>Text avançat</h1>
+<section id="rmarkdown-avançat-text" class="title-slide slide level1 center" data-background-color="#e8e8e8">
+<h1>4.2. RMarkdown avançat (text)</h1>
 
 </section>
 <section id="tabsets" class="slide level2">
@@ -754,81 +754,118 @@ Jordi Mas Elias
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="sc">:::</span> panel<span class="sc">-</span>tabset</span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="do">### Tab A</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a></span>
-<span id="cb24-4"><a href="#cb24-4"></a>Contingut de <span class="st">`</span><span class="at">Tab A</span><span class="st">`</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="do">### Tab B</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a></span>
-<span id="cb24-8"><a href="#cb24-8"></a>Contingut de <span class="st">`</span><span class="at">Tab B</span><span class="st">`</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="do">## Títol {.tabset}</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a>Aquí comença una tabset.</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="do">### Tab A</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a>Contingut de <span class="st">`</span><span class="at">Tab A</span><span class="st">`</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="do">### Tab B</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a></span>
+<span id="cb23-11"><a href="#cb23-11"></a>Contingut de <span class="st">`</span><span class="at">Tab B</span><span class="st">`</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="do">## {-}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="RMarkdown_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<p><img data-src="RMarkdown_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="incloure-codi-al-text" class="slide level2">
+<section id="incloure-codi-al-text" class="slide level2 scrollable">
 <h2>Incloure codi al text</h2>
 <p>En qualsevol moment podem fer referència al text sobre qualsevol dada <strong>ja carregada</strong> en un chunk previ.</p>
 <ul>
 <li>A. Carreguem les dades:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>polity <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"p5v2018.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>polity <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"p5v2018.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>B. Referenciem les dades al text de la següent manera:</p>
+<ul>
+<li>B. Referenciem les dades al text de la següent manera:</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="st">`</span><span class="at">r polity$country[1]</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="st">`</span><span class="at">r polity$country[1]</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exemple: El nivell de democràcia de Denmark l’any 2020 era de:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="st">`</span><span class="at">r polity$country[polity$country == "Denmark" &amp; year == 2020]</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="st">`</span><span class="at">r polity$country[polity$country == "Denmark" &amp; year == 2020]</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exemple: El nivell de democràcia de r params<span class="math inline">\(country l'any r params\)</span>year era de</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>polity<span class="sc">$</span>country[polity<span class="sc">$</span>country <span class="sc">==</span> params<span class="sc">$</span>country <span class="sc">&amp;</span> year <span class="sc">==</span> params<span class="sc">$</span>year]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>polity<span class="sc">$</span>country[polity<span class="sc">$</span>country <span class="sc">==</span> params<span class="sc">$</span>country <span class="sc">&amp;</span> year <span class="sc">==</span> params<span class="sc">$</span>year]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Exemple 1: El règim amb més durada és:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="st">`</span><span class="at">p5$country[which(p5$durable == max(p5$durable, na.rm = T))]</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Exemple 2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>Com observem a la taula X, el nivell de democràcia de Dinamarca l<span class="st">'any `r params$year` és de `r p5$polity2`.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="quadres-de-text" class="slide level2">
 <h2>Quadres de text</h2>
+<div class="callout callout-note no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Pay Attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Using callouts is an effective way to highlight content that your reader give special consideration or attention.</p>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="sc">&lt;</span><span class="er">/</span>div<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="sc">&lt;</span>div class<span class="ot">=</span><span class="st">"alert alert-info"</span><span class="sc">&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="er">**</span>Info<span class="sc">!</span><span class="er">**</span> Indicates a neutral informative change or action.</span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="sc">&lt;</span><span class="er">/</span>div<span class="sc">&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a>primary, secondary, success, danger, warning, info, light, dark</span>
+<span id="cb30-6"><a href="#cb30-6"></a></span>
+<span id="cb30-7"><a href="#cb30-7"></a>[d](https<span class="sc">:</span><span class="er">//</span>getbootstrap.com<span class="sc">/</span>docs<span class="sc">/</span><span class="fl">4.0</span><span class="sc">/</span>components<span class="sc">/</span>alerts<span class="sc">/</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="incrustar-tuits-i-vídeos" class="slide level2">
 <h2>Incrustar tuits i vídeos</h2>
+<p>Amb <code>vembedr</code> és molt fàcil.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>knitr<span class="sc">::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">embed_url</span>(<span class="st">"https://youtu.be/hz3J6Wb5S_8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Encara més fàcil amb altres formats de Bookdown</p>
+<pre><code>
+
+
+{{&lt; tweet 1229386394658836480 &gt;}}</code></pre>
 </section>
 <section id="referències-al-text" class="slide level2">
 <h2>Referències al text</h2>
 <p>Per referenciar<sup>1</sup> la secció del document:</p>
-<pre><code># Introducció{#intro}</code></pre>
 <p>En qualsevol moment del text, introduïm:</p>
 <pre><code>[text](#intro)</code></pre>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>En aquest <a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html" target="_blank">enllaç</a>, també podeu veure com es poden referenciar taules i marcs de dades</p></li></ol></aside></section>
-<section id="posar-bibliografia" class="slide level2 scrollable">
-<h2>Posar bibliografia</h2>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>En aquest <a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html" target="_blank">enllaç</a>, també podeu veure com es poden referenciar taules i marcs de dades</p>
+<h1 id="intro">Introducció</h1>
+</li></ol></aside></section>
+<section id="referències-bibliogràfiques" class="slide level2 scrollable">
+<h2>Referències bibliogràfiques</h2>
 <p>Ho farem normalment amb un document <strong>BibTex</strong> (<code>.bib</code>)<sup>1</sup>.</p>
 <ol type="1">
 <li>Obrim un <strong>Text file</strong>, el guardem com a <code>biblio.bib</code> i introduïm:</li>
 </ol>
 <!-- -->
-<pre><code>@book{Singer1972,
-address = {New York},
-author = {Singer, J. David and Small, Melvin},
-publisher = {Wiley},
-title = {{The wages of war, 1816-1965: a statistical handbook}},
-year = {1972}
+<pre><code>@misc{Marshall2020,
+author = {Marshall, Monty G. and Gurr, Ted Robert},
+mendeley-groups = {Ind Political},
+publisher = {Center for Systemic Peace},
+title = {{Polity V. Political Regime Characteristics and Transitions, 1800-2018}},
+year = {2020}
 }</code></pre>
 <ol start="2" type="1">
 <li>Indiquem al <strong>YAML</strong> on es troba l’arxiu:</li>
@@ -848,22 +885,32 @@ year = {1972}
 
 <aside><div>
 <p>Per saber-ne més sobre l’estil de citació BibTex, podeu consultar <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">RMarkdown Cookbook: Bibliographies and Citations</a>, <a href="https://monashdatafluency.github.io/r-rep-res/citations.html">Reproducible Research in R: Section 10 Citations</a> o <a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX">Wikibooks: LaTeX/Bibliography Management</a>.</p>
-</div><ol class="aside-footnotes"><li id="fn4"><p>Alguns paquets d’R com <code>RefManageR</code> automatitzen la gestió de cites.</p></li></ol></aside></section></section>
+</div><ol class="aside-footnotes"><li id="fn6"><p>Alguns paquets d’R com <code>RefManageR</code> automatitzen la gestió de cites.</p></li></ol></aside></section></section>
 <section>
-<section id="rmarkdown-avançat" class="title-slide slide level1 center" data-background-color="#e8e8e8">
-<h1>RMarkdown avançat</h1>
+<section id="rmarkdown-avançat-chunks" class="title-slide slide level1 center" data-background-color="#e8e8e8">
+<h1>4.3. RMarkdown avançat (chunks)</h1>
 
 </section>
 <section id="taules" class="slide level2">
 <h2>Taules</h2>
+<p>Opció Knitr</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Arguments d’interès:</p>
+<ul>
+<li><code>col.names = c("Noms", "Ben", "Posats)</code></li>
+<li><code>align = c("ccc")</code></li>
+<li><code>caption = "Títol"</code></li>
+</ul>
+<p><sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>Taules de tota mena amb <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">KableExtra</a></p></li></ol></aside></section>
+<section id="taules-1" class="slide level2">
+<h2>Taules</h2>
+<p>Opció DT</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>DT<span class="sc">::</span><span class="fu">data.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>DT<span class="sc">::</span><span class="fu">data.table</span>(dplyr<span class="sc">::</span>starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>kable(df, - col.names = c(“Noms”, “Ben”, “Posats) - align = c(”ccc”) - caption = “Títol”</p>
-<p>Taules de tota mena amb <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">KableExtra</a></p>
 </section>
 <section id="figures" class="slide level2">
 <h2>Figures</h2>
@@ -891,30 +938,26 @@ year = {1972}
 <li>funcions que carreguen bases de dades (ex. CEO)</li>
 </ul>
 </section>
-<section id="dashboards" class="slide level2">
-<h2>Dashboards</h2>
-<p><a href="https://pkgs.rstudio.com/flexdashboard/">flexdashboard</a></p>
-</section>
 <section id="canviar-mida-de-text" class="slide level2">
 <h2>Canviar mida de text</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>    <span class="sc">&lt;</span>style<span class="sc">&gt;</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a>    body {</span>
-<span id="cb38-3"><a href="#cb38-3"></a>    font<span class="sc">-</span>size<span class="sc">:</span> 13pt;</span>
-<span id="cb38-4"><a href="#cb38-4"></a>    text<span class="sc">-</span>align<span class="sc">:</span> justify}</span>
-<span id="cb38-5"><a href="#cb38-5"></a>    <span class="sc">&lt;</span><span class="er">/</span>style<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>    <span class="sc">&lt;</span>style<span class="sc">&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>    body {</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    font<span class="sc">-</span>size<span class="sc">:</span> 13pt;</span>
+<span id="cb39-4"><a href="#cb39-4"></a>    text<span class="sc">-</span>align<span class="sc">:</span> justify}</span>
+<span id="cb39-5"><a href="#cb39-5"></a>    <span class="sc">&lt;</span><span class="er">/</span>style<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rmd-taules" class="slide level2">
 <h2>Taules</h2>
 <p>Una altra de les assignatures pendents de RMarkdown són les taules. Imaginem-nos com creem una taula en Word: anem a “Crear taula” i simplement ens demanarà el nombre de files i columnes de la taula. En RMarkdown és molt més embolicat. Vegem un exemple. Aquest és el codi que haurem d’utilitzar per crear una taula.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>    <span class="sc">|</span> Funció       <span class="sc">|</span> Paquet    <span class="sc">|</span> Descripció                                           <span class="sc">|</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>    <span class="er">|</span><span class="sc">--------------</span><span class="er">|</span><span class="sc">-----------</span><span class="er">|</span><span class="sc">------------------------------------------------------</span><span class="er">|</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">filter()</span><span class="st">`</span>   <span class="sc">|</span> <span class="st">`</span><span class="at">dplyr</span><span class="st">`</span>   <span class="sc">|</span> Filtra les observacions d<span class="st">'un marc de dades           |</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="st">    | `separate()` | `tidyr`   | Separa els elements d'</span>un vector en base a un criteri <span class="sc">|</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">read_csv()</span><span class="st">`</span> <span class="sc">|</span> <span class="st">`</span><span class="at">readr</span><span class="st">`</span>   <span class="sc">|</span> Llegeix els arxius CSV                               <span class="sc">|</span></span>
-<span id="cb39-6"><a href="#cb39-6"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">ggplot()</span><span class="st">`</span>   <span class="sc">|</span> <span class="st">`</span><span class="at">ggplot2</span><span class="st">`</span> <span class="sc">|</span> Reprodueix elements gràfics                          <span class="sc">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>    <span class="sc">|</span> Funció       <span class="sc">|</span> Paquet    <span class="sc">|</span> Descripció                                           <span class="sc">|</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>    <span class="er">|</span><span class="sc">--------------</span><span class="er">|</span><span class="sc">-----------</span><span class="er">|</span><span class="sc">------------------------------------------------------</span><span class="er">|</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">filter()</span><span class="st">`</span>   <span class="sc">|</span> <span class="st">`</span><span class="at">dplyr</span><span class="st">`</span>   <span class="sc">|</span> Filtra les observacions d<span class="st">'un marc de dades           |</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="st">    | `separate()` | `tidyr`   | Separa els elements d'</span>un vector en base a un criteri <span class="sc">|</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">read_csv()</span><span class="st">`</span> <span class="sc">|</span> <span class="st">`</span><span class="at">readr</span><span class="st">`</span>   <span class="sc">|</span> Llegeix els arxius CSV                               <span class="sc">|</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>    <span class="er">|</span> <span class="st">`</span><span class="at">ggplot()</span><span class="st">`</span>   <span class="sc">|</span> <span class="st">`</span><span class="at">ggplot2</span><span class="st">`</span> <span class="sc">|</span> Reprodueix elements gràfics                          <span class="sc">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>| Funció       | Paquet    | Descripció                                           |
 |--------------|-----------|------------------------------------------------------|
@@ -935,8 +978,21 @@ year = {1972}
 <li><a href="https://bookdown.org/yihui/blogdown/">Blogdown</a>: Permet crear blocs, com per exemple: <a href="www.jordimas.cat">www.jordimas.cat</a>.</li>
 </ul>
 </section>
-<section id="exportar" class="slide level2">
-<h2>Exportar</h2>
+<section id="exercici-2" class="slide level2">
+<h2>Exercici 2</h2>
+<p>Agafeu el treball d’un dataset anterior i construiu un document Html, procurant d’utilitzar algunes de les funcions avançades. En particular:</p>
+<ul>
+<li>Tauler en knitr o DT.</li>
+<li>Temes i subratllats.</li>
+<li>Plegar codi.</li>
+<li>Mida gràfics</li>
+<li></li>
+</ul>
+</section></section>
+<section>
+<section id="què-és-rmarkdown-1" class="title-slide slide level1 center" data-background-color="#e8e8e8">
+<h1>Què és RMarkdown?</h1>
+
 </section>
 <section id="el-món-de-lendemà" class="slide level2">
 <h2>El món de l’endemà</h2>
@@ -947,11 +1003,6 @@ year = {1972}
 <p><a href="www.posit.co">Posit</a> <img data-src="img/posit.png"></p>
 </div>
 </div>
-</section></section>
-<section>
-<section id="referències" class="title-slide slide level1 center">
-<h1>Referències</h1>
-
 </section>
 <section id="bibliografia-principal" class="slide level2">
 <h2>Bibliografia principal</h2>
@@ -961,6 +1012,10 @@ year = {1972}
 <li><a href="https://es.r4ds.hadley.nz/r-markdown.html" target="_blank">Capítol de RMarkdown al llibre <em>R para ciencia de datos</em></a> <span class="citation" data-cites="Grolemund2020">[@Grolemund2020]</span>.</li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/html-document.html" target="_blank">El llibre complet: <em>RMarkdown: The Definitive Guide</em></a> <span class="citation" data-cites="rmarkdown2018">[@rmarkdown2018]</span>.</li>
 </ul>
+</section>
+<section id="dashboards" class="slide level2">
+<h2>Dashboards</h2>
+<p><a href="https://pkgs.rstudio.com/flexdashboard/">flexdashboard</a></p>
 
 <img src="ub-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>RMarkdown - Postgrau d’Analista de Dades (UB)</p>
