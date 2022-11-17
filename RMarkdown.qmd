@@ -39,7 +39,7 @@ install.packages(c("rmarkdown",
 
 ![](img/r-packages.png){style="float:center;" width="650"}
 
-## Un llenguatge (o una prosa) {.scrollable}
+## Un llenguatge/prosa {.scrollable}
 
 ![](img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
 
@@ -110,9 +110,17 @@ Crear un document: YAML - Text - Chunk
 Crear una petita història amb **Polity V**:
 
 -   Descarregar la base de dades Polity V a <https://www.systemicpeace.org/inscrdata.html>
--   Text amb tots els formats possibles.
--   Un marc de dades
--   Dos plots
+-   **Text** amb tots els formats possibles.
+-   Un marc de dades i dos plots
+
+::: aside
+Variables d'interès:
+
+- `country`: país
+- `year`: any
+- `polity2`: democràcia (-10 + 10)
+- 
+:::
 
 ## Slide with a pause
 
@@ -182,7 +190,6 @@ starwars |>
   arrange(height)
 ```
 
-
 # RMarkdown avançat (YAML) {background-color="#e8e8e8"}
 
 ## Data automàtica
@@ -200,7 +207,7 @@ Sys.Date()
 . . .
 
 ```{r eval = F, echo = T}
-date: "`r format(Sys.time(), ‘%d %B %Y’)`"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 ```
 
 ```{r eval = T, echo = F}
@@ -273,16 +280,19 @@ Per una llista dels diferents estils de temes i subratllats veure [aquest enlla�
 
 Els gràfics que apareixen al document han de tenir per defecte algunes dimensions determinades?
 
-```{r eval = F, echo = T}
+``` {.r code-line-numbers="4-5"}
+title: "Postgrau d'Analista de Dades (UB)"
+output:
+  html_document:
 fig_width: 6 
 fig_height: 4 
 ```
 
-
-
 ## Paràmetres {.scrollable}
 
-Establim uns paràmetres^[Molt útil per fer [RMarkdowns interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit) per establir els paràmetres de base.] al YAML que al llarg del document podrem utilitzar com a codi.
+Establim uns paràmetres[^2] al YAML que al llarg del document podrem utilitzar com a codi.
+
+[^2]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit) per establir els paràmetres de base.
 
 ```{r echo = T, eval = F}
 params:
@@ -292,19 +302,19 @@ params:
 
 En el document, podem accedir als paràmetres de tres maneres:
 
-- A. Al text,  
+-   A. Al text,
 
 ```{r echo = T, eval = F}
 `r params$country`
 ```
 
-- B. Als chunks, 
+-   B. Als chunks,
 
 ```{r echo = T, eval = F}
 filter(dataset, country == params$country)
 ```
 
-- C. Als títols de gràfic, 
+-   C. Als títols de gràfic,
 
 ```{r echo = T, eval = F}
 "blablabla `r params$country`"
@@ -362,15 +372,13 @@ Contingut de `Tab B`
 ```{r echo = F}
 hist(dplyr::starwars$height)
 ```
-
 :::
-
 
 ## Incloure codi al text
 
 En qualsevol moment podem fer referència al text sobre qualsevol dada **ja carregada** en un chunk previ.
 
-- A. Carreguem les dades:
+-   A. Carreguem les dades:
 
 ```{r echo = T, eval = F}
 polity <- read_excel("p5v2018.xlsx")
@@ -382,9 +390,24 @@ B. Referenciem les dades al text de la següent manera:
 `r polity$country[1]`
 ```
 
+Exemple: El nivell de democràcia de Denmark l'any 2020 era de:
+
+```{r echo = T, eval = F}
+`r polity$country[polity$country == "Denmark" & year == 2020]`
+```
+
+Exemple: El nivell de democràcia de r params$country l'any r params$year era de
+
+```{r echo = T, eval = F}
+polity$country[polity$country == params$country & year == params$year]
+```
+
+
 
 
 ## Quadres de text
+
+
 
 ```{r echo = T, eval = F}
 </div>
@@ -392,24 +415,29 @@ B. Referenciem les dades al text de la següent manera:
 
 ## Incrustar tuits i vídeos
 
+```{r echo = T, eval = F}
+knitr::
+```
 
 
 ## Referències al text
 
-Per referenciar una secció del document, el més adequat és posar el codi de la referència just després del títol de secció. Aquest codi el posarem entre claus i encaplaçat del coixinet. Per exemple:
+Per referenciar^[En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades] la secció del document: 
 
     # Introducció{#intro}
 
-Llavors, en qualsevol moment del text podrem referenciar la secció d'una manera molt similar a la manera que referenciem les pàgines web: `[text](#intro)`. El text que faci la referència el posarem entre claudàtors seguit dels parèntesis, que inclouran el codi de la secció amb un coixinet davant.
+En qualsevol moment del text, introduïm:
+
+    [text](#intro)
 
 
-En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades.
 
 ## Posar bibliografia {.scrollable}
 
-Amb un document **BibTex** (`.bib`)^[Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.]. 
+Ho farem normalment amb un document **BibTex** (`.bib`)^[Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.].
 
-1. Obrim un document de text (**Text file**) i el guardem com a `biblio.bib`.
+
+1.  Obrim un **Text file**, el guardem com a `biblio.bib` i introduïm:
 
 <!-- -->
 
@@ -420,57 +448,60 @@ Amb un document **BibTex** (`.bib`)^[Alguns paquets d'R com `RefManageR` automat
     title = {{The wages of war, 1816-1965: a statistical handbook}},
     year = {1972}
     }
-    
-2.  Introduïm al **YAML**:
+
+2.  Indiquem al **YAML** on es troba l'arxiu:
 
 <!-- -->
 
     bibliography: biblio.bib
 
-3. Citem al **text**.
+3.  Citem les referències al **text**.
 
--   Si l'envoltem de claudàtors `[@Singer1987]` ens posarà nom i any entre parèntesi: [@Singer1987].
--   Si no utilitzem els claudàtors `@Singer1987` ens posarà només l'any entre parèntesi: @Singer1987.
+-   Entre claudàtors `[@Singer1987]`, ens posarà (Singer 1987).
+-   Sense claudàtors `@Singer1987`, ens posarà Singer (1987).
 
 4.  En l'última línia del document de RMarkdown, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
-
-
-
 
 ::: aside
 Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
 :::
 
-
-
-# RMarkdown avançat {background-color="#e8e8e8"}
+# RMarkdown avançat (chunks) {background-color="#e8e8e8"}
 
 ## Taules
+
+Opció Knitr
 
 ```{r echo = T, eval = F}
 knitr::kable()
 ```
 
+Arguments d'interès: 
+
+- `col.names = c("Noms", "Ben", "Posats)` 
+- `align = c("ccc")`
+- `caption = "Títol"`
+
+^[Taules de tota mena amb [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)]
+
+
+
+## Taules
+
+Opció DT
 
 ```{r echo = T, eval = F}
-DT::data.table()
+DT::data.table(dplyr::starwars)
 ```
 
 
-
-kable(df, - col.names = c("Noms", "Ben", "Posats) - align = c("ccc") - caption = "Títol"
-
-Taules de tota mena amb [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
-
 ## Figures
 
-
-- `fig.width`: amplada en inches. 
-- `fig.height`: alçada en inches. 
-- `fig.align`: "left", "right", "center". 
-- `fig.dim`: primer width i després height, c(5,3) 
-- `out.width`: "50%" ocuparà el 50% de l'amplada del report
-
+-   `fig.width`: amplada en inches.
+-   `fig.height`: alçada en inches.
+-   `fig.align`: "left", "right", "center".
+-   `fig.dim`: primer width i després height, c(5,3)
+-   `out.width`: "50%" ocuparà el 50% de l'amplada del report
 
 ## Opcions globals
 
