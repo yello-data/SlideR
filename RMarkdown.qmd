@@ -10,6 +10,7 @@ params:
   year: 2012
 format: 
   revealjs:
+    embed-resources: true
     slide-number: true
     show-slide-number: print
     theme: simple
@@ -116,19 +117,19 @@ Crear un document: YAML - Text - Chunk
 
 ## Configurar RMarkdown
 
-- `Preview in Viewer Pane`
-- `Chunk Output in Console`
-- Knit: `Ctrl + Shift + K`
-- Visualització Viewer o Web
-- YAML - Text - Chunk
+-   `Preview in Viewer Pane`
+-   `Chunk Output in Console`
+-   Knit: `Ctrl + Shift + K`
+-   Visualització Viewer o Web
+-   YAML - Text - Chunk
 
 ## YAML
 
-- Què és?
-- Nom, títol i data.
-- `---`
+-   Què és?
+-   Nom, títol i data.
+-   `---`
 
- . . . 
+. . .
 
 ::: {.callout-note icon="false"}
 ## Exercici 1: YAML
@@ -140,82 +141,64 @@ output:
   html_document:
     theme: cosmo
 ```
-
 :::
-
-
-
 
 ## Text
 
-- **Negreta**, _cursives_, `codi`, [enllaços](www.jordimas.cat){target="_blank"}, nota al peu[^10].
+-   **Negreta**, *cursives*, `codi`, [enllaços](www.jordimas.cat){target="_blank"}, nota al peu[^1].
 
-- Seccions i subseccions
-- Ítems i subítems.
-- Ítems enumerats.
+-   Seccions i subseccions
 
- . . . 
+-   Ítems i subítems.
+
+-   Ítems enumerats.
+
+[^1]: Això és una nota al peu
+
+. . .
 
 ::: {.callout-note icon="false"}
 ## Exercici 2: Text
 
 Llegir introducció i fins a la imatge de RMarkdown. Fer els canvis que es proposen en el text.
-
 :::
-
-[^10]: Això és una nota al peu
-
-
-
-
-
 
 ## Chunks
 
-- Què és? `Ctrl + Alt + I`
-- Inici i final d'un chunk.
-- Etiquetes del chunk.
-- Elements: `echo`, `eval`, `message`, `warning`.
+-   Què és? `Ctrl + Alt + I`
+-   Inici i final d'un chunk.
+-   Etiquetes del chunk.
+-   Elements: `echo`, `eval`, `message`, `warning`.
 
- . . . 
+. . .
 
 ::: {.callout-note icon="false"}
 ## Exercici 3: Chunks
 
 Llegir l'apartat chunks i fer canvis que es proposen.
-
 :::
-
-
-
 
 ## Taules, imatges i gràfics
 
-- Els posem a dins del chunk.
-- Marc de dades: tibble, kable, datatable.
-- Imatges: `![]()` o `include_graphics("__")`.
-- Gràfics: `fig.align = "center"`, `fig.width = 50%`.
+-   Els posem a dins del chunk.
+-   Marc de dades: tibble, kable, datatable.
+-   Imatges: `![]()` o `include_graphics("__")`.
+-   Gràfics: `fig.align = "center"`, `fig.width = 50%`.
 
- . . . 
+. . .
 
 ::: {.callout-note icon="false"}
 ## Exercici 4: Dades i gràfics
 
 Llegir l'últim apartat, modifica marc de dades i gràfic.
-
 :::
-
 
 ## Avís important
 
 És important diferenciar entre
 
-- Mode Knit
-- Mode R Script
-
-
-
-
+-   Mode Knit
+-   Mode R Script
 
 ## Activitat
 
@@ -227,11 +210,7 @@ Crear una petita història amb [**Polity V**](https://www.jordimas.cat/files/pol
 -   Descarregar la base de dades Polity V a [Systemic Peace](https://www.systemicpeace.org/inscrdata.html){target="_blank"}
 -   **Text** amb tots els formats possibles.
 -   Un **marc de dades** i dos **plots**.
-
 :::
-
-
-
 
 ::: aside
 Variables d'interès:
@@ -344,9 +323,9 @@ output:
 
 ## Paràmetres {.scrollable}
 
-Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^1].
+Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^2].
 
-[^1]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
+[^2]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
 
 ``` {.r code-line-numbers="3-5"}
 title: "Postgrau d'Analista de Dades (UB)"
@@ -385,9 +364,9 @@ output:
 
 ## Formats d'output
 
-Al YAML podem especificar el tipus de format[^2].
+Al YAML podem especificar el tipus de format[^3].
 
-[^2]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
+[^3]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
 
 ``` {.r code-line-numbers="4,6,8"}
 title: "Postgrau d'Analista de Dades (UB)"
@@ -516,9 +495,9 @@ Encara més fàcil amb altres formats de Bookdown:
 
 ## Referències al text
 
-Per referenciar la secció del document[^3]:
+Per referenciar la secció del document[^4]:
 
-[^3]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
+[^4]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
 
 ```{r eval = F, echo = T}
 # Introducció {#intro}
@@ -532,9 +511,9 @@ En qualsevol moment del text, introduïm:
 
 ## Referències bibliogràfiques {.scrollable}
 
-Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
+Ho farem normalment amb un document **BibTex** (`.bib`)[^5].
 
-[^4]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
+[^5]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
 
 1.  Obrim un **Text file**, el guardem com a `biblio.bib` i introduïm:
 
@@ -655,7 +634,7 @@ També una assignatura pendent de RMarkdown.
 ```
 
 | Funció       | Paquet    | Descripció                                           |
-|--------------|--------------|--------------------------------------------|
+|--------------|-----------|------------------------------------------------------|
 | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
 | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
 | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
@@ -675,16 +654,15 @@ Amb l'editor visual veurem una interfície que ens serà molt més familiar. No 
 
 La forma més directa és mitjançant [RPubs](https://rpubs.com/){target="_blank"}, encara que també es poden fer pàgines web més sofisticades, blocs ([Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}) o llibres ([Bookdown](https://bookdown.org/){target="_blank"}).
 
- . . . 
+. . .
 
 ::: {.callout-note icon="false"}
 ## Exercici 6: Publicar
 
 A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -\> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
-
 :::
 
-## Activitat 
+## Activitat
 
 ::: {.callout-note icon="false"}
 ## Exercici 7: Prova final
@@ -695,19 +673,15 @@ Agafeu el treball d'un **dataset anterior** i construiu un document Html, procur
 -   Temes i subratllats.
 -   Plegar codi.
 -   Mida gràfics.
-
 :::
-
-
-
 
 # Consideracions finals {background-color="#e8e8e8"}
 
-## Interactius  {.scrollable}
+## Interactius {.scrollable}
 
-- Dashboards amb [flexdashboard](https://pkgs.rstudio.com/flexdashboard/){target="_blank"}
+-   Dashboards amb [flexdashboard](https://pkgs.rstudio.com/flexdashboard/){target="_blank"}
 
-- Mapes amb [leaflet](https://leafletjs.com/){target="_blank"}
+-   Mapes amb [leaflet](https://leafletjs.com/){target="_blank"}
 
 ```{r echo = T, eval = T}
 leaflet() %>% 
@@ -716,8 +690,6 @@ leaflet() %>%
           lat = 35.682170, 
           zoom = 13)
 ```
-
-
 
 ## El món de l'endemà
 
