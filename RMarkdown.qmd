@@ -221,7 +221,11 @@ Variables d'interès:
 -   `durable`: anys de durada del règim.
 :::
 
+# 4. RMarkdown avançat I {background-color="#e8e8e8"}
+
+
 # 4.1. RMarkdown avançat (YAML) {background-color="#e8e8e8"}
+
 
 ## Data automàtica
 
@@ -309,48 +313,6 @@ highlight: tango
 Per una llista dels diferents estils de temes i subratllats veure [aquest enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style){target="_blank"} i per una llista amb contingut més avançat veure [aquesta llista](https://www.datadreaming.org/post/r-markdown-theme-gallery/){target="_blank"}.
 :::
 
-## Gràfics per defecte
-
-Els gràfics que apareixen al document han de tenir per defecte algunes dimensions determinades?
-
-``` {.r code-line-numbers="4-5"}
-title: "Postgrau d'Analista de Dades (UB)"
-output:
-  html_document:
-    fig_width: 6 
-    fig_height: 4 
-```
-
-## Paràmetres {.scrollable}
-
-Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^2].
-
-[^2]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
-
-``` {.r code-line-numbers="3-5"}
-title: "Postgrau d'Analista de Dades (UB)"
-author: "Jordi Mas Elias"
-params:
-  country: "United States"
-  year: 2014
-```
-
-::: aside
-En el document, accedim als paràmetres de dues maneres:
-
--   A. Al text:
-
-```{r echo = T, eval = F}
-`r params$country`
-```
-
--   B. Als chunks:
-
-```{r echo = T, eval = F}
-filter(polity, country == params$country)
-```
-:::
-
 ## Plegar codi
 
 Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document.
@@ -381,35 +343,24 @@ output:
 
 I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/){target="_blank"} en diversos formats.
 
+
+
+
+
 # 4.2. RMarkdown avançat (text) {background-color="#e8e8e8"}
 
-## Tabsets
+## Canviar mida de text
 
-::: panel-tabset
-### Codi
+Un dels deutes pendents de RMarkdown.
 
-```{r echo = T, eval=F}
-## Títol {.tabset}
-
-Aquí comença una tabset.
-
-### Tab A
-
-Contingut de `Tab A`
-
-### Tab B
-
-Contingut de `Tab B`
-
-## {-}
+```{r eval = F, echo = T}
+    <style>
+    body {
+    font-size: 13pt;
+    text-align: justify}
+    </style>
 ```
 
-### Gràfic
-
-```{r echo = F}
-hist(dplyr::starwars$height)
-```
-:::
 
 ## Incloure codi al text {.scrollable}
 
@@ -460,38 +411,6 @@ max(polity$durable, na.rm = T)
 ```
 :::
 
-## Quadres de text
-
-::: {.callout-note icon="false"}
-## Avís!
-
-Utilitzar quadres de text és una manera efectiva per dirigir l'atenció a determinat contingut.
-:::
-
-    <div class="alert alert-info">
-    **Informació!** Blablabla.
-    </div>
-
-Tipus:
-
--   `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`.
-
-## Incrustar vídeos i tuits
-
-Amb el paquet `vembedr` és molt fàcil.
-
-```{r eval = F, echo = T}
-embed_url("https://youtu.be/hz3J6Wb5S_8")
-```
-
-{{< video https://youtu.be/hz3J6Wb5S_8 >}}
-
-Encara més fàcil amb altres formats de Bookdown:
-
-```{r eval = F, echo = T}
-{{< video https://youtu.be/wo9vZccmqwc >}}
-{{< tweet 1229386394658836480 >}}
-```
 
 ## Referències al text
 
@@ -543,6 +462,10 @@ Ho farem normalment amb un document **BibTex** (`.bib`)[^5].
 Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
 :::
 
+
+
+
+
 # 4.3. RMarkdown avançat (chunks) {background-color="#e8e8e8"}
 
 ## Taules
@@ -577,6 +500,8 @@ polity |>
 ```
 :::
 
+
+
 ## Figures
 
 Varis paràmetres per establir les dimensions:
@@ -607,17 +532,123 @@ El primer chunk també és útil per carregar els paquets i objectes que necessi
 -   Carregar bases de dades d'internet.
 -   Funcions que carreguen bases de dades (ex. `CEOdata`)
 
-## Canviar mida de text
 
-Un dels deutes pendents de RMarkdown.
+# 4.4. RMarkdown avançat (publicar) {background-color="#e8e8e8"}
 
-```{r eval = F, echo = T}
-    <style>
-    body {
-    font-size: 13pt;
-    text-align: justify}
-    </style>
+
+## Exportar i publicar {#rmd-rpubs}
+
+Tres maneres de publicar en Html:
+
+- [RPubs](https://rpubs.com/){target="_blank"}: La forma més senzilla.
+- [Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}: Blocs.
+- [Bookdown](https://bookdown.org/){target="_blank"}: Llibres.
+
+
+
+
+## Activitat
+
+::: {.callout-note icon="false"}
+## Exercici 7: Prova final
+
+Agafeu el treball d'un **dataset anterior** i construiu un document Html, procurant d'utilitzar també algunes de les funcions avançades. En particular:
+
+-   Marc de dades en knitr o DT.
+-   Temes i subratllats.
+-   Plegar codi.
+-   Mida gràfics.
+
+**Publiqueu-ho a [RPubs](https://rpubs.com/){target="_blank"}:** A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
+
+:::
+
+
+# 5. RMarkdown avançat II
+
+
+
+# 5.1. RMarkdown avançat (YAML)
+
+
+## Gràfics per defecte
+
+Els gràfics que apareixen al document han de tenir per defecte algunes dimensions determinades?
+
+``` {.r code-line-numbers="4-5"}
+title: "Postgrau d'Analista de Dades (UB)"
+output:
+  html_document:
+    fig_width: 6 
+    fig_height: 4 
 ```
+
+
+
+## Paràmetres {.scrollable}
+
+Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^2].
+
+[^2]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
+
+``` {.r code-line-numbers="3-5"}
+title: "Postgrau d'Analista de Dades (UB)"
+author: "Jordi Mas Elias"
+params:
+  country: "United States"
+  year: 2014
+```
+
+::: aside
+En el document, accedim als paràmetres de dues maneres:
+
+-   A. Al text:
+
+```{r echo = T, eval = F}
+`r params$country`
+```
+
+-   B. Als chunks:
+
+```{r echo = T, eval = F}
+filter(polity, country == params$country)
+```
+:::
+
+
+# 5.2. RMarkdown avançat (text)
+
+## Tabsets
+
+::: panel-tabset
+### Codi
+
+```{r echo = T, eval=F}
+## Títol {.tabset}
+
+Aquí comença una tabset.
+
+### Tab A
+
+Contingut de `Tab A`
+
+### Tab B
+
+Contingut de `Tab B`
+
+## {-}
+```
+
+
+
+### Gràfic
+
+```{r echo = F}
+hist(dplyr::starwars$height)
+```
+:::
+
+
 
 ## Taules {.scrollable}
 
@@ -634,13 +665,16 @@ També una assignatura pendent de RMarkdown.
 ```
 
 | Funció       | Paquet    | Descripció                                           |
-|--------------|-----------|------------------------------------------------------|
+|--------------|--------------|--------------------------------------------|
 | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
 | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
 | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
 | `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
 
 També podem utilitzar l'**Editor Visual** (següent).
+
+
+
 
 ## Editor visual
 
@@ -650,32 +684,51 @@ Interfície més semblant a Word per generar documents.
 
 Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
 
-## Exportar i publicar {#rmd-rpubs}
 
-La forma més directa és mitjançant [RPubs](https://rpubs.com/){target="_blank"}, encara que també es poden fer pàgines web més sofisticades, blocs ([Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}) o llibres ([Bookdown](https://bookdown.org/){target="_blank"}).
 
-. . .
+## Quadres de text
 
 ::: {.callout-note icon="false"}
-## Exercici 6: Publicar
+## Avís!
 
-A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -\> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
+Utilitzar quadres de text és una manera efectiva per dirigir l'atenció a determinat contingut.
 :::
 
-## Activitat
+    <div class="alert alert-info">
+    **Informació!** Blablabla.
+    </div>
 
-::: {.callout-note icon="false"}
-## Exercici 7: Prova final
+Tipus:
 
-Agafeu el treball d'un **dataset anterior** i construiu un document Html, procurant d'utilitzar també algunes de les funcions avançades. En particular:
+-   `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`.
 
--   Marc de dades en knitr o DT.
--   Temes i subratllats.
--   Plegar codi.
--   Mida gràfics.
-:::
 
-# Consideracions finals {background-color="#e8e8e8"}
+
+# 5.3. RMarkdown avançat (chunk)
+
+
+## Incrustar vídeos i tuits
+
+Amb el paquet `vembedr` és molt fàcil.
+
+```{r eval = F, echo = T}
+embed_url("https://youtu.be/hz3J6Wb5S_8")
+```
+
+{{< video https://youtu.be/hz3J6Wb5S_8 >}}
+
+Encara més fàcil amb altres formats de Bookdown:
+
+```{r eval = F, echo = T}
+{{< video https://youtu.be/wo9vZccmqwc >}}
+{{< tweet 1229386394658836480 >}}
+```
+
+
+
+
+
+# 6. Consideracions finals {background-color="#e8e8e8"}
 
 ## Interactius {.scrollable}
 
