@@ -14,7 +14,7 @@ format:
     slide-number: true
     show-slide-number: print
     theme: simple
-editor: visual
+editor: source
 ---
 
 ## Sumari
@@ -634,7 +634,7 @@ També una assignatura pendent de RMarkdown.
 ```
 
 | Funció       | Paquet    | Descripció                                           |
-|--------------|--------------|--------------------------------------------|
+|------------------|------------------|-------------------------------------|
 | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
 | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
 | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
