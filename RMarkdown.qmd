@@ -4,7 +4,7 @@ subtitle: "Postgrau d'Analista de Dades (UB)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
 footer: "RMarkdown - Postgrau d'Analista de Dades (UB)"
-logo: ub-logo.png
+logo: logo-ub.png
 params:
   country: "United States"
   year: 2012
@@ -223,9 +223,7 @@ Variables d'interès:
 
 # 4. RMarkdown avançat I {background-color="#e8e8e8"}
 
-
 # 4.1. RMarkdown avançat (YAML) {background-color="#e8e8e8"}
-
 
 ## Data automàtica
 
@@ -326,9 +324,9 @@ output:
 
 ## Formats d'output
 
-Al YAML podem especificar el tipus de format[^3].
+Al YAML podem especificar el tipus de format[^2].
 
-[^3]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
+[^2]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
 
 ``` {.r code-line-numbers="4,6,8"}
 title: "Postgrau d'Analista de Dades (UB)"
@@ -343,10 +341,6 @@ output:
 
 I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/){target="_blank"} en diversos formats.
 
-
-
-
-
 # 4.2. RMarkdown avançat (text) {background-color="#e8e8e8"}
 
 ## Canviar mida de text
@@ -360,7 +354,6 @@ Un dels deutes pendents de RMarkdown.
     text-align: justify}
     </style>
 ```
-
 
 ## Incloure codi al text {.scrollable}
 
@@ -411,12 +404,11 @@ max(polity$durable, na.rm = T)
 ```
 :::
 
-
 ## Referències al text
 
-Per referenciar la secció del document[^4]:
+Per referenciar la secció del document[^3]:
 
-[^4]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
+[^3]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
 
 ```{r eval = F, echo = T}
 # Introducció {#intro}
@@ -430,9 +422,9 @@ En qualsevol moment del text, introduïm:
 
 ## Referències bibliogràfiques {.scrollable}
 
-Ho farem normalment amb un document **BibTex** (`.bib`)[^5].
+Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
 
-[^5]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
+[^4]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
 
 1.  Obrim un **Text file**, el guardem com a `biblio.bib` i introduïm:
 
@@ -461,10 +453,6 @@ Ho farem normalment amb un document **BibTex** (`.bib`)[^5].
 ::: aside
 Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
 :::
-
-
-
-
 
 # 4.3. RMarkdown avançat (chunks) {background-color="#e8e8e8"}
 
@@ -500,8 +488,6 @@ polity |>
 ```
 :::
 
-
-
 ## Figures
 
 Varis paràmetres per establir les dimensions:
@@ -532,20 +518,15 @@ El primer chunk també és útil per carregar els paquets i objectes que necessi
 -   Carregar bases de dades d'internet.
 -   Funcions que carreguen bases de dades (ex. `CEOdata`)
 
-
 # 4.4. RMarkdown avançat (publicar) {background-color="#e8e8e8"}
-
 
 ## Exportar i publicar {#rmd-rpubs}
 
 Tres maneres de publicar en Html:
 
-- [RPubs](https://rpubs.com/){target="_blank"}: La forma més senzilla.
-- [Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}: Blocs.
-- [Bookdown](https://bookdown.org/){target="_blank"}: Llibres.
-
-
-
+-   [RPubs](https://rpubs.com/){target="_blank"}: La forma més senzilla.
+-   [Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}: Blocs.
+-   [Bookdown](https://bookdown.org/){target="_blank"}: Llibres.
 
 ## Activitat
 
@@ -559,17 +540,12 @@ Agafeu el treball d'un **dataset anterior** i construiu un document Html, procur
 -   Plegar codi.
 -   Mida gràfics.
 
-**Publiqueu-ho a [RPubs](https://rpubs.com/){target="_blank"}:** A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
-
+**Publiqueu-ho a [RPubs](https://rpubs.com/){target="_blank"}:** A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -\> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
 :::
-
 
 # 5. RMarkdown avançat II
 
-
-
 # 5.1. RMarkdown avançat (YAML)
-
 
 ## Gràfics per defecte
 
@@ -583,13 +559,11 @@ output:
     fig_height: 4 
 ```
 
-
-
 ## Paràmetres {.scrollable}
 
-Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^2].
+Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^5].
 
-[^2]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
+[^5]: Molt útil per fer [documents interactius](https://bookdown.org/yihui/rmarkdown/params-knit.html#params-knit){target="_blank"} per establir els paràmetres de base.
 
 ``` {.r code-line-numbers="3-5"}
 title: "Postgrau d'Analista de Dades (UB)"
@@ -615,7 +589,6 @@ filter(polity, country == params$country)
 ```
 :::
 
-
 # 5.2. RMarkdown avançat (text)
 
 ## Tabsets
@@ -639,16 +612,12 @@ Contingut de `Tab B`
 ## {-}
 ```
 
-
-
 ### Gràfic
 
 ```{r echo = F}
 hist(dplyr::starwars$height)
 ```
 :::
-
-
 
 ## Taules {.scrollable}
 
@@ -673,9 +642,6 @@ També una assignatura pendent de RMarkdown.
 
 També podem utilitzar l'**Editor Visual** (següent).
 
-
-
-
 ## Editor visual
 
 Interfície més semblant a Word per generar documents.
@@ -683,8 +649,6 @@ Interfície més semblant a Word per generar documents.
 ![](img/rmarkdown-visual-editor.png){.absolute top="300" left="0" width="500"}
 
 Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
-
-
 
 ## Quadres de text
 
@@ -702,10 +666,7 @@ Tipus:
 
 -   `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`.
 
-
-
 # 5.3. RMarkdown avançat (chunk)
-
 
 ## Incrustar vídeos i tuits
 
@@ -723,10 +684,6 @@ Encara més fàcil amb altres formats de Bookdown:
 {{< video https://youtu.be/wo9vZccmqwc >}}
 {{< tweet 1229386394658836480 >}}
 ```
-
-
-
-
 
 # 6. Consideracions finals {background-color="#e8e8e8"}
 

@@ -1,0 +1,146 @@
+---
+title: "Excel & R"
+subtitle: "Tècniques Quantitatives (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Tècniques Quantitatives (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: visual
+---
+
+## Summary
+
+-   Types of data files
+-   Import data to Excel
+-   Dynamic tables in Excel
+-   Collaborative spreadcheets 
+-   Import data to R
+-   Vectors and data frames in R
+-   Objects and functions in R
+
+
+## Types of data files
+
+Plain files: csv, csv2, tsv, txt.
+
+Program files:
+
+- Excel: `.xlsx`, `.xls`.
+- R: `.Rdata`.
+- Stata: `.dta`.
+- SPSS: `.sav`, `.spss`.
+
+
+## Types of data files {.scrollable}
+
+Comma Separated Values (`csv`).
+
+::: columns
+::: {.column width="40%"}
+
+- Comas separate variables.
+- Points separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv.png)
+
+:::
+
+:::
+
+
+
+
+## Types of data files {.scrollable}
+
+Comma Separated Values 2 (`csv`).
+
+::: columns
+::: {.column width="40%"}
+
+- Semi-colons separate variables.
+- Commas separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv2.png)
+
+:::
+
+:::
+
+
+
+## Types of data files {.scrollable}
+
+Tab-Separated Values 2 (`tsv`).
+
+::: columns
+::: {.column width="40%"}
+
+- XXXXXX
+- XXXXXX
+:::
+
+::: {.column width="60%"}
+![](img/read_tab.png)
+
+:::
+
+:::
+
+
+
+
+
+
+## Types of data files {.scrollable}
+
+Other delimiters (`txt`).
+
+::: columns
+::: {.column width="40%"}
+
+- XXXXXX
+- XXXXXX
+:::
+
+::: {.column width="60%"}
+![](img/read_delim.png)
+
+:::
+
+:::
+
+
+
+
+
+
+## Import data to Excel
+
+
+
+## Dynamic tables in Excel
+
+
+## Collaborative spreadcheets 
+
+
+## Import data to R
+
+
+## Vectors and data frames in R
+
+
+## Objects and functions in R
+
+
+
