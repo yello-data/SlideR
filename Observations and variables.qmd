@@ -1,10 +1,11 @@
 ---
-title: "Observations and variables"
+title: "Observations & variables"
 subtitle: "Quantitative Methodology (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
 footer: "Quantitative Methodology (UPF)"
 logo: logo-upf.png
+bibliography: references.bib
 format: 
   revealjs:
     embed-resources: true
@@ -26,25 +27,113 @@ editor_options:
 
 # Terminology {background-color="#e8e8e8"}
 
-## Types of data files
+## Table
 
-## Quarto
+Can be almost anything.
+Qualsevol cosa: Taula periòdica, taula de multiplicar, taula de la veritat, taula de chi quadrat, 
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+## Dataframe
 
-## Bullets
 
-When you click the **Render** button a document will be generated that includes:
+Una manera d’emmagatzemar dades d’R
+Normalment les emmagatzemarem *tidy*.
 
--   Content authored with markdown
--   Output from executable code
+## Spreadsheet
 
-## Code
+Com Excel emmagatzema les dades.
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
 
-```{r}
-1 + 1
+# Observations {background-color="#e8e8e8"}
+
+## What is an observation?
+
+The thing that we want to know about.
+
+-	Unit of analysis: 
+-	Unit of observation: 
+
+## Examples:
+
+-	States
+- Bombings
+- Ethnic groups
+- Terrorist rups ètnics, atemptats terroristes.
+
+## Types of dataset:
+
+-	Monàdiques
+-	Diàdiques.
+
+## Problema unitat d’anàlisi:
+
+-	Singer
+-	Fal·làcia ecològica: “Els rics són menys corruptes”.
+
+
+
+# Variables {background-color="#e8e8e8"}
+
+## What is a variable?
+
+
+
+## Types of variables (I): Nominal
+
+
+## Types of variables (I): Ordinal
+
+
+## Types of variables (III): Interval
+
+
+## Types of variables (III): Ratio
+
+
+# Recoding variables {background-color="#e8e8e8"}
+
+
+
+
+# Tidy data {background-color="#e8e8e8"}
+
+## Wickham rules {.scrollable}
+
+We consider a dataframe as *tidy* if it fulfills the following requirements [@Wickham2014]:
+
+![](img/wickham.jpeg){style="float:right;" width="300"}
+
+::: columns
+::: {.column width="50%"}
+
+- Each dataframe has one **unit of observation**.
+- **Observations** are represented in the rows.
+- **Variables** are represented in the columns.
+- Each **cell** indicates a value.
+:::
+
+::: {.column width="40%"}
+:::
+
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/tidydata.png")
 ```
+:::
+
+
+# Pivoting dataframes {background-color="#e8e8e8"}
+
+## What does it mean?
+
+Canviem la unitat d’anàlisi, les observacions, i les variables del marc de dades, mantenint la mateixa informació.
+
+- Pivot longer
+- Pivot wider
+
+## Pivot longer
+
+
+## Pivot wider
+
+
 
 
