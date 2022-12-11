@@ -32,6 +32,14 @@ editor_options:
 Can be almost anything.
 Qualsevol cosa: Taula periòdica, taula de multiplicar, taula de la veritat, taula de chi quadrat, 
 
+## Dataset
+
+ddd
+
+## Database
+
+ddd
+
 ## Dataframe
 
 
