@@ -20,27 +20,48 @@ editor_options:
 ## Summary
 
 -   Terminology
--   Tidy data
--   Pivoting
 -   Observations
 -   Variables
+-   Tidy data
+-   Pivoting
+
+```{r echo = F, message=F, warning=F}
+library(tidyverse)
+library(readxl)
+```
+
 
 # Terminology {background-color="#e8e8e8"}
 
 ## Table
 
-Can be almost anything.
-Qualsevol cosa: Taula periòdica, taula de multiplicar, taula de la veritat, taula de chi quadrat, 
+It s a generic name. It can be almost anything.
 
-## Dataframe
-
-
-Una manera d’emmagatzemar dades d’R
-Normalment les emmagatzemarem *tidy*.
+- Periodic table
+- Multiplication table
+- Truth table
+- Chi squared table 
 
 ## Spreadsheet
 
-Com Excel emmagatzema les dades.
+How Excel stores data in two dimensions:
+
+![](img/excel-spreadsheet.png)
+
+## Dataframe
+
+A way to store data in R in two dimensions:
+
+```{r echo = F}
+read_xls("p5v2018.xls") |> 
+  select(scode, country, year, polity2, xrreg:parreg)
+```
+
+::: aside
+We will normally store them *tidy*.
+:::
+
+
 
 
 # Observations {background-color="#e8e8e8"}
