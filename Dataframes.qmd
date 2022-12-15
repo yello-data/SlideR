@@ -1,0 +1,247 @@
+---
+title: "Dataframes"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+bibliography: references.bib
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+-   What is a dataframe?
+-   Observations
+-   Variables
+-   Recoding variables
+-   Scope of data
+
+```{r echo = F, message=F, warning=F}
+library(tidyverse)
+library(readxl)
+```
+
+
+# What is a dataframe? {background-color="#e8e8e8"}
+
+## Table
+
+It s a generic name. It can be almost anything.
+
+- Periodic table
+- Multiplication table
+- Truth table
+- Chi squared table 
+- Phonetic table
+- ...
+
+## Data(s)
+
+- **Source of information (SI):** Raw empirical material.
+- **Data (s/p):** Collected, processed, systematized and organized SI [@VanEvera2009].
+    - Numbers, characters, symbols ... no meaning.
+- **Database:** An organized collection of data stored and accessed electronically / An organized collection of data stored as multiple datasets.
+- **Dataset:** A structured collection of data generally associated with a unique body of work.
+
+
+## Spreadsheet
+
+How Excel stores data in two dimensions:
+
+![](img/excel-spreadsheet.png)
+
+
+## Dataframe
+
+A way to store data in R in two dimensions^[And we will normally store them *tidy*.]:
+
+```{r echo = F}
+read_xls("p5v2018.xls") |> 
+  select(scode, country, year, polity2, xrreg:parreg)
+```
+
+## A _tidy_ dataframe
+
+We consider a dataframe as *tidy* if it fulfills the following requirements [@Wickham2014]:
+
+- Each dataframe has one **unit of observation**.
+- **Observations** are represented in the rows.
+- **Variables** are represented in the columns.
+- Each **cell** indicates a value.
+
+
+# Observations {background-color="#e8e8e8"}
+
+## Observing ...
+
+:::: {.columns}
+
+::: {.column width="40%"}
+We need to decide which are the **units** of interest.
+:::
+
+::: {.column width="60%"}
+![](https://2.bp.blogspot.com/-wA7H0iOgUgM/VtSymS91sfI/AAAAAAAAA1U/UEtXfoDg8j0/s1600/day_globe_75fr_125ms.gif)
+:::
+
+::::
+
+
+
+
+## What is an observation?
+
+-	**Unit of analysis:** The thing that we want to know about.
+    - Marked by the hypothesis / question.
+-	**Unit of observation:** Each row of a dataframe.
+    - Marked by the instrument of measurement.
+
+
+```{r}
+gapminder::gapminder |> 
+  head(8)
+```
+
+
+
+## Example: Macro level {.scrollable}
+
+States, regions, legal systems ...
+
+```{r echo = T, eval = F}
+interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
+```
+
+Intra-State War Data ([Correlates of War](https://correlatesofwar.org/data-sets/cow-war/))
+```{r}
+interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
+interstate |> 
+  select(WarName, WarType, CcodeA, SideA, CcodeB, SideB) |> 
+  head(15)
+```
+
+
+
+## Example: Meso level
+
+Organitzations, ethnic groups, political parties ...
+
+```{r}
+read_csv("files/rfe.csv")
+```
+
+
+## Example: Micro level
+
+Families, individuals, relationships^[Bombings, contracts, terrorist attacks...] ...
+
+```{r}
+read_csv("files/nig.csv") |> 
+  select(1:5)
+```
+
+
+
+
+
+## Ecological fallacy
+
+
+“Els rics són menys corruptes”.
+
+- Simpson's paradox.
+- Durkheim.
+- Wealthier states tend to vote Democratic.
+- Covid a hospitals.
+
+## Local elections 
+
+What if...
+[Elections in Barcelona](https://twitter.com/Rogerbuch/status/1133126546405888006)
+
+
+# Variables {background-color="#e8e8e8"}
+
+## What is a variable?
+
+
+
+## Types of variables (I): Nominal
+
+```{r}
+c("England", "France")
+factor(c("England", "France"))
+```
+
+
+## Types of variables (I): Ordinal
+
+```{r}
+factor(c("England", "France"),
+       ordered = T)
+```
+
+
+## Types of variables (III): Interval
+
+
+## Types of variables (III): Ratio
+
+
+# Recoding variables {background-color="#e8e8e8"}
+
+
+
+
+# Tidy data {background-color="#e8e8e8"}
+
+## Wickham rules {.scrollable}
+
+We consider a dataframe as *tidy* if it fulfills the following requirements [@Wickham2014]:
+
+![](img/wickham.jpeg){style="float:right;" width="300"}
+
+::: columns
+::: {.column width="50%"}
+
+- Each dataframe has one **unit of observation**.
+- **Observations** are represented in the rows.
+- **Variables** are represented in the columns.
+- Each **cell** indicates a value.
+:::
+
+::: {.column width="40%"}
+:::
+
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/tidydata.png")
+```
+:::
+
+
+# Pivoting dataframes {background-color="#e8e8e8"}
+
+## What does it mean?
+
+Canviem la unitat d’anàlisi, les observacions, i les variables del marc de dades, mantenint la mateixa informació.
+
+- Pivot longer
+- Pivot wider
+
+## Pivot longer
+
+
+## Pivot wider
+
+
+
+

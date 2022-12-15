@@ -1,0 +1,1600 @@
+age,language,urban_rural,region,electricity_nearby,piped_water_nearby,sweage_system_nearby,post_office_nearby,school_nearby,soldiers_nearby,customs_checkpoints_nearby,situation_country,situation_personal,armed_forces_trust,courts_law_trust
+26,Igbo,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Fairly Good,Somewhat,Not at all
+25,Other,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Not at all
+35,Hausa,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+79,Other,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Not at all,Not at all
+19,English,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+34,Igbo,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Don't know,Don't know,Not at all,Not at all
+30,Pidgin English,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+32,Hausa,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+50,Other,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Don’t know,Just a little
+18,English,Rural,FCT ABUJA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Somewhat
+34,Hausa,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+35,Other,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,Not at all
+32,Other,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Fairly Good,Fairly Bad,A lot,A lot
+20,Hausa,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Somewhat
+30,Igbo,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+60,Hausa,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+78,Other,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Very Bad,Neither good nor bad,Not at all,Just a little
+70,Other,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Not at all
+19,English,Rural,"NASARAWA",Yes,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+41,Yoruba,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Just a little
+21,English,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+21,Hausa,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Good,A lot,A lot
+36,Tiv,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+58,Igbo,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,A lot,Somewhat
+22,English,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,English,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+37,Ebira,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+20,Hausa,Urban,FCT ABUJA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Very Bad,A lot,Not at all
+24,Igbo,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,A lot
+20,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+65,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Not at all
+22,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+24,Other,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+35,Other,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Somewhat
+28,English,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Not at all,Not at all
+22,English,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+36,Yoruba,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,Other,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,A lot,A lot
+50,English,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Very Bad,Very good,A lot,Not at all
+41,Pidgin English,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Just a little
+60,Igbo,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+37,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Just a little
+28,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Refused,Neither good nor bad,Somewhat,Somewhat
+39,Hausa,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Don’t know
+32,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+65,English,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,A lot,A lot
+32,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Don't know,Neither good nor bad,Somewhat,Not at all
+70,Igbo,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Not at all
+20,English,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Somewhat
+28,Igbo,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very good,Not at all,Just a little
+33,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Bad,A lot,Not at all
+85,Other,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Don’t know,Don’t know
+26,English,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+62,Igbo,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Don’t know
+19,English,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+19,Other,Rural,"NASARAWA",No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Don’t know,Just a little
+50,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Neither good nor bad,Very Bad,Just a little,Not at all
+20,Other,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+31,Pidgin English,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Somewhat
+32,English,Urban,IMO,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Bad,A lot,Not at all
+60,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Very Bad,Very Bad,A lot,Just a little
+18,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Bad,Not at all,Not at all
+20,Igbo,Rural,FCT ABUJA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+18,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,A lot
+40,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+19,Hausa,Urban,SOKOTO,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,A lot,A lot
+53,English,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+61,English,Urban,ANAMBRA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very Bad,Just a little,Just a little
+38,English,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+37,English,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Fairly Good,Fairly Good,Just a little,A lot
+20,Yoruba,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+21,English,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+29,Hausa,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+67,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Very Bad,A lot,Don’t know
+40,English,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Don't know,Very good,Not at all,Not at all
+52,English,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+22,Hausa,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+36,English,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+31,English,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+42,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,English,Urban,SOKOTO,Yes,Yes,Yes,Can't determine,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+35,Hausa,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Somewhat
+33,English,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Just a little
+25,Other,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Somewhat
+50,Igbo,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+29,English,Urban,IMO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Not at all,Not at all
+56,English,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+35,Igbo,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+26,English,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Very Bad,Not at all,Not at all
+48,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Fairly Bad,Just a little,Not at all
+30,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Fairly Good,A lot,Not at all
+45,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+24,Hausa,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+35,Hausa,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+25,English,Urban,"NASARAWA",Yes,No,Yes,No,Yes,No,No,Fairly Bad,Very good,Somewhat,Just a little
+20,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+19,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Very Bad,Not at all,Just a little
+40,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Very Bad,Just a little,Somewhat
+30,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,Can't determine,No,Very Bad,Neither good nor bad,Not at all,Somewhat
+30,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Good,Neither good nor bad,Just a little,Just a little
+35,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Somewhat,Somewhat
+20,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Bad,Very Bad,Just a little,Somewhat
+20,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Neither good nor bad,Neither good nor bad,Don’t know,Don’t know
+28,English,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Not at all
+36,Pidgin English,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Very Bad,Fairly Bad,Just a little,Not at all
+60,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Neither good nor bad,Very Bad,Not at all,Not at all
+35,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+25,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+46,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Bad,Fairly Bad,Not at all,Not at all
+40,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Good,Neither good nor bad,Just a little,Just a little
+30,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Very good,Very good,A lot,A lot
+39,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Not at all
+41,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+33,Hausa,Rural,SOKOTO,No,No,No,No,Yes,No,Yes,Very good,Very good,Somewhat,A lot
+52,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+32,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Not at all
+40,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+62,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Don’t know,Refused
+38,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Just a little
+41,Pidgin English,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Neither good nor bad,Neither good nor bad,Just a little,Not at all
+35,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,Yes,No,Fairly Good,Fairly Good,Not at all,Not at all
+20,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Very good,Very good,Not at all,Not at all
+29,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Bad,Fairly Good,A lot,Don’t know
+21,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+64,Hausa,Rural,KADUNA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+43,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+20,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Very good,A lot,A lot
+18,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+20,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,Just a little
+27,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,Somewhat
+18,English,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+55,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+45,Igbo,Rural,ANAMBRA,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+22,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Very good,Just a little,Somewhat
+49,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+20,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+22,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Neither good nor bad,Not at all,Just a little
+28,English,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+22,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Not at all
+32,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+43,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Not at all
+24,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+35,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+60,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,A lot,A lot
+25,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Somewhat
+45,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,English,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+19,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Don’t know
+37,Igbo,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Very Bad,Very good,Not at all,A lot
+24,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+26,English,Rural,IMO,Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Not at all
+35,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+35,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+22,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Fairly Good,Very Bad,Just a little,Just a little
+20,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Very Bad,Fairly Good,A lot,Just a little
+19,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Very good,Fairly Good,A lot,A lot
+30,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Fairly Good,Neither good nor bad,A lot,Somewhat
+23,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Not at all
+53,Igbo,Urban,ANAMBRA,Yes,Can't determine,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+40,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+26,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+25,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+70,Igbo,Rural,IMO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+65,English,Rural,IMO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Don’t know
+75,Igbo,Rural,IMO,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Not at all,Not at all
+35,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Not at all
+50,Igbo,Rural,IMO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+62,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Just a little,Not at all
+18,Igbo,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very good,Very good,Not at all,Not at all
+22,Pidgin English,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+20,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+27,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+43,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+58,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+25,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+19,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,A lot,Somewhat
+42,English,Urban,ANAMBRA,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,A lot
+24,Igbo,Rural,IMO,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,A lot
+18,Pidgin English,Rural,IMO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,English,Rural,IMO,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Not at all
+52,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+18,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+25,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Not at all
+27,English,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+24,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+39,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,A lot,Somewhat
+39,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+45,Igbo,Rural,IMO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+42,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Not at all
+18,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+31,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+23,Hausa,Rural,SOKOTO,No,Yes,No,No,Yes,No,No,Very good,Fairly Good,Not at all,Not at all
+42,Isoko,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+26,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+23,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+21,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+49,Other,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+36,English,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+32,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+47,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Very good,Not at all,Not at all
+25,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Very good,A lot,Somewhat
+35,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,A lot
+29,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+20,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Fairly Good,Somewhat,Somewhat
+45,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very Bad,Neither good nor bad,Not at all,Not at all
+50,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+27,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Very good,Somewhat,Just a little
+30,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+20,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+35,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+27,Hausa,Rural,SOKOTO,No,No,No,No,No,No,No,Very good,Very good,Not at all,Not at all
+70,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Not at all
+25,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+31,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Not at all
+42,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,A lot
+21,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,A lot,A lot
+52,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+35,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very good,Very good,A lot,A lot
+30,Igbo,Urban,DELTA,No,No,No,No,No,No,No,Very Bad,Fairly Good,Somewhat,Just a little
+27,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+35,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+22,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+25,Hausa,Urban,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+21,Pidgin English,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Fairly Bad,Neither good nor bad,Somewhat,Not at all
+35,Igbo,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Fairly Good,Very Bad,Just a little,Just a little
+25,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+45,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+42,English,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Just a little,Not at all
+72,Igbo,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Somewhat,Just a little
+35,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+29,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very good,Fairly Bad,A lot,A lot
+20,English,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Not at all,Somewhat
+38,Hausa,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+40,Yoruba,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+78,Hausa,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+42,Idoma,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+35,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Not at all
+30,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+47,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Somewhat
+42,Igbo,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+55,Igbo,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+23,English,Rural,ABIA,Yes,Yes,Yes,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+20,Ebira,Urban,KOGI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Not at all
+42,Yoruba,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Refused,Somewhat
+26,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+30,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Just a little,A lot
+31,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+18,Hausa,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Just a little
+47,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+30,English,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+42,Igbo,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+28,Idoma,Urban,KADUNA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+19,Don't know,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Just a little
+25,Other,Rural,DELTA,No,No,No,No,Yes,No,No,Very good,Neither good nor bad,Not at all,Just a little
+43,Urhobo,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+21,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Very good,Somewhat,Somewhat
+19,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+19,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+40,Hausa,Rural,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+38,English,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Somewhat
+34,Refused,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+28,Urhobo,Rural,DELTA,No,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+25,Pidgin English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Not at all
+39,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+26,Other,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Somewhat
+48,English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,English,Rural,KEBBI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+29,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Somewhat
+21,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+18,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+22,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Just a little
+73,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+18,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+60,Fulani,Rural,KEBBI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+24,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+45,English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+24,Pidgin English,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Not at all
+56,Other,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+42,Igbo,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+36,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+24,Igbo,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+58,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+25,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+50,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Don’t know,A lot
+20,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+54,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+22,Other,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+40,English,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+42,Urhobo,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+35,Igbo,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,A lot,Just a little
+68,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Not at all,Not at all
+35,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+30,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+65,Yoruba,Rural,KOGI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+22,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Not at all,Not at all
+24,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Somewhat,Just a little
+18,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Fairly Good,Fairly Good,Just a little,Just a little
+49,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Neither good nor bad,Fairly Bad,Not at all,Not at all
+24,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Not at all,Not at all
+25,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Not at all,Not at all
+42,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+52,Other,Urban,KADUNA,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+59,Igbo,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+70,Igbo,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Good,Neither good nor bad,Not at all,Not at all
+40,Igbo,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+50,English,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very good,Very good,Just a little,Not at all
+23,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+45,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very Bad,Somewhat,Don’t know
+68,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+20,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+19,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+34,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Just a little
+58,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+29,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+38,English,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+23,Igbo,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+20,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Don’t know,Don’t know
+20,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Just a little,Just a little
+60,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Don’t know
+53,Igbo,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+18,English,Urban,ABIA,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Just a little
+19,Yoruba,Rural,KOGI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+46,English,Rural,KADUNA,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Somewhat
+31,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+29,Other,Rural,KADUNA,No,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Just a little
+25,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+67,Yoruba,Rural,KADUNA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+36,Hausa,Rural,KADUNA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+55,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+24,Hausa,Rural,KEBBI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+23,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Just a little
+65,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+18,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,Other,Rural,KADUNA,No,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+25,English,Rural,KADUNA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+30,Other,Rural,KADUNA,No,No,No,No,Yes,No,No,Very Bad,Fairly Good,A lot,Somewhat
+30,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+24,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+54,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Not at all
+22,Ijaw,Rural,DELTA,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Somewhat
+39,Other,Rural,KADUNA,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Somewhat
+18,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+48,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+52,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+58,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Somewhat
+43,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Just a little,Don’t know
+35,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+24,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+25,Hausa,Rural,KEBBI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+60,English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+70,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+54,Pidgin English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+55,English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Not at all
+49,Other,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+34,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+29,Pidgin English,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Just a little
+45,Other,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+26,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+21,Igbo,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+24,Pidgin English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+27,English,Rural,ABIA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+27,Hausa,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+33,Pidgin English,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+19,Other,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Not at all
+31,Other,Rural,KADUNA,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+70,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+18,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+65,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,A lot,Somewhat
+45,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Very good,Fairly Good,Just a little,Just a little
+40,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+23,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Somewhat
+20,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+73,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Don’t know
+18,Other,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+35,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Not at all
+41,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+28,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+35,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+25,Yoruba,Urban,EKITI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,Hausa,Urban,KEBBI,Yes,Yes,No,No,Yes,No,No,Very good,Neither good nor bad,Don’t know,Don’t know
+18,Pidgin English,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Very Bad,Very good,Not at all,Not at all
+33,Urhobo,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+18,Urhobo,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Pidgin English,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Somewhat
+22,Pidgin English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Neither good nor bad,Fairly Bad,Not at all,Not at all
+24,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+25,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Don’t know
+42,Other,Urban,EKITI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Just a little
+31,Kanuri,Urban,EKITI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+45,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+29,Pidgin English,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Somewhat
+18,Urhobo,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,A lot,Just a little
+45,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+47,English,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Very good,Very good,Not at all,Not at all
+23,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+30,Urhobo,Urban,DELTA,Yes,Yes,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+27,Yoruba,Urban,EKITI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Somewhat
+23,Pidgin English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,A lot
+28,English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Just a little
+37,Pidgin English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+32,English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+19,English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+38,English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Very good,Very good,Just a little,Not at all
+35,Pidgin English,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Very Bad,Refused,Not at all,Not at all
+50,Igbo,Urban,RIVERS,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+18,Urhobo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Not at all
+19,Igbo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Fairly Good,Very Bad,Not at all,Not at all
+30,English,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Very Bad,Neither good nor bad,Not at all,Not at all
+81,Edo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Very Bad,Neither good nor bad,Somewhat,Just a little
+30,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+22,English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Not at all
+30,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+36,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+32,Pidgin English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very good,Fairly Good,Just a little,Just a little
+60,Other,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+28,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+33,English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+70,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+18,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+25,Edo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Fairly Good,Very good,Just a little,Just a little
+36,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+26,Edo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+35,Igbo,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+22,English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Don’t know,Not at all
+32,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+25,English,Urban,EDO,Yes,No,No,Can't determine,Yes,Yes,No,Very Bad,Fairly Good,Not at all,Just a little
+26,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+35,English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+27,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+25,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+50,Yoruba,Rural,EKITI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+18,Pidgin English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Don’t know,Don’t know
+28,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Very good,Somewhat,Somewhat
+43,Pidgin English,Rural,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Not at all
+29,Agatu,Rural,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+80,Other,Rural,EKITI,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Not at all
+38,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+24,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+21,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Just a little
+24,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Just a little
+25,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+45,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+32,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Good,A lot,A lot
+80,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,A lot
+25,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Just a little
+18,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+26,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+22,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Just a little
+59,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+50,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+61,Agatu,Rural,BENUE,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+40,Idoma,Rural,BENUE,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+60,Agatu,Rural,BENUE,No,No,No,No,Yes,No,No,Very good,Very good,A lot,Just a little
+52,Pidgin English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+38,Igbo,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+30,Idoma,Rural,BENUE,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,A lot,Just a little
+36,Pidgin English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+38,English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+28,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Somewhat
+45,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+30,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+30,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Not at all,Don’t know
+58,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+60,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+30,Yoruba,Rural,OSUN,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+33,Agatu,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+25,Idoma,Rural,BENUE,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Just a little,Not at all
+31,Agatu,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+27,Agatu,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Not at all
+25,English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+27,Esan,Urban,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+18,Esan,Urban,EDO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Not at all
+58,English,Urban,EDO,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,A lot
+39,Edo,Urban,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+42,English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Not at all,Not at all
+19,English,Rural,RIVERS,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Not at all
+40,Esan,Urban,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Not at all
+35,Esan,Urban,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Just a little
+70,Esan,Urban,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+22,English,Urban,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+20,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Somewhat
+54,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+80,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+60,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+43,Other,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+22,English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+42,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,Just a little
+66,English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Somewhat
+59,English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Very Bad,Fairly Bad,Somewhat,Not at all
+43,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+19,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+37,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Just a little
+34,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+22,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+30,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+21,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Fairly Good,Just a little,Don’t know
+22,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+26,Idoma,Urban,OSUN,Yes,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+45,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+21,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+60,Yoruba,Urban,OSUN,Yes,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+39,Pidgin English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Not at all
+28,Pidgin English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Very Bad,Fairly Good,Not at all,Not at all
+33,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Don’t know
+25,Pidgin English,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Fairly Bad,Very Bad,Not at all,Not at all
+22,Other,Rural,RIVERS,No,No,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+72,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Somewhat
+32,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+85,Edo,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Very good,Just a little,A lot
+27,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+45,Esan,Rural,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+19,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+27,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+18,Idoma,Rural,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Just a little
+36,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Just a little
+63,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+30,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+27,Igala,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+46,Urhobo,Rural,EDO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very Bad,Somewhat,Just a little
+47,Igbo,Rural,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+19,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+35,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Just a little
+67,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+32,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+41,English,Rural,RIVERS,No,No,No,No,Yes,No,No,Fairly Good,Very Bad,Not at all,Not at all
+25,Other,Rural,RIVERS,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+45,Pidgin English,Rural,RIVERS,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,English,Rural,RIVERS,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+27,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+30,English,Rural,RIVERS,No,No,No,No,Yes,No,No,Fairly Good,Very good,Not at all,Not at all
+30,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+50,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+20,Hausa,Rural,ZAMFARA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+20,Other,Rural,RIVERS,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+55,Other,Rural,RIVERS,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Yoruba,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Don’t know
+57,English,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+46,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+32,English,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Just a little
+23,English,Rural,RIVERS,No,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Not at all
+38,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+40,Edo,Rural,EDO,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Not at all
+40,English,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Somewhat
+39,Other,Rural,EDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Just a little
+45,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Just a little
+43,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+45,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Just a little
+22,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+31,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+35,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Somewhat
+62,Yoruba,Urban,OSUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+40,Igbo,Urban,BENUE,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+19,Pidgin English,Urban,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+61,Pidgin English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Just a little
+36,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+50,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+40,Pidgin English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Just a little
+45,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+36,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+45,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+50,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Not at all
+35,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Don’t know,Don’t know
+30,Fulani,Rural,ONDO,No,No,No,No,No,No,No,Neither good nor bad,Fairly Bad,Somewhat,Somewhat
+34,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+45,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+23,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+28,Tiv,Urban,BENUE,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+45,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+22,Other,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+34,Other,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+44,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+37,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+25,Fulani,Rural,ONDO,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+43,Hausa,Rural,ONDO,No,No,No,No,No,No,No,Don't know,Fairly Good,Just a little,Somewhat
+28,Hausa,Rural,ONDO,No,No,No,No,No,No,No,Don't know,Fairly Good,A lot,A lot
+30,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+23,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,A lot,A lot
+38,Yoruba,Urban,OSUN,Yes,No,Yes,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+20,Fulani,Rural,ONDO,No,No,No,No,No,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+25,Hausa,Rural,ONDO,No,No,No,No,No,No,No,Fairly Good,Very good,Just a little,Just a little
+47,Fulani,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Don’t know
+22,Hausa,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Somewhat
+35,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+33,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+35,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+27,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+21,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+25,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+23,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+40,Ogoni,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+36,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+40,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Neither good nor bad,Fairly Good,Somewhat,Not at all
+48,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+65,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Just a little
+22,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Just a little
+23,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+33,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Somewhat
+36,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Just a little
+19,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Don’t know
+19,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+55,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Fairly Bad,Just a little,Just a little
+28,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+46,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+22,English,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Not at all
+45,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Neither good nor bad,Fairly Good,Just a little,Somewhat
+30,Ikwere,Urban,RIVERS,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Good,Not at all,Not at all
+28,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Very good,Very good,Somewhat,Somewhat
+45,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+20,English,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Fairly Bad,Fairly Bad,Somewhat,Just a little
+35,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Fairly Good,Fairly Good,Not at all,Just a little
+28,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Fairly Bad,Fairly Bad,A lot,A lot
+18,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Very Bad,Very Bad,A lot,A lot
+54,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Fairly Good,Fairly Bad,Not at all,Not at all
+23,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Don’t know,Don’t know
+35,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+25,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Somewhat
+26,Igbo,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+24,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Just a little
+28,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+20,Hausa,Rural,ZAMFARA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+50,Yoruba,Urban,KWARA,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Don’t know
+40,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Fairly Bad,Neither good nor bad,A lot,Just a little
+28,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Very good,Very good,Not at all,Just a little
+32,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Very Bad,Very Bad,Not at all,Not at all
+30,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Fairly Bad,Fairly Good,Just a little,A lot
+45,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+40,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Fairly Good,Very good,Somewhat,Just a little
+27,Tiv,Rural,BENUE,No,No,No,No,No,No,No,Very good,Very good,Just a little,Just a little
+27,Yoruba,Urban,ONDO,Yes,Can't determine,No,Can't determine,Yes,No,Yes,Very Bad,Very Bad,Not at all,Not at all
+40,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Somewhat
+32,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Just a little
+31,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+48,Yoruba,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Fairly Bad,Neither good nor bad,A lot,Somewhat
+22,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Not at all
+35,Yoruba,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Fairly Good,Fairly Good,Somewhat,Not at all
+35,Other,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Fairly Good,Fairly Bad,Just a little,Just a little
+40,Yoruba,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+24,Other,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Very Bad,Very Bad,Just a little,Just a little
+22,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Somewhat
+38,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+32,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Very Bad,Very good,Not at all,Just a little
+50,Yoruba,Rural,ONDO,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+18,Yoruba,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Very Bad,Neither good nor bad,Somewhat,Not at all
+50,Yoruba,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Fairly Bad,Fairly Bad,Somewhat,Just a little
+50,Other,Rural,KWARA,Yes,No,No,No,Yes,No,Can't determine,Fairly Good,Fairly Bad,Just a little,Just a little
+55,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+45,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+72,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+32,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+30,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+24,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Don’t know,Don’t know
+33,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+50,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+35,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+24,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+69,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+31,Tiv,Rural,BENUE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Not at all
+55,Igbo,Rural,ONDO,No,No,No,No,No,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+39,Yoruba,Rural,ONDO,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+22,Yoruba,Rural,ONDO,No,No,No,No,No,No,No,Very good,Very good,Just a little,Just a little
+29,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+19,Igbo,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Just a little,Somewhat
+35,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+55,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+43,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+33,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Pidgin English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Don’t know,Not at all
+24,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+40,Hausa,Urban,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+35,Igbo,Rural,ONDO,No,No,No,No,No,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+30,Igala,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Very Bad,A lot,Not at all
+45,English,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+39,Igbo,Rural,ONDO,No,No,No,No,No,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+22,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+38,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Not at all
+22,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+30,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+18,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+60,Other,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Igbo,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+25,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Somewhat
+35,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+52,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+30,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Very good,Fairly Good,Somewhat,Just a little
+41,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+18,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Very Bad,Fairly Bad,Not at all,Just a little
+25,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+45,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+19,Yoruba,Urban,KWARA,Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+35,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+37,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Fairly Bad,Fairly Bad,Not at all,Just a little
+29,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Don’t know
+38,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+35,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Neither good nor bad,Fairly Good,Not at all,Just a little
+29,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+22,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+25,Other,Urban,TARABA,Yes,Yes,No,No,No,No,No,Very good,Very good,Somewhat,Just a little
+28,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+42,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+23,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Not at all,Not at all
+53,Hausa,Urban,KATSINA,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+22,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,A lot
+60,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very Bad,Very Bad,Don’t know,Not at all
+35,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very good,Fairly Bad,Somewhat,Don’t know
+23,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+37,Pidgin English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,English,Urban,ONDO,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+32,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+80,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+72,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Somewhat
+26,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Just a little
+35,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+30,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Don’t know
+50,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Just a little
+25,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very good,Fairly Bad,Just a little,Just a little
+25,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+32,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Somewhat
+27,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+65,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+46,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+33,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+31,Nupe,Rural,NIGER,No,No,No,No,No,No,No,Very Bad,Very Bad,Don’t know,Not at all
+35,English,Rural,BAYELSA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Not at all
+28,Yoruba,Urban,ONDO,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+23,Ijaw,Rural,BAYELSA,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Not at all
+40,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Bad,Fairly Bad,Just a little,Somewhat
+24,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Good,Fairly Good,Somewhat,Just a little
+36,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Bad,Fairly Bad,Just a little,Somewhat
+30,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Very good,Very good,Don’t know,Don’t know
+40,Other,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+34,Pidgin English,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+32,English,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,Don’t know,Just a little
+48,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Good,Fairly Good,Somewhat,Don’t know
+28,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Bad,Fairly Bad,Just a little,Somewhat
+18,Other,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Just a little
+20,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Fairly Bad,Very Bad,Just a little,Somewhat
+25,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,Yes,Yes,Very good,Very good,A lot,A lot
+30,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+58,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Just a little
+22,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,A lot,Just a little
+29,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+38,Igbo,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+26,English,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+36,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Good,Fairly Good,Just a little,Just a little
+40,English,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+28,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Very good,Very good,Somewhat,Don’t know
+52,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Bad,Fairly Bad,Somewhat,Just a little
+35,Other,Urban,BAYELSA,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,A lot
+50,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+22,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Good,Very good,Just a little,Somewhat
+65,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Don’t know,Don’t know
+80,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Very Bad,Fairly Good,Just a little,Not at all
+19,Nupe,Rural,NIGER,No,No,No,No,Yes,No,No,Fairly Good,Very good,A lot,A lot
+25,Hausa,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+22,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+30,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+40,Hausa,Rural,TARABA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+29,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Good,Fairly Good,Just a little,Just a little
+23,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Bad,Fairly Bad,Just a little,Just a little
+21,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Very good,Very good,Somewhat,Just a little
+24,Hausa,Rural,KATSINA,Yes,Yes,Yes,No,Yes,Yes,Yes,Fairly Good,Fairly Good,Just a little,Just a little
+35,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very good,Fairly Good,Don’t know,Just a little
+20,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+50,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Not at all
+21,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+32,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+25,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+56,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Somewhat
+45,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Just a little
+36,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+35,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Fairly Good,Fairly Good,Somewhat,Somewhat
+43,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Fairly Good,Fairly Good,Not at all,Not at all
+31,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Fairly Good,Neither good nor bad,Just a little,Somewhat
+30,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Very Bad,Fairly Bad,Just a little,Just a little
+20,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+23,Nupe,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+48,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very good,Neither good nor bad,Just a little,Somewhat
+19,English,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+20,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Somewhat
+45,Other,Rural,TARABA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+35,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Fairly Bad,Neither good nor bad,Somewhat,Not at all
+30,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+35,English,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Very Bad,Very Bad,A lot,Somewhat
+22,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Fairly Bad,Very good,Not at all,Somewhat
+28,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,Yes,Very Bad,Fairly Good,Not at all,Not at all
+19,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Not at all
+26,Hausa,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Very good,Fairly Good,Just a little,Just a little
+36,Nupe,Urban,NIGER,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+34,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Somewhat,Somewhat
+29,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Very good,Very good,Somewhat,Somewhat
+49,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Just a little,Just a little
+19,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Just a little,Just a little
+35,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+28,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+25,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+40,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+38,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Bad,Fairly Bad,Just a little,Just a little
+41,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Good,Very good,Don’t know,Don’t know
+20,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Somewhat,Just a little
+22,English,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Not at all,Just a little
+20,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,Yes,Very good,Very good,A lot,Don’t know
+32,English,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+28,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Not at all,Not at all
+40,Pidgin English,Urban,OYO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+18,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very Bad,Very good,Don’t know,Don’t know
+37,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+23,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+35,Hausa,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+30,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+40,Hausa,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Not at all,Somewhat
+30,Hausa,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Not at all,Not at all
+22,Igbo,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+30,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very good,Neither good nor bad,A lot,A lot
+27,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+36,Hausa,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+23,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+19,Igbo,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+30,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Just a little
+35,Yoruba,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,Hausa,Urban,NIGER,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+27,Anang,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Don’t know
+32,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Fairly Good,A lot,A lot
+27,Pidgin English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+38,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+43,Ibibio,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,A lot,Somewhat
+59,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very good,Fairly Good,A lot,Somewhat
+32,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+18,Hausa,Rural,NIGER,Yes,No,No,No,Yes,No,No,Very Bad,Very good,Somewhat,Just a little
+75,Other,Rural,NIGER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Don’t know
+18,Igala,Rural,NIGER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+18,Other,Rural,NIGER,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+25,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+19,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Just a little
+25,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,A lot,Don’t know
+20,Other,Rural,NIGER,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+30,Yoruba,Urban,OYO,Yes,No,No,Yes,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+38,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+45,Hausa,Rural,NIGER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+35,Other,Rural,NIGER,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+30,Other,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Very Bad,A lot,A lot
+22,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+18,Other,Rural,NIGER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+49,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,Just a little
+32,Pidgin English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Not at all
+57,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+40,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Just a little,Somewhat
+22,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+25,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+20,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+25,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+28,Anang,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+40,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+24,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Just a little
+27,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Just a little
+47,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+38,Hausa,Rural,KATSINA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+18,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+20,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Neither good nor bad,A lot,A lot
+33,Edo,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Don’t know,Don’t know
+45,Other,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+32,Igbo,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+45,Hausa,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+35,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+32,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+25,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+21,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+20,Anang,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+25,Esan,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+32,Ebira,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Just a little
+30,Fulani,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+58,Hausa,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+32,Other,Rural,NIGER,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+25,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+68,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Somewhat
+38,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+23,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very good,Very good,A lot,A lot
+36,Pidgin English,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Just a little
+69,Other,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+27,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+40,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+62,English,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Very good,Neither good nor bad,Just a little,Not at all
+24,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+41,Hausa,Rural,KATSINA,Yes,Yes,Can't determine,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+32,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+35,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+35,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+18,Efik,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+38,Yoruba,Urban,OYO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,A lot
+70,Other,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+40,English,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Not at all
+22,Pidgin English,Rural,AKWA IBOM,Yes,No,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,A lot
+56,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+47,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+29,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+27,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+20,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Just a little
+41,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+26,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+35,Other,Rural,ADAMAWA,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Just a little
+20,Efik,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+23,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+45,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Not at all
+30,Ibibio,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,Other,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+24,Hausa,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Very good,Fairly Good,A lot,A lot
+37,Fulani,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+31,Fulani,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+21,Efik,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+38,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Not at all
+26,English,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Not at all,Not at all
+30,Efik,Rural,AKWA IBOM,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+36,Fulani,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+19,Other,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+21,Fulani,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Just a little
+65,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Don’t know,Just a little
+25,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Not at all
+23,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Very good,Somewhat,A lot
+60,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+28,Fulani,Rural,ADAMAWA,No,No,No,No,Yes,No,No,Fairly Bad,Very Bad,A lot,A lot
+25,English,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Fairly Bad,Neither good nor bad,Just a little,Just a little
+34,Efik,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Just a little,Not at all
+48,English,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Fairly Good,Fairly Good,Just a little,Not at all
+22,Efik,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Somewhat,Not at all
+45,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+22,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+40,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+30,Fulani,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+55,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+72,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+25,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+22,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,A lot
+27,English,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very Bad,Fairly Bad,Not at all,Not at all
+62,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+20,Efik,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Just a little,A lot
+45,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Somewhat
+45,Other,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Not at all,Not at all
+25,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Don’t know,Don’t know
+30,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Don’t know
+39,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Somewhat
+32,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+19,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+44,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Just a little,Somewhat
+20,English,Rural,AKWA IBOM,Yes,No,No,No,Yes,No,Yes,Very good,Fairly Bad,Not at all,Not at all
+22,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Very good,Very Bad,Somewhat,Just a little
+59,Hausa,Rural,KATSINA,No,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+40,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+39,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+53,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+42,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+45,Yoruba,Rural,OYO,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+47,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+25,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Fairly Good,Very good,Just a little,A lot
+45,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Just a little
+30,Hausa,Urban,BAUCHI,Yes,No,No,Yes,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Not at all
+20,English,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+20,Ibibio,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Ibibio,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,A lot,Not at all
+45,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+48,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Very Bad,Not at all,Not at all
+42,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+40,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+28,English,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Neither good nor bad,Somewhat,Just a little
+25,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Very good,Very good,Somewhat,A lot
+18,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+39,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Just a little
+Refused,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+40,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+25,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+23,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+30,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Don’t know
+49,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+21,Hausa,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Somewhat,Somewhat
+39,Hausa,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+31,Fulani,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+30,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Just a little
+36,Hausa,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Neither good nor bad,Fairly Bad,Somewhat,Somewhat
+22,English,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+28,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+30,Ibibio,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Somewhat,Not at all
+28,Pidgin English,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+35,English,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Somewhat
+48,English,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Fairly Good,Not at all,Not at all
+28,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+26,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+40,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+27,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+26,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Don’t know
+45,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Somewhat
+30,Ibibio,Urban,AKWA IBOM,Yes,Yes,Yes,No,No,No,No,Very Bad,Very Bad,Just a little,A lot
+42,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Not at all
+47,Hausa,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+45,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Just a little
+30,Other,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+38,English,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Not at all,Not at all
+30,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Just a little,Somewhat
+21,Hausa,Urban,ADAMAWA,Yes,No,No,No,Yes,Yes,No,Very good,Fairly Good,Somewhat,Somewhat
+25,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very good,Not at all,Not at all
+40,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+19,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+40,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+61,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+32,English,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+28,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+35,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+28,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Somewhat,A lot
+29,Yoruba,Urban,OYO,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+22,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+39,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+23,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+26,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+27,Other,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Somewhat
+33,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Not at all,Not at all
+25,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+18,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+18,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+20,Other,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+30,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+25,Hausa,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+20,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+61,English,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+41,English,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Very good,Just a little,Not at all
+32,Efik,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Don’t know,Just a little
+27,Other,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Not at all
+26,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,A lot
+42,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+36,Yoruba,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+30,English,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+24,Efik,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+29,English,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+24,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+22,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Somewhat
+28,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+25,Hausa,Urban,GOMBE,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+40,Efik,Urban,CROSS RIVER,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Not at all
+25,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+30,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Somewhat
+46,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+32,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Somewhat
+20,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+42,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Somewhat
+71,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+32,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Not at all,Not at all
+25,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Not at all
+57,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+32,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+38,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+32,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+30,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Somewhat,Somewhat
+25,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very good,Very good,Just a little,Just a little
+50,English,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+18,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Don’t know,Don’t know
+24,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+22,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Just a little
+23,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Don’t know
+50,Fulani,Rural,BAUCHI,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+19,Hausa,Rural,BAUCHI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Somewhat
+36,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+28,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Just a little
+42,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Fairly Bad,Very good,Not at all,Not at all
+18,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Somewhat
+33,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+52,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+22,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+21,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+26,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+28,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+38,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Just a little
+60,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Not at all,Not at all
+20,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Just a little
+27,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+21,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+35,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+20,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Fairly Good,Neither good nor bad,A lot,Somewhat
+24,Karekare,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+24,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+27,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Fairly Good,Very good,A lot,A lot
+50,Hausa,Rural,KANO,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Somewhat
+35,English,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+25,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+39,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Neither good nor bad,Fairly Bad,Somewhat,Just a little
+19,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Very good,Very good,Somewhat,Somewhat
+27,Fulani,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+48,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+25,English,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+27,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+40,Hausa,Urban,GOMBE,Yes,Yes,No,Yes,No,No,No,Neither good nor bad,Neither good nor bad,A lot,A lot
+20,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Just a little
+28,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Not at all
+20,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+25,Hausa,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+47,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+22,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,A lot
+54,Hausa,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,A lot
+35,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+52,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+22,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+38,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+23,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+40,Fulani,Rural,OGUN,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Don’t know
+42,Yoruba,Rural,OGUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,A lot,Just a little
+19,Yoruba,Rural,OGUN,No,No,No,No,No,No,No,Fairly Bad,Neither good nor bad,A lot,A lot
+35,Fulani,Rural,OGUN,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+18,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Just a little
+36,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+25,Fulani,Rural,GOMBE,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+32,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+26,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+20,Yoruba,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+58,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Don’t know
+80,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Neither good nor bad,Neither good nor bad,A lot,Somewhat
+25,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+46,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+32,Fulani,Rural,OGUN,No,No,No,No,No,No,No,Very Bad,Very good,Somewhat,Somewhat
+35,Yoruba,Rural,OGUN,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+25,Yoruba,Rural,OGUN,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Somewhat
+20,Fulani,Rural,OGUN,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+52,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+28,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+23,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+27,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+32,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Just a little
+45,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,A lot
+53,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Somewhat
+45,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+32,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,A lot,Somewhat
+28,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Neither good nor bad,A lot,Just a little
+20,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Fairly Bad,Very Bad,Just a little,Not at all
+25,Hausa,Rural,BAUCHI,No,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Somewhat
+31,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+26,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+30,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+39,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+25,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Not at all,Not at all
+26,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Somewhat
+28,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+43,Fulani,Rural,GOMBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+42,Hausa,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+20,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+20,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+23,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+25,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Just a little
+50,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+20,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Neither good nor bad,Neither good nor bad,Somewhat,Just a little
+40,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+20,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Bad,Just a little,Just a little
+35,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Not at all,Not at all
+35,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Very Bad,Fairly Good,Just a little,Just a little
+55,Pidgin English,Rural,OGUN,No,No,No,No,Yes,No,Yes,Fairly Bad,Fairly Good,Somewhat,Somewhat
+30,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Very Bad,Not at all,Not at all
+58,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Fairly Bad,Just a little,Not at all
+24,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Very Bad,Just a little,Not at all
+30,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Fairly Bad,Not at all,Not at all
+36,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Fairly Bad,Fairly Bad,Just a little,Just a little
+42,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Very Bad,Very Bad,Just a little,Not at all
+35,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Fairly Good,Very good,Just a little,Somewhat
+35,Yoruba,Rural,OGUN,No,No,No,No,Yes,No,Yes,Very Bad,Fairly Bad,Somewhat,Just a little
+32,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Neither good nor bad,Just a little,Not at all
+30,English,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Very Bad,Somewhat,Just a little
+32,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Very Bad,Just a little,Somewhat
+65,Other,Rural,CROSS RIVER,Yes,No,No,No,Yes,Yes,Yes,Very Bad,Very good,Not at all,Not at all
+24,Kanuri,Urban,YOBE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+38,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Somewhat,A lot
+23,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+42,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+19,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Bad,Not at all,Not at all
+31,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,A lot
+36,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+32,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+40,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Not at all
+39,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+25,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,Igbo,Rural,OGUN,Yes,No,No,No,Yes,No,No,Don't know,Fairly Bad,A lot,A lot
+29,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+20,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+18,Hausa,Rural,BAUCHI,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Just a little,Just a little
+65,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+37,Other,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Just a little
+31,English,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+18,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+28,Other,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,A lot
+45,English,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+20,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Just a little
+27,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very good,Somewhat,Somewhat
+36,Yoruba,Rural,OGUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+28,Igbo,Rural,OGUN,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+40,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Just a little
+20,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Fairly Good,A lot,A lot
+21,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+18,Fulani,Rural,BAUCHI,No,No,No,No,No,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+50,English,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Not at all
+36,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,A lot,A lot
+21,Other,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Somewhat
+54,Other,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Just a little,Just a little
+59,Pidgin English,Rural,CROSS RIVER,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Not at all
+52,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+22,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+22,Hausa,Urban,YOBE,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+24,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+34,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+30,Kanuri,Urban,YOBE,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+18,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+29,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Very good,Very good,Just a little,Somewhat
+34,Hausa,Urban,YOBE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+20,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+38,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Somewhat,Somewhat
+27,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+26,Hausa,Urban,KANO,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Somewhat
+25,English,Urban,YOBE,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Just a little
+30,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+24,Hausa,Urban,YOBE,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+25,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+52,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+25,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+48,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Somewhat
+30,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+50,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+21,Hausa,Urban,YOBE,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+18,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Not at all
+36,Fulani,Rural,BAUCHI,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Just a little
+28,English,Urban,YOBE,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+33,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+45,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+30,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Fairly Good,Neither good nor bad,Not at all,Somewhat
+55,Yoruba,Urban,OGUN,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+35,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+25,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Very good,Somewhat,Just a little
+63,Isoko,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+45,English,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Somewhat
+35,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Very good,Somewhat,Not at all
+57,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Somewhat
+19,English,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Just a little
+21,Igbo,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Just a little
+48,Igbo,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+48,Other,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+24,English,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+45,English,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+26,Fulani,Rural,YOBE,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+69,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+50,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+36,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+30,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Very good,Just a little,Don’t know
+35,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Not at all,Not at all
+38,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Not at all
+31,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+30,English,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Just a little
+50,English,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very good,Fairly Bad,Somewhat,Just a little
+20,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+31,Fulani,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+45,Igbo,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+49,Other,Rural,EBONYI,Yes,Yes,Yes,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+27,English,Rural,YOBE,No,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Somewhat
+52,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+41,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+35,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+40,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+29,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Somewhat
+33,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+32,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Just a little
+25,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+28,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Just a little
+40,Other,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+24,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Just a little,Not at all
+18,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+45,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+19,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+18,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Not at all
+20,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+24,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+40,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+35,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+72,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Somewhat
+20,Hausa,Urban,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+38,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+43,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Just a little
+37,Berom,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Not at all,Just a little
+48,Other,Rural,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+21,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+40,English,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Just a little,Not at all
+60,Igbo,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+35,Igbo,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,A lot,Don’t know
+23,Igbo,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+21,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+25,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+44,Igbo,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Very good,Not at all,Not at all
+20,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Not at all
+28,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+23,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+18,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+25,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+41,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+27,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Very good,A lot,Don’t know
+25,Karekare,Rural,YOBE,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Just a little
+18,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Not at all
+33,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Neither good nor bad,Not at all,Not at all
+50,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Just a little
+85,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+53,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+40,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Just a little
+35,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Just a little
+40,Igbo,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+28,English,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Just a little,Not at all
+24,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+33,Yoruba,Rural,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+25,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+35,English,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+24,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+35,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+26,Other,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Just a little
+30,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Just a little
+52,Igbo,Urban,EBONYI,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+31,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Neither good nor bad,Just a little,Just a little
+50,Berom,Rural,PLATEAU,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Not at all
+19,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Very good,Just a little,Somewhat
+21,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+38,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+33,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+39,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+21,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,A lot
+47,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+24,Hausa,Rural,KANO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+27,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Good,Just a little,Not at all
+28,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Fairly Bad,A lot,Not at all
+35,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+39,English,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Not at all
+20,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+40,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+21,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Somewhat
+20,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+22,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+19,English,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Not at all
+48,Igbo,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+26,Yoruba,Urban,LAGOS,Yes,No,No,Can't determine,Yes,No,No,Fairly Bad,Very good,Somewhat,Somewhat
+30,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+28,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+39,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+25,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Don't know,Don't know,A lot,Don’t know
+21,Hausa,Rural,KANO,No,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+21,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+75,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Don’t know
+18,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+39,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+28,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+34,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Very good,Very good,Just a little,A lot
+29,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+25,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Don’t know
+30,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,A lot
+30,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+24,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Somewhat,Just a little
+21,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,A lot,Somewhat
+41,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+18,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+39,Other,Rural,PLATEAU,No,Can't determine,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+32,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Somewhat
+42,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+24,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+20,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Very good,Very good,Don’t know,Don’t know
+30,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+27,Pidgin English,Urban,EBONYI,No,No,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Not at all
+52,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very good,Not at all,A lot
+35,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+26,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+45,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+38,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very good,Very good,Just a little,Just a little
+33,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+18,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,A lot,Just a little
+34,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+25,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,A lot,Somewhat
+27,Hausa,Rural,KANO,No,Yes,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Just a little
+35,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+30,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+36,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+25,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Don't know,Fairly Bad,Just a little,Just a little
+65,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+42,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+19,English,Urban,EBONYI,No,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+23,Igbo,Urban,EBONYI,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Just a little,Not at all
+32,Other,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Not at all
+38,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Not at all
+25,Hausa,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Very good,Fairly Good,Somewhat,Somewhat
+39,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+30,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+37,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+23,Hausa,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Fairly Good,Not at all,A lot
+26,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Just a little
+21,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Good,Very good,Just a little,Somewhat
+20,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Just a little
+31,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+40,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+35,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+29,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+37,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Very good,Somewhat,Somewhat
+22,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+55,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Fairly Good,Fairly Good,Just a little,Just a little
+29,Hausa,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Just a little
+27,Other,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+24,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,Yes,No,Fairly Good,Very good,Somewhat,Somewhat
+52,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+36,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+30,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Fairly Bad,Very Bad,Just a little,Somewhat
+30,Hausa,Urban,PLATEAU,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+30,Igbo,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+45,English,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Fairly Good,Just a little,A lot
+19,English,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+70,Igbo,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Somewhat
+29,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very good,Very good,A lot,Somewhat
+24,Other,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Just a little
+32,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+42,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Very good,Somewhat,Somewhat
+21,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+48,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+41,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+21,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+40,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+23,Igbo,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Not at all
+20,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+22,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Neither good nor bad,Very good,Not at all,Not at all
+42,Igbo,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Good,Fairly Good,Not at all,Not at all
+24,English,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+25,Igbo,Urban,ENUGU,Yes,Yes,Yes,No,Yes,Yes,No,Very good,Fairly Good,Just a little,Don’t know
+31,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+19,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+24,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+36,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+35,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Just a little,Just a little
+25,Other,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+21,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Not at all,Not at all
+45,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,A lot,A lot
+22,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+27,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+28,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very good,Very good,A lot,A lot
+45,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Just a little,Somewhat
+37,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Neither good nor bad,Not at all,Not at all
+25,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+26,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+23,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Somewhat
+53,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Somewhat
+30,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+22,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+21,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+30,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Not at all,Not at all
+20,Hausa,Rural,JIGAWA,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,A lot
+41,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+39,English,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+42,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Neither good nor bad,Very Bad,Not at all,Not at all
+39,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+28,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+50,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+25,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+24,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+39,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,Somewhat,Just a little
+44,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Not at all
+28,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+48,English,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Just a little
+27,Yoruba,Urban,LAGOS,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Bad,Somewhat,Just a little
+19,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+40,Hausa,Urban,JIGAWA,No,Yes,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+35,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+51,Hausa,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Fairly Good,Fairly Bad,Somewhat,Somewhat
+55,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+42,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Not at all,Not at all
+59,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+46,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Very Bad,Fairly Bad,Just a little,Not at all
+35,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Just a little
+25,Isoko,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Fairly Good,Very good,Somewhat,Not at all
+35,English,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Very Bad,Neither good nor bad,Not at all,Not at all
+45,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+34,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+58,English,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Fairly Good,Fairly Bad,Not at all,Just a little
+25,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+19,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Very Bad,Fairly Good,Somewhat,Somewhat
+22,Kanuri,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+43,Igbo,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Neither good nor bad,Just a little,Not at all
+28,Hausa,Urban,BORNO,Yes,Yes,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+30,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Very Bad,Fairly Good,Somewhat,Just a little
+52,Edo,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Good,Just a little,Somewhat
+28,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,Yes,No,Very Bad,Fairly Bad,Not at all,Not at all
+70,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very good,Very good,Somewhat,Not at all
+26,English,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+48,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+27,Igbo,Urban,ENUGU,Yes,No,Yes,Yes,Yes,No,No,Very Bad,Fairly Good,Just a little,Just a little
+21,Kanuri,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Fairly Good,Very good,Somewhat,Just a little
+35,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Not at all,Not at all
+48,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+40,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Very good,Fairly Good,Not at all,Just a little
+32,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+55,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+27,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+24,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Very good,Very good,A lot,Don’t know
+28,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+20,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+27,Ebira,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+19,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+38,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Fairly Good,Neither good nor bad,A lot,Just a little
+26,Kanuri,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+29,English,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+31,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Very good,Very good,A lot,Don’t know
+27,Hausa,Rural,JIGAWA,No,Yes,No,No,Yes,Yes,No,Fairly Good,Very good,Somewhat,A lot
+32,Igbo,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Just a little,Just a little
+18,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+40,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,Somewhat,Just a little
+35,Ebira,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very good,Very good,Not at all,Not at all
+66,Yoruba,Urban,LAGOS,Yes,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+40,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+21,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,No,No,Fairly Bad,Neither good nor bad,Somewhat,Somewhat
+19,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+23,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Just a little,Just a little
+30,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+36,English,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Fairly Bad,Fairly Bad,Somewhat,Just a little
+56,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+30,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+21,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Neither good nor bad,Fairly Bad,Just a little,Just a little
+26,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Somewhat
+48,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Fairly Bad,Very good,Just a little,Somewhat
+54,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Very Bad,Somewhat,Not at all
+38,English,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Very Bad,Not at all,Not at all
+34,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Very Bad,Just a little,Not at all
+38,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Very Bad,Very Bad,Not at all,Not at all
+23,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+35,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,A lot
+24,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Very good,Somewhat,Somewhat
+39,Nupe,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Fairly Bad,Neither good nor bad,Somewhat,Somewhat
+43,English,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+26,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Very Bad,Very Bad,Somewhat,Somewhat
+45,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Fairly Bad,Not at all,Somewhat
+28,Igbo,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Very Bad,Neither good nor bad,Just a little,Just a little
+58,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,Yes,No,Very Bad,Fairly Bad,Somewhat,Just a little
+19,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Neither good nor bad,Very Bad,Somewhat,Somewhat
+54,Igbo,Rural,ENUGU,Yes,No,No,No,Can't determine,No,No,Very Bad,Very Bad,Just a little,Somewhat
+28,Other,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Bad,Somewhat,Not at all
+41,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Good,Very Bad,Somewhat,Somewhat
+40,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very Bad,Very Bad,Just a little,Just a little
+38,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Very good,Somewhat,Just a little
+30,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Somewhat,Just a little
+35,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Not at all
+32,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Fairly Good,Somewhat,Somewhat
+55,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Somewhat
+25,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very good,Very good,Just a little,Just a little
+29,Kanuri,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Very Bad,Fairly Good,Somewhat,Somewhat
+25,Hausa,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Good,Fairly Good,A lot,Somewhat
+33,Ebira,Urban,BORNO,Yes,No,No,No,Yes,Yes,No,Fairly Bad,Fairly Bad,A lot,A lot
+25,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Fairly Bad,Just a little,Just a little
+32,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Good,Very good,Somewhat,Just a little
+22,English,Urban,ENUGU,No,No,No,No,No,No,No,Fairly Bad,Neither good nor bad,Somewhat,Just a little
+26,Igbo,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+40,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,A lot,Not at all
+54,Igbo,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Just a little
+20,English,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Somewhat,Don’t know
+36,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Fairly Bad,Not at all,Not at all
+37,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Very good,A lot,Somewhat
+22,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Somewhat,Somewhat
+20,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Somewhat
+24,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
+35,Igbo,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Fairly Bad,Somewhat,Not at all
+36,English,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Very Bad,Somewhat,Somewhat
+38,Igbo,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Very Bad,Not at all,Not at all
+41,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+50,Igbo,Urban,ENUGU,No,No,No,No,No,No,No,Very Bad,Very Bad,A lot,Somewhat
+25,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+18,Fulani,Rural,JIGAWA,No,No,No,No,Yes,No,No,Neither good nor bad,Very good,A lot,A lot
+36,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,A lot
+31,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+32,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Bad,Somewhat,Just a little
+32,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+30,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+48,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Somewhat,Not at all
+20,Igbo,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Good,Neither good nor bad,Not at all,Not at all
+53,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Neither good nor bad,Just a little,Just a little
+57,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Somewhat
+34,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,Somewhat,Just a little
+26,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Just a little
+23,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Very good,A lot,Don’t know
+45,English,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Neither good nor bad,Not at all,Just a little
+40,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Very Bad,Not at all,Not at all
+19,Yoruba,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Fairly Bad,Very good,Somewhat,Just a little
+50,English,Urban,LAGOS,Yes,No,No,Yes,Yes,No,No,Very Bad,Neither good nor bad,Somewhat,Somewhat
+22,Hausa,Rural,JIGAWA,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,Just a little
+47,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Very good,Fairly Good,Somewhat,A lot
+23,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Somewhat,Somewhat
+27,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Fairly Good,Neither good nor bad,Just a little,Just a little
+48,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Neither good nor bad,Just a little,Just a little
+29,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Neither good nor bad,Fairly Good,A lot,Don’t know
+37,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Very good,Very good,Somewhat,Somewhat
+45,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Fairly Good,Fairly Good,A lot,Somewhat
+21,Hausa,Urban,KANO,No,No,No,No,Yes,No,No,Very good,Very good,A lot,A lot
