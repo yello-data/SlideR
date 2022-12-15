@@ -216,55 +216,14 @@ c(3, 9, 13)
 Zero means absence of
 
 ```{r}
-c(4.9, )
+c(4.9, 9)
 ```
 
 
 # Recoding variables {background-color="#e8e8e8"}
 
 
-
-
-# Tidy data {background-color="#e8e8e8"}
-
-## Wickham rules {.scrollable}
-
-We consider a dataframe as *tidy* if it fulfills the following requirements [@Wickham2014]:
-
-![](img/wickham.jpeg){style="float:right;" width="300"}
-
-::: columns
-::: {.column width="50%"}
-
-- Each dataframe has one **unit of observation**.
-- **Observations** are represented in the rows.
-- **Variables** are represented in the columns.
-- Each **cell** indicates a value.
-:::
-
-::: {.column width="40%"}
-:::
-
-```{r eval = T, fig.align='center', fig.width=20}
-knitr::include_graphics("img/tidydata.png")
-```
-:::
-
-
-# Pivoting dataframes {background-color="#e8e8e8"}
-
-## What does it mean?
-
-Canviem la unitat d’anàlisi, les observacions, i les variables del marc de dades, mantenint la mateixa informació.
-
-- Pivot longer
-- Pivot wider
-
-## Pivot longer
-
-
-## Pivot wider
-
+# Bibliography {background-color="#e8e8e8"}
 
 
 

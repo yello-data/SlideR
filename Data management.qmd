@@ -1,0 +1,205 @@
+---
+title: "Data cleaning"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+bibliography: references.bib
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+-   Introduction
+-   Tidy data
+-   Variables
+-   Recoding variables
+-   Scope of data
+
+```{r echo = F, message=F, warning=F}
+library(tidyverse)
+library(readxl)
+```
+
+# Introduction {background-color="#e8e8e8"}
+
+## Introduction
+
+> "Data Scientists spend up to 80% of the time on data cleaning and 20% on actual data analysis".
+
+![Source: R for Data Science](img/whole-game.png)
+
+## Introduction
+
+Why do we need to clean data? 
+
+- Data is not tidy.
+- Data is missing.
+- Data is many datasets.
+
+
+
+# Tidy data {background-color="#e8e8e8"}
+
+## Wickham rules {.scrollable}
+
+A _df_ is *tidy* if it fulfills these requirements [@Wickham2014]:
+
+![](img/wickham.jpeg){style="float:right;" width="300"}
+
+::: columns
+::: {.column width="65%"}
+
+- Each _df_ has one **unit of observation**.
+- **Observations** represented in the rows.
+- **Variables** represented in the columns.
+- Each **cell** indicates a value.
+:::
+
+::: {.column width="30%"}
+:::
+
+![Source: R for Data Science](img/tidydata.png)
+:::
+
+## A tidy dataframe
+
+Intra-State War Data ([Correlates of War](https://correlatesofwar.org/data-sets/cow-war/))
+
+```{r}
+interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
+interstate |> 
+  select(WarName, WarType, SideA, SideB)
+```
+
+## Untidy data
+
+More datasets, opening the `tidyr::` package.
+
+```{r}
+tidyr::relig_income
+```
+
+## Untidy data {.smaller}
+
+Number of TB cases documented by the WHO in Afghanistan, Brazil, and China between 1999 and 2000 (cases & population).
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Table A
+```{r}
+table3
+```
+
+Table B
+```{r}
+table1
+```
+:::
+
+::: {.column width="50%"}
+Table C
+
+```{r}
+table2
+```
+
+Table D
+```{r}
+table4a
+```
+
+:::
+
+::::
+
+
+
+## Pivoting data
+
+We change the rows and columns of the dataframe keeping the same information.
+
+
+Pivot wider
+```
+pivot_wider(df, names_from, values_from)
+```
+```{r eval = F}
+pivot_wider(table2, names_from = type, values_from = count)
+```
+
+Pivot longer
+```
+pivot_longer(df, cols, names_to, names_to)
+```
+```{r eval = F}
+pivot_longer(table1, cases:population, 
+             names_to = "variables", values_to = "values")
+```
+
+Separate
+
+```
+separate(df, col, into, sep)
+```
+```{r eval = F}
+separate(table3, rate, into = c("cases", "population"))
+```
+
+
+
+Unite
+
+```
+unite(df, col, ..., sep)
+```
+
+## Exercise
+
+Check the following dataset:
+
+- Tidy the data.
+
+```{r echo = T, eval = F}
+?world_bank_pop
+world_bank_pop |> 
+  pivot_longer(`2000`:`2017`, names_to = "year", values_to = "vals") |> 
+  pivot_wider(names_from = indicator, values_from = vals)
+```
+
+
+
+# Pivoting dataframes {background-color="#e8e8e8"}
+
+## What does it mean?
+
+
+
+
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+
