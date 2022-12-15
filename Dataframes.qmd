@@ -62,16 +62,18 @@ How Excel stores data in two dimensions:
 
 ## Dataframe
 
-A way to store data in R in two dimensions^[And we will normally store them *tidy*.]:
+A way^[Other ways are: vectors, matrixs, arrays...] to store data in R in **two dimensions**: rows and columns^[And we will normally store dataframes in a *tidy* way.]:
 
 ```{r echo = F}
 read_xls("p5v2018.xls") |> 
   select(scode, country, year, polity2, xrreg:parreg)
 ```
 
+
+
 ## A _tidy_ dataframe
 
-We consider a dataframe as *tidy* if it fulfills the following requirements [@Wickham2014]:
+We consider that a dataframe is *tidy* if it fulfills the following requirements [@Wickham2014]:
 
 - Each dataframe has one **unit of observation**.
 - **Observations** are represented in the rows.
@@ -117,17 +119,14 @@ gapminder::gapminder |>
 
 States, regions, legal systems ...
 
-```{r echo = T, eval = F}
-interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
-```
-
-Intra-State War Data ([Correlates of War](https://correlatesofwar.org/data-sets/cow-war/))
 ```{r}
 interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
 interstate |> 
   select(WarName, WarType, CcodeA, SideA, CcodeB, SideB) |> 
   head(15)
 ```
+
+Intra-State War Data ([Correlates of War](https://correlatesofwar.org/data-sets/cow-war/))
 
 
 
@@ -139,18 +138,27 @@ Organitzations, ethnic groups, political parties ...
 read_csv("files/rfe.csv")
 ```
 
+[International Conflict Research](https://icr.ethz.ch/data/epr/){target="_blank"}
 
 ## Example: Micro level
 
-Families, individuals, relationships^[Bombings, contracts, terrorist attacks...] ...
+Families, individuals, relationships ...
 
 ```{r}
 read_csv("files/nig.csv") |> 
   select(1:5)
 ```
 
+## Example: Events
 
+Bombings, contracts, terrorist attacks...
 
+```{r}
+read_csv("files/cam_list_3.0.csv") |> 
+  select(-date)
+```
+
+[Coup Agency and Mechanisms Dataset](https://militarycoups.org/Codebook-v3.0.html){target="_blank"}
 
 
 ## Ecological fallacy
@@ -166,6 +174,7 @@ read_csv("files/nig.csv") |>
 ## Local elections 
 
 What if...
+
 [Elections in Barcelona](https://twitter.com/Rogerbuch/status/1133126546405888006)
 
 
@@ -173,7 +182,9 @@ What if...
 
 ## What is a variable?
 
+A characteristic of the object we're studying.
 
+- It **varies** across units.
 
 ## Types of variables (I): Nominal
 
@@ -186,15 +197,27 @@ factor(c("England", "France"))
 ## Types of variables (I): Ordinal
 
 ```{r}
-factor(c("England", "France"),
+factor(c("Small", "Large"),
        ordered = T)
 ```
 
 
 ## Types of variables (III): Interval
 
+Zero is arbitrary.
+
+```{r}
+c(3, 9, 13)
+```
+
 
 ## Types of variables (III): Ratio
+
+Zero means absence of
+
+```{r}
+c(4.9, )
+```
 
 
 # Recoding variables {background-color="#e8e8e8"}
