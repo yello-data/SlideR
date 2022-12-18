@@ -21,9 +21,9 @@ editor_options:
 
 -   Introduction
 -   Tidy data
--   Variables
--   Recoding variables
--   Scope of data
+-   Missing data
+-   Join data
+-   Codebooks
 
 ```{r echo = F, message=F, warning=F}
 library(tidyverse)
@@ -73,7 +73,7 @@ A _df_ is *tidy* if it fulfills these requirements [@Wickham2014]:
 
 ## A tidy dataframe
 
-Intra-State War Data ([Correlates of War](https://correlatesofwar.org/data-sets/cow-war/))
+Correlates of War [Intra-State War Data](https://correlatesofwar.org/data-sets/cow-war/)
 
 ```{r}
 interstate <- read_csv("files/Intra-StateWarData_v4.1.csv")
@@ -81,15 +81,18 @@ interstate |>
   select(WarName, WarType, SideA, SideB)
 ```
 
-## Untidy data
+## An untidy dataframe
 
-More datasets, opening the `tidyr::` package.
+PEW Research [Religious Landscape Study](https://www.pewresearch.org/religion/religious-landscape-study/)^[More datasets available in the `tidyr::` package.]
 
 ```{r}
-tidyr::relig_income
+tidyr::relig_income |> 
+  select(1:6)
 ```
 
-## Untidy data {.smaller}
+
+
+## Untidy dataframes? {.smaller}
 
 Number of TB cases documented by the WHO in Afghanistan, Brazil, and China between 1999 and 2000 (cases & population).
 
@@ -179,27 +182,34 @@ world_bank_pop |>
 
 
 
-# Pivoting dataframes {background-color="#e8e8e8"}
+#  Missing data {background-color="#e8e8e8"}
 
-## What does it mean?
-
-
+## Example
 
 
 
-## Bullets
+## Why they are missing?
 
-When you click the **Render** button a document will be generated that includes:
+NA (Not Available)
 
--   Content authored with markdown
--   Output from executable code
+Related with the state capacity to collect them [@Stone2008]
 
-## Code
+Check the World Bank
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
+Small or underdeveloped states
 
 
+
+
+#  Join data {background-color="#e8e8e8"}
+
+Classificació d'estats:
+- Countrycode
+Classificació de regions
+- https://population.un.org/wpp/DefinitionOfRegions/
+
+
+
+
+
+##  Codebooks {background-color="#e8e8e8"}
