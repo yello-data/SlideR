@@ -18,111 +18,30 @@ editor_options:
 
 ## Summary
 
--   Types of data files
 -   Excel Workflow
--   Collaborative spreadcheets
 -   Dynamic tables in Excel
 -   R Workflow
 -   Objects in R
 -   Functions in R
+-   Types of data files
 
-# Types of data files {background-color="#e8e8e8"}
-
-## Types of data files
-
-Plain files:
-
--   `.csv`, `.csv2`, `.tsv`, `.txt`.
-
-Program files:
-
--   Excel: `.xlsx`, `.xls`.
--   R: `.Rdata`.
--   Stata: `.dta`.
--   SPSS: `.sav`, `.spss`.
-
-## Types of data files {.scrollable}
-
-Comma Separated Values (`csv`).
-
-::: columns
-::: {.column width="40%"}
--   Comas (`,`) separate variables.
--   Points (`.`) separate decimals.
-:::
-
-::: {.column width="60%"}
-![](img/read_csv.png)
-:::
-:::
-
-## Types of data files {.scrollable}
-
-Comma Separated Values 2 (`csv`).
-
-::: columns
-::: {.column width="40%"}
--   Semi-colons (`;`) separate variables.
--   Commas (`,`) separate decimals.
-:::
-
-::: {.column width="60%"}
-![](img/read_csv2.png)
-:::
-:::
-
-## Types of data files {.scrollable}
-
-Tab-Separated Values 2 (`tsv`).
-
-::: columns
-::: {.column width="40%"}
--   Tabulators (\ \ \ \ \ \ \ \ ) separate variables.
--   Points (`.`) separate decimals.
-:::
-
-::: {.column width="60%"}
-![](img/read_tab.png)
-:::
-:::
-
-## Types of data files {.scrollable}
-
-Other delimiters (`txt`).
-
-::: columns
-::: {.column width="40%"}
--   Forward slash (`/`) separate variables.
--   Points (`.`) separate decimals.
-:::
-
-::: {.column width="60%"}
-![](img/read_delim.png)
-:::
-:::
 
 # Excel {background-color="#e8e8e8"}
 
+## UPF Happiness Index
+
+![](img/logo-excel.png){style="float:right;" width="20"}
+
 ## Excel workflow
 
--   Cells, columns files.
--   Reference a cell.
--   Import data.
+-   Cells, columns, rows.
+-   Reference a cell, e.g.: `C22`.
+-   Import data: Data -> Get
 -   Basic operations.
     -   Equal `=` symbol.
     -   Functions (AVERAGE, SUM, MAX, MIN).
-    -   Scentific notation: E+16.
     -   Drag cells.
     -   Dollar `$` symbol to impeed draging cells.
-
-## Collaborative spreadcheets
-
-[World University Rankings 2023](https://www.timeshighereducation.com/world-university-rankings/2023/world-ranking#!/page/0/length/-1/sort_by/scores_overall/sort_order/asc/cols/scores) (Times Higher Education).
-
--   International students.
--   Ratio student per staff.
--   Female students.
--   Full Time Equivalent (FTE) students.
 
 ## Dynamic tables in Excel
 
@@ -130,7 +49,7 @@ Google Spreadsheets:
 
 -   Data -\> Create a Filter.
 
-Microsoft Excel
+Microsoft Excel:
 
 -   Insert -\> Table
 
@@ -138,26 +57,14 @@ Microsoft Excel
 
 ## RStudio workflow
 
-1.  Create a project
-2.  Four screens:
-
-::: incremental
--   Files: `getwd()`, `dir()`
--   Console: `1:10`, `sample(1:10, 2)`, `d <- 1`
--   Script: `#`, `space`.
--   Environment: `objects()`, `ls()`, `search()`
-:::
-
-## Packages
-
--   **Install:** Once in a year.
+-   **Install packages:** Once in a year.
 
 ```{r eval = F, echo = T}
 install.packages(c("dplyr", "ggplot", "tidyr", 
                    "readr", "readxl", "haven", "foreign"))
 ```
 
--   **Load:** Everytime you join R.
+-   **Load packages:** Everytime you join R.
 
 ```{r echo = T, message=F, warning=F}
 library(dplyr)
@@ -169,15 +76,16 @@ library(readr)
 
 # R objects {background-color="#e8e8e8"}
 
-## Objects (I)
+## Objects
 
-- Values (A)
-- Vectors (B)
-- Dataframes (C)
+- A. Values
+- B. Vectors: `c(value1, value2, value3, ...)`
+- C. Dataframes: `tibble(vector1, vector2, ...)`
 
 ![](img/intro-dataframe.png)
 
-## Objects (II). General rules
+
+## Objects. General rules
 
 General rules for creating objects:
 
@@ -186,197 +94,72 @@ General rules for creating objects:
 - Overwrittes if saving with the same name. 
 - Case sensitive.
 
-## Objects (III). Values
-
-- Numbers: Decimals with a dot (`.`).
-
-```{r echo = T, eval = F}
-1
-5.9
-4204455
-```
-
-- Character (*strings*): Case sensitive.
-
-```{r echo = T, eval = F}
-"D"
-"Biden"
-"Torroella de Mongrí"`
-```
-
-- Logical: Only two values.
-
-```{r echo = T, eval = F}
-TRUE
-FALSE
-```
+## Objects. Vectors {.smaller}
 
 
-## Objects (IV): Vectors {.scrollable}
+| Class   | Type    | Example                                                |
+|------------|-------------|-----------------------------------------------|
+| Character | Character | `c("b", "c", "d")`                                     |
+| Factor    | Integer    | `factor(c("b", "c", "d"))`                             |
+| Integer   | Integer    | `c(10L, 6L, 12L)`                                      |
+| Numeric   | Double    | `c(1.1, 3.5, 10.2)`                                    |
+| Data      | Double    | `as.Date(c("2019/06/04", "2019/11/02", "2020/01/23"))` |
+| Logical   | Logical    | `c(FALSE, TRUE, FALSE)`                                |
 
-::: {.callout-note icon="false"}
-## Vector structure
-A vector is formed by a chain of values.
-It is created with the function `c()`.
+: Class and type of vector {#tbl-types-vector}
 
-    c(value1, value2, value3, value4...)
 
+
+## Objects. Rules 
+
+- All values in a vector must be of the same type
+- All vectors in a dataframe must have equal length
+- Values in a vector can be selected with `[ ]`
+- Rows and columns in a df can be selected with `[ , ]`
+
+## Exercise
+
+::: {.callout-tip icon="false"}
+## CHES Latin America
+Codebook available [here](https://www.chesdata.eu/chesla){target="_blank"}.
+
+- Glimpse the `ches_la` object. Rows? Columns?
+- Which countries are in the dataset?
+- Select `Colombia` and create a new object named `ches_co`.
+- Glimpse the new dataframe (how many observations?).
+- Select party variables, lrecon, galtan, crime, regions, ethnic_minorities.
+- Overwrite the object ches_co with the transformation.
 :::
 
-- Numeric
-```{r echo = T, eval = F}
-numeric <- c(4, 5, 6, 7, 8)
-num_dec <- c(54.98, 55.97, 76.58, 47.33, 82.24)
-numeric / 2
-num_dec / numeric
-```
+# Functions {background-color="#e8e8e8"}
 
-- Integer
-```{r echo = T, eval = F}
-integer_L <- c(3L, 6L, 7L, 5L, 9L)
-integer_F <- as.integer(c(2022, 2021, 2021, 2021, 2020))
-```
+## Functions (I): General rules {.scrollable}
 
-- Character
-```{r echo = T, eval = F}
-character <- c("Colombia", "Japan", "Germany", "Chile", "New Zealand")
-mingle <- c("4$", "אַפֿגהאַניסטאַן", "البانیہ", "%%16", "漢字%3")
-```
+General rules for using functions:
 
-- Factor
-```{r echo = T, eval = F}
-factor <- factor(c("America", "Asia", "Europe", "America", "Oceania"))
-```
+- They can contain several arguments.
+  - `function(argument1, argument2 ...)`
+- Normally, the first argument is a vector or a dataframe.
+- Use `?` or other help to know how to use them.
 
-- Logical
-
-```{r echo = T, eval = F}
-logic <- c(TRUE, FALSE, FALSE, TRUE, FALSE)
-```
-
-- Data
-
-```{r echo = T, eval = F}
-date <- as.Date(c("2022/05/29", "2021/10/31", "2021/09/26", "2021/11/21", "2020/10/17"))
-```
-
-
-
-
-## Objects (V): Dataframes {.scrollable}
-
-::: {.callout-note icon="false"}
-## Dataframe structure
-A dataframe is formed by several vectors.
-It is created with the function `tibble()`.
-
-    tibble(vector1, vector2, vector3, vector4...)
+::: {.callout-tip icon="false"}
+## Exercise: Afrobarometer - Nigeria
+Codebook available [here](https://www.afrobarometer.org/survey-resource/nigeria-round-8-questionnaire/){target="_blank"}.   
+File: <https://www.jordimas.cat/files/nig.csv>
 :::
 
-Two ways of creating a dataframe:
 
-1. Save the vectors, then create the df
+## Functions (II): Without arguments  {.scrollable}
 
-``` {.r code-line-numbers="|8"}
-country <- c("Colombia", "Japan", "Germany", "Chile", "New Zealand")
-year <- as.integer(c(2022, 2021, 2021, 2021, 2020))
-date <- as.Date(c("2022/05/29", "2021/10/31", "2021/09/26", "2021/11/21", "2020/10/17"))
-turnout <- c(54.98, 55.97, 76.58, 47.33, 82.24)
-continent <- factor(c("America", "Asia", "Europe", "America", "Oceania"))
-presidential <- c(TRUE, FALSE, FALSE, TRUE, FALSE)
-
-elections <- tibble(country, year, date, turnout, continent, presidential)
+Normally, when they are related to the working environment.
+```{r echo = T, eval = F}
+ls()
+installed.packages()
+search()
+getwd()
 ```
 
 
-2. Do it all in the same procedure.
-
-```{r echo = T}
-elections <- tibble(country = c("Colombia", "Japan", "Germany", "Chile", "New Zealand"), 
-                    year = as.integer(c(2022, 2021, 2021, 2021, 2020)), 
-                    date = as.Date(c("2022/05/29", "2021/10/31", "2021/09/26", "2021/11/21", "2020/10/17")), 
-                    turnout = c(54.98, 55.97, 76.58, 47.33, 82.24), 
-                    continent = factor(c("Europe", "Asia", "Europe", "America", "Oceania")), 
-                    presidential = c(TRUE, FALSE, FALSE, TRUE, FALSE))
-```
-
-
-## Objects (VI): Selection {.scrollable}
-
-Vector in a dataframe
-```{r echo = T, collapse=T}
-elections$turnout
-```
-
-Use of brackets
-
-```{r echo = T, collapse=T}
-elections$turnout[1]
-```
-
-
-```{r echo = T, collapse=T}
-elections$turnout[c(1,3)]
-```
-
-
-```{r echo = T, collapse=T}
-elections[1,]
-```
-
-
-```{r echo = T, collapse=T}
-elections[,c(1,4)]
-```
-
-```{r echo = T, collapse=T}
-elections[elections$presidential,]
-```
-
-# R functions {background-color="#e8e8e8"}
-
-## Functions (I)  {.scrollable}
-
-::: {.callout-note icon="false"}
-## Function structure
-A function is formed by one or several arguments.
-It is created with the function `function()`.
-
-    function(argument1, argument2 ...)
-:::
-
-We can easily create a function:
-
-```{r echo = T, collapse=T}
-per_four <- function(x) {x * 4}
-```
-
-And apply it to any object:
-
-```{r echo = T, collapse=T}
-per_four(2) #to a value
-per_four(elections$turnout) #to a vector
-```
-
-
-## Functions (II): Import functions 
-
-- Package `readr`.
-
-```{r eval = F, echo = T}
-read_csv("files/gapminder.csv")
-read_csv2("files/gapminder2.csv")
-read_tsv("files/gapminder3.tsv")
-read_delim("files/gapminder4.txt", delim = "/")
-```
-
-- Other packages:
-
-```{r eval = F, echo = T}
-tibble(foreign::read.dta("files/gapminder5.dta"))
-load("files/gapminder6.Rdata")
-tibble(read.spss("files/gapminder7.sav", to.data.frame = T))
-```
 
 
 ## Functions (III): With one argument
@@ -403,39 +186,126 @@ hist()
 
 ## Functions (IV): With many arguments  {.scrollable}
 
-::: {.callout-note icon="false"}
-## Help!
-R is impossible to use without help.
+::: {.callout-tip icon="false"}
+## Exercise: Functions
 
-- Use `?` before a function: e.g. `?sample`.
-- Use Google.
-- Use Cheet Sheats: e.g. [Dplyr](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf).
-- Use Stackoverflow.
-:::
-
-Some functions with (normally) more than one argument:
-```
+```{r echo = T, eval = F}
 sample()
 seq()
 rep()
 ```
+:::
+
+::: {.callout-note icon="false"}
+## Help!
+Using R is impossible without help.
+
+- Use `?` before a function: e.g. `?sample`.
+- Use Cheet Sheats (see [Posit website](https://posit.co/resources/cheatsheets/){target="_blank"}).
+- Use [Stackoverflow](https://stackoverflow.com/){target="_blank"}.
+- Use Google.
+:::
 
 
 
 
-## Functions (IV): Without arguments  {.scrollable}
 
-Normally, when they are related to the working environment.
+# Import data {background-color="#e8e8e8"}
+
+## Import functions
+
+```{r import, echo = FALSE, message = FALSE, warning = FALSE}
+library(dplyr)
+tribble(
+  ~`File type`, ~Package, ~Functions,
+  "csv",   "readr", "read_csv() o read_csv2()",
+  "xls",   "readxl", "read_xls()",
+  "xlsx",   "readxl", "read_xlsx()",
+  "dta",   "foreign", "read.dta()",
+  "dta",   "haven", "read_dta()",
+  "sav", "haven", "read_sav()",
+  "spss", "haven", "read_spss()") %>% 
+  knitr::kable()
 ```
-ls()
-installed.packages()
-search()
-getwd()
+
+
+
+## Import functions 
+
+- Package `readr`.
+
+```{r eval = F, echo = T}
+read_csv("data/gapminder.csv")
+read_csv2("data/gapminder2.csv")
+read_tsv("data/gapminder3.tsv")
+read_delim("data/gapminder4.txt", delim = "/")
 ```
 
+- Other packages:
 
-## Import data to Rv
+```{r eval = F, echo = T}
+tibble(foreign::read.dta("data/gapminder5.dta"))
+load("data/gapminder6.Rdata")
+tibble(foreign::read.spss("data/gapminder7.sav", to.data.frame = T))
+read_xlsx("data/gapminder8.xlsx", sheet = 2)
+```
 
-## Vectors and data frames in R
+## Plain files (I) {.scrollable}
 
-## Objects and functions in R
+Comma Separated Values (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Comas (`,`) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv.png)
+:::
+:::
+
+## Plain files (II) {.scrollable}
+
+Comma Separated Values 2 (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Semi-colons (`;`) separate variables.
+-   Commas (`,`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv2.png)
+:::
+:::
+
+## Plain files (III) {.scrollable}
+
+Tab-Separated Values 2 (`tsv`).
+
+::: columns
+::: {.column width="40%"}
+-   Tabulators (\ \ \ \ \ \ \ \ ) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_tab.png)
+:::
+:::
+
+## Plain files (IV) {.scrollable}
+
+Other delimiters (`txt`).
+
+::: columns
+::: {.column width="40%"}
+-   Forward slash (`/`) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_delim.png)
+:::
+:::
