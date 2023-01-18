@@ -1,0 +1,311 @@
+---
+title: "Excel & R"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+-   Excel Workflow
+-   Dynamic tables in Excel
+-   R Workflow
+-   Objects in R
+-   Functions in R
+-   Types of data files
+
+
+# Excel {background-color="#e8e8e8"}
+
+## UPF Happiness Index
+
+![](img/logo-excel.png){style="float:right;" width="20"}
+
+## Excel workflow
+
+-   Cells, columns, rows.
+-   Reference a cell, e.g.: `C22`.
+-   Import data: Data -> Get
+-   Basic operations.
+    -   Equal `=` symbol.
+    -   Functions (AVERAGE, SUM, MAX, MIN).
+    -   Drag cells.
+    -   Dollar `$` symbol to impeed draging cells.
+
+## Dynamic tables in Excel
+
+Google Spreadsheets:
+
+-   Data -\> Create a Filter.
+
+Microsoft Excel:
+
+-   Insert -\> Table
+
+# R {background-color="#e8e8e8"}
+
+## RStudio workflow
+
+-   **Install packages:** Once in a year.
+
+```{r eval = F, echo = T}
+install.packages(c("dplyr", "ggplot", "tidyr", 
+                   "readr", "readxl", "haven", "foreign"))
+```
+
+-   **Load packages:** Everytime you join R.
+
+```{r echo = T, message=F, warning=F}
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
+# R objects {background-color="#e8e8e8"}
+
+## Objects
+
+- A. Values
+- B. Vectors: `c(value1, value2, value3, ...)`
+- C. Dataframes: `tibble(vector1, vector2, ...)`
+
+![](img/intro-dataframe.png)
+
+
+## Objects. General rules
+
+General rules for creating objects:
+
+- Can't start with a number.
+- Can't contain: `^, !, $, @, +, -, /, *`.
+- Overwrittes if saving with the same name. 
+- Case sensitive.
+
+## Objects. Vectors {.smaller}
+
+
+| Class   | Type    | Example                                                |
+|------------|-------------|-----------------------------------------------|
+| Character | Character | `c("b", "c", "d")`                                     |
+| Factor    | Integer    | `factor(c("b", "c", "d"))`                             |
+| Integer   | Integer    | `c(10L, 6L, 12L)`                                      |
+| Numeric   | Double    | `c(1.1, 3.5, 10.2)`                                    |
+| Data      | Double    | `as.Date(c("2019/06/04", "2019/11/02", "2020/01/23"))` |
+| Logical   | Logical    | `c(FALSE, TRUE, FALSE)`                                |
+
+: Class and type of vector {#tbl-types-vector}
+
+
+
+## Objects. Rules 
+
+- All values in a vector must be of the same type
+- All vectors in a dataframe must have equal length
+- Values in a vector can be selected with `[ ]`
+- Rows and columns in a df can be selected with `[ , ]`
+
+## Exercise
+
+::: {.callout-tip icon="false"}
+## CHES Latin America
+Codebook available [here](https://www.chesdata.eu/chesla){target="_blank"}.
+
+- Glimpse the `ches_la` object. Rows? Columns?
+- Which countries are in the dataset?
+- Select `Colombia` and create a new object named `ches_co`.
+- Glimpse the new dataframe (how many observations?).
+- Select party variables, lrecon, galtan, crime, regions, ethnic_minorities.
+- Overwrite the object ches_co with the transformation.
+:::
+
+# Functions {background-color="#e8e8e8"}
+
+## Functions (I): General rules {.scrollable}
+
+General rules for using functions:
+
+- They can contain several arguments.
+  - `function(argument1, argument2 ...)`
+- Normally, the first argument is a vector or a dataframe.
+- Use `?` or other help to know how to use them.
+
+::: {.callout-tip icon="false"}
+## Exercise: Afrobarometer - Nigeria
+Codebook available [here](https://www.afrobarometer.org/survey-resource/nigeria-round-8-questionnaire/){target="_blank"}.   
+File: <https://www.jordimas.cat/files/nig.csv>
+:::
+
+
+## Functions (II): Without arguments  {.scrollable}
+
+Normally, when they are related to the working environment.
+```{r echo = T, eval = F}
+ls()
+installed.packages()
+search()
+getwd()
+```
+
+
+
+
+## Functions (III): With one argument
+
+Applied normally to a dataframe:
+
+```{r echo = T, eval = F}
+glimpse()
+dim()
+summary()
+```
+
+Applied normally to a vector:
+
+```{r echo = T, eval = F}
+#to a character vector
+unique()
+table()
+
+#to a numeric vector
+mean() 
+hist()
+```
+
+## Functions (IV): With many arguments  {.scrollable}
+
+::: {.callout-tip icon="false"}
+## Exercise: Functions
+
+```{r echo = T, eval = F}
+sample()
+seq()
+rep()
+```
+:::
+
+::: {.callout-note icon="false"}
+## Help!
+Using R is impossible without help.
+
+- Use `?` before a function: e.g. `?sample`.
+- Use Cheet Sheats (see [Posit website](https://posit.co/resources/cheatsheets/){target="_blank"}).
+- Use [Stackoverflow](https://stackoverflow.com/){target="_blank"}.
+- Use Google.
+:::
+
+
+
+
+
+# Import data {background-color="#e8e8e8"}
+
+## Import functions
+
+```{r import, echo = FALSE, message = FALSE, warning = FALSE}
+library(dplyr)
+tribble(
+  ~`File type`, ~Package, ~Functions,
+  "csv",   "readr", "read_csv() o read_csv2()",
+  "xls",   "readxl", "read_xls()",
+  "xlsx",   "readxl", "read_xlsx()",
+  "dta",   "foreign", "read.dta()",
+  "dta",   "haven", "read_dta()",
+  "sav", "haven", "read_sav()",
+  "spss", "haven", "read_spss()") %>% 
+  knitr::kable()
+```
+
+
+
+## Import functions 
+
+- Package `readr`.
+
+```{r eval = F, echo = T}
+read_csv("data/gapminder.csv")
+read_csv2("data/gapminder2.csv")
+read_tsv("data/gapminder3.tsv")
+read_delim("data/gapminder4.txt", delim = "/")
+```
+
+- Other packages:
+
+```{r eval = F, echo = T}
+tibble(foreign::read.dta("data/gapminder5.dta"))
+load("data/gapminder6.Rdata")
+tibble(foreign::read.spss("data/gapminder7.sav", to.data.frame = T))
+read_xlsx("data/gapminder8.xlsx", sheet = 2)
+```
+
+## Plain files (I) {.scrollable}
+
+Comma Separated Values (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Comas (`,`) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv.png)
+:::
+:::
+
+## Plain files (II) {.scrollable}
+
+Comma Separated Values 2 (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Semi-colons (`;`) separate variables.
+-   Commas (`,`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv2.png)
+:::
+:::
+
+## Plain files (III) {.scrollable}
+
+Tab-Separated Values 2 (`tsv`).
+
+::: columns
+::: {.column width="40%"}
+-   Tabulators (\ \ \ \ \ \ \ \ ) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_tab.png)
+:::
+:::
+
+## Plain files (IV) {.scrollable}
+
+Other delimiters (`txt`).
+
+::: columns
+::: {.column width="40%"}
+-   Forward slash (`/`) separate variables.
+-   Points (`.`) separate decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_delim.png)
+:::
+:::
