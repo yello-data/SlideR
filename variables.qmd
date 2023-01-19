@@ -1,0 +1,672 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Variables
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE,
+                      message = FALSE)
+library(pacman)
+p_load(tidyverse, readxl, janitor, foreign, haven, knitr)
+wvs <- read_csv("../../DataIP/Datasets/wvs7_example.csv")
+mid <- read_csv("../../DataIP/Datasets/dyadic_mid_4.02.csv")
+```
+
+## Introducció
+
+Una **variable** és una característica del fenomen que volem estudiar que varia entre observacions i que, per tant, pren diversos valors. Si a totes les observacions del nostre marc de dades una determinada característica té el mateix valor, llavors no és una variable. Tornem a la @fig-vars, on aquesta vegada veiem assenyalada en vermell una de les seves variables. La columna `turnout` és una variable perquè adopta diferents valors i és una característica del fenomen que estem estudiant, que són les eleccions. El nom del país també és una característica de cada unitat, ja que ens indica el nom del país on s'han produït les eleccions. Totes elles, si ens fixem, són variables. En canvi, no seria una variable el planeta on s'han produït les eleccions, perquè totes s'han produït a la Terra. En essència, la gravetat també seria la mateixa i a cada observació hi ha la mateixa presència d'oxigen, pel qual aquestes dues característiques no les podríem considerar variables. 
+
+```{r echo = FALSE}
+#| fig-cap: La participació és un atribut de totes unitats que observem
+#| label: fig-vars
+knitr::include_graphics("img/variable.png")
+```
+
+Com podem veure, les variables acostumen a estar formades per nombres (com els valors de `turnout` o de `year`) o bé per categories (com els valors de `country` o de `continent`). Però al marge d'aquesta primera distinció, l'important és distingir-les per les operacions que permeten fer amb els seus valors. A la @tbl-typvars observem els quatre tipus principals de variables. Amb les variables nominals, només podem saber si els seus valors són iguals o diferents. En canvi, amb les ordinals també podem ordenar els seus valors. A diferència de les ordinals, les variables d'interval tenen valors amb significat, pel qual en algunes ocasions podrem fer operacions com sumes i restes. I finalment, amb les variables de ràtio podrem fer tot tipus d'operació, com sumar, restar, multiplicar o dividir.
+
+```{r echo = FALSE}
+#| label: tbl-typvars
+#| tbl-cap: Tipus de variables
+#| column: body-outset-right
+tribble(~Tipus, ~Característiques, ~Vector, ~Operacions, 
+        "Categòrica nominal", "Categories no ordenables", "Caràcter o factor", "==, !=",
+        "Categòrica ordinal", "Categories ordenables", "Factor", "==, ¡=, <=, <, >, >=",
+        "Numèrica d'interval", "Nombres, zero sense significat", "Numèric o enter", "==, ¡=, <=, <, >, >=, +, -",
+        "Numèrica de ràtio", "Nombres, zero amb significat", "Numèric", "==, ¡=, <=, <, >, >=, +, -, *, / ...") |> 
+  knitr::kable()
+```
+
+
+::: {.callout-note}
+## Distinció entre columnes, variables i vectors
+Fins ara hem estudiat la columna, la variable i el vector com tres conceptes que semblen idèntics. Però són el mateix? La resposta és que no, encara que és fàcil confondre'ls l'un per l'altre perquè sovint serveixen pel mateix propòsit. Per distingir-los, direm que:
+
+- La **columna** es refereix a la distribució vertical dels valors en una taula.
+- La **variable** és un constructe abstracte, una propietat del fenomen que estem estudiant que varia entre observacions.  
+- El **vector** és una eina d'R que ens permet emmagatzemar dades en forma de concatenat.
+
+Malgrat aquestes diferències, bé és cert que moltes vegades la columna, la variable i el vector se solapen. Per analitzar fenòmens, a R acostumem a guardar les variables en forma de vectors. I cada vector forma una columna d'un marc de dades. Més endavant veurem, però, que no sempre hi ha coincidència (veure per exemple el marc de dades `tidyr::world_bank_pop`, en què les variables són valors de la columna `indicator`).
+:::   
+
+
+
+## Variables nominals{#nominals} 
+
+Les **variables categòriques nominals** (també en podem dir simplement **variables nominals**) agrupen els seus valors en categories diferents assumint que no segueixen cap ordre concret. L’únic que podem fer és classificar-les. Aquestes variables acostumen a ser noms o característiques de l’objecte. Podem, per exemple, classificar els estats que hi ha al món, les religions, la nacionalitat d’una persona, el lloc de naixement o el sexe. Però no podem ni ordenar-les ni quantificar-les numèricament: no té sentit dir que “groc” és superior a “blau” o multiplicar “Brasil” per “Hondures”. L’únic que podem fer és dir si un valor de la variable és igual o diferent a un altre.
+
+A R, emmagatzemarem les variables nominals com a **vectors de caràcter** o com a **factors**. En essència, no hi ha cap diferència en guardar una variable nominal en un vector de caràcter o en un factor.
+
+### Operacions amb variables nominals
+
+Per fer algunes operacions amb variables nominals, hem creat el marc de dades `strings` a partir d'una adaptació de les dades del paquet countrycode [@Ccode2018]. En l'argot d'R, la paraula _string_ s'utilitza per denominar els vectors de caràcter:
+
+```{r collapse=T}
+#| column: page-inset-left
+strings <- tribble(~iso3c, ~country, ~currency, ~continent, ~region,
+        "CMR", "Cameroon", "CFA Franc BEAC", "Africa", "Sub-Saharan Africa",
+        "COL", "Colombia", "Colombian Peso", "Americas", "Latin America & Caribbean",
+        "CUB", "Cuba", "Cuban Peso", "Americas", "Latin America & Caribbean",
+        "FRA", "France", "Euro", "Europe", "Europe & Central Asia",
+        "LSO", "Lesotho", "Loti", "Africa", "Sub-Saharan Africa",
+        "QAT", "Qatar", "Qatari Rial", "Asia", "Middle East & North Africa",
+        "TWN", "Taiwan", "New Taiwan Dollar", "Asia", "East Asia & Pacific",
+        "TTO", "Trinidad & Tobago", "Trinidad & Tobago Dollar", "Americas", "Latin America & Caribbean")
+strings
+```
+
+Amb les operacions que veiem al requadre de la dreta, podem respondre preguntes com les que fem a continuació:
+
+::: {.column-margin}
+::: {.callout-note}
+## Operacions
+Al tenir poques propietats matemàtiques, amb les variables nominals només podem fer operacions de:
+
+- Igualtat (`==`, `%in%`)
+- No igualtat (`!=`)
+:::
+:::
+
+::: {.column-margin}
+::: {.callout-note}
+## El símbol `%in%`
+Amb operacions amb més d'un valor categòric, utilitzarem `%in%`. Per exemple, si del vector `var` volem que ens retorni `v1`, `v2` i `v3`, utilitzarem el següent codi:
+```
+var %in% c("v1","v2","v3") 
+```
+:::
+:::
+
+
+
+
+::: {.panel-tabset}
+
+## Cameroon
+
+- **Quina observació és Cameroon?** Del marc de dades `strings`, seleccionem les observacions en què la variable `country` sigui **igual** a `"Cameroon"`.
+
+```{r nom1, collapse = TRUE}
+strings[strings$country == "Cameroon",]
+```
+
+## Africa
+
+- **Quins països estan a l'Àfrica o a Europa?** Del marc de dades `strings`, seleccionem les observacions en què la variable `continent` sigui **igual** a `"Africa"` o `"Europe"`.
+
+```{r nom2, collapse = TRUE}
+strings[strings$continent %in% c("Africa", "Europe"),]
+```
+
+## Region
+
+- **Quins països no estan a la regió d'Amèrica Llatina i el Carib?** Del marc de dades `strings`, seleccionem les observacions en què la variable `region` sigui **no igual** a `"Latin America & Caribbean"`.
+
+```{r nom3, collapse = TRUE}
+strings[strings$region != "Latin America & Caribbean",]
+```
+:::
+
+
+Més endavant, veurem com amb altres variables podrem fer operacions més complexes. Com que les categories de les variables nominals no són ordenables, no permeten saber si una categoria és més gran que l'altra o sumar i restar categories. No obstant, hem de saber que els vectors de caràcter i els factors tenen associada una ordenabilitat alfabètica.^[Els vectors de caràcter, i també els factors, estan ordenats alfabèticament, sent "A" el valor més petit i "Z" el valor més gran. Aquesta ordenació ens pot convenir per classificar les dades, però no haurem de tractar les variables nominals com a ordenables.].
+
+
+### Altres exemples de variables nominals
+
+A la següent base de dades veiem un fragment de la [Global Terrorism Database](https://www.start.umd.edu/gtd/){target="_blank"} [@START2022], que té recomptats més de 200.000 atacs terroristes des de 1970 fins a l'actualitat, incloent bombardejos, assassinats i segrestos. Com podem veure a la @tbl-gtd, les variables `country_txt`, `provstate`, `city`, `attacktype1_txt`, `targtype1_txt` i `weapdetail` són nominals^[Es podria pressuposar una certa ordinalitat a `attacktype1_txt` i `weapdetail`.].
+
+```{r echo = FALSE}
+#| label: tbl-gtd
+#| tbl-cap: Global Terrorism Database (v2021)
+#| column: page
+gtd <- read_xlsx("../../DataIP/Datasets/globalterrorismdb_0221dist.xlsx")
+gtd |> 
+  select(iyear, country_txt, provstate:longitude, attacktype1, attacktype1_txt, targtype1, targtype1_txt, weapdetail) |> 
+  head(8) |> 
+  knitr::kable()
+```
+
+::: {.column-margin}
+::: {.callout-caution collapse="true"}
+## On més hem vist variables nominals?
+També hem vist anteriorment en bases de dades d'aquest capítol exemples de variables nominals: 
+
+- El nom del país (`ctryname`) a la @tbl-dd.
+- El nom del líder polític (`leader`) a la @tbl-reign.
+- El nom del grup ètnic (`group`) a la @tbl-epr.
+:::
+:::
+
+::: {.callout-tip appearance="minimal"}
+::: {#exr-nominals}
+## Variables nominals
+Practica les variables nominals amb els exercicis d'[aquesta web](https://www.jordimas.cat/courses/dataanalysis_en/exercises/data_analysis_en_exercises_beginner#nominal/){target="_blank"}.
+:::
+:::
+
+Altres variables nominals poden ser el municipi (Barcelona, Sant Cugat, Granollers...), la religió (musulmana, catòlica, sintoista...), la llengua (rus, català, suec...), la ideologia (conservadora, progressista, liberal...), la organització internacional (Unió Europea, Mercosur, ASEAN...) o el tipus de mercaderia (transport, maquinària, tèxtil...).
+
+
+
+### Variables binàries
+
+Les **variables binàries** (també dites dicotòmiques o *dummy*) són conceptualment un subtipus de variable categòrica nominal en què la característica de l'objecte que estem estudiant només pot adoptar dos valors: absència o presència [@Goertz2020, pp. 137-138]. Operativament, però, podem tractar aquestes variables com a vector de caràcter, com a factor, com a vector numèric i fins i tot com a vector lògic. No hi ha cap norma clara de com guardar-les inicialment. El més normal és que més endavant les transformem d'un tipus de vector a un altre en funció del nostre propòsit^[Per exemple, si volem visualitzar dades les acabarem transformant en vectors de caràcter o factors, mentre que si volem realitzar un anàlisi bivariants les acabarem transformant a vectors numèrics. Passar-la a vector lògic és factible, però poc habitual].
+
+Quan importem dades a R, el més freqüent serà trobar-nos les seves variables binàries codificades en un vector numèric amb 1 i 0. El valor 1 indicarà la presència del concepte i el 0 l'absència. En la següent @tbl-ally, observem un fragment de la [Formal Alliances](https://correlatesofwar.org/data-sets/formal-alliances){target="_blank"} dataset [@Gibler2009; @Singer1966], formada principalment per variables binàries. Cada unitat d'observació és l'aliança entre dos països. Entre les seves característiques, s'hi troba l'any de creació (`dyad_st_year`), l'any de finalització (`dyad_end_year`), si és una aliança de defensa (`defense`), de neutralitat (`neutrality`), un pacte de no-agressió (`nonaggression`) o una *entente* (`entente`).
+
+```{r echo = FALSE}
+#| label: tbl-ally
+#| tbl-cap: Formal Alliances dataset (v4.1)
+#| column: page-left
+ally <- read_csv("../../DataIP/Datasets/Ally/alliance_v4.1_by_dyad.csv") |>
+  select(state_name1, state_name2, dyad_st_year, dyad_end_year, defense:entente)
+ally |> 
+  head(10) |> 
+  knitr::kable()
+```
+
+Quan ens trobem alguna variable binària en un marc de dades, el més recomanable és deixar-la com està. Normalment això significarà deixar-la com a vector numèric i, en tot cas, ja recodificarem la variable més endavant si ho necessitem. En el cas que vulguessim passar la variable a categòrica, recomanem emmagatzemar-la en forma de factor. Si suposem que el marc de dades té com a nom `ally`, utilitzaríem el procediment següent per convertir la variable `defense` a factor^[El mateix podríem fer amb `neutrality`, `nonaggression` i `entente`.].
+
+::: {.column-margin}
+::: {.callout-caution collapse="true"}
+## On més hem vist variables binàries?
+En aquest capítol hem vist diversos exemples de variables binàries. Per exemple: 
+
+- Si el líder polític va ser o no elegit (`elected`) a la @tbl-reign.
+- Si un cop d'estat va ser exitós o no (`successful`) a la @tbl-cam.
+- Si el grup ètnic té o no autonomia regional (`reg_aut`) a la @tbl-epr.
+:::
+:::
+
+```{r eval = F, echo = T}
+ally$defense <- factor(ally$defense, 
+                       labels = c("No", "Yes"))
+```
+
+El que és important és que el nom del vector numèric permeti identificar clarament quin sentit pren la variable en cas de presència. El vector `male` no tindria sentit posar-lo com a `gender` si està codificat amb 1 i 0, perquè no sabríem quin gènere és 1 i quin és 0. En canvi, si la recodifiquéssim com a factor, sí que tindria més sentit posar `gender` i que tingués com a possibles valors "Male" i "Other".
+
+
+### El paquet stringr
+
+Per manipular els vectors de caràcter, la millor eina que podem utilitzar és el paquet [`stringr`](https://stringr.tidyverse.org/){target="_blank"} [@stringr2022]. En aquest apartat no ens detindrem a explicar totes les funcions del paquet. El més adequat és consultar el seu [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"} corresponent a la pàgina d'RStudio. Però veurem algunes funcions a continuació amb al mateix marc de dades `strings` que hem creat anteriorment:
+
+::: {.panel-tabset}
+
+## str_remove
+Amb `str_remove()` podem eliminar una sèrie de caràcters dels valors d'una variable. A continuació eliminem `"Latin "` a la variable `region`.
+
+```{r echo = TRUE, collapse = TRUE}
+str_remove(strings$region, "Latin ")
+```
+
+## str_replace
+Amb `str_replace()` podem substituir uns caràcters per uns altres. A continuació substituïm "&" de la variable `country` per "and".
+
+```{r echo = TRUE, collapse = TRUE}
+str_replace(strings$country, "&", "and")
+```
+
+## str_to_upper
+Amb `str_to_upper()` posem tots els caràcters en majúscules. A continuació posem el nom de la moneda de la variable `currency` en majúscules.
+
+```{r echo = TRUE, collapse = TRUE}
+str_to_upper(strings$currency)
+```
+
+D'una manera molt semblant, `str_to_sentence()` posa la primera lletra de la frase en majúscula, `str_to_lower()` totes les lletres en minúscules, `str_to_title()` la primera lletra de cada paraula en majúscules
+
+## str_sub
+Amb `str_sub()` traiem l'últim caràcter de la variable `iso3c`, de manera que ens queda un codi de país de dos caràcters.
+
+```{r echo = TRUE, collapse = TRUE}
+str_sub(strings$iso3c, end = 2)
+```
+:::
+
+
+::: {.callout-tip appearance="minimal"}
+::: {#exr-stringr}
+## El paquet `stringr`
+Practica l'ús del paquet stringr amb els exercicis d'[aquesta web](https://www.jordimas.cat/courses/dataanalysis_en/exercises/data_analysis_en_exercises_beginner#stringr/){target="_blank"}.
+:::
+:::
+
+## Variables ordinals{#ordinals} 
+
+Les **variables categòriques ordinals** (o, simplement, **variables ordinals**) agrupen les observacions en categories diferents que segueixen un ordre lògic concret. Per exemple, podem ordenar les persones en funció de si són “infants”, “joves” o “adults” o bé el seu nivell educatiu en “sense estudis”, “estudis primaris”, “estudis secundaris” o “estudis superiors”. Així, podem saber si una categoria és superior o inferior a l’altra. El que no podem saber amb aquesta variable és la distància que hi ha entre categories. No sabem, per exemple, si hi ha la mateixa distància entre “sense estudis” i “estudis primaris” que entre “estudis primaris” i “estudis secundaris”, simplement pel fet que no hi ha cap interval numèric associat a cada variable. L’únic que podem fer és comparar les categories entre elles en termes de ser més, menys, igual que o diferent a una altra.
+
+A R, emmagatzemarem les variables ordinals com a **factors** ordenables.
+
+
+### Operacions amb variables ordinals
+
+Per fer algunes operacions amb variables ordinals hem creat el marc de dades `ords`, que conté una classificació d'agències donants d'ajuda al desenvolupament i la seva puntuació ordinal en el rànquing Aid Transparency Index (ATI) de 2022 que publica per l'ONG [Publish What You Fund](https://www.publishwhatyoufund.org/){target="_blank"}. Aquesta classificació ordinal estableix fins a quin punt l'agència donant publica de forma transparent què es gasta, qui ho gasta i a on es gasta. El marc de dades també inclou a quin tipus de règim pertany l'agència donant segons la classificació ordinal de democràcia del [Economist Intelligence Unit](https://www.eiu.com/n/){target="_blank"} de 2022.
+
+```{r ordinals, collapse=T}
+#| column: page
+ords <- tibble(donor = c("US-MCC", "Canada-GAC", "Germany-BMZ-GIZ", "Korea-KOICA", "Australia-DFAT", "Spain-AECID", 
+                         "Saudi Arabia-KSRelief", "Norway-MFA", "China-MOFCOM", "Turkey-TIKA"),
+               ati = factor(c("Very Good", "Good", "Good", "Good", "Good", "Fair",
+                              "Poor", "Poor", "Very Poor", "Very Poor"),
+                            ordered = TRUE,
+                            levels = c("Very Poor", "Poor", "Fair", "Good", "Very Good")),
+               regime_type = factor(c("Flawed Democracy", "Full Democracy", "Full Democracy", "Full Democracy", "Full Democracy", 
+                                      "Flawed Democracy", "Authoritarian", "Full Democracy", "Authoritarian", "Hybrid Regime"), 
+                                    ordered = TRUE,
+                                    levels = c("Authoritarian", "Hybrid Regime", "Flawed Democracy", "Full Democracy")))
+ords
+```
+
+Amb les operacions que veiem al requadre de la dreta, podem respondre preguntes com les que fem a continuació:
+
+::: {.column-margin}
+::: {.callout-note}
+## Operacions
+Amb les variables ordinals podem fer operacions de:
+
+- Igualtat (`==`, `%in%`)
+- No igualtat (`!=`)
+- Més gran que (`>`)
+- Més gran o igual que (`>=`)
+- Més petit que (`<`)
+- Més petit o igual que (`<=`)
+:::
+:::
+
+::: {.panel-tabset}
+
+## Democràcies dèbils
+**Quines agències pertanyen a democràcies dèbils?** Del marc de dades `ords`, selecciona les observacions en què la variable `regime_type` sigui **igual a** `"Flawed Democracy"`.
+
+```{r ord1, collapse = TRUE}
+ords[ords$regime_type == "Flawed Democracy",]
+```
+
+## ATI alt
+**Quines agències tenen un ATI com a mínim bo?** Del marc de dades `ords`, seleccionem les observacions en què la variable `ati` sigui **major o igual** que `"Good"`.
+
+```{r ord2, collapse = TRUE}
+ords[ords$ati >= "Good",]
+```
+
+## ATI baix
+Quins agències tenen un ATI inferior a correcte?** Del marc de dades `ords`, seleccionem les observacions en què la variable `ati` sigui **menor** que `"Fair"`.
+
+```{r ord3, collapse = TRUE}
+ords[ords$ati < "Fair",]
+```
+:::
+
+A part de les operacions d'igualtat, doncs, les variables ordinals permeten saber si una categoria és més gran o més petita que l'altra. Però com que no coneixem la distància entre categories, per exemple entre "Fair" i "Poor", no podem operacions més complexes com sumar i restar. Aquestes operacions les podrem fer amb les variables numèriques.
+
+
+### Importar dades ordinals
+
+
+```{r echo = FALSE}
+#| label: tbl-wbincome
+#| column: margin
+#| tbl-cap: Ingressos WB
+#| tbl-cap-location: top
+wb <- read_xls("../../DataIP/Datasets/WB_Income_Group.xls") |>
+  clean_names()
+wb |> 
+  select(code, income_group) |> 
+  head(8) |>  
+  knitr::kable()
+```
+
+Quan importem bases de dades a R, rarament ens trobarem les variables ordinals codificades com a factor ordinal. Normalment ens trobarem una de les situacions següents:  
+
+1. Les variables ordinals estan **codificades com a vector de caràcter (1)**. Aquest és el cas per exemple de la variable `income_group`, una classificació produïda pel Banc Mundial que ordena grups de països segons nivells de renda per càpita. Observem un fragment d'aquestes dades a la @tbl-wbincome del lateral.
+2. Les variables ordinals ens arriben **codificades com a vector numèric (2)**. Aquest és el cas de moltes dades d'enquesta, en què respostes que porten associades categories com "Molt", "Bastant", "Poc" o "Gens" acostumen a estar codificades numèricament (@tbl-wvs7side).
+
+
+```{r echo = FALSE}
+#| column: margin
+#| tbl-cap: WVS 2017-2020 (v7)
+#| label: tbl-wvs7side
+#| tbl-cap-location: top
+wvs |> 
+  select(CCOW = C_COW_ALPHA, YEAR = A_YEAR, Q1:Q4) |> 
+  head(6) |> 
+  kable()
+```
+
+En els dos casos, les variables hauran de ser recodificades a factor ordinal amb un procediment molt semblant. Per ara, hem de saber que per fer la conversió utilitzarem la funció `factor()` i a dins hi introduïrem tres arguments: el vector, la indicació que és ordinal en el vector `ordrered` i, en un tercer argument, els nivells (`levels`) o bé les etiquetes (`labels`) el factor.
+```
+factor(vector, 
+       ordered = TRUE,
+       levels = c("Baix", "Mig", "Alt"))
+```
+
+A l'apartat recodificacions de variables tractarem aquests dos casos en detall i veurem també la diferència entre `levels` i `labels`.
+
+
+
+::: {.callout-tip}
+## Repàs d'operadors relacionals
+Un resum dels operadors relacionals que hem vist ara el trobem en aquest vídeo:
+
+{{< video https://youtu.be/ZJ7H-3j_-mE >}}
+:::
+
+### El paquet forcats{#forcats}
+
+Per manipular els factors, la millor eina que podem utilitzar és el paquet [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@forcats2022]. En aquest apartat només veurem algunes de les seves funcions, però per explorar-lo més a fons podeu consultar el seu [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"} corresponent a la pàgina d’RStudio. A continuació aplicarem algunes funcions al marc de dades `ords` que hem creat anteriorment. La majoria d'aquestes funcions van relacionades amb reordenar factors i són molt útils per a la visualització de gràfics.
+
+::: {.panel-tabset}
+
+## fct_relevel
+Amb `fct_relevel()` canviem ràpidament l'ordre dels nivells. En el primer argument indiquem el factor i la resta d'arguments indiquem, en ordre ascendent, els nivells.
+
+```{r collapse = TRUE}
+fct_relevel(ords$regime_type, "Hybrid Regime", "Full Democracy", "Flawed Democracy", "Authoritarian")
+```
+
+## fct_rev
+Amb `fct_rev()` capgirem l'ordre dels nivells.
+
+```{r}
+fct_rev(ords$ati)
+```
+
+## fct_other
+Amb `fct_other()` creem un nivell format per vàries categories. En el primer argument indiquem el factor i en el segon indiquem les categories que volem conservar.
+
+```{r echo = TRUE, collapse = TRUE}
+fct_other(ords$ati, keep = c("Good", "Very Good"))
+```
+
+## fct_infreq
+`fct_infreq()` ordenem els nivells en funció del seu número de freqüències a la base de dades (és a dir, en funció de les vegades que hi apareixen). Aquesta funció és molt útil quan la combinem amb funcions que reprodueixen gràfics.
+
+```{r echo = TRUE, collapse = TRUE, fig.width = 5, fig.asp = .62}
+plot(fct_infreq(ords$ati))
+```
+
+## fct_rev + fct_infreq
+Si combinem `fct_infreq()` i `fct_rev()`, obtindrem els nivells en l'ordre contrari.
+
+```{r echo = TRUE, collapse = TRUE, fig.width = 5, fig.asp = .62}
+plot(fct_rev(fct_infreq(ords$ati)))
+```
+:::
+
+Totes les funcions de `forcats` són útils per factors, tant per representar variables nominals com per representar variables ordinals.
+
+::: {.callout-tip appearance="minimal"}
+::: {#exr-forcats}
+## El paquet forcats
+Practica l'ús del paquet forcats amb els exercicis d'[aquesta web](https://www.jordimas.cat/courses/dataanalysis_en/exercises/data_analysis_en_exercises_beginner#forcats/){target="_blank"}.
+:::
+:::
+
+
+## Variables d'interval{#interval} 
+
+A diferència de les variables categòriques, les variables numèriques agrupen les observacions en nombres. Les **variables numèriques d’interval** (o simplement **variables d'interval**) tenen com a principal propietat que la distància entre els seus valors té significat, però que el valor zero no indica l'absència del valor en concret. Així, amb les variables d'interval podem fer les mateixes operacions que les variables ordinals (saber si un valor és més gran o més petit que un altre) i, a més, també podem saber com de gran o com de petit és aquest valor perquè la distància numèrica és coneguda. 
+
+Un exemple és la variable any, quan ens referim als anys de calendari^[A diferència de la variable any quan ens referim als anys d'una persona. En aquest cas, el zero sí que té significat.]. Posem pel cas que tenim tres valors d'interval: 1919, 1945 i 1989. Podem saber si un any és més petit o més gran que l'altre, però també podem saber quina distància hi ha entre aquests valors. Per exemple, sabem que hi ha una diferència de 26 anys entre 1919 i 1945 i una diferència de 70 anys entre 1919 i 1989. Això és una operació que no podríem fer amb variables ordinals.
+
+Amb les variables d'interval, però, no podrem calcular la ràtio entre els seus valors, ja que una de les propietats que manca a aquest tipus de variables és que el valor zero no significa "absència de". En l'exemple dels anys del calendari, l'any zero no significa absència de res en concret, com l'absència d'anys o absència de temps. Ho entendrem millor amb un altre exemple: la temperatura en graus Celsius^[L'exemple també val per graus Fahrenheit. En canvi, la temperatura en graus Kelvin sí que és una variable de ràtio ja que el zero indica l’absència de calor i, per tant, passar de 100 a 200 graus Kelvin voldria dir que es duplica la calor.]: els zero graus no representen l'absència de calor ni l'absència de temperatura. Per tant, si la temperatura puja de 10 a 20 graus no podrem dir que la calor s'ha duplicat. 
+
+A R, les variables d'interval s'emmagatzemen preferiblement com a **vectors numèrics**, encara que en alguns casos les podrem emmagatzemar com a vectors enters o vectors de data.
+
+### Operacions amb variables d'interval
+
+Per fer algunes operacions amb variables d'interval hem creat el marc de dades `polity`, que el nivell de democràcia que tenien varis països en el seu any de fundació segons la base de dades [Polity V](https://www.systemicpeace.org/polityproject.html){target="_blank"} [@Marshall2020]. Aquesta base de dades assigna un nivell de democràcia als règims polítics entre -10 i 10, sent 10 el nivell màxim de democràcia. El zero, en aquest cas, no significa "absència de", sinó que és un nivell intermig que adopta un règim polític en aquesta escala^[I encara que l'escala estigués construïda de 0 a 10, el zero tampoc significa "absència de" democràcia.].  
+
+```{r polity, collapse=T}
+#| column: body-outset
+polity <- tibble(country = c("United States", "Bolivia", "Australia", "Azerbaijan",
+                             "USSR", "Timor Leste", "Eritrea", "Qatar", "Gambia"),
+                 year = c(1776, 1825, 1901, 1991, 1922, 2002, 1993, 1971, 1965),
+                 polity2 = c(0, -3, 10, -3, -7, 6, -6, -10, 8))
+polity
+```
+
+Amb les operacions que veiem al requadre, podem respondre preguntes com les que fem a continuació:
+
+::: {.column-margin}
+::: {.callout-note}
+## Operacions
+Amb les variables d'interval podem fer operacions de:
+
+- Igualtat (`==`, `%in%`)
+- No igualtat (`!=`)
+- Més gran que (`>`)
+- Més gran o igual que (`>=`)
+- Més petit que (`<`)
+- Més petit o igual que (`<=`)
+- I en alguns casos, sumes (`+`) i restes (`-`)
+:::
+:::
+
+::: {.panel-tabset}
+
+## Fundació
+Quants anys de **diferència** hi ha entre la fundació d'Estats Units i la fundació de la Unió Soviètica?
+
+```{r}
+polity$year[polity$country == "United States"] - polity$year[polity$country == "USSR"]
+```
+
+## Democràcia
+En els seus respectius anys de fundació, el nivell de democràcia de Bolívia era **més gran que** el d'Eritrea?
+
+```{r}
+polity$polity2[polity$country == "Bolivia"] > polity$polity2[polity$country == "Eritrea"]
+```
+
+## Estats Units
+Quins règims polítics tenien nivells de democràcia **superiors** als Estats Units en el seu any de fundació?
+
+```{r}
+polity$country[polity$polity2[polity$country == "United States"] > polity$polity2]
+```
+:::
+
+### Importar dades d'interval
+
+En la majoria dels casos, les variables d'interval s'importen a R com a vectors numèrics. Ja està bé que s'importin així i no haurem de fer cap transformació addicional. En alguns casos, és fàcil confondre les variables d'interval amb altres tipus de variables, com les ordinals o les de ràtio. 
+
+::: {.column-margin}
+::: {.callout-caution collapse="true"}
+## On més hem vist variables d'interval?
+En aquest capítol, també hem vist anteriorment en bases de dades exemples de variables d'interval. Per exemple:
+
+- Totes les variables que contenen la variable any, com `year` a les taules [-@tbl-dd], [-@tbl-mid] i [-@tbl-cam].
+- La data concreta (`date`) a la @tbl-cam.
+- La latitud (`latitude`) i la longitud (`longitude`) de la @tbl-gtd.
+:::
+:::
+
+
+
+::: {.callout-note}
+## L'eix esquerra-dreta és una variable d'interval?
+Una de les variables més conegudes en Ciència Política, que és la de l'escala ideològica (@tbl-gps). A les enquestes, s'acostuma a preguntar: "Ubiqui's ideològicament, on 0 és extrema esquerra i 10 extrema dreta". És aquesta una variable d'interval? Òbviament el zero no té significat, perquè no significa absència d'ideologia, pel qual podem descartar que sigui una variable de ràtio. Fixem-nos que podríem construir una escala on, per exemple, el zero indiqués el centre, -10 l'esquerra i +10 la dreta. O bé que fos 90 dreta i 100 esquerra. Com veiem, una de les propietats de l'escala d'interval és que podem ubicar el principi i el final de l'escala a qualsevol lloc. I això és així perquè el zero no té cap significat i els valors de les escales són completament mòbils i arbitraris.
+
+El que resulta més difícil de dir és si l'autoubicació ideològica és una variable d'interval o ordinal. La principal diferència entre les dues és que a les variables ordinals existeix una distància coneguda i igual entre els nivells de l'escala. Passar de 4 a 5 a l'eix ideològic hauria de significar el mateix que passar de 5 a 6. I això és qüestionable. Tècnicament, l'ideologia és ordinal [veure @Johnson2016, p. 351], encara que hi ha moltes construccions numèriques que es poden considerar com a variable d'interval. Una regla no escrita és que si una variable ordinal està formada per set o més valors es pot considerar d'interval [@Goertz2020, p. 139, 144].
+
+
+```{r gps, echo = FALSE}
+#| tbl-cap: Global Party Survey (v2.1)
+#| label: tbl-gps
+load("../../DataIP/Datasets/Global Party Survey by Party SPSS V2_1_Apr_2020.rdata")
+tibble(table) |> 
+  filter(Country == "United Kingdom") |> 
+  mutate(across(c(V4_Ord), ~as_factor(.))) |> 
+  select(Partyname, Partyabb, V4_Scale, V4_Ord) |> 
+  knitr::kable()
+```
+:::
+
+### El paquet lubridate{#lubridate}
+
+Una de les principals variables d'interval és la de les dates de calendari. Amb això tant ens podem referir a variables com l'any (2013, 2014, 2015...) com a variables més concretes que tinguin com a valors dates exactes (per exemple "1952-03-10", com hem vist a la variable `date` de la @tbl-cam) o encara més concretes, com seria "1961-01-20 13:00:00". Quan només necessitem l'any com a variable, ens serà suficient emmagatzemar-ho com a vector numèric, sense necessitat de fer cap transformació especial. Però a mesura que el temps sigui un factor important del nostre estudi i necessitem jugar amb mesos, setmanes, dies o hores, més important serà utilitzar el paquet [`lubridate`](https://lubridate.tidyverse.org/){target="_blank"} [@R-lubridate].
+
+No entrarem en detall a explicar-lo en aquest mòdul, perquè és un paquet que s'utilitza per necessitats molt concretes. Però hem de saber que ens permet fer operacions com distingir quines dates cauen en cap de setmana, crear nivells ordinals entre dies de la setmana, calcular diferències entre dates o calcular diferències entre franges horàries.
+
+
+::: {.callout-tip appearance="minimal"}
+::: {#exr-interval}
+## Variables d'interval
+Practica les variables d'interval amb els exercicis d'[aquesta web](https://www.jordimas.cat/courses/dataanalysis_en/exercises/data_analysis_en_exercises_beginner#interval/){target="_blank"}.
+:::
+:::
+
+## Variables de ràtio{#ratio} 
+
+A diferència de les altres variables que hem vist, les **variables numèriques de ràtio** (o simplement, **variables de ràtio**) tenen totes les propietats matemàtiques. Podem dir si els nombres són iguals o diferents, si són més grans o més petits, quina distància hi ha entre ells i també podem saber la quantitat relativa de cada valor. La propietat distintiva de les variables de ràtio és que el zero té significat. Això vol dir que hi ha un punt de referència que marca l’absència del fenomen. El zero en l'edat d'una persona significa absència d'anys, així com el zero en la taxa d'atur significa l'absència d'atur i el zero en població significa que aquell país o territori no té població.
+
+::: {.column-margin}
+::: {.callout-note}
+## Què vol dir 1.2e+07?
+Quan tractem amb variables numèriques, sovint veurem els valors representats amb notació científica:
+
+```{r collapse=T, echo = T, eval = T}
+12000000
+```
+
+Interpretar-los és més fàcil del que sembla, ja que simplement hem de moure
+els decimals tantes vegades a la dreta com ens indiqui l’últim nombre, si és positiu,
+o tantes vegades a l’esquerra si és negatiu. Per exemple, 2.50+e08 es traduirà com a 250.000.000.
+:::
+:::
+
+El fet que el zero tingui significat ens permet utilitzar-lo per establir relacions entre els valors de la variable a través d'operacions matemàtiques més complexes, com multiplicar, dividir, fer arrels quadrades, etc. Per exemple, podem dir que deu anys d'edat són el doble que cinc, o que si l'atur varia del 10% al 5%, s'ha reduït a la meitat. Aquestes són operacions que no podem fer amb els altres tipus de variables que hem vist. Per exemple, amb l'escala d'interval de Polity V no podem dir que un país és el doble de democràtic que un altre. Ni tampoc podem dir que un país categoritzat com a "Low Income" sigui la meitat que "Lower Middle Income". Això és degut a que el zero, que és un punt real de referència en les variables de ràtio, no existeix ni té significat propi en les altres variables. Des d'un punt de vista de l'anàlisi quantitativa, doncs, les variables de ràtio són preferibles als altres tipus de variables perquè permeten fer més operacions matemàtiques.
+
+A R, emmagatzemarem les variables de ràtio com a **vectors numèrics**. Algunes d'elles també les podríem emmagatzemar com a vectors enters. 
+
+
+### Operacions amb variables de ràtio
+
+Per fer algunes operacions amb variables de ràtio, hem recreat les capacitats materials de les principals potències participants a la Segona Guerra Mundial l'any 1939 a partir de les dades de la [National Material Capabilities (NMC)](https://correlatesofwar.org/data-sets/national-material-capabilities){target="_blank"} dataset [@Singer1987; @Singer1972]. El marc de dades  `ratios` conté la variable despesa militar (`milex`, en milers de dòlars), personal militar (`milper`, en milers), total de població (`tpop`, en milers), i l'índex CINC (`cinc`)^[Respon a l'acrònim Composite Index of National Capability. La variable `milex` respon a la despesa militar, `milper` a personal militar i `tpop` a població total. Aquestes i altres variables formen l'índex `cinc`.], que és una mesura composta que classifica els països segons les seves capacitats materials.
+
+```{r collapse = T}
+#| column: body-outset
+ratio <- tibble(country = c("USA", "UKG", "FRN", "GMY", "ITA", "RUS", "JPN"),
+                milex = c(980000, 7895671, 1023651, 12000000, 669412, 5984123, 1699970),
+                milper = c(334, 394, 581, 2750, 581, 1789, 957),
+                tpop = c(131028, 47762, 41900, 79798, 44020, 170317, 71380),
+                cinc = c(0.182, 0.0997, 0.0396, 0.178, 0.0270, 0.138, 0.0591))
+ratio
+```
+
+Amb les operacions que veiem al requadre lateral, podem respondre preguntes com les que fem a continuació:
+
+::: {.column-margin}
+::: {.callout-note}
+## Operacions
+Amb les variables de ràtio podem fer operacions de:
+
+- Igualtat (`==`, `%in%`)
+- No igualtat (`!=`)
+- Més gran que (`>`)
+- Més gran o igual que (`>=`)
+- Més petit que (`<`)
+- Més petit o igual que (`<=`)
+- Sumes (`+`), restes (`-`), multiplicacions (`*`), divisions (`/`)
+- Altres tipus d'operacions com arrels quadrades (`sqrt()`), logaritmes (`log()`), màxims (`max()`), el mínims (`min()`) o mitjanes (`mean()`).  
+:::
+:::
+
+::: {.panel-tabset}
+## Personal militar
+Quin país té més un personal militar superior al milió de persones?
+
+```{r collapse = T}
+ratio$country[ratio$milper > 1000]
+```
+
+## Despesa militar
+Quantes vegades la despesa militar d'Alemanya és superior cada una de les altres potències?
+
+```{r collapse = T}
+ratio$milex_gmy <- ratio$milex[ratio$country == "GMY"] / ratio$milex
+ratio
+```
+
+## Percentatges
+Quin país té un personal militar inferior al 1 per cent de la població?
+
+```{r collapse = T}
+ratio$country[1 > ratio$milper / ratio$tpop * 100]
+```
+
+## Màxims
+Quin és el país amb l'índex CINC més alt?
+
+```{r collapse = T}
+ratio$country[ratio$cinc == max(ratio$cinc)]
+```
+
+## Mínims
+Quin és el país amb menys despesa militar?
+
+```{r collapse = T}
+ratio$country[ratio$milex == min(ratio$milex)]
+```
+:::
+
+### Importar variables de ràtio
+
+Les variables de ràtio s'acostumen a importar automàticament com a vectors numèrics, que és el que necessitem per poder fer operacions de tot tipus. No obstant, convé saber distingir entre tres tipus (o ordres) de variables de ràtio: els recomptes, els ràtios i els índexs compostos [@Power1999; @Merry2016, p. 15]. Aquests tipus de variables els trobem representats a la següent taula @tbl-nuts, que inclou dades d'Eurostat i dades de vot a partits regionalistes i independentistes en diverses regions europees [@Sanjaume2023]. 
+
+```{r echo = F}
+#| label: tbl-nuts
+#| tbl-cap: NUTS dataset
+#| column: page-right
+nuts <- tibble(read_csv("../../Old/NUTS_datset/euromap.csv")) |> 
+  filter(!is.na(vote_year)) |> 
+  select(id, country, nuts_name, 
+         vote_reg:vote_ind, gdpc, innov, pop:distance)
+nuts |> 
+  head(10) |> 
+  knitr::kable()
+```
+
+Les dades de **recompte** són dades que compten coses, com la població (`pop`) o la superfície del territori (`area`). Per definició no cal que tinguin decimals. Les dades de **ràtio** comparen dos nombres, com el percentatge de vot (`vote_reg`, que divideix votants a partits regionalistes pel total de votants), la densitat de població (`density`, compara habitants i àrea) o el PIB per càpita (`gdpc`, estableix la mitjana d'ingressos per habitant). És molt probable que tinguin decimals. Finalment, els **índexs** són mesures més complexes que agrupen vàries variables, com l'[Índex d'Innovació Regional](https://research-and-innovation.ec.europa.eu/statistics/performance-indicators/regional-innovation-scoreboard_en){target="_blank"} (`innov`)^[Per saber-ne més, veure el mòdul docent [Mesures compostes](https://www.jordimas.cat/courses/fiiei_cat/indicadors/){target="_blank"}.]. 
+
+:::{.column-margin}
+::: {.callout-caution collapse="true"}
+## On més hem vist variables de ràtio?
+En aquest capítol, també hem vist anteriorment en bases de dades exemples de variables de ràtio. Per exemple:
+
+- La durada d'una disputa militar militaritzada (`duration`) a la taula @tbl-mid.
+- Els mesos d'un líder polític al càrrec (`tenure_months`) a la taula @tbl-reign.
+- La mida relativa d'un grup ètnic a dins d'un país (`size`) a la taula @tbl-epr.
+:::
+:::
+
+::: {.callout-tip appearance="minimal"}
+::: {#exr-ratio}
+## Variables de ràtio
+Practica les variables de ràtio amb els exercicis d'[aquesta web](https://www.jordimas.cat/courses/dataanalysis_en/exercises/data_analysis_en_exercises_beginner#ratio/){target="_blank"}.
+:::
+:::
+
+
