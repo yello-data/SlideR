@@ -102,13 +102,18 @@ suicide |>
 #####################################################################
 
 # - Variables: Characteristics of what we study.
-#     - Categoric nominal
-#     - Categoric ordinal
-#     - Numeric interval
-#     - Numeric ratio
+#     - Categoric nominal: No order
+#     - Categoric ordinal: Order, no distance
+#     - Numeric interval: Distance, zero no meaning
+#     - Numeric ratio: Order, distance, zero
 
 
 # 2.1. NOMINAL
+
+# Categoric nominal: No order
+
+
+
 
 
 
@@ -122,6 +127,12 @@ suicide |>
 
 # 2.4. RATIO
 
+
+
+
+#####################################################################
+# PART 3. TRANSFORMATIONS
+#####################################################################
 
 
 
