@@ -80,6 +80,20 @@ We consider that a dataframe is *tidy* if it fulfills the following requirements
 - **Variables** are represented in the columns.
 - Each **cell** indicates a value.
 
+## RStudio workflow
+
+**Load packages:** Everytime you join R.
+
+```{r echo = T, message=F, warning=F}
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(forcats)
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
 
 # Observations {background-color="#e8e8e8"}
 
@@ -216,6 +230,7 @@ Barcelona local elections: Census section level.
 ![](img/bcn3.png)
 
 
+
 # Variables {background-color="#e8e8e8"}
 
 ## What is a variable?
@@ -224,25 +239,41 @@ A characteristic of the object we're studying.
 
 - It **varies** across units.
 
+
 ## Types of variables (I): Nominal
 
-```{r}
-c("England", "France")
-factor(c("England", "France"))
-```
+- **Municipality:** Barcelona, Sant Cugat, Granollers...
+- **Religion:** Muslim, Catholic, Shinto...
+- **Language:** Russian, Catalan, Swedish.
+- **Ideology:** Conservatism, Nationalism, Liberal...
+- **Parties:** PSOE, PP, Cs, ERC...
+
+[`stringr`](https://stringr.tidyverse.org/){target="_blank"} [@stringr2022]. En aquest apartat no ens detindrem a explicar totes les funcions del paquet. El més adequat és consultar el seu [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"} corresponent a la pàgina d'RStudio. Però veurem algunes funcions a continuació amb al mateix marc de dades `strings` que hem creat anteriorment:
 
 
 ## Types of variables (I): Ordinal
 
-```{r}
-factor(c("Small", "Large"),
-       ordered = T)
-```
+Things: Small, medium, large.
+Age: Child, Young, Adult.
+Education: Primary, Secondary, Tertiary.
+Ideas: Agree, Neutral, Disagree.
+
+Aid Transparency Index (ATI) 2022, [Publish What You Fund](https://www.publishwhatyoufund.org/){target="_blank"}.
+[Economist Intelligence Unit](https://www.eiu.com/n/){target="_blank"} 2022.
+
+Per manipular els factors, la millor eina que podem utilitzar és el paquet [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@forcats2022]. En aquest apartat només veurem algunes de les seves funcions, però per explorar-lo més a fons podeu consultar el seu [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"} corresponent a la pàgina d’RStudio. A continuació aplicarem algunes funcions al marc de dades `ords` que hem creat anteriorment. La majoria d'aquestes funcions van relacionades amb reordenar factors i són molt útils per a la visualització de gràfics.
 
 
 ## Types of variables (III): Interval
 
 Zero is arbitrary.
+
+- Year: 2004, 2005, 2008, 2010.
+- Temperature (except Kelvin): 10, 25, 30.
+- Ideology: Left-right measured as 0-10.
+- Coordinates: Longitude and latitude.
+
+[Polity V](https://www.systemicpeace.org/polityproject.html){target="_blank"}
 
 ```{r}
 c(3, 9, 13)
@@ -255,6 +286,17 @@ Zero means absence of
 
 ```{r}
 c(4.9, 9)
+```
+
+## Types of variables (IV): Summary
+
+```{r echo = FALSE}
+tribble(~Tipus, ~Característiques, ~Vector, ~Operacions, 
+        "Categòrica nominal", "Categories no ordenables", "Caràcter o factor", "==, !=",
+        "Categòrica ordinal", "Categories ordenables", "Factor", "==, !=, <=, <, >, >=",
+        "Numèrica d'interval", "Nombres, zero sense significat", "Numèric o enter", "==, !=, <=, <, >, >=, +, -",
+        "Numèrica de ràtio", "Nombres, zero amb significat", "Numèric", "==, !=, <=, <, >, >=, +, -, *, / ...") |> 
+  knitr::kable()
 ```
 
 
