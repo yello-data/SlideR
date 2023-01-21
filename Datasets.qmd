@@ -17,6 +17,16 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'dplyr', 'ggplot2',
+  'tidyr', 'readxl', 'readr', 'tidyverse', 'pacman', 'lubridate'
+), 'packages.bib')
+```
+
+
 ## Summary
 
 -   What is a dataframe?
