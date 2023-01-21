@@ -3,91 +3,8 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Recodificacions
-```{r echo = F, message=F}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE,
-                      message = FALSE)
-library(pacman)
-p_load(tidyverse, readxl, janitor, foreign, haven, knitr)
-strings <- tribble(~iso3c, ~country, ~currency, ~continent, ~region,
-        "CMR", "Cameroon", "CFA Franc BEAC", "Africa", "Sub-Saharan Africa",
-        "COL", "Colombia", "Colombian Peso", "Americas", "Latin America & Caribbean",
-        "CUB", "Cuba", "Cuban Peso", "Americas", "Latin America & Caribbean",
-        "FRA", "France", "Euro", "Europe", "Europe & Central Asia",
-        "LSO", "Lesotho", "Loti", "Africa", "Sub-Saharan Africa",
-        "QAT", "Qatar", "Qatari Rial", "Asia", "Middle East & North Africa",
-        "TWN", "Taiwan", "New Taiwan Dollar", "Asia", "East Asia & Pacific",
-        "TTO", "Trinidad & Tobago", "Trinidad and Tobago Dollar", "Americas", "Latin America & Caribbean")
-ords <- tibble(donor = c("US-MCC", "Canada-GAC", "Germany-BMZ-GIZ", "Korea-KOICA", "Australia-DFAT", "Spain-AECID", 
-                         "Saudi Arabia-KSRelief", "Norway-MFA", "China-MOFCOM", "Turkey-TIKA"),
-               ati = factor(c("Very Good", "Good", "Good", "Good", "Good", "Fair",
-                              "Poor", "Poor", "Very Poor", "Very Poor"),
-                            ordered = TRUE,
-                            levels = c("Very Poor", "Poor", "Fair", "Good", "Very Good")),
-               regime_type = factor(c("Flawed Democracy", "Full Democracy", "Full Democracy", "Full Democracy", "Full Democracy", 
-                                      "Flawed Democracy", "Authoritarian", "Full Democracy", "Authoritarian", "Hybrid Regime"), 
-                                    ordered = TRUE,
-                                    levels = c("Authoritarian", "Hybrid Regime", "Flawed Democracy", "Full Democracy")))
-ratio <- tibble(country = c("USA", "UKG", "FRN", "GMY", "ITA", "RUS", "JPN"),
-                milex = c(980000, 7895671, 1023651, 12000000, 669412, 5984123, 1699970),
-                milper = c(334, 394, 581, 2750, 581, 1789, 957),
-                tpop = c(131028, 47762, 41900, 79798, 44020, 170317, 71380),
-                cinc = c(0.182, 0.0997, 0.0396, 0.178, 0.0270, 0.138, 0.0591))
-polity <- tibble(country = c("United States", "Bolivia", "Australia", "Azerbaijan",
-                             "USSR", "Timor Leste", "Eritrea", "Qatar", "Gambia"),
-                 year = c(1776, 1825, 1901, 1991, 1922, 2002, 1993, 1971, 1965),
-                 polity2 = c(0, -3, 10, -3, -7, 6, -6, -10, 8))
-mid_recod <- read_csv("files/mid_recod.csv")
-relig_recod <- read_csv("files/relig_recod.csv")
-wb_recod <- read_csv("files/wb_recod.csv")
-wvs_recod <- read_csv("files/wvs_recod.csv")
-```
-
-## Introducció
-
-En moltes ocasions ens trobarem amb variables que necessiten ser recodificades. Recodificar una variable significa modificar els seus valors de manera parcial o total, fins al punt d'arribar a canviar el tipus de vector o de variable. Aquestes transformacions acostumen a anar en sentit invers a com les hem estudiat. És a dir, sovint recodificarem una variable de ràtio per convertir-la en una variable ordinal, però difícilment podrem recodificar una variable nominal o ordinal en una de ràtio. Això és degut a que les variables categòriques tenen menys informació que les numèriques. Per exemple, amb una categòrica podem saber solament si un país és "Ric" o "Pobre", però amb aquesta informació és impossible transformar els seus valors a una xifra numèrica concreta. En canvi, a la inversa ens resulta més fàcil: si sabem que un país té 15.000 dòlars per càpita, fàcilment podem transformar aquesta xifra a "Ric" o "Pobre" en base a algun criteri concret.
-
-Un resum del tipus de recodificacions que podem fer el trobem a la @tbl-recoding. A la primera columna veiem la variable de destí a la que ho volem recodificar i a la segona columna la funció que utilitzarem per fer la recodificació.  
 
 
-| Destí      | Funció                                          |
-|------------|-------------------------------------------------|
-| Binària    | `if_else()`                                     |
-| Categòrica | `case_when()`                                   |
-| Ordinal    | `factor()`                                      |
-| Qualsevol  | `recode()`                                      |
-| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
-
-: Variable de destí i funció que es necessita {#tbl-recoding}
-
-A l'hora de recodificar variables, els vectors lògics tenen una importància capital. Anteriorment ja havíem comentat que els vectors lògics eren molt importants, però en el darrer apartat hem vist que no estan explícitament associats a cap variable. Així doncs, de què ens serveix un vector lògic? Els vectors lògics són principalment eines operacionals. Això significa que ens serviran per crear les condicions que permetin canviar d'un tipus de variable a una altra o per filtrar les observacions d'un marc de dades. I per explotar les seves potencialitats necessitarem conèixer els operadors Booleans.
-
-Els **operadors Booleans** o relacionals ens permeten fer combinacions de valors de forma lògica. Per comprendre'n el seu funcionament, es recomana veure primer el vídeo de la dreta. En segon lloc, aplicarem els tres operadors Booleans (AND, OR i NOT) al marc de dades `ctr_pov`, que veiem sencer a la @tbl-pov del marge lateral.
-
-::: {.column-margin}
-::: {.callout-note}
-## Operadors Booleans
-{{< video https://youtu.be/6PpQS-YLWDQ >}}
-:::
-:::
-
-- L'operador **AND** (`&`) retorna TRUE només si es compleixen totes les condicions.
-- L'operador **OR** (`|`) retorna TRUE si es compleix una de les condicions.
-- L'operador **NOT** (`!`) retorna el contrari de la condició.
-
-```{r echo = F, eval = T}
-#| tbl-column: margin
-#| tbl-cap: Llindars de pobresa
-#| label: tbl-pov
-tibble(country = c("Armenia", "Austria", "Benin", "Bolivia",
-                              "Brazil", "Colombia", "El Salvador",
-                              "Ethiopia", "Honduras", "Indonesia"),
-                  continent = c("FSU", "EUR", "AFR", "AME", "AME", "AME", 
-                                "AME", "AFR", "AME", "ASI"),
-                  poverty = c(1.90, 0.7, 49.6, 6.4, 3.4, 4.5, 
-                              1.9, 26.7, 16.2, 7.2)) |> 
-  kable()
-```
 
 
 ```{r}
@@ -147,9 +64,6 @@ Països que no (NOT) siguin africans o (OR) que tinguin el llindar de pobresa in
 ```{r}
 !ctr_pov$continent == "AFR" | ctr_pov$poverty < 10
 ```
-
-Val a dir que, abans d'utilitzar OR i NOT, sempre trobarem combinacions més senzilles per aconseguir el mateix resultat.
-:::
 
 
 
