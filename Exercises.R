@@ -1,3 +1,8 @@
+
+Transformations -> Poverty
+booleans.png
+creador packages
+
 ## Nominals
 
 

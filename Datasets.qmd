@@ -311,6 +311,12 @@ tribble(~Tipus, ~Característiques, ~Vector, ~Operacions,
 - L'operador **OR** (`|`) retorna TRUE si es compleix una de les condicions.
 - L'operador **NOT** (`!`) retorna el contrari de la condició.
 
+```{r echo = FALSE, eval = F}
+#| fig-cap: Combinacions d'operadors Booleans
+#| label: fig-booleans
+#| fig-column: margin
+knitr::include_graphics("img/booleans.png")
+```
 
 
 ## Summary recoding

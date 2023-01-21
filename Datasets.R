@@ -106,14 +106,14 @@ suicide |>
 
 
 ### 2.1.1. DATAFRAME
-strings <- tribble(~iso3c, ~country, ~currency, ~continent, ~region,
-                   "CMR", "Cameroon", "CFA Franc BEAC", "Africa", "Sub-Saharan Africa",
-                   "COL", "Colombia", "Colombian Peso", "Americas", "Latin America & Caribbean",
-                   "CUB", "Cuba", "Cuban Peso", "Americas", "Latin America & Caribbean",
-                   "FRA", "France", "Euro", "Europe", "Europe & Central Asia",
-                   "LSO", "Lesotho", "Loti", "Africa", "Sub-Saharan Africa",
-                   "QAT", "Qatar", "Qatari Rial", "Asia", "Middle East & North Africa",
-                   "TWN", "Taiwan", "New Taiwan Dollar", "Asia", "East Asia & Pacific",
+strings <- tribble(~iso3c, ~country,           ~currency, ~continent, ~region,
+                   "CMR", "Cameroon",          "CFA Franc BEAC",           "Africa",   "Sub-Saharan Africa",
+                   "COL", "Colombia",          "Colombian Peso",           "Americas", "Latin America & Caribbean",
+                   "CUB", "Cuba",              "Cuban Peso",               "Americas", "Latin America & Caribbean",
+                   "FRA", "France",            "Euro",                     "Europe",   "Europe & Central Asia",
+                   "LSO", "Lesotho",           "Loti",                     "Africa",   "Sub-Saharan Africa",
+                   "QAT", "Qatar",             "Qatari Rial",              "Asia",     "Middle East & North Africa",
+                   "TWN", "Taiwan",            "New Taiwan Dollar",        "Asia",     "East Asia & Pacific",
                    "TTO", "Trinidad & Tobago", "Trinidad & Tobago Dollar", "Americas", "Latin America & Caribbean")
 strings
 
@@ -261,6 +261,8 @@ polity
 #    - Sometimes, sums and differences: +, -
 
 
+# Founded after 1900
+polity[polity$year > 1900,]
 
 # Difference between the foundation of the US and the foundation of the USSR
 polity$year[polity$country == "United States"] - polity$year[polity$country == "USSR"]
@@ -287,10 +289,10 @@ ratio
 ### 2.4.2. STORAGE
 #    - Numeric
 
-# 1.2e+07?
+# Scientific notation: 1.2e+07?
 12000000
 
-# 2.50+e08
+# Scientific notation: 2.50+e08
 250000000
 
 
@@ -326,7 +328,6 @@ ratio$country[ratio$cinc == max(ratio$cinc)]
 ## Which country had less military expenditure?
 ratio$country[ratio$milex == min(ratio$milex)]
 
-
 ## Which countries have military personnel above 1M?
 cinc[cinc$milper > 10000, ]
 
@@ -338,9 +339,9 @@ cinc
 
 # Countries in 1816?
 
-# Highest cinc index?
+# Highest CINC index?
 
-# Lowest military personnel per capita (milper/tpop)?
+# Country with the lowest military personnel per capita (milper/tpop)?
 
 
 
@@ -351,28 +352,86 @@ cinc
 
 ## 3.1. BOOLEAN OPERATORS
 
+#    - AND: & (all conditions must be present)
+#    - OR: | (any condition can be present)
+#    - NOT: ! (returns the contrary of the condition)
+
+ctr_pov <- tibble(country = c("Armenia", "Austria", "Benin", "Bolivia",
+                              "Brazil", "Colombia", "El Salvador",
+                              "Ethiopia", "Honduras", "Indonesia"),
+                  continent = c("ASI", "EUR", "AFR", "AME", "AME", "AME", 
+                                "AME", "AFR", "AME", "ASI"),
+                  poverty = c(1.90, 0.7, 49.6, 6.4, 3.4, 4.5, 
+                              1.9, 26.7, 16.2, 7.2))
+
+# African countries AND less than 30% below poverty line
+ctr_pov$continent == "AFR" & ctr_pov$poverty > 30
+
+# Not from Africa AND less than 10% below poverty line  
+ctr_pov$continent != "AFR" & ctr_pov$poverty < 10
+
+# American countries OR less than 30% below poverty line
+ctr_pov$continent == "AME" | ctr_pov$poverty > 30
+
+# NOT from Africa / less than 30% below poverty line
+!ctr_pov$continent %in% c("AFR", "AME") | ctr_pov$poverty < 10
 
 
-## 3.2. IF_ELSE
+
+## 3.2. IF_ELSE (dplyr)
+#    - if_else(condition, if TRUE, if FALSE)
+
+if_else(strings$continent == "Americas", 1, 0)
+
+if_else(strings$continent %in% c("Europe", "Asia"), "Eurasia", strings$continent)
+
+if_else(polity$polity2 > 5, "Democracy", "Autocracy")
+
+if_else(ratio$milex > 800000 & ratio$milper > 900, "Superpower", "Great Power")
 
 
 
-## 3.3. CASE_WHEN
+## 3.3. CASE_WHEN (dplyr)
+#    - case_when(condition1 ~ if TRUE,
+#                condition2 ~ if TRUE,
+#                condition3 ~ if TRUE,
+#                ..., 
+#                TRUE ~ if TRUE)
 
+case_when(polity$polity2 > 5 ~  "Democracy", 
+          polity$polity2 > -5 ~  "Anocracy",
+          TRUE ~ "Autocracy")
 
+polity$century <- case_when(polity$year < 1800 ~  "18c", 
+                            polity$year < 1900 ~  "19c",
+                            polity$year < 2000 ~  "20c",
+                            TRUE ~ "21c")
 
 ## 3.4. FACTOR
+#    - factor(vector)
+#    - factor(vector)
 
+factor(polity$century,
+       ordered = TRUE,
+       c("18c", "19c", "20c", "21c"))
 
 
 ## 3.5. RECODE
+#    - recode(vector, old_value, "new_value")
+
+recode(ords$donor, `Turkey-TIKA` = "Turkey-TIK")
+recode(ratio$country, UKG = "GBR", FRN = "FRA", GMY = "DEU")
+
+## 3.6. AS.XXXXXX
+#    - as.numeric(vector)
+#    - as.factor(vector)
+#    - as.character(vector)
+#    - as.integer(vector)
+#    - as.Date(vector)
+
+polity <- polity |>
+  mutate(across(country:polity2, ~ as.character(.)))
 
 
-
-
-
-
-
-
-
-
+polity$year <- as.numeric(polity$year)
+polity$polity2 <- as.numeric(polity$polity2)
