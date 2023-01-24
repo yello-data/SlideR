@@ -175,7 +175,7 @@ When the UA and the UO are not the same, we run the risk of having an ecological
 
 ::: aside
 
-- Berkeley admissions (see [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox){target="_blank"})
+- BERKELEY ADMISSIONS (see [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox){target="_blank"}).
 
 ```{r}
 uni <- tibble(faculty = rep(c("Psysics", "Politics", "Journalism"), times = 1, each = 2),
@@ -190,7 +190,7 @@ uni |>
   knitr::kable()
 ```
 
-- Suicide
+- SUICIDE (critique to Durkheim).
 
 ```{r}
 suicide <- tibble(region = c("Isère"),

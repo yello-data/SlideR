@@ -32,6 +32,8 @@ points(rlc$class[class], rlc$knowledge[class], col = "red")
 ### 1.1.1. Pivot longer
 #- pivot_longer(df, cols, names_to, names_to)
 
+https://www.idescat.cat/indicadors/?id=aec&n=15225
+
 table1
 pivot_longer(table1, cols = cases:population, 
              names_to = "variables", values_to = "values")
