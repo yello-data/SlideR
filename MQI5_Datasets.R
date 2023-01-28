@@ -108,6 +108,9 @@ suicide |>
 
 
 
+
+
+
 #####################################################################
 # PART 2. VARIABLES
 #####################################################################
@@ -332,20 +335,20 @@ ratio
 
 
 ## Which countries have military personnel above 1M?
-ratio$country[ratio$milper > 1000]
+ratio[ratio$milper > 1000, ]
 
 ## How many times the military expenditure of Germany is superior to the other great powers?
 ratio$milex_gmy <- ratio$milex[ratio$country == "GMY"] / ratio$milex
 ratio
 
 ## Which country has a military personnel below 1 percent of its population?
-ratio$country[1 > ratio$milper / ratio$tpop * 100]
+ratio[1 > ratio$milper / ratio$tpop * 100,]
 
 ## Which country had higher CINC index?
-ratio$country[ratio$cinc == max(ratio$cinc)]
+ratio[ratio$cinc == max(ratio$cinc),]
 
 ## Which country had less military expenditure?
-ratio$country[ratio$milex == min(ratio$milex)]
+ratio[ratio$milex == min(ratio$milex),]
 
 ## Which countries have military personnel above 1M?
 cinc[cinc$milper > 10000, ]
@@ -353,10 +356,11 @@ cinc[cinc$milper > 10000, ]
 
 ### 2.4.4. EXeRcIsE!!!!!
 
-cinc <- read_csv("https://correlatesofwar.org/wp-content/uploads/NMC_v4_0.csv")
-cinc
+#https://www.idescat.cat/indicadors/?id=aec&n=15903&t=202200
+id
 
-# Countries in 1816?
+# Populations above 1000 mts
+id$
 
 # Highest CINC index?
 
@@ -364,9 +368,9 @@ cinc
 
 
 
-### 2.4.5. IDESCAT
+### 2.4.5. 
 
-#https://www.idescat.cat/indicadors/?id=aec&n=15903&t=202200
+
 
 
 
