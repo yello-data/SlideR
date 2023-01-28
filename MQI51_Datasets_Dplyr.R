@@ -220,7 +220,7 @@ contractes_menors
 
 
 ### 3.3.1. SELECT
-# Select columns
+# Select vectors
 glimpse(accidents)
 
 accidents |> 
@@ -244,7 +244,7 @@ lloguer_any
 
   
 ### 3.3.2. MUTATE
-# Modifies the values of a column or creates a new one
+# Modifies the values of a vector or creates a new one
 
 municipi |> 
   mutate(densitat = poblacio / superficie_km2)
@@ -282,8 +282,11 @@ cens_gc |>
   summarize(tarragona = mean(provincia_desaparicio == "Tarragona", na.rm = T)) #percentatges, si posem vector lògic
 
 
+
+
+
 ### 3.4.3. GROUP_BY
-# Groups
+# Groups the data by some category
 
 #Mitjana assistència per àmbit
 festivals |> 
@@ -311,24 +314,23 @@ contractes_menors
 # Quim proveidor s'ha emportat més pasta 'menor' als contractes de l'Ajuntament de Barcelona?
 contractes_menors
 
+# Població per comarca
+municipi
 
 
-lloguer_any #2
-accidents #3
-contractes_menors #2
-festivals #3
-municipi #1
-lloguer_any #1
-rendacs #1
-cens_gc #1
+### Exemple de group_by amb filter
+lloguer_any |> 
+  group_by(nom_districte) |> 
+  filter(preu_m2 == max(preu_m2) | preu_m2 == min(preu_m2)) |> 
+  arrange(nom_districte)
 
-
-
-
-
-
-
-
+### Exemple de group_by amb mutate
+lloguer_any |> 
+  group_by(trimestre, nom_districte, any) |> 
+  mutate(m_distr_peu_m2 = mean(preu_m2)) |> 
+  ungroup() |> 
+  mutate(rel_distr = preu_m2 / m_distr_peu_m2) |> 
+  arrange(desc(rel_distr))
 
 
 
@@ -352,29 +354,64 @@ ctr_pov <- tibble(country = c("Armenia", "Austria", "Benin", "Bolivia",
                               1.9, 26.7, 16.2, 7.2))
 
 # African countries AND less than 30% below poverty line
-ctr_pov$continent == "AFR" & ctr_pov$poverty > 30
+ctr_pov |> 
+  filter(continent == "AFR" & poverty > 30)
 
 # Not from Africa AND less than 10% below poverty line  
-ctr_pov$continent != "AFR" & ctr_pov$poverty < 10
+ctr_pov |> 
+  filter(continent != "AFR" & poverty < 10)
 
 # American countries OR less than 30% below poverty line
-ctr_pov$continent == "AME" | ctr_pov$poverty > 30
+ctr_pov |> 
+  filter(continent == "AME" | ctr_pov$poverty > 30)
 
 # NOT from Africa / less than 30% below poverty line
-!ctr_pov$continent %in% c("AFR", "AME") | ctr_pov$poverty < 10
+ctr_pov |> 
+  filter(!continent %in% c("AFR", "AME") | ctr_pov$poverty < 10)
+
 
 
 
 ## 3.2. IF_ELSE (dplyr)
 #    - if_else(condition, if TRUE, if FALSE)
 
-if_else(strings$continent == "Americas", 1, 0)
 
-if_else(strings$continent %in% c("Europe", "Asia"), "Eurasia", strings$continent)
+#Ens hem adonat que no sabem si els accidents es van produir o no en cap de setmana
+accidents |> 
+  glimpse()
+unique(accidents$descripcio_tipus_dia)
+unique(accidents$descripcio_dia_setmana)
 
-if_else(polity$polity2 > 5, "Democracy", "Autocracy")
+accidents |> 
+  mutate(descripcio_dia_setmana = if_else(descripcio_tipus_dia %in% c("Dissabte", "Diumenge"),
+                                          "Cap de setmana", "Entre setmana"))
 
-if_else(ratio$milex > 800000 & ratio$milper > 900, "Superpower", "Great Power")
+
+#Volem saber quines persones van desaparèixer a Catalunya durant la guerra civil
+cens_gc |> 
+  glimpse() 
+  
+cens_gc |>
+  select(nom_desaparegut, sexe, provincia_desaparicio) |> 
+  mutate(cat_desaparicio = if_else(provincia_desaparicio %in% c("Tarragona", "Barcelona",
+                                                                "Girona", "Lleida"), "Catalunya", "Altres"))
+
+#Distingir els contractes menors de telefonia
+contractes_menors |> 
+  mutate(objecte_del_contracte = if_else(str_detect(objecte_del_contracte, "telef") | str_detect(objecte_del_contracte, "telèf"), 
+                                         "Telefonia", objecte_del_contracte))
+
+#### ExErSiSe!!!!
+
+#Dicotomitza les seccions censals de Barcelona segons si són riques
+rendacs
+hist(rendacs$import_euros)
+
+
+
+
+
+
 
 
 
@@ -385,6 +422,12 @@ if_else(ratio$milex > 800000 & ratio$milper > 900, "Superpower", "Great Power")
 #                ..., 
 #                TRUE ~ if TRUE)
 
+polity <- tibble(country = c("United States", "Bolivia", "Australia", "Azerbaijan",
+                             "USSR", "Timor Leste", "Eritrea", "Qatar", "Gambia"),
+                 year = c(1776, 1825, 1901, 1991, 1922, 2002, 1993, 1971, 1965),
+                 polity2 = c(0, -3, 10, -3, -7, 6, -6, -10, 8))
+polity
+
 case_when(polity$polity2 > 5 ~  "Democracy", 
           polity$polity2 > -5 ~  "Anocracy",
           TRUE ~ "Autocracy")
@@ -393,6 +436,15 @@ polity$century <- case_when(polity$year < 1800 ~  "18c",
                             polity$year < 1900 ~  "19c",
                             polity$year < 2000 ~  "20c",
                             TRUE ~ "21c")
+
+# Volem separar els municipis en funció de: Barcelona, Grans, Mitjans, Petits
+municipi
+
+
+
+
+
+
 
 ## 3.4. FACTOR
 #    - factor(vector)
@@ -403,11 +455,20 @@ factor(polity$century,
        c("18c", "19c", "20c", "21c"))
 
 
-## 3.5. RECODE
-#    - recode(vector, old_value, "new_value")
 
-recode(ords$donor, `Turkey-TIKA` = "Turkey-TIK")
-recode(ratio$country, UKG = "GBR", FRN = "FRA", GMY = "DEU")
+## 3.5. RECODE
+#    - recode(vector, old_value = "new_value")
+
+
+#Veiem que Sants-Montjuïc no està ben posat:
+accidents |> 
+  glimpse()
+
+accidents |> 
+  mutate(nom_districte = recode(nom_districte, `Sants-Montjuďc` = "Sants-Montjuïc"))
+
+
+
 
 ## 3.6. AS.XXXXXX
 #    - as.numeric(vector)
