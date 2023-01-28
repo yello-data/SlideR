@@ -1,0 +1,92 @@
+---
+title: "Ggplot2"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+- Layers
+- Row dplyr functions
+- Column dplyr functions
+- Transform variables
+
+# Warm up {background-color="#e8e8e8"}
+
+## R learning curve
+
+```{r}
+library(dplyr)
+rlc <- tibble(class = 1:8,
+             knowledge = (1:8)^3)
+class <- 5
+plot(rlc$class, rlc$knowledge)
+points(rlc$class[class], rlc$knowledge[class], col = "red")
+```
+
+# Layers {background-color="#e8e8e8"}
+
+## Basic layers
+
+Almost always, a ggplot consists of three layers:
+
+- 1. Dataframe
+- 2. Aesthetics
+- 3. Geometry
+
+```{r echo = T, eval = F}
+df |> 
+  ggplot(aes(aestethics)) +
+  geometry()
+```
+
+## Optional layers
+
+Optionally, we add more layers, such as:
+
+- 4. Facet
+- 5. Coordinates
+- 6. Scale
+- 7. Theme
+- 8. Etc
+
+
+## Layered example
+
+Example of a full-equipped plot.
+
+```{r echo = T, eval = F}
+bins |> 
+  ggplot(aes(x = pvote, y = n, fill = type)) +
+  geom_bar(stat = "identity", show.legend = F) + 
+  geom_hline(yintercept = 0, size = 0.3) +
+  scale_fill_manual(values = c("grey65", "grey35")) +
+  facet_share(~type, dir = "h", scales = "free", reverse_num = TRUE) +
+  coord_flip() +
+  labs(x = NULL, fill = NULL, y = "Vote") +
+  theme(panel.background = element_blank(),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 16),
+        text = element_text(size = 15),
+        axis.line.x = element_line(size = 0.3),
+        axis.title.x = element_text(vjust=125, size = 14))
+```
+
+
+
+# Warm up {background-color="#e8e8e8"}
+
+
+

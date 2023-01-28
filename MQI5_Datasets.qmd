@@ -247,7 +247,7 @@ suicide
 
 
 
-## Types of variables (I): Nominal
+## Types of variables (1a): Nominal
 
 Unordered categories:
 
@@ -257,12 +257,19 @@ Unordered categories:
 - **Ideology:** Conservatism, Nationalism, Liberal...
 - **Political parties:** PSOE, PP, Cs, ERC...
 
-For strings, [`stringr`](https://stringr.tidyverse.org/){target="_blank"} [@R-stringr]. 
+For strings, [`stringr`](https://stringr.tidyverse.org/){target="_blank"} [@R-stringr] | [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
 
-- [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
+## Types of variables (1b): Nominal
+
+- **Storage:** Character, factor
+
+- **Operations:**
+  - Equality: `==`
+  - Equality: `%in%`
+  - Not equality: `!=`
 
 
-## Types of variables (II): Ordinal
+## Types of variables (2a): Ordinal
 
 Ordered categories:
 
@@ -271,12 +278,24 @@ Ordered categories:
 - **Education:** Primary, Secondary, Tertiary.
 - **Ideas:** Disagree, Neutral, Agree.
 
-For factors, [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@R-forcats].
-
-- [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
+For factors, [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@R-forcats] | [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
 
 
-## Types of variables (III): Interval
+## Types of variables (2b): Ordinal {.scrollable}
+
+- **Storage:** Ordered factor
+
+- **Operations:**
+  - Equality: `==`
+  - Equality: `%in%`
+  - Not equality: `!=`
+  - More than: `>`
+  - More or equal than: `>=`
+  - Less than: `<`
+  - Less or equal than: `<=`
+  
+
+## Types of variables (3a): Interval
 
 Numbers, zero is arbitrary.
 
@@ -285,10 +304,26 @@ Numbers, zero is arbitrary.
 - **Ideology:** Left-right measured as 0-10.
 - **Coordinates:** Longitude and latitude.
 
-Data available: [Polity V](https://www.systemicpeace.org/polityproject.html){target="_blank"}.
 
 
-## Types of variables (IV): Ratio
+## Types of variables (3b): Interval {.scrollable}
+
+- **Storage:** Numeric, integer, date
+
+- **Operations:**
+  - Equality: `==`
+  - Equality: `%in%`
+  - Not equality: `!=`
+  - More than: `>`
+  - More or equal than: `>=`
+  - Less than: `<`
+  - Less or equal than: `<=`
+  - Sums and differences: `+`, `-`
+  - Max and min: `max()`, `min()`
+
+
+
+## Types of variables (4a): Ratio {.scrollable}
 
 Numbers, zero has meaning
 
@@ -297,45 +332,37 @@ Numbers, zero has meaning
 - **Population:** 200, 3345000, 13000000.
 - **Indices** (not all of them)**:** 0.245, 0.999.
 
-Data available: [National Material Capabilities (NMC)](https://correlatesofwar.org/data-sets/national-material-capabilities){target="_blank"} dataset [@Singer1987; @Singer1972]. 
+
+## Types of variables (4b): Ratio {.scrollable}
+
+- **Storage:** Numeric
+
+- **Operations:**
+  - Equality: `==`
+  - Equality: `%in%`
+  - Not equality: `!=`
+  - More than: `>`
+  - More or equal than: `>=`
+  - Less than: `<`
+  - Less or equal than: `<=`
+  - Sums: `+`
+  - Differences: `-`
+  - Multiplication: `*`
+  - Division: `/`
+  - Other: `sqrt()`, `log()`, `exp()`, `max()`, `min()`, `mean()`...
+
+
 
 ## Types of variables (V): Summary
 
 ```{r echo = FALSE}
 tribble(~Tipus, ~Característiques, ~Vector, ~Operacions, 
-        "Categòrica nominal", "Categories no ordenables", "Caràcter o factor", "==, !=",
-        "Categòrica ordinal", "Categories ordenables", "Factor", "==, !=, <=, <, >, >=",
+        "Categòrica nominal", "Categories no ordenables", "Caràcter o factor", "==, %in%, !=",
+        "Categòrica ordinal", "Categories ordenables", "Factor", "==, %in%, !=, <=, <, >, >=",
         "Numèrica d'interval", "Nombres, zero sense significat", "Numèric o enter", "==, !=, <=, <, >, >=, +, -",
         "Numèrica de ràtio", "Nombres, zero amb significat", "Numèric", "==, !=, <=, <, >, >=, +, -, *, / ...") |> 
   knitr::kable()
 ```
-
-
-# Recoding variables {background-color="#e8e8e8"}
-
-## Boolean operators
-
-
-- **AND** (`&`): TRUE if all conditions are met.
-- **OR** (`|`): TRUE if any condition is met.
-- **NOT** (`!`): TRUE if conditions are not met.
-
-```{r echo = FALSE}
-#| fig-column: margin
-knitr::include_graphics("img/booleans.png")
-```
-
-
-## Summary recoding
-
-
-| Destí      | Funció                                          |
-|------------|-------------------------------------------------|
-| Binària    | `if_else()`                                     |
-| Categòrica | `case_when()`                                   |
-| Ordinal    | `factor()`                                      |
-| Qualsevol  | `recode()`                                      |
-| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
 
 
 
