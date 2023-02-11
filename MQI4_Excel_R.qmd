@@ -25,6 +25,12 @@ editor_options:
 -   Functions in R
 -   Types of data files
 
+## Warm up
+
+Paint the fence, first.
+
+![](img/paint_fence.jpeg)
+
 
 # Excel {background-color="#e8e8e8"}
 
@@ -54,6 +60,7 @@ Microsoft Excel:
 -   Insert -\> Table
 
 # R {background-color="#e8e8e8"}
+
 
 ## RStudio workflow
 

@@ -1,0 +1,462 @@
+---
+title: "Dplyr II"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+- Summarize categoric variables
+- Summarize numeric variables
+- Summarize and group_by functions
+- Recoding variables
+
+# Warm up {background-color="#e8e8e8"}
+
+## R learning curve
+
+```{r}
+library(dplyr)
+festivals <- readRDS("data/festivals.rds")
+lloguer_any <- readRDS("data/lloguer_any.rds")
+cens_gc <- readRDS("data/cens_gc.rds")
+municipi <- readRDS("data/municipi.rds")
+rlc <- tibble(class = 1:8,
+             knowledge = (1:8)^3)
+class <- 5
+plot(rlc$class, rlc$knowledge)
+points(rlc$class[class], rlc$knowledge[class], col = "red")
+```
+
+## RStudio workflow
+
+**Load packages.**
+
+```{r echo = T, message=F, warning=F}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(stringr)
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
+
+
+
+# Summarize categoric variables {background-color="#e8e8e8"}
+
+## Categoric variables
+
+```{r echo = T, eval = T}
+festivals$ambit
+```
+
+
+## Categoric variables {.scrollable}
+
+**Mode**: Most repeated value.
+
+- Count: `count(d, v, sort = T)` 
+
+```{r echo = T, eval = T}
+count(festivals, ambit, sort = T)
+```
+
+- Frequency table: `table(df$v)`
+
+```{r echo = T, eval = T}
+table(festivals$ambit)
+```
+
+- Percentage FT: `prop.table(table(df$v)) * 100`
+
+```{r echo = T, eval = T}
+prop.table(table(festivals$ambit)) * 100
+```
+
+
+- Bar plot: `barplot(table(df$v))`
+
+```{r echo = T, eval = T}
+barplot(table(festivals$ambit))
+```
+
+- En %: `barplot(prop.table(table(df$v)))`
+
+```{r echo = T, eval = T}
+barplot(prop.table(table(festivals$ambit)))
+```
+
+
+```{r eval = F}
+table(festivals$ambit)
+barplot(table(festivals$ambit))
+count(cens_gc, indret_desaparicio)
+```
+
+
+# Summarize numeric variables {background-color="#e8e8e8"}
+
+## Numeric variables
+
+Central value: Where is the center?
+
+```{r echo = T, eval = T}
+lloguer_any$preu
+```
+
+
+
+## Numeric variables
+
+Central value: Where is the center? `median()`, `mean()`.
+
+![](img/uni-mean-median.png)
+
+## Numeric variables
+
+Central value: Where is the center?
+
+[![](img/gdp-median-nyt.png)](https://www.nytimes.com/2014/09/17/upshot/you-cant-feed-a-family-with-gdp.html)
+
+## Numeric variables
+
+Central value: Where is the center?
+
+![](img/uni-mean-extreme.png)
+
+
+## Numeric variables
+
+Central value: Mode? `hist(df$v)`.
+
+
+::: {.panel-tabset}
+
+## As. negative
+```{r}
+hist(municipi$altitud_m)
+```
+
+## Normal
+```{r}
+hist(lloguer_any$preu_m2)
+```
+
+
+## As. positive
+
+```{r}
+hist(c(rnorm(1:5, 35, 20), rnorm(1:50, 50, 15), rnorm(1:70, 70, 2)))
+```
+
+
+## Bimodal
+
+```{r}
+hist(c(rnorm(1:100, 30, 10), rnorm(1:100, 70, 10)))
+```
+
+
+:::
+
+## Numeric variables
+
+Dispersion: How dispersed are the numbers?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+- Min: `min()`
+- Max: `max()`
+- Range: `diff(range())`
+- Quantiles: `quantile()`
+- InterQuartilic Range: `IQR()`
+:::
+
+::: {.column width="35%"}
+![](img/uni-dispersion-range.png)
+:::
+
+::::
+
+
+## Numeric variables {.scrollable}
+
+Dispersion: How dispersed are the numbers?
+
+Min: `min()`
+
+```{r echo = T, eval = T}
+min(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+Max: `max()`
+
+```{r echo = T, eval = T}
+max(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+Range: `diff(range())`
+
+```{r echo = T, eval = T}
+diff(range(cens_gc$periode_desaparicio_1, na.rm = T))
+```
+
+Quantiles: `quantile()`
+
+```{r echo = T, eval = T}
+quantile(cens_gc$periode_desaparicio_1, 0.25, na.rm = T)
+quantile(cens_gc$periode_desaparicio_1, 0.75, na.rm = T)
+```
+
+Interquartílic Range: `IQR()`
+
+```{r echo = T, eval = T}
+IQR(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+
+
+
+## Numeric variables
+
+Dispersion: How dispersed are the numbers?
+
+- **Standard deviation:** How far from the mean? `sd()
+
+![](img/uni-dispersion-sd.png)
+
+## Numeric variables {.scrollable}
+
+Dispersion: How dispersed are the numbers?
+
+- What is _exactly_ the standard deviation? Follow the example:
+
+A. We have a dataframe, with two numeric vectors.
+
+```{r echo = T, eval = T}
+devs <- tibble(vec1 = c(2, 6, 4, 8),
+               vec2 = c(1, 9, 3, 7))
+```
+
+B. Both vectors have the same mean.
+
+```{r echo = T, eval = T}
+mean(devs$vec1)
+mean(devs$vec2)
+```
+
+C. But how far vector's values are from the mean? Visually, we observe that values in `vec2` are, _on average_, farther from the mean than values in `vec1`. Reproduce this code in your computer:
+
+```{r echo = T, eval = T}
+devs |> 
+  pivot_longer(vec1:vec2) |> 
+  ggplot(aes(x = name, y = value)) +
+  geom_point(aes(col = name), size = 4) +
+  stat_summary(geom = "point", size = 4) +
+  theme_minimal()
+```
+
+D. The standard deviation calculates this distance. Although it does not exactly calculate the _average_. What it does is the following. Take the example of `vec1`:
+
+- First, it calculates the distance of each value from the mean.
+
+```{r echo = T, eval = T}
+diff <- devs$vec1 - mean(devs$vec1)
+diff
+```
+
+- Then, it squares the difference (so, the farther values weight more than the closer values).
+
+```{r echo = T, eval = T}
+sq_diff <- diff^2
+sq_diff
+```
+
+- Then, it sums the values, and divides the result by the number of cases minus one. This result is called the **variance**.
+
+```{r echo = T, eval = T}
+variance <- sum(sq_diff) / (length(sq_diff) - 1)
+variance
+```
+
+- The **standard deviation** is the squared root of the variance.
+
+```{r echo = T, eval = T}
+sqrt(variance)
+```
+
+
+E. All in one:
+
+```{r echo = T, eval = T}
+devs |> 
+  mutate(across(vec1:vec2, ~ . - mean(.))) |> # distance from the mean
+  mutate(across(vec1:vec2, ~ .^2)) |> # square all values
+  summarize(across(vec1:vec2, ~ sum(.) / (length(.) - 1))) |> #sum and divide number of cases
+  mutate(across(vec1:vec2, ~ sqrt(.))) #square root
+```
+
+
+F. Or easier:
+
+```{r echo = T, eval = T}
+devs |> 
+  summarize(across(vec1:vec2, ~ sd(.)))
+```
+
+G. What if, instead of the standard deviation, we calculate the average distance from the mean? First we calculate the absolute distance of each value.
+
+```{r echo = T, eval = T, collapse=TRUE}
+abs_dist1 <- abs(devs$vec1 - mean(devs$vec1))
+abs_dist2 <- abs(devs$vec2 - mean(devs$vec2))
+```
+
+And then we calculate the average.
+
+```{r echo = T, eval = T, collapse=TRUE}
+mean(abs_dist1)
+mean(abs_dist2)
+```
+
+Since the standard deviation first squares the values, the results tend to be higher than calculating the average distance.
+
+
+# Summarize and group_by functions {background-color="#e8e8e8"}
+
+## Summarize function
+
+- Summarizes data.
+
+```{r echo = T, eval = F}
+df |> 
+  summarize(name = sum(vector))
+```
+
+- Different elements can be summarized:
+
+```{r echo = T, eval = F}
+df |> 
+  summarize(name1 = sum(vector_a),
+            name2 = mean(vector_z),
+            n = n())
+```
+
+*Mind the argument `na.rm = T`.
+
+
+## Group_by   
+
+- Always combined with another function (e.g. `summarize`, `filter`, `mutate`), it groups the data by the values of a vector^[This vector is usually a character vector or a factor, but it can be another vector with few categories.]...
+
+```{r echo = T, eval = F}
+df |> 
+  group_by(vector) |> 
+  summarize(name1 = sum(vector))
+```
+
+*With group_by and summarize, we change the __unit of observation__ of the dataset.
+
+
+# Recoding vectors {background-color="#e8e8e8"}
+
+## Recoding
+
+When we recode variables (vectors), we lose information.
+
+| Destí      | Funció                                          |
+|------------|-------------------------------------------------|
+| Binària    | `if_else()`                                     |
+| Categòrica | `case_when()`                                   |
+| Ordinal    | `factor()`                                      |
+| Qualsevol  | `recode()`                                      |
+| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
+
+
+## Boolean operators
+
+
+- **AND** (`&`): TRUE if all conditions are met.
+- **OR** (`|`): TRUE if any condition is met.
+- **NOT** (`!`): TRUE if conditions are not met.
+
+```{r echo = FALSE}
+#| fig-column: margin
+knitr::include_graphics("img/booleans.png")
+```
+
+
+
+## If_else
+
+- To a dichotomous / binary / dummy variable.
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_name = if_else(logic operation, true, false))
+```
+
+
+
+
+## Case_when
+
+```{r echo = T, eval = F}
+case_when(logic operation ~ "C1"
+          logic operation ~ "C2",
+          logic operation ~ "C3",
+          ...,
+          TRUE ~ "CN")
+```
+
+
+
+## Factor
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_vector = factor(wb$income_group, 
+                             ordered = TRUE,
+                             [levels o labels = ...]))
+```
+
+
+## Recode
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_vector = recode(vector, 
+                             old_value = "new_value"))
+```
+
+## As functions
+
+- `as.numeric(vector)`
+- `as.factor(vector)`
+- `as.character(vector)`
+- `as.integer(vector)`
+- `as.Date(vector)`
+
+
+# Last thing {background-color="#e8e8e8"}
+
+## As functions
+
+[Dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}
+
+

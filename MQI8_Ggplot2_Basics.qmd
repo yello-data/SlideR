@@ -1,0 +1,219 @@
+---
+title: "Ggplot2"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+- Layers
+- Row dplyr functions
+- Column dplyr functions
+- Transform variables
+
+# Warm up {background-color="#e8e8e8"}
+
+## R learning curve
+
+```{r}
+library(dplyr)
+library(ggplot2)
+cens_gc <- readRDS("data/cens_gc.rds")
+rendacs <- readRDS("data/rendacs.rds")
+lloguer_any <- readRDS("data/lloguer_any.rds")
+rlc <- tibble(class = 1:8,
+             knowledge = (1:8)^3)
+class <- 6
+plot(rlc$class, rlc$knowledge)
+points(rlc$class[class], rlc$knowledge[class], col = "red")
+```
+
+## Z-Scores
+
+```{r echo = T}
+rendacs |>
+  mutate(zs_gdp = (import_euros - mean(import_euros)) / sd(import_euros),
+         zs_gini = (mean(index_gini) - index_gini) / sd(index_gini),
+         upf_index = (zs_gdp + zs_gini) / 2) |> 
+  arrange(desc(upf_index))
+```
+
+
+
+## Warm up
+
+Paint the fence, first...
+
+![](img/paint_fence.jpeg)
+
+## Warm up
+
+...karate later.
+
+![](img/karate-practice.gif)
+
+
+## Warm up
+
+Data wrangling
+
+![](img/minority.gif)
+
+
+## Made with ggplot
+
+- [Visuals](https://www.jordimas.cat/courses/dataanalysis_en/visualize/data_analysis_en_visualization/){target="_blank"}
+- [Extensions](https://exts.ggplot2.tidyverse.org/gallery/){target="_blank"}
+- [Cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf){target="_blank"}
+
+# Layers {background-color="#e8e8e8"}
+
+## Basic layers
+
+Almost always, a ggplot consists of three layers^[Layers are separated by `+`, not by a pipe!!!!]:
+
+- 1. Dataframe
+- 2. Aesthetics
+- 3. Geometry
+
+```{r echo = T, eval = F}
+df |> 
+  ggplot(aes(aestethics)) +
+  geometry()
+```
+
+
+
+
+## Optional layers
+
+Optionally, we add more layers, such as:
+
+- 4. Facet
+- 5. Coordinates
+- 6. Scale
+- 7. Theme
+- 8. Etc
+
+
+## Layered example
+
+Example of a full-equipped plot.
+
+```{r echo = T, eval = F}
+bins |> 
+  ggplot(aes(x = pvote, y = n, fill = type)) +
+  geom_bar(stat = "identity", show.legend = F) + 
+  geom_hline(yintercept = 0, size = 0.3) +
+  scale_fill_manual(values = c("grey65", "grey35")) +
+  facet_share(~type, dir = "h", scales = "free", reverse_num = TRUE) +
+  coord_flip() +
+  labs(x = NULL, fill = NULL, y = "Vote") +
+  theme(panel.background = element_blank(),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 16),
+        text = element_text(size = 15),
+        axis.line.x = element_line(size = 0.3),
+        axis.title.x = element_text(vjust=125, size = 14))
+```
+
+
+
+# Aesthetics {background-color="#e8e8e8"}
+
+## Aesthetics {.scrollable}
+
+Inside `aes()`, what is represented by a variable:
+
+```{r echo = T}
+rendacs |> 
+  ggplot(aes(x = import_euros, y = index_gini, col = nom_districte)) +
+  geom_point()
+```
+
+- `x`: variable in the horizontal axis.
+- `y`: variable in the vertical axis.
+- `col`: color of the geometry.
+
+
+
+## Aesthetics vs. attributes {.scrollable}
+
+**Aesthetics** represent a variable. Always within the `aes()` function.
+
+    aesthetic = variable
+
+- E.g. 
+  - `x = gdp`
+  - `col = continent`
+
+**Attributes** represent characteristics of geometry. Outside the `aes()`, normally in the `geom_xxx()` function:
+
+    attribute = characteristic
+
+- E.g.
+  - `col = "red"`
+  - `size = 2`
+
+## Aesthetics vs. attributes {.scrollable}
+
+- `size`: size of the geometry.
+- `alpha`: transparency.
+- `labels`: names.
+
+```{r echo = T}
+rendacs |> 
+  ggplot(aes(x = import_euros, y = index_gini)) +
+  geom_point(col = "red")
+```
+
+## Aesthetics {.scrollable}
+
+Other aesthetics:
+
+- `fill`: For bars, polygons, and things to be painted.
+- `shape`: Mostly for points.
+- `linetype`: For lines.
+
+THERE ARE 32 AESTHETICS!
+
+## Geometry
+
+- `geom_bar()` / `geom_col()`
+- `geom_point()`
+- `geom_boxplot()`
+- `geom_smooth()`
+
+
+
+## Facet {.scrollable}
+
+Different plots 
+
+```{r}
+lloguer_any |> 
+  ggplot(aes(x = preu, y = preu_m2, col = nom_districte)) +
+  geom_point() +
+  facet_grid(.~any)
+```
+
+
+## Advanced
+
+- Put the aesthetics in the geom function.
+
+
+
+
