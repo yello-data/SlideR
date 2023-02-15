@@ -25,6 +25,8 @@ elecc19 <- read_xlsx("02_201911_1.xlsx", skip = 5) |>
 # 4. GLIMPSE DATA
 elecc19
 glimpse(elecc19)
+unique(elecc19$nombre_de_comunidad)
+unique(elecc19$nombre_de_provincia)
 
 
 # 5. EXERCISE

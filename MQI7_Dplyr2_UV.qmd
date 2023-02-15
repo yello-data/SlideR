@@ -163,6 +163,7 @@ hist(lloguer_any$preu_m2)
 hist(c(rnorm(1:5, 35, 20), rnorm(1:50, 50, 15), rnorm(1:70, 70, 2)))
 ```
 
+MARKS RSTUDIO 2023!!!
 
 ## Bimodal
 
