@@ -5,7 +5,7 @@ library(foreign)
 library(haven)
 
 
-#IDESCAT
+# 2. IDESCAT
 
 # Renda familiar disponible:
 # https://www.idescat.cat/pub/?id=rfdbc&n=13301&by=mun
@@ -19,11 +19,11 @@ library(haven)
 # https://www.idescat.cat/codis/?id=50&n=9
 
 
-# 3. ESTATS
+# 3. STATES
 
-#https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset
-read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_cs_jan23.csv") #cross-section
-read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_ts_jan23.csv") #time-series
+#Quality of Government Institute: https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset
+qog_cs <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_cs_jan23.csv") #cross-section
+qog_ts <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_ts_jan23.csv") #time-series
 
 
 #GAME OF THRONES
@@ -47,6 +47,8 @@ count(rs, Year, sort = T) |>
   ggplot(aes(x = Year, y = n)) +
   geom_line()
 
+#
+
 # Food consumption and CO2 emissions: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-18/readme.md
 # Tour de France winners: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-04-07/readme.md
 # Human Rights Violations: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-04-21/readme.md
@@ -55,7 +57,7 @@ count(rs, Year, sort = T) |>
 # Board Games: https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12
 # IMdb: https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-08
 imdb <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-01-08/IMDb_Economist_tv_ratings.csv")
-#Comic characters
+#Comic characters: https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-29
 comic <- read_csv("https://github.com/rfordatascience/tidytuesday/raw/master/data/2018/2018-05-29/week9_comic_characters.csv")
 # Friends: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-08/readme.md
 # Hollywood age gaps: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-02-14/readme.md
