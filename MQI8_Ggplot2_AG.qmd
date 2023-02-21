@@ -372,7 +372,7 @@ Similar to density plot: `geom_violin()`
 
 ```{r echo = T}
 #| code-fold: true
-  elecc19 |>
+elecc19 |>
   filter(nombre_de_comunidad == "Andalucía") |> 
   mutate(cs_per = cs / poblacion * 100) |> 
   ggplot(aes(x = fct_reorder(nombre_de_provincia, cs_per), y = cs_per)) +

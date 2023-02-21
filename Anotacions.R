@@ -41,6 +41,7 @@
 #- Què entendrà? Estructura de dades!!!
 #- Perfectly interchangable: sum(df$v) /  summarize(df, v = sum(v))
 
+#NO COPIEU I ENGANXEU CODI!!!!!!!!!!!
 
 # Cas estudi contractes menors
 
