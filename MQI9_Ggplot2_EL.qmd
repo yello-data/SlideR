@@ -505,3 +505,8 @@ Use Cheat Sheet & Manuals:
 
 
 
+## More vizz
+
+- [Datawrapper](https://xarxanet.org/informatic/recursos/com-fer-un-grafic-interactiu-amb-datawrapper)
+
+

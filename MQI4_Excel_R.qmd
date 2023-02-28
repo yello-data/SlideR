@@ -27,9 +27,22 @@ editor_options:
 
 ## Warm up
 
-Paint the fence, first.
+Paint the fence, first...
 
 ![](img/paint_fence.jpeg)
+
+## Warm up
+
+...karate later.
+
+![](img/karate-practice.gif)
+
+
+## Warm up
+
+Data wrangling
+
+![](img/minority.gif)
 
 
 # Excel {background-color="#e8e8e8"}

@@ -21,7 +21,6 @@ editor_options:
 - Summarize categoric variables
 - Summarize numeric variables
 - Summarize and group_by functions
-- Recoding variables
 
 # Warm up {background-color="#e8e8e8"}
 
@@ -238,7 +237,7 @@ IQR(cens_gc$periode_desaparicio_1, na.rm = T)
 
 Dispersion: How dispersed are the numbers?
 
-- **Standard deviation:** How far from the mean? `sd()
+- **Standard deviation:** How far from the mean? `sd()`
 
 ![](img/uni-dispersion-sd.png)
 
@@ -372,92 +371,4 @@ df |>
 ```
 
 *With group_by and summarize, we change the __unit of observation__ of the dataset.
-
-
-# Recoding vectors {background-color="#e8e8e8"}
-
-## Recoding
-
-When we recode variables (vectors), we lose information.
-
-| Destí      | Funció                                          |
-|------------|-------------------------------------------------|
-| Binària    | `if_else()`                                     |
-| Categòrica | `case_when()`                                   |
-| Ordinal    | `factor()`                                      |
-| Qualsevol  | `recode()`                                      |
-| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
-
-
-## Boolean operators
-
-
-- **AND** (`&`): TRUE if all conditions are met.
-- **OR** (`|`): TRUE if any condition is met.
-- **NOT** (`!`): TRUE if conditions are not met.
-
-```{r echo = FALSE}
-#| fig-column: margin
-knitr::include_graphics("img/booleans.png")
-```
-
-
-
-## If_else
-
-- To a dichotomous / binary / dummy variable.
-
-```{r echo = T, eval = F}
-df |> 
-  mutate(new_name = if_else(logic operation, true, false))
-```
-
-
-
-
-## Case_when
-
-```{r echo = T, eval = F}
-case_when(logic operation ~ "C1"
-          logic operation ~ "C2",
-          logic operation ~ "C3",
-          ...,
-          TRUE ~ "CN")
-```
-
-
-
-## Factor
-
-```{r echo = T, eval = F}
-df |> 
-  mutate(new_vector = factor(wb$income_group, 
-                             ordered = TRUE,
-                             [levels o labels = ...]))
-```
-
-
-## Recode
-
-```{r echo = T, eval = F}
-df |> 
-  mutate(new_vector = recode(vector, 
-                             old_value = "new_value"))
-```
-
-## As functions
-
-- `as.numeric(vector)`
-- `as.factor(vector)`
-- `as.character(vector)`
-- `as.integer(vector)`
-- `as.Date(vector)`
-
-
-# Last thing {background-color="#e8e8e8"}
-
-## As functions
-
-[Dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}
-
 

@@ -1,0 +1,158 @@
+---
+title: "Recoding"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Summary
+
+- Boolean operations
+- If_else
+- Case_when
+- Recode
+- As functions
+
+# Warm up {background-color="#e8e8e8"}
+
+## R learning curve
+
+```{r}
+library(dplyr)
+library(ggplot2)
+festivals <- readRDS("data/festivals.rds")
+lloguer_any <- readRDS("data/lloguer_any.rds")
+cens_gc <- readRDS("data/cens_gc.rds")
+municipi <- readRDS("data/municipi.rds")
+rlc <- tibble(class = 1:8,
+             knowledge = (1:8)^3)
+lesson <- 8
+rlc |> 
+  ggplot(aes(x = class, y = knowledge)) +
+  geom_line(size = 1) +
+  geom_point(data = rlc |> 
+               filter(class == lesson), col = "red") +
+  annotate("text", x = 4.5, y = 375, label = "You are here!") +
+  geom_curve(aes(x = 5, xend = 7.8, y = 400, yend = 515),
+             arrow = arrow(length = unit(0.08, "inch")), size = 0.5,
+             color = "gray40", curvature = -0.3) +
+  theme_minimal() +
+  labs(x = "Class number", y = "Knowledge", title = "The R Knowledge curve")
+```
+
+## Hall of fame
+
+Best plots!
+
+
+
+## RStudio workflow
+
+**Load packages.**
+
+```{r echo = T, message=F, warning=F}
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(forcats)
+library(readxl)
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
+
+
+
+# Summary {background-color="#e8e8e8"}
+
+## Recoding
+
+When we recode variables, we lose information^[Search here for the [dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}].
+
+| Destí      | Funció                                          |
+|------------|-------------------------------------------------|
+| Binària    | `if_else()`                                     |
+| Categòrica | `case_when()`                                   |
+| Ordinal    | `factor()`                                      |
+| Qualsevol  | `recode()`                                      |
+| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
+
+
+## Boolean operators
+
+
+- **AND** (`&`): TRUE if all conditions are met.
+- **OR** (`|`): TRUE if any condition is met.
+- **NOT** (`!`): TRUE if conditions are not met.
+
+```{r echo = FALSE}
+#| fig-column: margin
+knitr::include_graphics("img/booleans.png")
+```
+
+
+
+## If_else
+
+- To a dichotomous / binary / dummy variable.
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_name = if_else(logic operation, true, false))
+```
+
+
+
+
+## Case_when
+
+```{r echo = T, eval = F}
+case_when(logic operation ~ "C1"
+          logic operation ~ "C2",
+          logic operation ~ "C3",
+          ...,
+          TRUE ~ "CN")
+```
+
+
+
+## Factor
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_vector = factor(wb$income_group, 
+                             ordered = TRUE,
+                             [levels o labels = ...]))
+```
+
+
+## Recode
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_vector = recode(vector, 
+                             old_value = "new_value"))
+```
+
+## As functions
+
+- `as.numeric(vector)`
+- `as.factor(vector)`
+- `as.character(vector)`
+- `as.integer(vector)`
+- `as.Date(vector)`
+
+
+
