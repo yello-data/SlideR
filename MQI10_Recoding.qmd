@@ -1,5 +1,5 @@
 ---
-title: "Recoding"
+  title: "Recoding"
 subtitle: "Quantitative Methodology (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
@@ -7,21 +7,20 @@ footer: "Quantitative Methodology (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
-    embed-resources: true
-    slide-number: true
-    show-slide-number: print
-    theme: simple
+  embed-resources: true
+slide-number: true
+show-slide-number: print
+theme: simple
 editor: source
 editor_options: 
   chunk_output_type: console
 ---
-
-## Summary
-
-- Boolean operations
-- If_else
-- Case_when
-- Recode
+  
+  ## Summary
+  
+  - Boolean operations
+- Relabel functions
+- As factor
 - As functions
 
 # Warm up {background-color="#e8e8e8"}
@@ -36,7 +35,7 @@ lloguer_any <- readRDS("data/lloguer_any.rds")
 cens_gc <- readRDS("data/cens_gc.rds")
 municipi <- readRDS("data/municipi.rds")
 rlc <- tibble(class = 1:8,
-             knowledge = (1:8)^3)
+              knowledge = (1:8)^3)
 lesson <- 8
 rlc |> 
   ggplot(aes(x = class, y = knowledge)) +
@@ -54,20 +53,21 @@ rlc |>
 ## Hall of fame
 
 Best plots!
-
-
-
-## RStudio workflow
-
-**Load packages.**
-
-```{r echo = T, message=F, warning=F}
+  
+  
+  
+  ## RStudio workflow
+  
+  **Load packages.**
+  
+  ```{r echo = T, message=F, warning=F}
 library(dplyr)
 library(ggplot2)
 library(readr)
 library(stringr)
 library(forcats)
 library(readxl)
+library(vdemdata)
 ```
 
 ![](img/r-packages.png){style="float:center;" width="650"}
@@ -75,19 +75,7 @@ library(readxl)
 
 
 
-# Summary {background-color="#e8e8e8"}
-
-## Recoding
-
-When we recode variables, we lose information^[Search here for the [dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}].
-
-| Destí      | Funció                                          |
-|------------|-------------------------------------------------|
-| Binària    | `if_else()`                                     |
-| Categòrica | `case_when()`                                   |
-| Ordinal    | `factor()`                                      |
-| Qualsevol  | `recode()`                                      |
-| Altres     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
+# Functions and operators {background-color="#e8e8e8"}
 
 
 ## Boolean operators
@@ -103,10 +91,24 @@ knitr::include_graphics("img/booleans.png")
 ```
 
 
+## Recoding functions
 
-## If_else
+When we recode variables, we lose information^[Search here for the [dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}].
 
-- To a dichotomous / binary / dummy variable.
+| To      | Function                                          |
+  |------------|-------------------------------------------------|
+  | Binary    | `if_else()`                                     |
+  | Categorical | `case_when()`, `case_match()`                   |
+  | Ordinal    | `factor()`                                      |
+  | Others     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
+  
+  
+  # Relabel {background-color="#e8e8e8"}
+  
+  
+  ## If_else
+  
+  - To a dichotomous / binary / dummy variable.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -119,11 +121,26 @@ df |>
 ## Case_when
 
 ```{r echo = T, eval = F}
-case_when(logic operation ~ "C1"
-          logic operation ~ "C2",
-          logic operation ~ "C3",
-          ...,
-          TRUE ~ "CN")
+df |> 
+  mutate(new_var = case_when(logic operation ~ "C1",
+                             logic operation ~ "C2",
+                             logic operation ~ "C3",
+                             ...,
+                             .default ~ "CN"))
+```
+
+
+
+## Case_match
+
+```{r echo = T, eval = F}
+df |> 
+  mutate(new_var = case_match(variable,
+                              "c1" ~ "C1",
+                              "c2" ~ "C2",
+                              "c3" ~ "C3",
+                              ...,
+                              .default = "CN"))
 ```
 
 
@@ -137,14 +154,6 @@ df |>
                              [levels o labels = ...]))
 ```
 
-
-## Recode
-
-```{r echo = T, eval = F}
-df |> 
-  mutate(new_vector = recode(vector, 
-                             old_value = "new_value"))
-```
 
 ## As functions
 
