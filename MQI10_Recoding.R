@@ -86,7 +86,7 @@ ctr_pov |>
 
 
 #####################################################################
-# PART 3. RECODING FUNCTIONS
+# PART 3. RELABEL FUNCTIONS
 #####################################################################
 
 
@@ -103,7 +103,7 @@ unique(accidents$descripcio_dia_setmana)
 accidents |> 
   select(nom_districte, nom_barri, descripcio_dia_setmana) |> 
   mutate(wk = if_else(descripcio_dia_setmana %in% c("Dissabte", "Diumenge"),
-                                          "Cap de setmana", "Entre setmana")) |> 
+                      "Cap de setmana", "Entre setmana")) |> 
   ggplot(aes(x = wk)) +
   geom_bar()
 
@@ -111,12 +111,22 @@ accidents |>
 #Volem saber quines persones van desaparèixer concretament a Catalunya durant la guerra civil
 cens_gc |> 
   glimpse() 
-  
+
 cens_gc |>
   mutate(cat_desaparicio = if_else(provincia_desaparicio %in% c("Tarragona", "Barcelona",
                                                                 "Girona", "Lleida"), "Catalunya", "Altres")) |> 
   ggplot(aes(x = cat_desaparicio)) +
   geom_bar(aes(fill = as.character(localitzat)), position = "dodge")
+
+
+
+#Una opció sempre és recodificar NOMÉS ALGUNES variables
+cens_gc |>
+  mutate(cat_desaparicio = if_else(provincia_desaparicio %in% c("Tarragona", "Barcelona",
+                                                                "Girona", "Lleida"), 
+                                   "Catalunya", provincia_desaparicio)) |> 
+  glimpse()
+
 
 
 
@@ -144,7 +154,7 @@ unique(accidents$desc_tipus_vehicle_implicat)
 #                condition2 ~ if TRUE,
 #                condition3 ~ if TRUE,
 #                ..., 
-#                TRUE ~ if TRUE)
+#                .default = others)
 
 polity <- tibble(country = c("United States", "Bolivia", "Australia", "Azerbaijan",
                              "USSR", "Timor Leste", "Eritrea", "Qatar", "Gambia"),
@@ -152,10 +162,10 @@ polity <- tibble(country = c("United States", "Bolivia", "Australia", "Azerbaija
                  polity2 = c(0, -3, 10, -3, -7, 6, -6, -10, 8))
 polity
 
-polity |> 
+polity <- polity |> 
   mutate(polity_dic = case_when(polity2 > 5 ~  "Democracy", 
                                 polity2 > -5 ~  "Anocracy",
-                                TRUE ~ "Autocracy"))
+                                .default = "Autocracy"))
 
 #Does exactly the same operation:
 #polity$polity_dic <- case_when(polity$polity2 > 5 ~  "Democracy", 
@@ -166,8 +176,7 @@ polity <- polity |>
   mutate(century = case_when(year < 1800 ~  "18c", 
                              year < 1900 ~  "19c",
                              year < 2000 ~  "20c",
-                             TRUE ~ "21c"))
-
+                             .default = "21c"))
 
 # Veure la mitjana de democràcia per dècada:
 library(vdemdata)
@@ -185,7 +194,7 @@ vdem_sub |>
                             year < 2000 ~ "1990s",
                             year < 2010 ~ "2000s",
                             year < 2020 ~ "2010s",
-                            TRUE ~ "2020s")) |> 
+                            .default = "2020s")) |> 
   group_by(decade) |> 
   summarize(libdem = mean(v2x_libdem, na.rm = T)) |> 
   ggplot(aes(x = decade, y = libdem)) +
@@ -194,25 +203,15 @@ vdem_sub |>
 
 
 
-## 3.4. FACTOR
-#    - factor(vector, ordered = TRUE, c("Low", "High"))
-accidents |> 
-  count(hora_dia, descripcio_dia_setmana) |> 
-  ggplot(aes(x = hora_dia, y = descripcio_dia_setmana, fill = n)) +
-  geom_tile()
-
-factor(polity$century,
-       ordered = TRUE,
-       c("18c", "19c", "20c", "21c"))
-
-
-
-
-
-
-## 3.5. RECODE
+## 3.3. CASE_MATCH (dplyr)
 # change a particular value of a variable
-#    - recode(vector, old_value = "new_value")
+
+#    - case_match(variable,
+#                 "old value1" ~ "new value1",
+#                 "old value2" ~ "new value2",
+#                 ..., 
+#                 .default = others)
+
 
 
 #Veiem que Sants-Montjuïc no està ben posat:
@@ -221,7 +220,39 @@ accidents |>
 unique(accidents$nom_districte)
 
 accidents |> 
-  mutate(nom_districte = recode(nom_districte, `Sants-Montjuďc` = "Sants-Montjuïc"))
+  mutate(nom_districte = case_match(nom_districte, 
+                                    "Sants-Montjuďc" ~ "Sants-Montjuïc",
+                                    .default = nom_districte)) |> 
+  glimpse()
+
+
+
+
+
+
+#####################################################################
+# PART 3. FACTORS
+#####################################################################
+
+
+
+## 3.4. FACTOR
+#    - factor(vector, ordered = TRUE, c("Low", "High"))
+
+factor(polity$century,
+       ordered = TRUE,
+       c("18c", "19c", "20c", "21c"))
+
+
+
+# Ordenar dies de la setmana
+accidents |> 
+  count(hora_dia, descripcio_dia_setmana) |> 
+  ggplot(aes(x = hora_dia, y = descripcio_dia_setmana, fill = n)) +
+  geom_tile()
+
+
+
 
 
 ### ---- QUIN ÉS EL PARLAMENT NACIONAL DE CADA REGIÓ AMB MÉS DONES?
@@ -240,9 +271,14 @@ sdg_codebook[str_detect(sdg_codebook$Indicator, "women"),] #creem un buscador, b
 sdg_data <- read_xlsx("data/SDR-2022-Database.xlsx", sheet = 5)
 unique(sdg_data$indexreg)
 sdg_data |> 
-  mutate(indexreg = recode(indexreg, "E. Europe & C. Asia" = "Europa no-OCDE i Àsia Central",
-                           "MENA" = "Orient Mitjà i Nord Àfrica", "Sub-Saharan Africa" = "Àfrica Sub-sahariana",
-                           "LAC" = "Amèrica Llatina i Carib", "OECD" = "OCDE")) |>
+  mutate(indexreg = case_match(indexreg, 
+                               "E. Europe & C. Asia" ~ "Europa no-OCDE i Àsia Central",
+                               "MENA" ~ "Orient Mitjà i Nord Àfrica",
+                               "Sub-Saharan Africa" ~ "Àfrica Sub-sahariana",
+                               "LAC" ~ "Amèrica Llatina i Carib", 
+                               "East & South Asia" ~ "Sudest Asiàtic",
+                               "OECD" ~ "OCDE",
+                               .default = indexreg)) |>
   group_by(indexreg) |> 
   filter(sdg5_parl == max(sdg5_parl)) |> 
   ggplot(aes(x = fct_reorder(indexreg, sdg5_parl), y = sdg5_parl)) +
@@ -283,14 +319,16 @@ unique(accidents$descripcio_causa_vianant)
 #    - as.Date(vector)
 
 #Ens trobem variables d'un tipus que no ho haurien de ser
-polity <- polity |>
+polity_new <- polity |>
   mutate(across(country:polity2, ~ as.character(.)))
 
 #Per tant, no podrem fer les operacions que se suposa que hauríem de fer
-sum(polity$year)
-mean(polity$polity2)
+sum(polity_new$year) #dona error
+mean(polity_new$polity2) #dona error
 
 #Les hem de transformar!
-polity$year <- as.numeric(polity$year)
-polity$polity2 <- as.numeric(polity$polity2)
+polity_new$year <- as.numeric(polity_new$year)
+polity_new$polity2 <- as.numeric(polity_new$polity2)
+
+
 
