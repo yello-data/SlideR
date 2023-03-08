@@ -31,7 +31,7 @@ notes <- bind_rows(t1, t2, .id = "grup") |>
   mutate(estudiant = "XXXX XXXX") |> 
   sample_frac()
 
-write_csv(notes, "data/notes.csv")
+write_csv(notes, "Notes/notes.csv")
 
 #1. ESTADÍSTICS DESCRIPTIUS
 
