@@ -41,7 +41,21 @@
 #- Què entendrà? Estructura de dades!!!
 #- Perfectly interchangable: sum(df$v) /  summarize(df, v = sum(v))
 
-#NO COPIEU I ENGANXEU CODI!!!!!!!!!!!
+
 
 # Cas estudi contractes menors
+
+
+## CONSELLS ÚLTIM DIA
+
+# PER L'EXAMEN
+# Aprofiteu per mirar d'entendre els cheatsheets dplyr, ggplot2, tidyr
+# No s'ha de memoritzar
+
+# EN GENERAL
+#No copieu i enganxeu el codi!!!!!!!!!!!
+#Mireu l'ajuda i els exemples
+
+#FUN
+# Ensenyar coses de la web (visual aberrations, etc.)
 

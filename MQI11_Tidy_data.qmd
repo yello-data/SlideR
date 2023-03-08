@@ -5,7 +5,7 @@ author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
 footer: "Quantitative Methodology (UPF)"
 logo: logo-upf.png
-bibliography: references.bib
+bibliography: [references.bib, packages.bib]
 format: 
   revealjs:
     embed-resources: true
@@ -20,7 +20,7 @@ editor_options:
 ## Summary
 
 -   Introduction
--   Untidy data
+-   Messy data
 -   Missing data
 -   Separate data
 -   Codes and codebooks
@@ -80,14 +80,31 @@ rlc |>
 
 ## Warm up
 
-**Load packages.**
+**Install packages**
 
-```{r echo = T, message=F, warning=F}
+```{r eval = F, echo = T, message=F, warning=F}
+install.packages(c("dplyr", "ggplot2", "readr", "tidyr", 
+                   "countrycode", "janitor", "readxl", 
+                   "wbstats", "naniar", "haven", "Hmisc"))
+```
+
+
+## Warm up
+
+**Load packages**
+
+```{.r code-line-numbers="4"}
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(tidyr) # <- tidytidytidy
+library(tidyr)
 library(countrycode)
+library(janitor)
+library(readxl)
+library(wbstats)
+library(naniar)
+library(haven)
+library(Hmisc)
 ```
 
 ![](img/r-packages.png){style="float:center;" width="650"}
@@ -167,11 +184,13 @@ lloguer_any |>
   select(nom_barri, preu, preu_m2) |> 
   head(15)
 ```
+:::
 
+::: {.column width="10%"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 **Income per capita**
 ```{r}
 rendacs |> 
@@ -188,22 +207,22 @@ rendacs |>
 
 ## Introduction
 
-Data is _untidy_ because is:
+Often, data is not tidy because it's:
 
-- Variables are not represented in the columns.
+- **Messy:** Variables are not represented in the columns.
 - **Missing:** Cells do not contain a value.
-- **Separate:** Observations are in many datasets.
+- **Separated:** Observations are in many datasets.
 
 
 
 
-# Tidy data {background-color="#e8e8e8"}
+# Messy data {background-color="#e8e8e8"}
 
 
 
-## Untidy datasets? {.smaller}
+## Tidy data? {.smaller}
 
-Number of TB cases documented by the WHO in Afghanistan, Brazil, and China between 1999 and 2000 (cases & population).
+Number of TB cases documented by WHO in Afghanistan, Brazil, and China between 1999 & 2000 (cases & population) (example from @R-tidyr).
 
 :::: {.columns}
 
@@ -235,97 +254,141 @@ table4a
 
 
 
-## A tidy dataframe
-
-NOO ANOTHER
-
-Correlates of War [Intra-State War Data](https://correlatesofwar.org/data-sets/cow-war/)
-
-```{r}
-interstate <- read_csv("data/Intra-StateWarData_v4.1.csv")
-interstate |> 
-  select(WarName, WarType, SideA, SideB)
-```
-
-## An untidy dataframe
-
-PEW Research [Religious Landscape Study](https://www.pewresearch.org/religion/religious-landscape-study/)^[More datasets available in the `tidyr::` package.]
-
-```{r}
-tidyr::relig_income |> 
-  select(1:6)
-```
-
-
-
 ## Pivoting data
 
 We change the rows and columns of the dataframe keeping the same information.
 
-- Pivot longer
-```
-pivot_longer(df, cols, names_to, names_to)
-```
-
-- Pivot wider
-```
-pivot_wider(df, names_from, values_from)
-```
-
-- Separate
-
-```
-separate(df, col, into, sep)
-```
-
-- Unite
-
-```
-unite(df, col, ..., sep)
-```
+- Pivot longer: `pivot_longer(df, cols, names_to, values_to)`
+- Pivot wider: `pivot_wider(df, names_from, values_from)`
+- Separate: `separate(df, col, into, sep)`
+- Unite: `unite(df, col, ..., sep)`
 
 
-#  Join data {background-color="#e8e8e8"}
+## Why data is not tidy?
 
-## Join data
+Three reasons, among others:
 
-## Classifications
-
-- States: [Countrycode](https://www.rdocumentation.org/packages/countrycode/versions/1.4.0/topics/countrycode), [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html), [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Country_codes).
-- Regions: [UN](https://population.un.org/wpp/DefinitionOfRegions/).
-- Intergovernmental Organizations: [COW](https://correlatesofwar.org/data-sets/igos/)
-- Political parties: [Party facts](https://partyfacts.herokuapp.com).
-- Regions: 3166-2.
-- Municipalities: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=9), [INE](https://www.ine.es/daco/daco42/codmun/codmunmapa.htm).
-- Census sections: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=81).
-
-
-
+- Saves space (see [IGO dataset](https://correlatesofwar.org/data-sets/igos/){target="_blank"})
+- Spreadsheet mindset.
+- Tidyverse revolution^[More datasets examples available in the `tidyr::` package.].
 
 
 
 
 #  Missing data {background-color="#e8e8e8"}
 
+## What is missing data?
 
-## Why they are missing?
+Zero vs. NA (Not Available)
 
-NA (Not Available)
-
-Related with the state capacity to collect them [@Stone2008]
-
-Check the World Bank
-
-Small or underdeveloped states
+![](https://preview.redd.it/3370lkxk56ny.jpg?width=960&crop=smart&auto=webp&s=61a1bae1128914c9c7fc1eb0b02cc44189e78a5f)
 
 
-is.na()
+## Why is data missing?
+
+Special categories: People do not answer.
+
+```{r}
+nig <-read_csv("data/nig.csv")
+nig |> 
+  select(age, language, situation_country, situation_personal)
+```
+
+## Why is data missing?
+
+Special categories: Hard to qualify.
+
+```{r}
+polity <- read_xls("data/p5v2018.xls")
+polity |>
+  select(ccode, scode, country, year, polity, polity2) |>
+  filter(year > 1990, country == "South Africa")
+```
 
 
+## Why is data missing?
+
+Not known (NA) or strange/extreme value.
+
+```{r}
+lloguer_any |> 
+  rename(trim = trimestre, codi_dist = codi_districte, districte = nom_districte) |> 
+  filter(preu < 260)
+```
+
+
+## Why is data missing?
+
+Data join typically produces `NA`.
+
+- See next chapter
+
+## Dealing with missing data
+
+Some functions:
+
+- `summary()` for exploration.
+- `is.na()` is useful when filtering.
+- `na.rm = TRUE` argument in summary functions.
+- `replace_na()` assigns a value to NAs.
+- `naniar::vis_miss()` (be careful!!)
+
+## Dealing with missing data
+
+The real problem is when the reason why data is missing is related to what we are studying:
+
+- Why students don't come to class? 
+- Why is there poverty in the world? 
+
+
+
+
+
+
+#  Join data {background-color="#e8e8e8"}
+
+## Join data
+
+
+```{r echo = T, eval = F}
+xxxx_join(df1, 
+          df2, 
+          by = c("join_variable_df1" = "join_variable_df2"))
+```
+
+- `full_join()`
+- `left_join()`
+- `right_join()`
+- `inner_join()`
+
+
+
+## Join data
+
+![](https://www.csestack.org/wp-content/uploads/2020/10/sql-table-joins.png)
+
+## Classification territorial units & parties
+
+- States: [Countrycode](https://www.rdocumentation.org/packages/countrycode/versions/1.4.0/topics/countrycode){target="_blank"}, [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html){target="_blank"}, [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Country_codes){target="_blank"}.
+- Regions: [UN](https://population.un.org/wpp/DefinitionOfRegions/){target="_blank"}.
+- Intergovernmental Organizations: [COW](https://correlatesofwar.org/data-sets/igos/){target="_blank"}
+- Political parties: [Party facts](https://partyfacts.herokuapp.com){target="_blank"}.
+- Regions: [NUTS](https://www.idescat.cat/codis/?id=52&n=1&lang=es){target="_blank"} / [ISO 3166-2](https://www.iso.org/obp/ui/es/#iso:code:3166:ES){target="_blank"}.
+- Municipalities: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=9){target="_blank"}, [INE](https://www.ine.es/daco/daco42/codmun/codmunmapa.htm){target="_blank"}.
+- Census sections: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=81).
 
 
 
 #  Codebooks {background-color="#e8e8e8"}
+
+##  Codebooks
+
+Examples:
+
+- CHES dataset: [Web](https://www.chesdata.eu/ches-europe){target="_blank"} 
+- UCDP: [Web](https://ucdp.uu.se/downloads/){target="_blank"}
+- World Bank `wbstats` package.
+
 
 
 

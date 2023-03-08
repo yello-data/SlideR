@@ -1,5 +1,5 @@
 ---
-  title: "Recoding"
+title: "Recoding"
 subtitle: "Quantitative Methodology (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
@@ -7,7 +7,7 @@ footer: "Quantitative Methodology (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
-  embed-resources: true
+    embed-resources: true
 slide-number: true
 show-slide-number: print
 theme: simple

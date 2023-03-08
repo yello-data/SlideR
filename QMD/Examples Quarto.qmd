@@ -1,0 +1,84 @@
+---
+title: "DD"
+format: revealjs
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Slide with a pause
+
+content before the pause
+
+. . .
+
+content after the pause
+
+## Slide Title {.smaller}
+
+Holi holi
+
+## Slide Title {.scrollable}
+
+## Footers
+
+-   Green [^1]
+-   Brown
+-   Purple
+
+[^1]: A footnote
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+::: footer
+Custom footer text
+:::
+
+## Code
+
+``` {.r code-line-numbers="2-3"}
+install.packages(c("rmarkdown",
+                   "knitr", 
+                   "DT"))
+```
+
+Holi
+
+``` {.r code-line-numbers="2,4"}
+install.packages(c("rmarkdown",
+                   "dplyr",
+                   "ggplot2",
+                   "knitr", 
+                   "DT"))
+```
+
+Holi
+
+
+``` {.r code-line-numbers="|2|4"}
+install.packages(c("rmarkdown",
+                   "dplyr",
+                   "ggplot2",
+                   "knitr", 
+                   "DT"))
+```
+
+## Executable code
+
+```{r echo = TRUE}
+#| code-line-numbers: "|2|4"
+starwars |> 
+  select(name:last_col()) |> 
+  filter(hair_color == "blond") |> 
+  arrange(height)
+```

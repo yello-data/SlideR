@@ -119,6 +119,8 @@ stranger_things <- read_csv("https://github.com/rfordatascience/tidytuesday/raw/
 
 dplyr::starwars
 ggplot2::diamonds
-ggplot2::presidential
+ggplot2::presidential |> 
+  mutate(time = end - start,
+         sex = "Male")
 
 

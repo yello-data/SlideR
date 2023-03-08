@@ -1,8 +1,10 @@
+# Carreguem paquets i dades
 library(dplyr)
 library(readr)
 library(ggplot2)
 library(janitor)
 theme_set(theme_minimal())
+
 t1 <- read_csv("Notes/T1.csv") |> 
   clean_names() |>
   transmute(estudiant = paste(nom, cognoms),
@@ -39,6 +41,8 @@ notes |>
             mediana = median(total_ac),
             maxim = max(total_ac),
             minim = min(total_ac),
+            aprovats = sum(total_ac >= 5),
+            perc_aprovats = mean(total_ac >= 5),
             zeros = sum(total_ac == 0),
             n = n())
 
@@ -50,6 +54,8 @@ notes |>
             mediana = median(total_ac),
             maxim = max(total_ac),
             minim = min(total_ac),
+            aprovats = sum(total_ac >= 5),
+            perc_aprovats = mean(total_ac >= 5),
             zeros = sum(total_ac == 0),
             n = n())
 
@@ -80,7 +86,7 @@ notes |>
   filter(total_ac > 0) |> 
   ggplot(aes(x = total_ac)) +
   geom_histogram(bins = 20) +
-  scale_x_continuous(breaks = 0:10) +
+  scale_x_continuous(breaks = 0:10, limits = c(0, 10)) +
   geom_vline(xintercept = mean(notes$total_ac[notes$total_ac > 0]), col = "blue") +
   geom_vline(xintercept = median(notes$total_ac[notes$total_ac > 0]), col = "green")
 
