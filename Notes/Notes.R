@@ -28,11 +28,14 @@ t2 <- read_csv("Notes/T2.csv") |>
                                   TRUE ~ "Cap"))
 
 notes <- bind_rows(t1, t2, .id = "grup") |> 
-  mutate(estudiant = "XXXX XXXX")
+  mutate(estudiant = "XXXX XXXX") |> 
+  sample_frac()
 
-write_csv(notes, "data/notes.csv")
+write_csv(notes, "Notes/notes.csv")
 
 #1. ESTADÍSTICS DESCRIPTIUS
+
+notes <- read_csv("data/notes.csv")
 
 # 1.1. Inclòs 0
 notes |> 
