@@ -1,5 +1,5 @@
 #Rulers, Elections and Irregular Governance dataset (v2021.8)
-reign <- read_csv("REIGN_2021_8.csv")
+reign <- read_csv("data/REIGN_2021_8.csv")
 
 library(tidyverse)
 reign |> 
@@ -52,3 +52,17 @@ reign |>
   ungroup() |> 
   select(-tenure_months) |> 
   pivot_longer(age:government, names_to = "variables", values_to = "values")
+
+
+
+reign |> 
+  filter(leader %in% c("Zelensky", "Clinton", "Putin", "Thatcher", "De Gaulle")) |> 
+  group_by(leader) |> 
+  filter(year == first(year) & month == first(month)) |> 
+  select(country, leader, year, government, militarycareer)
+
+
+
+
+
+
