@@ -54,6 +54,7 @@
 
 # EN GENERAL
 #No copieu i enganxeu el codi!!!!!!!!!!!
+#Minimal reproducible example
 #Mireu l'ajuda i els exemples
 
 #FUN
