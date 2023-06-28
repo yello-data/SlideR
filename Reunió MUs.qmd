@@ -1,56 +1,42 @@
 ---
 title: "Reunió MUs"
-format: revealjs
+format: 
+  revealjs:
+    embed-resources: true
 ---
 
 ## Principal pregunta {.scrollable}
 
 "Tenint en compte l'oferta que tenim a la UOC de grau i doctorat en l'àmbit de la Ciència Política i les Relacions Internacionals, quina hauria de ser l'oferta de MU?".
 
-- Grau: Ciència Política i de l'Administració
-- Grau: Relacions Internacionals
-- Grau: Gestió i Administració Pública (UOC, UB)
-- MU: Anàlisi Política
-- MU: Drets Humans, Democràcia i Globalització
-- _MU: Administració i Govern Electrònic_
-- M/P Cooperació Internacional al Desenvolupament i Acció Humanitària (UOC, Creu Roja)
-- UOC-IBEI / UOC-UNITAR
+- MU: Anàlisi Política (especialitzat / dades)
+- MU: Relacions Internacionals (generalista)
+- Participar en l'oferta EIMT (Ciència de Dades en CCSS).
 
-## Preguntes específiques
+## Creació de forma integrada (I)
 
-- Quants MU hauríem d'ofertar?
-- Generalistes/especialitzats?
-- De Ciència Política? De Relacions Internacionals? 
-- Fins a quin punt s'hauria de reformar l'oferta existent? (_aka_ MUAP...)
+![](img/mu-esquema1.png)
 
-## Proposa inicial
+## Creació de forma integrada (II)
 
-- Un màster generalista, més de RRII que de CP.
-  - Molt orientat a la demanda (estudiant d'UOC que vol fer 1/2 anys més / persona interessada en el què passa al món).
-  - Aquest màster reformaria/substituiria el MUAP.
+![](img/mu-esquema2.png)
 
-- Un màster especialitzat de ciència de dades en CP.
-  - En col·laboració amb els EIMT.
 
-## Chat GPT {.scrollable}
+## MU Relacions Internacionals  {.scrollable}
 
-- Global Political Economy
-- Political Psychology and Leadership
-- Critical Approaches to International Relations Theory
-- Democracy and Democratization
-- Globalization and Nationalism
-- Political Theory in the Digital Age
-- International Negotiation and Conflict Resolution
-- Strategic Public Policy Analysis
-- The Politics of Global Health
-- Human Rights and Social Justice
-- Political Marketing and Campaigning
-- Public Diplomacy and Soft Power
-- Geopolitics and International Security
-- Global Environmental Politics
-- Gender and Politics: Contemporary Issues and Debates
-- Research Design and Methods in Political Science
-- Dissertation: Integrating Political Science and International Relations.
+![](img/muri_plan1.png)
+![](img/muri_plan2.png)
+![](img/muri_plan3.png)
+
+## MU Anàlisi Política {.scrollable}
+
+![](img/muap_plan1.png)
+![](img/muap_plan2.png)
+![](img/muap_plan3.png)
 
 
 
+
+## MUAP
+
+![](img/muap_transf.png)
