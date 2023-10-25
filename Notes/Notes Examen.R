@@ -40,14 +40,21 @@ notes <- bind_rows(t1, t2, .id = "grup") |>
   mutate(nota_teoria_num = if_else(is.na(examen), 0, nota_teoria),
          nota_teoria_cat = if_else(is.na(examen), "NP", as.character(nota_teoria)))
 
+
+notes |> 
+  select(estudiant, numero_id, total_ac) |> 
+  write_csv("Notes/notes_ac.csv")
+
 write_csv(notes, "Notes/notes_examen.csv")
 
 #1. ESTADÍSTICS DESCRIPTIUS
 
 notes <- read_csv("data/notes.csv")
 
+read_csv("notes_finals.csv")
+read_csv("notes_finals2.csv")
 
-View(notes)
+
 # 1.1. EXAMEN
 notes |> 
   group_by(grup) |> 

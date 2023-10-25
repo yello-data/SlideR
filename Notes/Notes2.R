@@ -1,4 +1,6 @@
 library(tidyverse)
+notes_examen <- read_csv("Notes/notes_examen.csv")
+
 notes_full <- full_join(
   notes_examen |> 
     select(grup:numero_id, total_ac, examen, nota_teoria_num),

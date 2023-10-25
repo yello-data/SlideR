@@ -1,0 +1,32 @@
+---
+title: "Introducció"
+subtitle: "Metodologia Quantitativa (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Metodologia Quantitativa (UPF)"
+logo: logo-upf.png
+bibliography: [references.bib, packages.bib]
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+
+
+## Xocolata i premis Nobel {.scrollable}
+
+![](img/cheating-chocolate.png)
+
+Font: [The New England Journal of Medicine](https://www.biostat.jhsph.edu/courses/bio621/misc/Chocolate%20consumption%20cognitive%20function%20and%20nobel%20laurates%20(NEJM).pdf)

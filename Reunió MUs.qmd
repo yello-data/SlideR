@@ -13,6 +13,13 @@ format:
 - MU: Relacions Internacionals (generalista)
 - Participar en l'oferta EIMT (Ciència de Dades en CCSS).
 
+## Deures
+
+- Parlar amb els EIMT
+- Estudis de mercat MK
+- Estudis de mercat AB
+
+
 ## Creació de forma integrada (I)
 
 ![](img/mu-esquema1.png)

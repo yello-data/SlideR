@@ -43,12 +43,19 @@ lloguer19 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69
 lloguer20 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69c3250b-100c-4d5b-a08e-0a191d9950e3/resource/47c9d64d-317a-45d0-8c45-45488df8601c/download/2020_lloguer_preu_trim.csv")|> 
   mutate(Preu = as.numeric(Preu))
 lloguer21 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69c3250b-100c-4d5b-a08e-0a191d9950e3/resource/e96bf614-467b-40ab-91b9-e48a616ea775/download/2022_lloguer_preu_trim.csv")
-lloguer22 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69c3250b-100c-4d5b-a08e-0a191d9950e3/resource/cfc45f2b-62eb-4621-8486-1b90e36b4bfe/download/2021_lloguer_preu_trim.csv")|> 
+lloguer22 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69c3250b-100c-4d5b-a08e-0a191d9950e3/resource/e96bf614-467b-40ab-91b9-e48a616ea775/download/2022_lloguer_preu_trim.csv")|> 
+  mutate(Preu = as.numeric(Preu))
+lloguer23 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/69c3250b-100c-4d5b-a08e-0a191d9950e3/resource/8148fe53-6bb4-42ca-98df-93e6b723dca9/download/2023_lloguer_preu_trim.csv")|> 
   mutate(Preu = as.numeric(Preu))
 
-lloguer <- bind_rows(lloguer14, lloguer15, lloguer16, lloguer17, lloguer18, lloguer19, lloguer20, lloguer21, lloguer22) |> 
+lloguer <- bind_rows(lloguer14, lloguer15, lloguer16, lloguer17, lloguer18, lloguer19, lloguer20, lloguer21, lloguer22, lloguer23) |> 
   pivot_wider(names_from = "Lloguer_mitja", values_from = "Preu") |> 
   rename("preu" = "Lloguer mitjà mensual (Euros/mes)", "preu_m2" = "Lloguer mitjà per superfície (Euros/m2 mes)") |> 
+  clean_names()
+
+lloguer2 <- bind_rows(lloguer14, lloguer15, lloguer16, lloguer17, lloguer18, lloguer19, lloguer20, lloguer21, lloguer22, lloguer23) |>
+  filter(Lloguer_mitja == "Lloguer mitjà mensual (Euros/mes)") |> 
+  select(-Lloguer_mitja) |> 
   clean_names()
 
 write_rds(lloguer, "data/lloguer_any.rds")
