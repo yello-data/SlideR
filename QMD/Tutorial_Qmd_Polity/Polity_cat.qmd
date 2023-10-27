@@ -1,0 +1,111 @@
+---
+title: "Títol del document"
+author: "Nom de l'estudiant"
+date: "10/27/2023"
+format: 
+  html:
+    embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) #echo TRUE as default
+```
+
+# Introducció
+
+El primer que farem és pitjar el botó **Render**. Com veieu, R ens llegeix el Quarto i ens converteix el seu contingut en un arxiu Html. Aneu comparant els dos documents i observa com els elements de Quarto es tradueixen a Html. 
+A continuació intentem resumir, de forma pràctica, els elements essencials d'un document de Quarto.
+
+# Un quadradet (#) al principi de línia crea un títol de secció
+
+Si no indiquem res al principi de la línia, podem introduir el text normal com estem fent ara. Per un salt de paràgraf, hem de deixar dos espais al final. Fixeu-vos que al final d'aquesta línia hi ha dos espais.->  
+Aquesta línia, en canvi, no l'acabarem amb espais. Per tant, no ens farà un salt de paràgraf.
+Amb el guionet podem crear punts (bullet points):  
+
+- Així es creen les **negretes**.  
+- I així les *cursives*. 
+- I així posem el text `en format de codi`^[Així les notes al peu.].
+
+L'altra opció és crear punts d'enumeració:  
+
+1. Si volem enllaçar una [pàgina web](https://quarto.org/docs/guide/) ho farem d'aquesta manera.  
+2. De nou, recordeu deixar dos espais al final per fer un salt de paràgraf. L'altra opció per fer salts de paràgrafs és simplement deixar una línia en blanc entre paràgrafs.
+
+Aquest és el logo de Quarto.
+Si volem posar imatges directament, farem servir el signe d'exclamació, seguit dels claudàtors i entre parèntesi l'enllaç a la imatge. ![així posem fotos](https://quarto.org/quarto.png)   
+
+
+## Amb dos quadradets creem una subsecció
+
+Amb els **chunks** podem afegir codi d'R al text. Els chunks són caixes grises que trobarem al llarg d'aquest script de Quarto. A dins dels chunks, posarem el codi d'R. Per crear chunks nous:  
+
+- Podem simplement seleccionar un chunk ja creat i copiar i enganxar el seu contingut.
+- O, alternativament, podem teclejar `Ctrl + Alt + I` (Mac: `Cmd + Option + I`).  
+
+Hem decidit que el primer chunk es dirà *packages*. I a dins del chunk, carreguem els paquets *dplyr*, *readr*, *ggplot2* i *knitr*.  
+
+```{r packages}
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(knitr)
+library(DT)
+```
+
+Observeu com Quarto ha convertit aquesta part en Html. Per defecte, Quarto mostra el codi del chunk i tots els resultats de produeix. Com que sempre que carregem el paquet dplyr ens apareixen uns missatges d'avís a la consola, també veurem aquests missatges impresos al document Html.
+
+Com que no ens interessa que apareguin aquests missatges, anem a eliminar-los i així de passada aprenem més coses sobre el funcionament dels chunks:
+
+- En el chunk que hem creat prèviament, i després de la paraula `packages`, afegirem una coma seguit de `message = FALSE`.  
+- Hauria de quedar de la següent manera: `{r packages, message = FALSE}`.  
+- Ara tornem a generar l'Html. Premem el botó **Knit** i observem els canvis.
+
+Com veiem, el chunk conté codi i indicacions sobre com es mostrarà el codi a l'Html. Les indicacions que podem donar són les següents:  
+
+- `message`: TRUE per defecte, deixa de mostrar els missatges quan canviem a FALSE.   
+- `warning`: TRUE per defecte, deixa de mostrar els avisos quan canviem a FALSE.
+- `echo`: TRUE per defecte, amaga el codi quan el canviem a FALSE.  
+- `eval`: TRUE per defecte, no reprodueix el resultat quan el canviem a FALSE. 
+- `include`: TRUE per defecte, ho amaga tot quan ho canviem a FALSE.  
+
+Vegem ara alguns exemples de com utilitzar els chunks. El següent chunk, anomenat `polity`, està preparat per mostrar el codi de la següent manera:
+
+- Mostrarà el codi, perquè per defecte `echo = TRUE`. 
+- No reproduirà el resultat, perquè hem posat explícitament que `eval = FALSE`. 
+
+```{r polity, eval = FALSE}
+polity <- read_csv("polity.csv")
+kable(head(polity, 10))
+```
+
+Ara fem alguns canvis al chunk anterior:
+
+- Posem `eval = TRUE`, de manera que ens reproduirà el codi.
+- Podem `echo = FALSE`, de manera que ens amagarà el codi.
+- Posem `message = FALSE`, de manera que ens eliminarà el missatge que apareix.
+- El chunk hauria de quedar de la següent manera: `{r polity, eval = TRUE, echo = FALSE, message = FALSE}`.
+- Premem **Render** de nou.
+
+# Imatges i gràfics
+
+Els chunks també serveixen per reproduir imatges. Per això posem a dins del chunk la funció `include_graphics()` del paquet `knitr`.
+
+- Feu els canvis al chunk per amagar codi i reproduir el resultat.
+
+```{r eval = FALSE}
+include_graphics("polity-index.jpeg")
+```
+
+Com que en el chunk previ hem creat l'objecte `polity` dins del Quarto, en els chunks següents podrem utilitzar-lo per reproduir resultats. Per exemple, en el següent codi reprodueix una figura a partir de l'objecte `polity`. És molt important que si no creem l'objecte prèviament (en el mateix chunk o en un chunk anterior, Quarto no sabrà de quin objecte estem parlant).
+
+- Simplement, canviem `eval` per `echo`.
+
+```{r eval = FALSE}
+polity %>%
+  filter(scode %in% c("USA", "CHN")) %>%
+  ggplot(aes(x = year, y = polity2, col = scode)) +
+  geom_line() +
+  labs(title = "Poseu un títol al gràfic")
+```
