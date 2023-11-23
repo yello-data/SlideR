@@ -1,0 +1,40 @@
+---
+title: "L’odi i la discriminació a Catalunya"
+subtitle: "Es pot posar aquí el logo de la UB o eliminar aquesta línia"
+author: 
+- "Estudiant1"
+- "Estudiant2"
+- "Estudiant3"
+author-title: Autors
+published-title: Última modificació
+date: "`r Sys.Date()`"
+format: 
+  html:
+    embed-resources: true
+    code-fold: true
+    code-summary: "Mostrar codi."
+    toc: true
+    toc-depth: 2
+    toc-title: Taula de continguts
+lang: ca
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Introducció
+
+Info sobre Quarto: <https://quarto.org/docs/authoring/markdown-basics.html>
+
+## Neteja de dades
+
+Text
+
+## Història
+
+Text
+
+```{r}
+1 + 1
+```
+

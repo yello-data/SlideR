@@ -1,0 +1,41 @@
+---
+title: "L’odi i la discriminació a Catalunya"
+author: 
+- "Estudiant1"
+- "Estudiant2"
+- "Estudiant3"
+footer: "Quarto - Postgrau d'Analista de Dades (UB)"
+#logo: logo-ub.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Introducció
+
+Info sobre diapositives: <https://quarto.org/docs/presentations/revealjs/>
+
+## Neteja de dades
+
+Text
+
+```{r echo = T}
+#| code-fold: true
+#| code-summary: Mostra codi.
+1 + 1
+```
+
+
+## Història
+
+Text
+
+```{r echo = T, collapse=T}
+1 + 1
+```
+

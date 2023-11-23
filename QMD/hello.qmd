@@ -1,10 +1,14 @@
 ---
 title: "Penguins, meet Quarto!"
-subtitle: "![Posar nom de títol](logo-ub.png){width=2in}"
+subtitle: "![](logo-ub.png){width=30%}"
 format: html
 editor: visual
+fontsize: 18px
+mainfont: Arial
 title-block-style: plain
 title-block-categories: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -22,3 +26,10 @@ Quarto enables you to weave together content and executable code into a finished
 The `penguins` data from the [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins "palmerpenguins R package") package contains size measurements for penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.
 
 The plot below shows the relationship between flipper and bill lengths of these penguins.
+
+
+
+```{r}
+plot(starwars$height)
+```
+

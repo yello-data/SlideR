@@ -190,7 +190,7 @@ Llegir fins a l'apartat Imatges i gràfics i fer canvis que es proposen.
 ## Taules, imatges i gràfics
 
 -   Posem aquests elements a dins del chunk.
--   Marc de dades: tibble, kable, datatable^[Sempre utilitzar `head()`!].
+-   Marc de dades: tibble, kable^[La funció `kable()` publica totes les observacions del marc de dades. Per tallar les observacions, utilitzar sempre la funció `head()`.], datatable.
 -   Imatges: `![]()` o `include_graphics("__")`.
 -   Gràfics: `fig.align = "center"`.
 
@@ -206,8 +206,8 @@ Llegir l'últim apartat, modifica marc de dades i gràfic.
 
 És important diferenciar entre
 
--   Mode Render
--   Mode R Script
+-   **Mode Render:** Llegeix el document Quarto de dalt a baix.
+-   **Mode R Script:** Utilitzem el que tenim guardat/carregat al Global Environment.
 
 ## Activitat
 
@@ -226,7 +226,7 @@ Variables d'interès:
 
 -   `country`: país.
 -   `year`: any.
--   `polity2`: democràcia (-10 + 10).
+-   `polity2`: de -10 (autocràcia) a + 10 (democràcia).
 -   `durable`: anys de durada del règim.
 :::
 
@@ -261,13 +261,14 @@ lang: ca
 
 ## Foto d'encapçalament
 
-Posem una foto a la capçalera del document.
+Posem una foto a la capçalera del document^[Alternativament, es pot posar la foto a `abstract:`.].
 
 ```{r eval = F, echo = T}
-title: "![Posar nom de títol](polity-index.jpeg){width=2in}"
+subtitle: "Posar subtítol si s'escau![](polity-index.jpeg){width=30%}"
 ```
 
-![](../img/polity-index.jpeg){.absolute top="250" left="0" width="500"}
+
+![](../img/polity-index.jpeg){.absolute top="180" left="0" width="350"}
 
 ## Taula de continguts
 
@@ -288,6 +289,26 @@ format:
 -   `number-sections:` seccions enumerades? (T/F).
 -   `toc-location:` a quina part del document?
 :::
+
+## Canviar la mida de tot el text
+
+Un dels deutes pendents de Markdown^[Més opcions a [aquí](https://quarto.org/docs/reference/formats/html.html#title-author){target="_blank"}].
+
+```{r eval = F, echo = T}
+fontsize: 18px
+mainfont: Arial
+```
+
+## Plegar codi
+
+Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document^[Compte, això funcionarà només pels chunks que estiguin en `echo = TRUE`.].
+
+``` {.r code-line-numbers="3-4"}
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar codi."
+```
 
 ## Temes
 
@@ -310,22 +331,12 @@ highlight-style: ayu
 - Per una llista d'estils de codi veure [aquest enllaç](https://quarto.org/docs/output-formats/html-code.html#highlighting){target="_blank"}. 
 :::
 
-## Plegar codi
-
-Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document.
-
-``` {.r code-line-numbers="3-4"}
-format:
-  html:
-    code-fold: true
-    code-summary: "Mostrar codi."
-```
 
 ## Formats d'output
 
 Al YAML podem especificar el tipus de format[^2].
 
-[^2]: Per crear Html, PDFs i Words, veure [el següent enllaç](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}
+[^2]: Per crear Html, PDFs i Words, veure [el següent enllaç](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}.
 
 ``` {.r code-line-numbers="2-5"}
 format:
@@ -338,91 +349,6 @@ format:
 I també podem crear [diapositives](https://quarto.org/docs/presentations/){target="_blank"} en diversos formats.
 
 # 4.2. Quarto avançat (text) {background-color="#e8e8e8"}
-
-## Canviar mida de text
-
-Un dels deutes pendents de Markdown.
-
-```{r eval = F, echo = T}
-<style>
-body {
-font-size: 13pt;
-text-align: justify}
-</style>
-```
-
-## Incloure codi al text {.scrollable}
-
-En qualsevol moment, al text podem referenciar qualsevol dada **ja carregada** en un chunk previ.
-
--   A. Carreguem les dades:
-
-```{r echo = T}
-polity <- read_excel("../data/p5v2018.xls")
-```
-
--   B. Per referenciar al text:
-
-```{r eval = F, echo = T}
-`r data`
-```
-
-
-::: panel-tabset
-### Exemple 1
-
-Estats Units en els darrers anys.
-
-```{r echo = T, eval = T}
-p5_ctr <- polity |> 
-  filter(country == "United States", year > 2012) |> 
-  select(country, year, polity2)
-```
-
-Observem que:
-
-- En l'últim any de dades ...
-
-```{r eval = F, echo = T}
-`r last(p5_ctr$year)`
-```
-
-- el país ...
-
-```{r eval = F, echo = T}
-`r p5_ctr$country[1]`
-```
-
-- tenia un nivell de democràcia de ...
-
-```{r eval = F, echo = T}
-`r last(p5_ctr$year)`
-```
-
-
-
-### Exemple 2
-
-```{r echo = T}
-polity |> 
-  group_by(country) |> 
-  summarize(duration = max(durable, na.rm = T)) |> 
-  ggplot(aes(x = duration)) +
-  geom_density()
-```
-
-El règim amb més durada és ...
-
-```{r eval = F, echo = T}
-`r polity$country[which(polity$durable == max(polity$durable, na.rm = T))]`
-```
-
-que ha durat X anys:
-
-```{r eval = F, echo = T}
-max(polity$durable, na.rm = T)
-```
-:::
 
 ## Referències al text
 
@@ -474,9 +400,62 @@ Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
 Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"}, [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html){target="_blank"} o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX){target="_blank"}.
 :::
 
+## Taules {.scrollable}
+
+Una assignatura pendent de Markdown.
+
+```{r eval = F, echo = T}
+    | Funció       | Paquet    | Descripció                                           |
+    |--------------|-----------|------------------------------------------------------|
+    | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+    | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+    | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+    | `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+
+```
+
+| Funció       | Paquet    | Descripció                                           |
+|------------------|------------------|-------------------------------------|
+| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+
+També podem utilitzar l'**Editor Visual** (següent).
+
+## Editor visual
+
+Interfície més semblant a Word per generar documents.
+
+![](../img/rmarkdown-visual-editor.png){.absolute top="300" left="0" width="500"}
+
+Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
+
+
 # 4.3. Quarto avançat (chunks) {background-color="#e8e8e8"}
 
-## Taules
+## Opcions globals
+
+Opcions per defecte als chunks de tot el document:
+
+```{r eval = F, echo = T}
+knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
+                      warning = FALSE, message = FALSE,
+                       fig.width = 6, fig.height = 6)
+```
+
+El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
+
+## Figures
+
+Varis paràmetres per establir les dimensions^[Recomanable posar els elements dins del chunk mitjançant `#|` i separar amb `-` enlloc del `.`.]:
+
+-   `fig.width`: amplada en inches.
+-   `fig.height`: alçada en inches.
+-   `fig.align`: "left", "right", "center".
+-   `fig.dim`: primer width i després height, c(5,3)
+
+## Millorar les taules
 
 ::: panel-tabset
 ## Opció knitr::kable
@@ -507,27 +486,6 @@ polity |>
   DT::datatable()
 ```
 :::
-
-## Figures
-
-Varis paràmetres per establir les dimensions^[Recomanable posar els elements dins del chunk mitjançant `#|` i separar amb `-` enlloc del `.`.]:
-
--   `fig.width`: amplada en inches.
--   `fig.height`: alçada en inches.
--   `fig.align`: "left", "right", "center".
--   `fig.dim`: primer width i després height, c(5,3)
-
-## Opcions globals
-
-Opcions per defecte als chunks de tot el document:
-
-```{r eval = F, echo = T}
-knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
-                      warning = FALSE, message = FALSE,
-                       fig.width = 6, fig.height = 6)
-```
-
-El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
 
 ## Què evitar als chunks
 
@@ -606,6 +564,80 @@ filter(polity, country == params$country)
 
 # 5.2. Quarto avançat (text)
 
+## Incloure codi al text {.scrollable}
+
+En qualsevol moment, al text podem referenciar qualsevol dada **ja carregada** en un chunk previ.
+
+-   A. Carreguem les dades:
+
+```{r echo = T}
+polity <- read_excel("../data/p5v2018.xls")
+```
+
+-   B. Per referenciar al text:
+
+```{r eval = F, echo = T}
+`r data`
+```
+
+
+::: panel-tabset
+### Exemple 1
+
+Estats Units en els darrers anys.
+
+```{r echo = T, eval = T}
+p5_ctr <- polity |> 
+  filter(country == "United States", year > 2012) |> 
+  select(country, year, polity2)
+```
+
+Observem que:
+
+- En l'últim any de dades ...
+
+```{r eval = F, echo = T}
+`r last(p5_ctr$year)`
+```
+
+- el país ...
+
+```{r eval = F, echo = T}
+`r p5_ctr$country[1]`
+```
+
+- tenia un nivell de democràcia de ...
+
+```{r eval = F, echo = T}
+`r last(p5_ctr$year)`
+```
+
+
+
+### Exemple 2
+
+```{r echo = T}
+polity |> 
+  group_by(country) |> 
+  summarize(duration = max(durable, na.rm = T)) |> 
+  ggplot(aes(x = duration)) +
+  geom_density()
+```
+
+El règim amb més durada és ...
+
+```{r eval = F, echo = T}
+`r polity$country[which(polity$durable == max(polity$durable, na.rm = T))]`
+```
+
+que ha durat X anys:
+
+```{r eval = F, echo = T}
+max(polity$durable, na.rm = T)
+```
+:::
+
+
 ## Tabsets
 
 ::: panel-tabset
@@ -632,36 +664,6 @@ hist(dplyr::starwars$height)
 ```
 :::
 
-## Taules {.scrollable}
-
-També una assignatura pendent de Markdown.
-
-```{r eval = F, echo = T}
-    | Funció       | Paquet    | Descripció                                           |
-    |--------------|-----------|------------------------------------------------------|
-    | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
-    | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
-    | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
-    | `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
-
-```
-
-| Funció       | Paquet    | Descripció                                           |
-|------------------|------------------|-------------------------------------|
-| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
-| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
-| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
-| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
-
-També podem utilitzar l'**Editor Visual** (següent).
-
-## Editor visual
-
-Interfície més semblant a Word per generar documents.
-
-![](../img/rmarkdown-visual-editor.png){.absolute top="300" left="0" width="500"}
-
-Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
 
 ## Quadres de text
 
