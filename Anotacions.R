@@ -1,20 +1,5 @@
-# 4. Excel & R
-## Quatre tipus d'estudiants: Esforç i talent
-# - Esforç + talent: 10
-# - Esforç, no talent: 10
-# - No esforç, talent: 0
-# - No esforç, no talent: 0
-
-## Passiu i actiu
-# - Passiu: Venir a classe i entendre-ho
-# - Actiu: Posar el codi i que surti
-
-
 
 # 6. Dplyr1
-## Passiu i actiu
-# - Passiu: Venir a classe i entendre-ho
-# - Actiu: Posar el codi i que surti
 
 ## Perquè no em funciona res?
 # - Crear projecte

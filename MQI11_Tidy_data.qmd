@@ -40,6 +40,13 @@ contractes_menors <- readRDS("data/contractes_menors.rds")
 
 # Warm up {background-color="#e8e8e8"}
 
+## Warm up
+
+Data wrangling
+
+![](img/minority.gif)
+
+
 ## R learning curve
 
 ```{r}

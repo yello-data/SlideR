@@ -1,0 +1,566 @@
+---
+title: "RMarkdown"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+params:
+  country: "United States"
+  year: 2012
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Sumari
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(leaflet)
+library(vembedr)
+```
+
+1.  Què és RMarkdown?
+2.  Repàs primeres sessions
+3.  Tutorial RMarkdown
+4.  RMarkdown avançat
+5.  Consideracions finals
+
+# 1. Què és RMarkdown? {background-color="#e8e8e8"}
+
+## Un paquet d'R
+
+S'instal·la com qualsevol altre.
+
+![](img/rmd-package.png){style="float:right;" fig-alt="RMarkdown logo." width="300"}
+
+```{r echo = T, eval = F}
+install.packages(c("rmarkdown", "knitr", 
+                   "DT", "vembedr", "leaflet"))
+```
+
+![](img/r-packages.png){style="float:center;" width="650"}
+
+## Un llenguatge/prosa {.scrollable}
+
+> "A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions"
+
+![](img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
+
+::: columns
+::: {.column width="50%"}
+-   John **Gruber**, 2004.
+-   Un format més **fàcil de llegir** i d'escriure que la majoria de llenguatges web com l'Html.
+-   **Convertible** fàcilment a Html, Pdf...
+:::
+
+::: {.column width="40%"}
+:::
+
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/html-code.png")
+```
+:::
+
+## Eina per a presentar resultats {.scrollable}
+
+::: columns
+::: {.column width="50%"}
+-   Imprescindible per a un bon analista de dades.
+-   Permet transformar en un ampli rang de formats el codi d'R.
+-   Exemples:
+:::
+
+::: {.column width="40%"}
+```{r eval = T, fig.align='center', fig.width=20}
+knitr::include_graphics("img/rmd-formats.png")
+```
+:::
+:::
+
+::: aside
+-   [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html){target="_blank"}
+-   [https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/){target="_blank"}
+-   [https://www.jordimas.cat/](https://www.jordimas.cat/){target="_blank"}
+:::
+
+# 2. Repàs primeres sessions {background-color="#e8e8e8"}
+
+## RStudio
+
+::: incremental
+-   Crear projecte
+-   Diferència entre instal·lar i carregar paquets
+-   Utilitzar l'Environment
+-   Importar arxius: csv, csv2, xlsx, dta, sav...
+:::
+
+## RMarkdown
+
+Crear un document: YAML - Text - Chunk
+
+![](img/rmd.png){style="float:left;" fig-alt="RMarkdown logo." width="290"}
+
+## Descarregar tutorial
+
+<https://www.jordimas.cat/files/Tutorial_Rmd_Polity.zip>
+
+![](img/polity-map.png)
+
+# 3. Tutorial RMarkdown {background-color="#e8e8e8"}
+
+## Configurar RMarkdown
+
+-   `Preview in Viewer Pane`
+-   `Chunk Output in Console`
+-   Knit: `Ctrl + Shift + K`
+-   Visualització Viewer o Web
+-   YAML - Text - Chunk
+
+## YAML
+
+-   Què és?
+-   Nom, títol i data.
+-   `---`
+
+. . .
+
+::: {.callout-note icon="false"}
+## Exercici 1: YAML
+
+Provar amb:
+
+``` {.r code-line-numbers="3"}
+output:
+  html_document:
+    theme: cosmo
+```
+:::
+
+## Text
+
+-   **Negreta**, *cursives*, `codi`, [enllaços](www.jordimas.cat){target="_blank"}, nota al peu[^1].
+
+-   Seccions i subseccions
+
+-   Ítems i subítems.
+
+-   Ítems enumerats.
+
+[^1]: Això és una nota al peu
+
+. . .
+
+::: {.callout-note icon="false"}
+## Exercici 2: Text
+
+Llegir introducció i fins a la imatge de RMarkdown. Fer els canvis que es proposen en el text.
+:::
+
+## Chunks
+
+-   Què és? `Ctrl + Alt + I`
+-   Inici i final d'un chunk.
+-   Etiquetes del chunk.
+-   Elements: `echo`, `eval`, `message`, `warning`.
+
+. . .
+
+::: {.callout-note icon="false"}
+## Exercici 3: Chunks
+
+Llegir l'apartat chunks i fer canvis que es proposen.
+:::
+
+## Taules, imatges i gràfics
+
+-   Els posem a dins del chunk.
+-   Marc de dades: tibble, kable, datatable.
+-   Imatges: `![]()` o `include_graphics("__")`.
+-   Gràfics: `fig.align = "center"`, `fig.width = 50%`.
+
+. . .
+
+::: {.callout-note icon="false"}
+## Exercici 4: Dades i gràfics
+
+Llegir l'últim apartat, modifica marc de dades i gràfic.
+:::
+
+## Avís important
+
+És important diferenciar entre
+
+-   Mode Knit
+-   Mode R Script
+
+## Activitat
+
+::: {.callout-note icon="false"}
+## Exercici 5: Polity V
+
+Crear una petita història amb [**Polity V**](https://www.jordimas.cat/files/polityV.xls){target="_blank"}:
+
+-   Descarregar la base de dades Polity V a [Systemic Peace](https://www.systemicpeace.org/inscrdata.html){target="_blank"}
+-   **Text** amb tots els formats possibles.
+-   Un **marc de dades** i dos **plots**.
+:::
+
+::: aside
+Variables d'interès:
+
+-   `country`: país.
+-   `year`: any.
+-   `polity2`: democràcia (-10 + 10).
+-   `durable`: anys de durada del règim.
+:::
+
+# 4. RMarkdown avançat I {background-color="#e8e8e8"}
+
+# 4.1. RMarkdown avançat (YAML) {background-color="#e8e8e8"}
+
+## Data automàtica
+
+Quan fem **Knit**, ens imprimeix automàticament el dia d'avui.
+
+```{r eval = F, echo = T}
+date: "`r Sys.Date()`"
+```
+
+```{r eval = T, echo = F}
+Sys.Date()
+```
+
+. . .
+
+```{r eval = F, echo = T}
+date: "`r format(Sys.time(), '%d %B %Y')`"
+```
+
+```{r eval = T, echo = F}
+format(Sys.time(), '%d %B %Y')
+```
+
+. . .
+
+```{r eval = F, echo = T}
+date: "Última edició `r format(Sys.time(), '%d %B %Y')`"
+```
+
+```{r eval = T, echo = F}
+paste0("Última edició ", format(Sys.time(), '%d %B %Y'))
+```
+
+## Foto d'encapçalament
+
+Posem una foto a la capçalera del document.
+
+```{r eval = F, echo = T}
+title: "![Posar nom de títol](polity-index.jpeg){width=2in}"
+```
+
+![](img/polity-index.jpeg){.absolute top="250" left="0" width="500"}
+
+## Taula de continguts
+
+Customitzem elements de la taula de continguts.
+
+``` {.r code-line-numbers="3-8"}
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    toc_float:
+      collapsed: false
+        smooth_scroll: false
+```
+
+::: aside
+-   `toc:` volem taula de continguts?
+-   `toc_depth:` de quina profunditat?
+-   `number_sections:` les seccions han d'anar enumerades?
+-   `toc_float:` la taula de continguts ha de ser flotant?
+    -   `collapsed:` s'amaga automàticament?
+    -   `smooth_scroll:` navegació suau.
+:::
+
+## Temes
+
+Seleccionem l'estil visual i el subratllat:
+
+-   **Tema:** default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti, null.
+
+```{r eval = F, echo = T}
+theme: paper
+```
+
+-   **Highlight:** default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate, null.
+
+```{r eval = F, echo = T}
+highlight: tango
+```
+
+::: aside
+Per una llista dels diferents estils de temes i subratllats veure [aquest enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style){target="_blank"} i per una llista amb contingut més avançat veure [aquesta llista](https://www.datadreaming.org/post/r-markdown-theme-gallery/){target="_blank"}.
+:::
+
+## Plegar codi
+
+Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document.
+
+``` {.r code-line-numbers="4"}
+title: "Postgrau d'Analista de Dades (UB)"
+output:
+  html_document:
+    code_folding: hide
+```
+
+## Formats d'output
+
+Al YAML podem especificar el tipus de format[^2].
+
+[^2]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
+
+``` {.r code-line-numbers="4,6,8"}
+title: "Postgrau d'Analista de Dades (UB)"
+author: "Nom de l'estudiant"
+output:
+  html_document:
+    code_folding: hide
+  pdf_document:
+    toc: yes
+  word_document:
+```
+
+I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/){target="_blank"} en diversos formats.
+
+# 4.2. RMarkdown avançat (text) {background-color="#e8e8e8"}
+
+## Canviar mida de text
+
+Un dels deutes pendents de RMarkdown.
+
+```{r eval = F, echo = T}
+    <style>
+    body {
+    font-size: 13pt;
+    text-align: justify}
+    </style>
+```
+
+## Incloure codi al text {.scrollable}
+
+En qualsevol moment podem fer referència al text sobre qualsevol dada **ja carregada** en un chunk previ.
+
+-   A. Carreguem les dades:
+
+```{r echo = T}
+polity <- read_excel("data/p5v2018.xls")
+```
+
+-   B. Referenciem les dades al text:
+
+::: panel-tabset
+### Exemple 1
+
+En aquest gràfic veiem Estats Units en els darrers anys
+
+```{r echo = T, eval = T}
+p5_ctr <- polity |> 
+  filter(country == params$country, year > params$year) |> 
+  select(country, year, polity2)
+knitr::kable(p5_ctr)
+```
+
+Observem que en l'últim any de dades `` `r last(p5_ctr$year)` ``, `` `r params$country` `` tenia un nivell de democràcia de `` `r last(p5_ctr$polity2)` ``.
+
+-   r last(p5_dk\$year)
+-   r params\$country
+-   r last(p5_dk\$polity2)
+
+### Exemple 2
+
+```{r echo = T}
+polity |> 
+  group_by(country) |> 
+  summarize(duration = max(durable, na.rm = T)) |> 
+  ggplot(aes(x = duration)) +
+  geom_density()
+```
+
+El règim amb més durada és `` `r polity$country[which(polity$durable == max(polity$durable, na.rm = T))]` `` amb `` `r max(polity$durable, na.rm = T)` `` anys:
+
+```{r eval = F, echo = T}
+polity$country[which(polity$durable == max(polity$durable, na.rm = T))]
+
+max(polity$durable, na.rm = T)
+```
+:::
+
+## Referències al text
+
+Per referenciar la secció del document[^3]:
+
+[^3]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
+
+```{r eval = F, echo = T}
+# Introducció {#intro}
+```
+
+En qualsevol moment del text, introduïm:
+
+```{r eval = F, echo = T}
+[text](#intro)
+```
+
+## Referències bibliogràfiques {.scrollable}
+
+Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
+
+[^4]: Alguns paquets d'R com `RefManageR` automatitzen la gestió de cites.
+
+1.  Obrim un **Text file**, el guardem com a `biblio.bib` i introduïm:
+
+<!-- -->
+
+    @misc{Marshall2020,
+    author = {Marshall, Monty G. and Gurr, Ted Robert},
+    publisher = {Center for Systemic Peace},
+    title = {{Polity V. Political Regime Characteristics and Transitions, 1800-2018}},
+    year = {2020}
+    }
+
+2.  Indiquem al **YAML** on es troba l'arxiu:
+
+<!-- -->
+
+    bibliography: biblio.bib
+
+3.  Citem les referències al **text**.
+
+-   Entre claudàtors `[@Marshall2020]`, ens posarà (Marshall 2020).
+-   Sense claudàtors `@Marshall2020`, ens posarà Marshall (2020).
+
+4.  En l'última línia del document de RMarkdown, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
+
+::: aside
+Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
+:::
+
+# 4.3. RMarkdown avançat (chunks) {background-color="#e8e8e8"}
+
+## Taules
+
+::: panel-tabset
+## Opció knitr::kable
+
+Tot tipus de taules amb el paquet [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+
+```{r echo = T, eval = F}
+polity |> 
+  filter(country %in% c("Angola", "Spain", "Vietnam"),
+         year == 2014) |> 
+  select(country, scode, polity2, durable) |> 
+  knitr::kable()
+```
+
+Arguments d'interès:
+
+::: aside
+-   `col.names = c("País", "Codi", "Democràcia", "Duració")`
+-   `align = c("llcc")`
+-   `caption = "Títol"`
+:::
+
+## Opció DT::data.table
+
+```{r echo = T, eval = F}
+polity |> 
+  select(country, scode, polity2, durable) |> 
+  DT::datatable()
+```
+:::
+
+## Figures
+
+Varis paràmetres per establir les dimensions:
+
+-   `fig.width`: amplada en inches.
+-   `fig.height`: alçada en inches.
+-   `fig.align`: "left", "right", "center".
+-   `fig.dim`: primer width i després height, c(5,3)
+-   `out.width`: "50%" ocuparà el 50% de l'amplada del report
+
+## Opcions globals
+
+Opcions per defecte als chunks de tot el document:
+
+```{r eval = F, echo = T}
+knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
+                      warning = FALSE, message = FALSE,
+                       fig.width = 6, fig.height = 6)
+```
+
+El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
+
+## Què evitar als chunks
+
+-   La funció `install.packages()`.
+-   La funció `download.file()`.
+-   La funció `View()`.
+-   Carregar bases de dades d'internet.
+-   Funcions que carreguen bases de dades (ex. `CEOdata`)
+
+# 4.4. RMarkdown avançat (publicar) {background-color="#e8e8e8"}
+
+## Exportar i publicar {#rmd-rpubs}
+
+Tres maneres de publicar en Html:
+
+-   [RPubs](https://rpubs.com/){target="_blank"}: La forma més senzilla.
+-   [Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}: Blocs.
+-   [Bookdown](https://bookdown.org/){target="_blank"}: Llibres.
+
+## Activitat
+
+::: {.callout-note icon="false"}
+## Exercici 7: Prova final
+
+Agafeu el treball d'un **dataset anterior** i construiu un document Html, procurant d'utilitzar també algunes de les funcions avançades. En particular:
+
+-   Marc de dades en knitr o DT.
+-   Temes i subratllats.
+-   Plegar codi.
+-   Mida gràfics.
+
+**Publiqueu-ho a [RPubs](https://rpubs.com/){target="_blank"}:** A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -\> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
+:::
+
+
+## El món de l'endemà
+
+::: columns
+::: {.column width="50%"}
+[Quarto](www.quarto.org) ![](img/quarto.png)
+:::
+
+::: {.column width="50%"}
+[Posit](www.posit.co) ![](img/posit.png)
+:::
+:::
+
+## Bibliografia principal
+
+-   [Guia ràpida de RMarkdown a la web de RStudio.](https://rmarkdown.rstudio.com/lesson-1.html){target="_blank"}
+-   [Cheatsheet RMarkdown.](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}
+-   [Capítol de RMarkdown al llibre *R para ciencia de datos*](https://es.r4ds.hadley.nz/r-markdown.html){target="_blank"}.
+-   [El llibre complet: *RMarkdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/html-document.html){target="_blank"}.

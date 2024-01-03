@@ -1,0 +1,208 @@
+---
+title: "Excel"
+subtitle: "Quantitative Methodology (UPF)"
+author: "Jordi Mas Elias"
+institute: "<https://www.jordimas.cat/>"
+footer: "Quantitative Methodology (UPF)"
+logo: logo-upf.png
+format: 
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: print
+    theme: simple
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Sumari
+
+-   Tipus d'arxius
+-   Orientar-se a Excel
+-   Taules dinàmiques amb Excel
+-   Summaries
+
+# Tipus d'arxius {background-color="#e8e8e8"}
+
+## Arxius plans (I) {.scrollable}
+
+Comma Separated Values (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Les comes (`,`) separen variables.
+-   Els punts (`.`) separen decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv.png)
+:::
+:::
+
+## Arxius plans (II) {.scrollable}
+
+Comma Separated Values 2 (`csv`).
+
+::: columns
+::: {.column width="40%"}
+-   Punt i coma (`;`) separa variables.
+-   Coma (`,`) separa decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_csv2.png)
+:::
+:::
+
+## Arxius plans (III) {.scrollable}
+
+Tab-Separated Values 2 (`tsv`).
+
+::: columns
+::: {.column width="40%"}
+-   Tabuladors (\ \ \ \ \ \ \ \ ) separen variables.
+-   Punts (`.`) separen decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_tab.png)
+:::
+:::
+
+## Arxius plans (IV) {.scrollable}
+
+Altres delimitadors (`txt`).
+
+::: columns
+::: {.column width="40%"}
+-   Barra (`/`) separen variables.
+-   Punts (`.`) separen decimals.
+:::
+
+::: {.column width="60%"}
+![](img/read_delim.png)
+:::
+:::
+
+## Altres tipus (V) {.scrollable}
+
+- Excel (`xls`, `xlsx`).
+- Stata (`dta`).
+- SPSS (`.sav`, `.spss`).
+- R (`.rds`, `Rdata`).
+
+
+
+# Tipus d'arxius {background-color="#e8e8e8"}
+
+
+## Orientar-se a Excel
+
+-	Cel·les, columnes i files.
+-	Referència de cel·la, e.g.: `C22`.
+- Símbol igual `=`
+- Arxius `.csv`
+- Importar dades (Data -> Get)
+- Funcions: `MAX()`
+
+Dades completes: [QOG Basic dataset](https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset)
+
+
+# Variables categòriques {background-color="#e8e8e8"}
+
+## Variables categòriques
+
+- Municipi: Barcelona, Sant Cugat, Granollers…
+- Educació: Primària, Secundària, Terciària.
+- Religió: Muslim, Catholic, Shinto…
+- Idioma: Russian, Catalan, Swedish.
+- Ideologia: Ideology: Conservatism, Nationalism, Liberal…
+- Partits polítics: PSOE, PP, Cs, ERC…
+
+## Operacions bàsiques
+
+- Categories úniques: `UNIQUE()`
+- Recompte: `COUNTIF()`
+- Taula de freqüències.
+- **Moda:** Valor més repetit.
+- Percentatges (_més endavant_)
+
+
+# Variables numèriques {background-color="#e8e8e8"}
+
+## Variables numèriques
+
+- Població: 200, 3345000, 13000000.
+- Anys: 2005, 2010, 2015, 2020...
+- Percentatge: 0%, 34%, 100%.
+- Ideologia: 0 (esquerra) - 10 (dreta)
+
+## Operacions bàsiques
+
+On es troba el centre?: `MEDIAN()`, `MEAN()`
+
+![](img/uni-mean-median.png)
+
+
+## Operacions bàsiques
+
+On es troba el centre?
+
+![](img/uni-mean-extreme.png)
+
+## Operacions bàsiques
+
+On es troba el centre?
+
+[![](img/gdp-median-nyt.png)](https://www.nytimes.com/2014/09/17/upshot/you-cant-feed-a-family-with-gdp.html)
+
+
+## Operacions bàsiques
+
+Com de dispersos estan els valors?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+- Min: `MIN()`
+- Max: `MAX()`
+- Range: `MAX() - MIN()`
+- Percentil: `PERCENTILE()`
+- Rang InterQuartilic: `PERCENTILE(x, 0.75)` - `PERCENTILE(x, 0.25)`
+:::
+
+::: {.column width="35%"}
+![](img/uni-dispersion-range.png)
+:::
+
+::::
+
+## Operacions bàsiques
+
+Com de dispersos estan els valors?
+
+- **Desviació estàndard/típica:** Com de lluny sobre la mitjana? `sd()`
+
+![](img/uni-dispersion-sd.png)
+
+
+
+# Excel avançat {background-color="#e8e8e8"}
+
+## Excel avançat
+
+- Arrossegar cel·les.
+- Símbol dòlar `$` per impedir que s'arrosseguin cel·les.
+
+## Taules dinàmiques amb Excel
+
+Google Spreadsheets:
+
+-   Data -\> Create a Filter.
+
+Microsoft Excel:
+
+-   Insert -\> Table
+
