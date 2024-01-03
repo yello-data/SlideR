@@ -46,25 +46,6 @@ plot(rlc$class, rlc$knowledge)
 points(rlc$class[class], rlc$knowledge[class], col = "red")
 ```
 
-## UPF Inclusive Growth Index (IGI)
-
-```{r echo = T}
-igi <- rendacs |>
-  mutate(zs_gdp = (import_euros - mean(import_euros)) / sd(import_euros),
-         zs_gini = (mean(index_gini) - index_gini) / sd(index_gini),
-         upf_index = (zs_gdp + zs_gini) / 2) |> 
-  select(nom_barri, secc = seccio_censal, zs_gdp:upf_index) |> 
-  arrange(desc(upf_index))
-head(igi, 10)
-```
-
-## UPF Inclusive Growth Index (IGI)
-
-```{r echo = T}
-tail(igi, 10)
-```
-
-
 
 
 ## Made with ggplot
