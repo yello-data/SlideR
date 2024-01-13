@@ -44,7 +44,8 @@ Paint the fence, first...
 - Situar-se a RStudio
 - Instal·lar paquets
 - Carregar paquets
-- Comprovar paquets
+- Importar arxius
+- Comprovar Environment
 
 
 ## RStudio workflow

@@ -1,13 +1,4 @@
 
-# 6. Dplyr1
-
-## Perquè no em funciona res?
-# - Crear projecte
-# - Tenir els paquets instal·lats
-# - Tenir els paquets carregats
-# - Tenir els arxius a l'Environment
-# - Repassar Guia d'RStudio
-
 
 # 7. Dplyr2
 ## Fer preguntes.
