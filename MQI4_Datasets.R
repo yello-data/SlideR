@@ -70,8 +70,6 @@ uni <- tibble(faculty = rep(c("Psysics", "Politics", "Journalism"), times = 1, e
               sex = rep(c("Men", "Women"), times = 3),
               applicants = c(825,108,325,593,181,392),
               admitted = c(520, 76, 119, 203, 52, 115))
-uni
-
 
 # What is aggregate data (uni level) telling us?
 uni |> 
@@ -92,7 +90,6 @@ suicide <- tibble(region = c("Isère"),
                   religion = rep(c("Protestant", "Catholic"), times = 3),
                   population = c(8250,1080,325,593,181,392),
                   suicide = c(520, 72, 12, 20, 5, 11))
-suicide
 
 #What aggregate data (regional level) is telling us?
 suicide |> 
@@ -105,7 +102,6 @@ suicide |>
 suicide |> 
   mutate(perc = suicide / population * 100) |>
   arrange(desc(perc))
-
 
 
 
@@ -314,9 +310,11 @@ ratio
 # Scientific notation: 1.2e+07?
 12000000
 
-# Scientific notation: 2.50+e08
+# Scientific notation: 2.50e+08
 250000000
 
+options(scipen=999)
+options(scipen=0)
 
 ### 2.4.3. OPERATIONS
 #    - Equality: ==
@@ -362,12 +360,11 @@ id
 # Populations above 1000 mts
 id$
 
-# Highest CINC index?
-
-# Country with the lowest military personnel per capita (milper/tpop)?
+# Populations "Osona"
 
 
+# Highest altitude
 
-### 2.4.5. 
 
+# Lowest surface
 

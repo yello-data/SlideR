@@ -12,7 +12,7 @@
 library(dplyr)
 rlc <- tibble(class = 1:8,
              knowledge = (1:8)^3)
-class <- 4
+class <- 3
 plot(rlc$class, rlc$knowledge)
 points(rlc$class[class], rlc$knowledge[class], col = "red")
 
@@ -40,7 +40,7 @@ rendacs #UO: ??
 cens_gc #UO: individu
 
 
-# At the end of this module, you will (almost) learn to do things like this 
+# In few sessions, you will (almost) learn to do things like this 
 lloguer_any |> 
   group_by(any, nom_districte) |> 
   summarize(preu = mean(preu, na.rm = T)) |> 

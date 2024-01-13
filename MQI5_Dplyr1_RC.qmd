@@ -16,29 +16,29 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
 - Pipe
-- Row dplyr functions
-- Column dplyr functions
-- Transform variables
+- Funcions dplyr de fila
+- Funcions dplyr de columna
+- Transformar variables
 
 # Warm up {background-color="#e8e8e8"}
 
-## R learning curve
+## Corba d'aprenentatge
 
 ```{r}
 library(dplyr)
 rlc <- tibble(class = 1:8,
              knowledge = (1:8)^3)
-class <- 4
+class <- 3
 plot(rlc$class, rlc$knowledge)
 points(rlc$class[class], rlc$knowledge[class], col = "red")
 ```
 
 ## RStudio workflow
 
-**Load packages.**
+**Carregar paquets**
 
 ```{r echo = T, message=F, warning=F}
 library(dplyr)
@@ -54,7 +54,7 @@ library(stringr)
 
 ## Pipe
 
-One function
+Una funció
 ```{r eval = F, echo = TRUE}
 #| code-line-numbers: "|1|2|3|4-5"
 f(d$v)
@@ -64,7 +64,7 @@ d |> f(v)
    sample(4)
 ```
 
-Various functions
+Vàries funcions
 ```{r eval = F, echo = TRUE}
 #| code-line-numbers: "|1|2-4"
 f1(f1(d, v1), v2)
@@ -77,14 +77,14 @@ d |>
 
 ## Pipe
 
-Without pipe
+Sense pipe
 ```{r eval = F, echo = TRUE}
 go_to_upf(take_transport(get_dressed(get_out_of_bed(wake_up(me,
 time = "8:30"), side = "left"), pants = TRUE, shirt = TRUE), 
 bus = TRUE, metro = FALSE), mqi = FALSE, bar = TRUE)
 ```
 
-With pipe
+Amb pipe
 
 ```{r eval = F, echo = TRUE}
 me |> 
@@ -95,34 +95,34 @@ me |>
   go_to_upf(mqi = FALSE, bar = TRUE)
 ```
 
-Example taken from [here](https://twitter.com/hadleywickham/status/1359852563726819332?s=20&t=J8qesZb3u9EAwVKMYMgh1Q) and [here](https://evalsp21.classes.andrewheiss.com/projects/01_lab/slides/01_lab.html#116).
+Exemple inspirat de [here](https://twitter.com/hadleywickham/status/1359852563726819332?s=20&t=J8qesZb3u9EAwVKMYMgh1Q) i [here](https://evalsp21.classes.andrewheiss.com/projects/01_lab/slides/01_lab.html#116).
 
 
-# Row dplyr functions {background-color="#e8e8e8"}
+# Funcions dplyr de fila {background-color="#e8e8e8"}
 
 ## Filter
 
-Reduces the number of rows according to a certain criteria
+Redueix el nombre de files en base a un criteri determinat
 
 ```{r echo = T, eval = F}
 df |> 
   filter(logic_vector)
 ```
 
-- Always is the result of a logic vector.
-- Can use `&` (AND), `|` (OR), `!` (NOR).
+- És sempre el resultat d'un vector lògic.
+- Es pot usar `&` (AND), `|` (OR), `!` (NOR).
 
 
 ## Arrange
 
-- Arranges from less to more...
+- Ordena de menys a més...
 
 ```{r echo = T, eval = F}
 df |> 
   arrange(vector)
 ```
 
-- ...or from more to less.
+- ...o de més a menys.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -131,14 +131,14 @@ df |>
 
 ## Count
 
-- Counts the number of categories in a vector^[This vector is usually a character vector or a factor, but it can be another vector with few categories.]...
+- Fa un recompte del nombre de categories d'un vector^[Aquest vector és normalment un vector de caràcter o un factor, però també podria ser un vector, per exemple, numèric amb poques categories.]...
 
 ```{r echo = T, eval = F}
 df |> 
   count(vector)
 ```
 
-- ...and orders the results.
+- ...i ordena els resultats.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -146,18 +146,18 @@ df |>
 ```
 
 
-# Column dplyr functions {background-color="#e8e8e8"}
+# Funcions dplyr de columna {background-color="#e8e8e8"}
 
 ## Select
 
-- Selects vectors.
+- Selecciona vectors.
 
 ```{r echo = T, eval = F}
 df |> 
   select(vector1, vector4, vector6:vector9)
 ```
 
-- Removes vectors.
+- Elimina vectors.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -166,7 +166,7 @@ df |>
 
 ## Rename
 
-Renames the vector.
+Reanomena el nom del vector.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -177,21 +177,21 @@ df |>
 
 ## Mutate {.scrollable}
 
-- **Modifies** the values of a vector^[It modifies the value of the vector because it saves the operation in the same vector.]...
+- **Modifica** els valors d'un vector^[Modifica el valor del vector perquè guarda el resultat de l'operació en el mateix vector.]...
 
 ```{r echo = T, eval = F}
 df |> 
   mutate(vector5 = vector5 * 100)
 ```
 
-- ... or creates a **new** vector^[It creates a new vector since the operation is saved in a vector that did not exist in the dataframe.].
+- ... o bé crea un **nou** vector^[Crea un nou vector perquè la operació es guarda en un vector que no existia prèviament en el marc de dades.].
 
 ```{r echo = T, eval = F}
 df |> 
   mutate(new_vector = vector5 + vector6)
 ```
 
-- Several operations can be combined.
+- Es poden combinar vàries operacions.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -202,14 +202,14 @@ df |>
 
 ## Summarize
 
-- Summarizes data.
+- Resumeix les dades.
 
 ```{r echo = T, eval = F}
 df |> 
   summarize(name = sum(vector))
 ```
 
-- Different elements can be summarized:
+- Varis elements poden ser resumits:
 
 ```{r echo = T, eval = F}
 df |> 
@@ -218,12 +218,12 @@ df |>
             n = n())
 ```
 
-*Mind the argument `na.rm = T`.
+*Compte amb l'argument `na.rm = T`.
 
 
 ## Group_by   
 
-- Always combined with another function (e.g. `summarize`, `filter`, `mutate`), it groups the data by the values of a vector^[This vector is usually a character vector or a factor, but it can be another vector with few categories.]...
+- Sempre s'ha de combinar amb una altra funció (e.g. `summarize`, `filter`, `mutate`), agrupa les dades segons els valors d'un o més vectors^[Aquest vector és normalment un vector de caràcter o un factor, però pot ser un altre vector amb poques categories (discret).]...
 
 ```{r echo = T, eval = F}
 df |> 
@@ -231,5 +231,5 @@ df |>
   summarize(name1 = sum(vector))
 ```
 
-*With group_by and summarize, we change the __unit of observation__ of the dataset.
+*Quan combinem group_by i summarize, estem canviant la __unitat d'observació__ del marc de dades.
 

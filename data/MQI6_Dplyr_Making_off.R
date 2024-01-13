@@ -85,7 +85,8 @@ write_rds(rendacs, "data/rendacs.rds")
 
 ## ACCIDENTS GU
 #https://opendata-ajuntament.barcelona.cat/data/dataset/87aa433e-fef8-4ff4-8f9a-d66e9beefff6/resource/3df166fe-ceec-4b20-811d-4b58c29d7cb1/download/2020_accidents_persones_gu_bcn.csv
-accidents20 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/87aa433e-fef8-4ff4-8f9a-d66e9beefff6/resource/3df166fe-ceec-4b20-811d-4b58c29d7cb1/download/2020_accidents_persones_gu_bcn.csv") |> 
+accidents20 <- read_csv("https://opendata-ajuntament.barcelona.cat/data/dataset/87aa433e-fef8-4ff4-8f9a-d66e9beefff6/resource/3df166fe-ceec-4b20-811d-4b58c29d7cb1/download/2020_accidents_persones_gu_bcn.csv",
+                        locale = locale(encoding = "UTF-8")) |> 
   clean_names()
 
 write_rds(accidents20, "data/accidents.rds")

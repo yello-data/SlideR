@@ -1,9 +1,9 @@
 ---
 title: "R"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa I (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa I (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
@@ -16,12 +16,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
 -   R Workflow
--   Objects in R
--   Functions in R
--   Types of data files
+-   Objectes d'R
+-   Funcions d'R
+-   Tipus d'arxius
 
 ## Warm up
 
@@ -38,17 +38,25 @@ Paint the fence, first...
 
 # R {background-color="#e8e8e8"}
 
+## Passos inicials
+
+- Crear projecte
+- Situar-se
+- Instal·lar paquets
+- Carregar paquets
+- Comprovar paquets
+
 
 ## RStudio workflow
 
--   **Install packages:** Once in a year.
+-   **Instal·lar paquets:** Un cop l'any.
 
 ```{r eval = F, echo = T}
 install.packages(c("dplyr", "ggplot", "tidyr", 
                    "readr", "readxl", "haven", "foreign"))
 ```
 
--   **Load packages:** Everytime you join R.
+-   **Carregar paquets:** Cada vegada que entrem a RStudio.
 
 ```{r echo = T, message=F, warning=F}
 library(dplyr)
@@ -58,30 +66,32 @@ library(readr)
 
 ![](img/r-packages.png){style="float:center;" width="650"}
 
-# R objects {background-color="#e8e8e8"}
 
-## Objects
 
-- A. Values
+# Objectes d'R {background-color="#e8e8e8"}
+
+## Objectes
+
+- A. Valors
 - B. Vectors: `c(value1, value2, value3, ...)`
-- C. Dataframes: `tibble(vector1, vector2, ...)`
+- C. Marcs de dades: `tibble(vector1, vector2, ...)`
 
 ![](img/intro-dataframe.png)
 
 
-## Objects. General rules
+## Objectes. Regles generals
 
-General rules for creating objects:
+Regles generals per crear objectes:
 
-- Can't start with a number.
-- Can't contain: `^, !, $, @, +, -, /, *`.
-- Overwrittes if saving with the same name. 
-- Case sensitive.
+- No començar amb un nombre.
+- No pot contenir: `^, !, $, @, +, -, /, *`.
+- Sobrescriu, si guardem amb el mateix nom. 
+- Sensible a majúscules.
 
-## Objects. Vectors {.smaller}
+## Objectes. Vectors {.smaller}
 
 
-| Class   | Type    | Example                                                |
+| Classe   | Tipus    | Exemple                                                |
 |------------|-------------|-----------------------------------------------|
 | Character | Character | `c("b", "c", "d")`                                     |
 | Factor    | Integer    | `factor(c("b", "c", "d"))`                             |
@@ -90,52 +100,47 @@ General rules for creating objects:
 | Data      | Double    | `as.Date(c("2019/06/04", "2019/11/02", "2020/01/23"))` |
 | Logical   | Logical    | `c(FALSE, TRUE, FALSE)`                                |
 
-: Class and type of vector {#tbl-types-vector}
+: Classe i tipus de vector {#tbl-types-vector}
 
 
 
-## Objects. Rules 
+## Objectes. Regles 
 
-- All values in a vector must be of the same type
-- All vectors in a dataframe must have equal length
-- Values in a vector can be selected with `[ ]`
-- Rows and columns in a df can be selected with `[ , ]`
+- Tots els valors d'un vector han de ser del mateix tipus.
+- Tots els vectors en un marc de dades han de tenir la mateixa longitud.
+- Els valors d'un vector es seleccionen amb `[ ]`.
+- Les files i columnes en un md es seleccionen amb `[ , ]`
 
-## Exercise
+## Exercici
 
 ::: {.callout-tip icon="false"}
 ## CHES Latin America
 Codebook available [here](https://www.chesdata.eu/chesla){target="_blank"}.
 
-- Glimpse the `ches_la` object. Rows? Columns?
-- Which countries are in the dataset?
-- Select `Colombia` and create a new object named `ches_co`.
-- Glimpse the new dataframe (how many observations?).
-- Select party variables, lrecon, galtan, crime, regions, ethnic_minorities.
-- Overwrite the object ches_co with the transformation.
+- Fes una ullada (`glimpse()`) a `ches_la` object.
+- Quins països tenim al _dataset_?
+- Selecciona `Colombia` i crea un objecte nou que es digui `ches_co`.
+- Torna a fer una ullada al nou _dataset_ (quantes observacions?).
+- Selecciona variables de partit + lrecon, galtan, crime, regions, ethnic_minorities.
+- Sobreescriu l'objecte `ches_co` amb la transformació.
 :::
 
-# Functions {background-color="#e8e8e8"}
+# Funcions {background-color="#e8e8e8"}
 
-## Functions (I): General rules {.scrollable}
+## Funcions (I): Regles generals {.scrollable}
 
-General rules for using functions:
+Regles generals per utilitzar funcions:
 
-- They can contain several arguments.
+- Poden tenir varis arguments.
   - `function(argument1, argument2 ...)`
-- Normally, the first argument is a vector or a dataframe.
-- Use `?` or other help to know how to use them.
-
-::: {.callout-tip icon="false"}
-## Exercise: Afrobarometer - Nigeria
-Codebook available [here](https://www.afrobarometer.org/survey-resource/nigeria-round-8-questionnaire/){target="_blank"}.   
-File: <https://www.jordimas.cat/files/nig.csv>
-:::
+- Normalment, el primer argument és un vector o un marc de dades.
+- Utilitza `?` o ajuda per saber com utilitzar-la.
 
 
-## Functions (II): Without arguments  {.scrollable}
 
-Normally, when they are related to the working environment.
+## Funcions (II): Sense arguments  {.scrollable}
+
+Normalment, quan fem alguna cosa relacionada amb el directori de treball.
 ```{r echo = T, eval = F}
 ls()
 installed.packages()
@@ -146,9 +151,9 @@ getwd()
 
 
 
-## Functions (III): With one argument
+## Funcions (III): Amb un argument
 
-Applied normally to a dataframe:
+Aplicades normalment a un marc de dades:
 
 ```{r echo = T, eval = F}
 glimpse()
@@ -156,22 +161,22 @@ dim()
 summary()
 ```
 
-Applied normally to a vector:
+Aplicades normalment a un vector:
 
 ```{r echo = T, eval = F}
-#to a character vector
+#vector de caràcter
 unique()
 table()
 
-#to a numeric vector
+#vector numèric
 mean() 
 hist()
 ```
 
-## Functions (IV): With many arguments  {.scrollable}
+## Funcions (VI): Amb molts arguments  {.scrollable}
 
 ::: {.callout-tip icon="false"}
-## Exercise: Functions
+## Exercici: Funcions
 
 ```{r echo = T, eval = F}
 sample()
@@ -181,22 +186,23 @@ rep()
 :::
 
 ::: {.callout-note icon="false"}
-## Help!
-Using R is impossible without help.
+## Ajuda!
+Fer servir R és impossible sense ajuda.
 
-- Use `?` before a function: e.g. `?sample`.
-- Use Cheet Sheats (see [Posit website](https://posit.co/resources/cheatsheets/){target="_blank"}).
-- Use [Stackoverflow](https://stackoverflow.com/){target="_blank"}.
-- Use Google.
+- Utilitza `?` abans d'una funció: e.g. `?sample`.
+- Cheet Sheats (see [Posit website](https://posit.co/resources/cheatsheets/){target="_blank"}).
+- Utilitza [Stackoverflow](https://stackoverflow.com/){target="_blank"}.
+- Utilitza ChatGPT.
+- Utilitza Google.
 :::
 
 
 
 
 
-# Import data {background-color="#e8e8e8"}
+# Importar dades {background-color="#e8e8e8"}
 
-## Import functions
+## Funcions d'importació
 
 ```{r import, echo = FALSE, message = FALSE, warning = FALSE}
 library(dplyr)
@@ -214,9 +220,9 @@ tribble(
 
 
 
-## Import functions 
+## Funcions d'importació
 
-- Package `readr`.
+- Paquet `readr`.
 
 ```{r eval = F, echo = T}
 read_csv("data/gapminder.csv")
@@ -225,7 +231,7 @@ read_tsv("data/gapminder3.tsv")
 read_delim("data/gapminder4.txt", delim = "/")
 ```
 
-- Other packages:
+- Altres paquets:
 
 ```{r eval = F, echo = T}
 tibble(foreign::read.dta("data/gapminder5.dta"))

@@ -179,9 +179,9 @@ unclass(factor) #actually, a factor is an integer with a label!
 logic <- c(TRUE, FALSE, FALSE, TRUE, FALSE)
 class(logic)
 
-act <- c("Johnny Depp", "Leo DiCaprio", "Jessica Chastain", "Lady Gaga", "Anthony Hopkins")
-hair <- c("brown",      "blond",        "red",              "blond",     "white")
-born <- c(1963,          1974,           1977,               1986,        1937)
+act <- c("Johnny Depp", "Cillian Murphy", "Margot Robbie", "Sarah Snook", "Anthony Hopkins")
+hair <- c("black",      "brown",        "blond",              "red",     "white")
+born <- c(1963,          1976,           1990,               1987,        1937)
 
 act == "Johnny Depp"
 born > 1975
@@ -303,21 +303,23 @@ elections[elections$presidential,]
 library(dplyr)
 library(readr)
 ches_la <- read_csv("https://www.chesdata.eu/s/ches_la_2020_aggregate_level_v01.csv")
+ches_la <- read_csv("https://www.chesdata.eu/s/ches_la_2020_aggregate_level_v01.csv",
+                    locale = locale(encoding = "ISO-8859-1")) 
+#Encoding: "UTF-8" / "ISO-8859-1"
 
-# Observe the ches_la object
-glimpse(ches_la)
+# Observe the ches_la object with glimpse()
+
 
 # Which countries are in the dataset?
 ## Hint: Unique names of vector country
-unique(ches_la$country)
+
 
 # Select Colombia and create a new object named ches_co
 ## Hint: Use selection claudators and a logical vector in the rows
-ches_co <- ches_la[ches_la$country == "Colombia", ]
-ches_co
+
 
 # Observe the new dataframe (how many observations?)
-glimpse(ches_co)
+
 
 # Keep party variables, lrecon, galtan, crime, regions, ethnic_minorities
 ches_co[, c("party_id", "party_abb", "party", "lrecon", "galtan", "crime", "regions", "ethnic_minorities")]
@@ -459,11 +461,13 @@ rep()
 # PART 7. IMPORT FUNCTIONS
 #####################################################################
 
+# Packages
 library(readr)
 library(foreign)
 library(haven)
 library(readxl)
 
+# Create folder "data" and put the documents there
 read_csv("data/gapminder.csv") #readr
 read_csv2("data/gapminder2.csv") #readr
 read_tsv("data/gapminder3.tsv") #readr
