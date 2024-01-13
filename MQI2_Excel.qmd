@@ -94,7 +94,7 @@ Altres delimitadors (`txt`).
 
 
 
-# Tipus d'arxius {background-color="#e8e8e8"}
+# Excel {background-color="#e8e8e8"}
 
 
 ## Orientar-se a Excel
@@ -103,7 +103,8 @@ Altres delimitadors (`txt`).
 -	Referència de cel·la, e.g.: `C22`.
 - Símbol igual `=`
 - Arxius `.csv`
-- Importar dades (Data -> Get)
+- Importar dades (E: Data -> Get)
+- Importar dades (G: Fitxer -> Import)
 - Funcions: `MAX()`
 
 Dades completes: [QOG Basic dataset](https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset)
@@ -195,6 +196,9 @@ Com de dispersos estan els valors?
 
 - Arrossegar cel·les.
 - Símbol dòlar `$` per impedir que s'arrosseguin cel·les.
+  - `A$1`: Impedeix arrossegament vertical.
+  - `$A1`: Impedeix arrossegament horitzontal.
+
 
 ## Taules dinàmiques amb Excel
 
