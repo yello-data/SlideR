@@ -7,6 +7,7 @@ library(janitor)
 # FONTS PRINCIPALS
 #https://www.idescat.cat/estad/?geo=mun
 #https://opendata-ajuntament.barcelona.cat/data/ca/dataset
+#https://mossos.gencat.cat/ca/els_mossos_desquadra/indicadors_i_qualitat/dades_obertes/index.html
 
 
 # 1. MUNICIPI

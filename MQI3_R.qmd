@@ -41,7 +41,7 @@ Paint the fence, first...
 ## Passos inicials
 
 - Crear projecte
-- Situar-se
+- Situar-se a RStudio
 - Instal·lar paquets
 - Carregar paquets
 - Comprovar paquets
