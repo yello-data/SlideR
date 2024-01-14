@@ -1,4 +1,4 @@
-
+#LMM
 
 # 7. Dplyr2
 ## Fer preguntes.
@@ -25,13 +25,13 @@
 ## CONSELLS ÚLTIM DIA
 
 # PER L'EXAMEN
-# Aprofiteu per mirar d'entendre els cheatsheets dplyr, ggplot2, tidyr
+# Aprofitar per mirar d'entendre els cheatsheets dplyr, ggplot2, tidyr
 # No s'ha de memoritzar
 
 # EN GENERAL
-#No copieu i enganxeu el codi!!!!!!!!!!!
+#No copiar i enganxar el codi!!!!!!!!!!!
 #Minimal reproducible example
-#Mireu l'ajuda i els exemples
+#Mirar l'ajuda i els exemples
 
 #FUN
 # Ensenyar coses de la web (visual aberrations, etc.)

@@ -116,7 +116,7 @@ Regles generals per crear objectes:
 
 ::: {.callout-tip icon="false"}
 ## CHES Latin America
-Codebook available [here](https://www.chesdata.eu/chesla){target="_blank"}.
+Llibre de codis disponible [aquí](https://www.chesdata.eu/chesla){target="_blank"}.
 
 - Fes una ullada (`glimpse()`) a `ches_la` object.
 - Quins països tenim al _dataset_?
@@ -135,7 +135,7 @@ Regles generals per utilitzar funcions:
 - Poden tenir varis arguments.
   - `function(argument1, argument2 ...)`
 - Normalment, el primer argument és un vector o un marc de dades.
-- Utilitza `?` o ajuda per saber com utilitzar-la.
+- Totes les funcions tenen un menú d'ajuda (`?funció`).
 
 
 

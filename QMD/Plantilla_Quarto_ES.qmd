@@ -1,0 +1,37 @@
+---
+title: "Título"
+author: 
+- "Estudiante"
+author-title: Autores
+published-title: Última modificación
+date: "`r Sys.Date()`"
+format: 
+  html:
+    embed-resources: true
+    code-fold: true
+    code-summary: "Mostrar código."
+    toc: true
+    toc-depth: 2
+    toc-title: Tabla de contenidos
+lang: es
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Apartado 1
+
+Info sobre Quarto: <https://quarto.org/docs/authoring/markdown-basics.html>
+
+## Apartado 2
+
+Text
+
+## Apartado 3
+
+Texto
+
+```{r}
+1 + 1
+```
+
