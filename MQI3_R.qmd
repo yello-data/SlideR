@@ -53,7 +53,7 @@ Paint the fence, first...
 -   **Instal·lar paquets:** Un cop l'any.
 
 ```{r eval = F, echo = T}
-install.packages(c("dplyr", "ggplot", "tidyr", 
+install.packages(c("dplyr", "ggplot2", "tidyr", 
                    "readr", "readxl", "haven", "foreign"))
 ```
 
@@ -174,7 +174,7 @@ mean()
 hist()
 ```
 
-## Funcions (VI): Amb molts arguments  {.scrollable}
+## Funcions (IV): Amb molts arguments  {.scrollable}
 
 ::: {.callout-tip icon="false"}
 ## Exercici: Funcions
