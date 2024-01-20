@@ -440,6 +440,20 @@ rendacs |>
 ```
 
 
+## Ghibli themes {.scrollable}
+
+Totes les paletes a: `ghibli::ghibli_palettes`
+
+```{r}
+library(ghibli)
+rendacs |> 
+  filter(nom_districte == "L'Eixample") |> 
+  ggplot(aes(x = import_euros, y = index_gini, col = nom_barri)) +
+  geom_point() +
+  scale_color_ghibli_d(name = "TotoroMedium",
+                       direction = -1)
+```
+
 
 ## Other theme packages {.scrollable}
 
@@ -454,6 +468,10 @@ rendacs |>
   scale_color_wsj() +
   theme_wsj()
 ```
+
+
+
+
 
 ## Modifying themes {.scrollable}
 
