@@ -1,9 +1,9 @@
 ---
 title: "Dplyr"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:

@@ -174,7 +174,7 @@ Quan la UA i la UO no concorden, tenim el risc d'incórrer en un problema de fal
 
 ::: aside
 
-- BERKELEY ADMISSIONS (see [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox){target="_blank"}).
+- Admissions de Berkeley (veure [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox){target="_blank"}).
 
 ```{r}
 uni <- tibble(faculty = rep(c("Psysics", "Politics", "Journalism"), times = 1, each = 2),
@@ -189,7 +189,7 @@ uni |>
   knitr::kable()
 ```
 
-- SUICIDE (critique to Durkheim).
+- Suicidi (crítica a Durkheim).
 
 ```{r}
 suicide <- tibble(region = c("Isère"),
