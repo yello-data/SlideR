@@ -197,17 +197,19 @@ str_sub(strings$iso3c, end = 2)
 
 
 ### 2.2.1. DATAFRAME
-ords <- tibble(donor = c("US-MCC", "Canada-GAC", "Germany-BMZ-GIZ", "Korea-KOICA", "Australia-DFAT", "Spain-AECID", 
-                         "Saudi Arabia-KSRelief", "Norway-MFA", "China-MOFCOM", "Turkey-TIKA"),
-               ati = factor(c("Very Good", "Good", "Good", "Good", "Good", "Fair",
-                              "Poor", "Poor", "Very Poor", "Very Poor"),
-                            ordered = TRUE,
-                            levels = c("Very Poor", "Poor", "Fair", "Good", "Very Good")),
-               regime_type = factor(c("Flawed Democracy", "Full Democracy", "Full Democracy", "Full Democracy", "Full Democracy", 
-                                      "Flawed Democracy", "Authoritarian", "Full Democracy", "Authoritarian", "Hybrid Regime"), 
-                                    ordered = TRUE,
-                                    levels = c("Authoritarian", "Hybrid Regime", "Flawed Democracy", "Full Democracy")))
+ords <- tibble(nom = c("Tània", "Pablo", "Sílvia", "Íñigo", "Carles", "Basha", "Isabel", "Santiago"),
+               decada = factor(c("1970s", "1970s", "1980s", "1960s", "1960s", "1980s", "1970s", "1970s"),
+                               ordered = TRUE, levels = c("1960s", "1970s", "1980s")),
+               independencia = factor(c("A favor", "Neutral", "A favor", "Neutral", "A favor", "A favor", "En contra", "En contra"),
+                                      ordered = T, levels = c("En contra", "Neutral", "A favor")),
+               immigracio =  factor(c("A favor", "A favor", "En contra", "Neutral", "Neutral", "A favor", "Neutral", "En contra"),
+                                    ordered = T, levels = c("En contra", "Neutral", "A favor")),
+               liberalisme = c("Baix", "Molt baix", "Mitjà", "Alt", "Alt", "Molt baix", "Molt alt", "Mitjà"))
 ords
+
+
+
+
 
 ### 2.2.2. STORAGE
 #    - Ordered factor

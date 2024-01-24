@@ -42,7 +42,8 @@ cens_gc #UO: individu
 
 #### ExErSiSe!!!!
 
-#Filtra per festivals de titularitat privada...
+#Q: Quina és la durada dels festivals de titularitat privada?
+# Filtra per festivals de titularitat privada...
 #...crea la variable durada amb la durada del festival...
 #...elimina la columna any (no és una variable), data_inici, data_fi...
 #... ordena les dades per durada, ordre descendent
@@ -109,16 +110,18 @@ contractes_menors
 municipi
 
 
-### Exemple de group_by amb filter (NO EXAM!)
+### Exemple de group_by amb filter (NO EXAMEN!)
+#Q: Quin és el preu mínim i el preu màxim de cada districte?
 lloguer_any |> 
   group_by(nom_districte) |> 
   filter(preu_m2 == max(preu_m2) | preu_m2 == min(preu_m2)) |> 
   arrange(nom_districte)
 
-### Exemple de group_by amb mutate (NO EXAM!)
+### Exemple de group_by amb mutate (NO EXAMEN!)
+#Q: Quins són els barris amb major preu de lloguer en relació a la mitjana del districte?
 lloguer_any |> 
   group_by(trimestre, nom_districte, any) |> 
-  mutate(m_distr_peu_m2 = mean(preu_m2)) |> 
+  mutate(m_distr_peu_m2 = mean(preu_m2, na.rm = T)) |> 
   ungroup() |> 
   mutate(rel_distr = preu_m2 / m_distr_peu_m2) |> 
   arrange(desc(rel_distr))

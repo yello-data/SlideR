@@ -199,37 +199,3 @@ df |>
          new_vector = vector5 + vector6)
 ```
 
-
-## Summarize
-
-- Resumeix les dades.
-
-```{r echo = T, eval = F}
-df |> 
-  summarize(name = sum(vector))
-```
-
-- Varis elements poden ser resumits:
-
-```{r echo = T, eval = F}
-df |> 
-  summarize(name1 = sum(vector),
-            name2 = mean(vector),
-            n = n())
-```
-
-*Compte amb l'argument `na.rm = T`.
-
-
-## Group_by   
-
-- Sempre s'ha de combinar amb una altra funció (e.g. `summarize`, `filter`, `mutate`), agrupa les dades segons els valors d'un o més vectors^[Aquest vector és normalment un vector de caràcter o un factor, però pot ser un altre vector amb poques categories (discret).]...
-
-```{r echo = T, eval = F}
-df |> 
-  group_by(vector) |> 
-  summarize(name1 = sum(vector))
-```
-
-*Quan combinem group_by i summarize, estem canviant la __unitat d'observació__ del marc de dades.
-

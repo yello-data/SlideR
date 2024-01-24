@@ -248,19 +248,19 @@ suicide
 
 ## Tipus de variables (1a): Nominal
 
-Categories desordenades:
+Categories no ordenables:
 
 - **Municipi:** Barcelona, Sant Cugat, Ripoll...
-- **Religió:** Muslim, Catholic, Shinto...
-- **Idioma:** Russian, Catalan, Swedish.
-- **Ideologia:** Conservatism, Nationalism, Liberal...
+- **Religió:** Cristianisme, Judaisme, Budisme...
+- **Idioma:** Alemany, Català, Suec...
+- **Ideologia:** Conservadorisme, Nacionalisme, Liberalisme...
 - **Partits polítics:** PSOE, PP, Cs, ERC...
 
 També es diuen _strings_, [`stringr`](https://stringr.tidyverse.org/){target="_blank"} [@R-stringr] | [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
 
 ## Tipus de variables (1b): Nominal
 
-- **Emmagatzematge:** Character, factor
+- **Emmagatzematge:** Character _<chr>_, factor _<fct>_
 
 - **Operacions:**
   - Igualtat: `==`
@@ -270,18 +270,18 @@ També es diuen _strings_, [`stringr`](https://stringr.tidyverse.org/){target="_
 
 ## Tipus de variables (2a): Ordinal
 
-Categories desordenades:
+Categories ordenables:
 
-- **Mida:** Small, Medium, Large.
-- **Any:** Child, Young, Adult.
-- **Educació:** Primary, Secondary, Tertiary.
-- **Idees:** Disagree, Neutral, Agree.
+- **Mida:** Petit, Mitjà, Gran.
+- **Any:** Infant, Jove, Adult.
+- **Educació:** Primària, Secundària, Terciària.
+- **Idees:** En contra, Neutral, A favor.
 
 Per factors, [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@R-forcats] | [Cheatsheet](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}.
 
 ## Tipus de variables (2a): Ordinal {.scrollable}
 
-- **Emmagatzematge:** Factor desordenat
+- **Emmagatzematge:** Factor ordenat _<ord>_
 
 - **Operacions:**
   - Igualtat: `==`
@@ -297,16 +297,16 @@ Per factors, [`forcats`](https://forcats.tidyverse.org/){target="_blank"} [@R-fo
 
 Nombres, el zero és arbitrari.
 
-- **Any:** 2004, 2005, 2008, 2010.
+- **Any calendari:** 2004, 2005, 2008, 2010.
 - **Temperatura** (except Kelvin)**:** 10, 25, 30.
 - **Ideologia:** Left-right measured as 0-10.
-- **Coordenades:** Longitude and latitude.
+- **Coordenades:** Longitud i latitud.
 
 
 
 ## Tipus de variables (3b): Interval {.scrollable}
 
-- **Emmagatzematge:** Numeric, integer, date
+- **Emmagatzematge:** Numeric _<dbl>_, integer _<int>_, date _<date>_
 
 - **Operacions:**
   - Igualtat: `==`
@@ -324,7 +324,7 @@ Nombres, el zero és arbitrari.
 
 Nombres, zero té significat
 
-- **Any:** 2, 5, 7, 9.
+- **Edat:** 2, 5, 7, 9.
 - **Percentatges:** 0%, 34%, 100%.
 - **Població:** 200, 3345000, 13000000.
 - **Índexs** (not all of them)**:** 0.245, 0.999.
@@ -332,7 +332,7 @@ Nombres, zero té significat
 
 ## Tipus de variables (4b): Ratio {.scrollable}
 
-- **Emmagatzematge:** Numèric
+- **Emmagatzematge:** Numèric _<dbl>_
 
 - **Operacions:**
   - Igualtat: `==`
@@ -350,12 +350,12 @@ Nombres, zero té significat
 
 
 
-## Tipus de variables (5): Sumari
+## Sumari
 
 ```{r echo = FALSE}
 tribble(~Tipus, ~Característiques, ~Vector, ~Operacions, 
         "Categòrica nominal", "Categories no ordenables", "Caràcter o factor", "==, %in%, !=",
-        "Categòrica ordinal", "Categories ordenables", "Factor", "==, %in%, !=, <=, <, >, >=",
+        "Categòrica ordinal", "Categories ordenables", "Factor ordenable", "==, %in%, !=, <=, <, >, >=",
         "Numèrica d'interval", "Nombres, zero sense significat", "Numèric o enter", "==, !=, <=, <, >, >=, +, -",
         "Numèrica de ràtio", "Nombres, zero amb significat", "Numèric", "==, !=, <=, <, >, >=, +, -, *, / ...") |> 
   knitr::kable()

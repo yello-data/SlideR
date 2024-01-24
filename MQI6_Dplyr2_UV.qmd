@@ -1,9 +1,9 @@
 ---
 title: "Dplyr II"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa I (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa I (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
@@ -16,11 +16,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
-- Summarize categoric variables
-- Summarize numeric variables
-- Summarize and group_by functions
+- Resumir variables categòriques
+- Resumir variables numèriques
+- Resumir per grups
 
 # Warm up {background-color="#e8e8e8"}
 
@@ -55,18 +55,18 @@ library(stringr)
 
 
 
-# Summarize categoric variables {background-color="#e8e8e8"}
+# Resumir variables categòriques {background-color="#e8e8e8"}
 
-## Categoric variables
+## Variables categòriques
 
 ```{r echo = T, eval = T}
 festivals$ambit
 ```
 
 
-## Categoric variables {.scrollable}
+## Variables categòriques {.scrollable}
 
-**Mode**: Most repeated value.
+**Moda**: El valor més repetit.
 
 - Count: `count(d, v, sort = T)` 
 
@@ -74,20 +74,20 @@ festivals$ambit
 count(festivals, ambit, sort = T)
 ```
 
-- Frequency table: `table(df$v)`
+- Taula de freqüències: `table(df$v)`
 
 ```{r echo = T, eval = T}
 table(festivals$ambit)
 ```
 
-- Percentage FT: `prop.table(table(df$v)) * 100`
+- TF en percentages: `prop.table(table(df$v)) * 100`
 
 ```{r echo = T, eval = T}
 prop.table(table(festivals$ambit)) * 100
 ```
 
 
-- Bar plot: `barplot(table(df$v))`
+- Diagrama de barres: `barplot(table(df$v))`
 
 ```{r echo = T, eval = T}
 barplot(table(festivals$ambit))
@@ -107,11 +107,11 @@ count(cens_gc, indret_desaparicio)
 ```
 
 
-# Summarize numeric variables {background-color="#e8e8e8"}
+# Resumir variables numèriques {background-color="#e8e8e8"}
 
-## Numeric variables
+## Variables numèriques
 
-Central value: Where is the center?
+Valor central: On es troba el centre?
 
 ```{r echo = T, eval = T}
 lloguer_any$preu
@@ -119,33 +119,33 @@ lloguer_any$preu
 
 
 
-## Numeric variables
+## Variables numèriques
 
-Central value: Where is the center? `median()`, `mean()`.
+Valor central: On es troba el centre? `median()`, `mean()`.
 
 ![](img/uni-mean-median.png)
 
-## Numeric variables
+## Variables numèriques
 
-Central value: Where is the center?
+Valor central: On es troba el centre?
 
 [![](img/gdp-median-nyt.png)](https://www.nytimes.com/2014/09/17/upshot/you-cant-feed-a-family-with-gdp.html)
 
-## Numeric variables
+## Variables numèriques
 
-Central value: Where is the center?
+Valor central: On es troba el centre?
 
 ![](img/uni-mean-extreme.png)
 
 
-## Numeric variables
+## Variables numèriques
 
-Central value: Mode? `hist(df$v)`.
+Valor central: Moda? `hist(df$v)`.
 
 
 ::: {.panel-tabset}
 
-## As. negative
+## As. negativa
 ```{r}
 hist(municipi$altitud_m)
 ```
@@ -156,13 +156,11 @@ hist(lloguer_any$preu_m2)
 ```
 
 
-## As. positive
+## As. positiva
 
 ```{r}
 hist(c(rnorm(1:5, 35, 20), rnorm(1:50, 50, 15), rnorm(1:70, 70, 2)))
 ```
-
-MARKS RSTUDIO 2023!!!
 
 ## Bimodal
 
@@ -170,12 +168,21 @@ MARKS RSTUDIO 2023!!!
 hist(c(rnorm(1:100, 30, 10), rnorm(1:100, 70, 10)))
 ```
 
-
 :::
 
-## Numeric variables
+## Variables numèriques
 
-Dispersion: How dispersed are the numbers?
+Notes finals curs 2023
+
+![](img/notesfinals23.png)
+
+
+
+
+## Variables numèriques
+
+
+Dispersió: Com de dispersos estan els valors?
 
 :::: {.columns}
 
@@ -183,9 +190,9 @@ Dispersion: How dispersed are the numbers?
 
 - Min: `min()`
 - Max: `max()`
-- Range: `diff(range())`
-- Quantiles: `quantile()`
-- InterQuartilic Range: `IQR()`
+- Rang: `diff(range())`
+- Quantils: `quantile()`
+- Rang InterQuartilic: `IQR()`
 :::
 
 ::: {.column width="35%"}
@@ -195,9 +202,9 @@ Dispersion: How dispersed are the numbers?
 ::::
 
 
-## Numeric variables {.scrollable}
+## Variables numèriques {.scrollable}
 
-Dispersion: How dispersed are the numbers?
+Dispersió: Com de dispersos estan els valors?
 
 Min: `min()`
 
@@ -211,20 +218,20 @@ Max: `max()`
 max(cens_gc$periode_desaparicio_1, na.rm = T)
 ```
 
-Range: `diff(range())`
+Rang: `diff(range())`
 
 ```{r echo = T, eval = T}
 diff(range(cens_gc$periode_desaparicio_1, na.rm = T))
 ```
 
-Quantiles: `quantile()`
+Quantils: `quantile()`
 
 ```{r echo = T, eval = T}
 quantile(cens_gc$periode_desaparicio_1, 0.25, na.rm = T)
 quantile(cens_gc$periode_desaparicio_1, 0.75, na.rm = T)
 ```
 
-Interquartílic Range: `IQR()`
+Rang Interquartílic: `IQR()`
 
 ```{r echo = T, eval = T}
 IQR(cens_gc$periode_desaparicio_1, na.rm = T)
@@ -233,35 +240,35 @@ IQR(cens_gc$periode_desaparicio_1, na.rm = T)
 
 
 
-## Numeric variables
+## Variables numèriques
 
-Dispersion: How dispersed are the numbers?
+Dispersió: Com de dispersos estan els valors?
 
-- **Standard deviation:** How far from the mean? `sd()`
+- **Desviació estàndard:** Com de lluny respecte la mitjana? `sd()`
 
 ![](img/uni-dispersion-sd.png)
 
-## Numeric variables {.scrollable}
+## Variables numèriques {.scrollable}
 
-Dispersion: How dispersed are the numbers?
+Dispersió: Com de dispersos estan els valors?
 
-- What is _exactly_ the standard deviation? Follow the example:
+- Què és _exactament_ la desviació estàndard? Segueix l'exemple:
 
-A. We have a dataframe, with two numeric vectors.
+A. Tenim un marc de dades, amb dos vectors numèrics.
 
 ```{r echo = T, eval = T}
 devs <- tibble(vec1 = c(2, 6, 4, 8),
                vec2 = c(1, 9, 3, 7))
 ```
 
-B. Both vectors have the same mean.
+B. Els dos vectors tenen la mateixa mitjana.
 
 ```{r echo = T, eval = T}
 mean(devs$vec1)
 mean(devs$vec2)
 ```
 
-C. But how far vector's values are from the mean? Visually, we observe that values in `vec2` are, _on average_, farther from the mean than values in `vec1`. Reproduce this code in your computer:
+C. Però com de lluny estan els valors de la mitjana? Visualment, observem que els valors a `vec2` estan, _de mitjana_, més lluny de la mitjana que els valors de `vec1`. Reprodueix aquest codi al teu ordinador:
 
 ```{r echo = T, eval = T}
 devs |> 
@@ -272,37 +279,37 @@ devs |>
   theme_minimal()
 ```
 
-D. The standard deviation calculates this distance. Although it does not exactly calculate the _average_. What it does is the following. Take the example of `vec1`:
+D. La desviació estàndard calcula aquesta distància. Encara que no calcula exactament la _mitjana_. El què fa és el següent. Mirem el `vec1`:
 
-- First, it calculates the distance of each value from the mean.
+- Primer, calcula la distància de cada valor respecte la mitjana.
 
 ```{r echo = T, eval = T}
 diff <- devs$vec1 - mean(devs$vec1)
 diff
 ```
 
-- Then, it squares the difference (so, the farther values weight more than the closer values).
+- Després, eleva les diferències al quadrat (de manera que tots els valors es tornen positius i els valors més alts s'exageren).
 
 ```{r echo = T, eval = T}
 sq_diff <- diff^2
 sq_diff
 ```
 
-- Then, it sums the values, and divides the result by the number of cases minus one. This result is called the **variance**.
+- A continuació, se sumen els valors i el resultat es divideix pel nombre de casos menys ú. Al valor resultant se'n diu **variància**.
 
 ```{r echo = T, eval = T}
 variance <- sum(sq_diff) / (length(sq_diff) - 1)
 variance
 ```
 
-- The **standard deviation** is the squared root of the variance.
+- La **desviació estàndard** és l'arrel quadrada de la variància.
 
 ```{r echo = T, eval = T}
 sqrt(variance)
 ```
 
 
-E. All in one:
+E. En resum:
 
 ```{r echo = T, eval = T}
 devs |> 
@@ -313,42 +320,42 @@ devs |>
 ```
 
 
-F. Or easier:
+F. O més senzill, amb `sd()`:
 
 ```{r echo = T, eval = T}
 devs |> 
   summarize(across(vec1:vec2, ~ sd(.)))
 ```
 
-G. What if, instead of the standard deviation, we calculate the average distance from the mean? First we calculate the absolute distance of each value.
+G. Què passaria si, enlloc de la desviació típica, calculem la distància mitjana respecte la mitjana? Primer calculem la distància absoluta dels valors en cada vector.
 
 ```{r echo = T, eval = T, collapse=TRUE}
 abs_dist1 <- abs(devs$vec1 - mean(devs$vec1))
 abs_dist2 <- abs(devs$vec2 - mean(devs$vec2))
 ```
 
-And then we calculate the average.
+I després calculem la mitjana de les distàncies.
 
 ```{r echo = T, eval = T, collapse=TRUE}
 mean(abs_dist1)
 mean(abs_dist2)
 ```
 
-Since the standard deviation first squares the values, the results tend to be higher than calculating the average distance.
+Com que la desviació estàndard primer eleva els valors al quadrat, els resultats seran majors que no pas si calculem la distància mitjana sobre la mitjana.
 
 
-# Summarize and group_by functions {background-color="#e8e8e8"}
+# Summarize i group_by functions {background-color="#e8e8e8"}
 
-## Summarize function
+## Funció summarize
 
-- Summarizes data.
+- Resumeix les dades.
 
 ```{r echo = T, eval = F}
 df |> 
   summarize(name = sum(vector))
 ```
 
-- Different elements can be summarized:
+- Es poden resumir varis elements:
 
 ```{r echo = T, eval = F}
 df |> 
@@ -357,12 +364,12 @@ df |>
             n = n())
 ```
 
-*Mind the argument `na.rm = T`.
+*Posar sempre l'argument `na.rm = T`.
 
 
 ## Group_by   
 
-- Always combined with another function (e.g. `summarize`, `filter`, `mutate`), it groups the data by the values of a vector^[This vector is usually a character vector or a factor, but it can be another vector with few categories.]...
+- Sempre es combina amb una altra funció (e.g. `summarize`, `filter`, `mutate`), agrupa les dades pels valors d'un vector^[Aquest vector és normalment un vector de caràcter o un factor, però pot ser també un altre vector amb poques categories (discret).]...
 
 ```{r echo = T, eval = F}
 df |> 
@@ -370,5 +377,4 @@ df |>
   summarize(name1 = sum(vector))
 ```
 
-*With group_by and summarize, we change the __unit of observation__ of the dataset.
-
+*Important!!! Amb group_by i summarize, canviem la __unitat d'observació__ del dataset.

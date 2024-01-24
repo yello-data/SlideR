@@ -147,7 +147,7 @@ lloguer_any |>
   filter(nom_districte == "XXXXXXXXXX" & any >= XXXXXX)
 
 lloguer_any |> 
-  filter(preu == max(preu, na.rm = T)) # <- na.rm!!! mean, median, max, min...
+  filter(preu == max(preu, na.rm = T)) # <- na.rm!!! in functions mean, median, max, min...
 
 festivals |> 
   filter(str_detect(nom_del_festival, "Jazz"))
@@ -190,7 +190,7 @@ rendacs |>
 # Barri amb menys renda per càpita? (data problem?)
 rendacs
 
-# Filtra pel districte de Ciutat Vella i ordena les dades en ordre descendent 
+# Filtra pel districte de Ciutat Vella i ordena les dades per preu en ordre descendent 
 rendacs |> 
   filter() |> 
   arrange()
