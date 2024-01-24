@@ -16,9 +16,9 @@ editor_options:
   chunk_output_type: console
 ---
   
-  ## Summary
+## Summary
   
-  - Boolean operations
+- Boolean operations
 - Relabel functions
 - As factor
 - As functions
@@ -103,12 +103,12 @@ When we recode variables, we lose information^[Search here for the [dplyr cheats
   | Others     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
   
   
-  # Relabel {background-color="#e8e8e8"}
+# Relabel {background-color="#e8e8e8"}
   
   
-  ## If_else
+## If_else
   
-  - To a dichotomous / binary / dummy variable.
+- To a dichotomous / binary / dummy variable.
 
 ```{r echo = T, eval = F}
 df |> 
