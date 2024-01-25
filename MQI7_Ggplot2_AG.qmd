@@ -1,9 +1,9 @@
 ---
 title: "Ggplot2 I"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa I (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa I (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
@@ -16,10 +16,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
-- The layer system
-- Aesthetics
+- El sistema de capes
+- Estètics
 - Geometries
 
 # Warm up {background-color="#e8e8e8"}
@@ -48,42 +48,42 @@ points(rlc$class[class], rlc$knowledge[class], col = "red")
 
 
 
-## Made with ggplot
+## Fet amb ggplot2
 
 - [Visuals](https://www.jordimas.cat/courses/dataanalysis_en/visualize/data_analysis_en_visualization/){target="_blank"}
 - [Extensions](https://exts.ggplot2.tidyverse.org/gallery/){target="_blank"}
 - [Cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf){target="_blank"}
 
-# The layer system {background-color="#e8e8e8"}
+# El sistema de capes {background-color="#e8e8e8"}
 
-## Basic layers
+## Capes bàsiques
 
-Almost always, a ggplot consists of three layers^[Layers are separated by `+`, not by a pipe!!!!]:
+Gairebé sempre, una gràfica creada amb ggplot2 consisteix en **tres capes**^[Layers are separated by `+`, not by a pipe!!!!]:
 
-- 1. Dataframe
-- 2. Aesthetics
-- 3. Geometry
+- 1. Marc de dades
+- 2. Estètics
+- 3. Geometria
 
 ```{r echo = T, eval = F}
 df |> 
-  ggplot(aes(aestethics)) +
+  ggplot(aes(estètics)) +
   geometry()
 ```
 
 
 
-## Optional layers
+## Capes opcionals
 
-Optionally, we add more layers, such as:
+Opcionalment, afegim més capes com per exemple:
 
 - 4. Facet
-- 5. Coordinates
-- 6. Scale
-- 7. Theme
+- 5. Coordenades
+- 6. Escales
+- 7. Tema
 - 8. Etc
 
 
-## Layered example
+## Exemple amb capes
 
 Example of a full-equipped plot.
 
@@ -106,11 +106,11 @@ bins |>
 
 
 
-# Aesthetics {background-color="#e8e8e8"}
+# Estètics {background-color="#e8e8e8"}
 
-## Cartesian coordinates
+## Coordenades cartesianes
 
-- `x` and `y`.
+- Partim de dues dimensions: `x` i `y`.
 
 ```{r echo = F, eval = T}
 tibble(x = 1:100,
@@ -120,9 +120,9 @@ tibble(x = 1:100,
 ```
 
 
-## Aesthetics {.scrollable}
+## Estètics {.scrollable}
 
-Inside `aes()`, what is represented by a variable:
+A dins d'`aes()`, indica què representa cada variable:
 
 ```{r echo = T, eval = F}
 rendacs |> 
@@ -144,22 +144,22 @@ rendacs |>
 
 ::: {.column width="40%"}
 
-- `x`: var horizontal axis.
-- `y`: var vertical axis.
-- `col`: geometry color.
+- `x`: variable eix horitzontal.
+- `y`: variable eix vertical.
+- `col`: color de la geometria.
 
 :::
 
 ::::
 
 
-## Aesthetics vs. attributes {.scrollable}
+## Estètics vs. atributs {.scrollable}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-Color as aesthetic
+Color com a estètic
 ```{r echo = T}
 rendacs |> 
   ggplot(aes(x = import_euros, 
@@ -171,7 +171,7 @@ rendacs |>
 :::
 
 ::: {.column width="50%"}
-Color as attribute
+Color com a atribut
 ```{r echo = T}
 rendacs |> 
   ggplot(aes(x = import_euros, 
@@ -185,9 +185,9 @@ rendacs |>
 
 
 
-## Aesthetics vs. attributes {.scrollable}
+## Estètics vs. atributs {.scrollable}
 
-**Aesthetics** represent a variable. Always within the `aes()` function. E.g.:
+**Estètics**: representen una variable. Always within the `aes()` function. E.g.:
 
 - `x = gdp`
 - `col = continent`

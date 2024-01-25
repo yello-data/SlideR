@@ -51,18 +51,41 @@ festivals
 
 
 #####################################################################
-# PART 3. UNIVARIATE ANALYSIS 
+# PART 2. SUMMARIZE CATEGORICAL VARIABLES 
 #####################################################################
 
-# ..... continues from last lecture....
+#2.1. Frequency table
 
-### 3.3.3. SUMMARIZE / SUMMARISE
+##2.1.1. Count (dplyr)
+count(festivals, ambit)
+count(festivals, ambit, sort = T)
+
+##2.1.2. Table (base)
+
+table(festivals$ambit) # Absolute numbers
+prop.table(table(festivals$ambit)) * 100 # In percentages
+
+barplot(table(festivals$ambit)) # plot absolute numbers
+barplot(prop.table(table(festivals$ambit))) #plot percentages
+
+#ExErCiSe!!!!
+cens_gc
+
+
+#####################################################################
+# PART 3. SUMMARIZE NUMERICAL VARIABLES 
+#####################################################################
+
+
+
+### 3.1. SUMMARIZE / SUMMARISE
 # Summarizes data
 
 contractes_menors |>
   summarize(import_total = sum(import_adjudicat))
 
 accidents |> #min, max...
+  glimpse()
   summarize(edat_mitjana = mean(edat),
             n = n())
 
@@ -71,8 +94,6 @@ cens_gc |>
 
 cens_gc |> 
   summarize(tarragona = mean(provincia_desaparicio == "Tarragona", na.rm = T)) #percentatges, vectors lògics (TRUE-FALSE)
-
-
 
 
 
@@ -105,7 +126,7 @@ contractes_menors
 # Quim proveidor s'ha emportat més pasta 'menor' als contractes de l'Ajuntament de Barcelona?
 contractes_menors
 
-# Per comarca, mediana i desviació típica de població i altitud màxima ...
+# Per comarca, calcula la mediana i la desviació típica de població i l'altitud màxima ...
 #... ordena els resultats per desviació típica, en ordre descendent.
 municipi
 

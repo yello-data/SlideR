@@ -170,7 +170,7 @@ Reanomena el nom del vector.
 
 ```{r echo = T, eval = F}
 df |> 
-  rename(new_name = Old.Vector.Name)
+  rename(nom_nou = Nom.Vector.Antic)
 ```
 
 
@@ -188,7 +188,7 @@ df |>
 
 ```{r echo = T, eval = F}
 df |> 
-  mutate(new_vector = vector5 + vector6)
+  mutate(nou_vector = vector5 + vector6)
 ```
 
 - Es poden combinar vàries operacions.
@@ -196,6 +196,6 @@ df |>
 ```{r echo = T, eval = F}
 df |> 
   mutate(vector5 = vector5 * 100,
-         new_vector = vector5 + vector6)
+         nou_vector = vector5 + vector6)
 ```
 
