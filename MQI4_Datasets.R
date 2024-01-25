@@ -249,10 +249,10 @@ ords[ , ]
 ### 2.2.4. FORCATS PACKAGE
 library(forcats)
 fct_relevel(ords$liberalisme, "Hybrid Regime", "Full Democracy", "Flawed Democracy", "Authoritarian")
-fct_rev(ords$ati)
-fct_other(ords$ati, keep = c("Good", "Very Good"))
-plot(fct_infreq(ords$ati))
-plot(fct_rev(fct_infreq(ords$ati)))
+fct_rev(ords$liberalisme)
+fct_other(ords$liberalisme, keep = c("Molt alt", "Alt"))
+plot(fct_infreq(ords$liberalisme))
+plot(fct_rev(fct_infreq(ords$liberalisme)))
 
 
 

@@ -118,7 +118,7 @@ lloguer_any |>
             n = n())
 
 
-#### ExErSiSe!!!!
+#### ExErSiSe: Minority report.
 
 # Quin proveidor s'ha emportat més pasta 'menor'? (group_by -> summarize -> sum)
 contractes_menors 

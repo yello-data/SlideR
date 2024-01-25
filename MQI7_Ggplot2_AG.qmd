@@ -187,28 +187,28 @@ rendacs |>
 
 ## Estètics vs. atributs {.scrollable}
 
-**Estètics**: representen una variable. Always within the `aes()` function. E.g.:
+**Estètics**: Representen una variable. Sempre a dins de la funció `aes()`. E.g.:
 
 - `x = gdp`
 - `col = continent`
 
-**Attributes** represent characteristics of geometry. Outside the `aes()`, normally in the `geom_xxx()` function. E.g.:
+**Atributs**: Representen característiques de geometria. Es posen fora de `aes()`, normalment a la funció `geom_xxx()`. E.g.:
 
 - `col = "red"`
 - `size = 2`
 
 
-## Aesthetics vs. attributes {.scrollable}
+## Estètics vs. atributs {.scrollable}
 
-Types of attributes:
+Tipus d'atributs:
 
-- `size`: size of the geometry.
-- `alpha`: transparency.
-- `text`: names.
-- `labels`: names.
-- `fill`: For bars, polygons, and things to be painted.
-- `shape`: Mostly for points.
-- `linetype` / `lty`: For lines.
+- `size`: mida de la geometria.
+- `alpha`: transparència.
+- `text`: noms.
+- `labels`: etiquetes.
+- `fill`: Per barres, polígons i coses que es pinten.
+- `shape`: Principalment per punts.
+- `linetype` / `lty`: Per línies.
 
 
 # Geometries {background-color="#e8e8e8"}
@@ -220,9 +220,9 @@ Types of attributes:
 - `geom_point()`
 - `geom_boxplot()`
 - `geom_smooth()`
-- ... about 35 geometries!
+- ... fins a 35 geometries!
 
-# One categoric variable {background-color="#e8e8e8"}
+# Una variable categòrica {background-color="#e8e8e8"}
 
 ## Bar plot (I) {.scrollable}
 
@@ -240,11 +240,11 @@ accidents |>
 Extra: `coord_flip()`
 :::
 
-# One numeric variable {background-color="#e8e8e8"}
+# Una variable numèrica {background-color="#e8e8e8"}
 
-## Histogram {.scrollable}
+## Histograma {.scrollable}
 
-Number of bins: `geom_histogram()`
+Nombre de barres: `geom_histogram()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -259,7 +259,7 @@ Extra: `fill`
 
 ## Density plot {.scrollable}
 
-A lot of numeric data: `geom_density()`
+Quan tenim molta info numèrica: `geom_density()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -275,7 +275,7 @@ Extra: `alpha`, `fill`, `col`
 
 ## Dot plot {.scrollable}
 
-Semi-continuous, few cases (~100): `geom_dotplot()`
+Semi-contínua, pocs casos (~100): `geom_dotplot()`
 
 ```{r echo = T, fig.width=8, fig.height=5}
 #| code-fold: true
@@ -290,11 +290,11 @@ Extra: `fill`.
 :::
 
 
-# Two categoric variables {background-color="#e8e8e8"}
+# Dues variables categòriques {background-color="#e8e8e8"}
 
 ## Bar plot (II) {.scrollable}
 
-Bars are 'filled' with a C variable: `geom_bar()`
+Les barres s'omplen (fill) amb una variable Cat: `geom_bar()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -305,7 +305,7 @@ accidents |>
 
 
 
-# One categoric, one numeric {background-color="#e8e8e8"}
+# Una categòrica, una numèrica {background-color="#e8e8e8"}
 
 
 ## Bar plot (III) {.scrollable}
