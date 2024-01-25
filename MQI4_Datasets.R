@@ -198,15 +198,16 @@ str_sub(strings$iso3c, end = 2)
 
 ### 2.2.1. DATAFRAME
 ords <- tibble(nom = c("Tània", "Pablo", "Sílvia", "Íñigo", "Carles", "Basha", "Isabel", "Santiago"),
-               decada = factor(c("1970s", "1970s", "1980s", "1960s", "1960s", "1980s", "1970s", "1970s"),
+               naixement = factor(c("1970s", "1970s", "1980s", "1960s", "1960s", "1980s", "1970s", "1970s"),
                                ordered = TRUE, levels = c("1960s", "1970s", "1980s")),
                independencia = factor(c("A favor", "Neutral", "A favor", "Neutral", "A favor", "A favor", "En contra", "En contra"),
                                       ordered = T, levels = c("En contra", "Neutral", "A favor")),
                immigracio =  factor(c("A favor", "A favor", "En contra", "Neutral", "Neutral", "A favor", "Neutral", "En contra"),
                                     ordered = T, levels = c("En contra", "Neutral", "A favor")),
                liberalisme = c("Baix", "Molt baix", "Mitjà", "Alt", "Alt", "Molt baix", "Molt alt", "Mitjà"))
-ords
 
+#fixem-nos que liberalisme NO és ordinal i ho hauria de ser
+ords
 
 
 
@@ -214,14 +215,12 @@ ords
 ### 2.2.2. STORAGE
 #    - Ordered factor
 
-ords$ati <- factor(ords$ati,
-                   ordered = TRUE,
-                   levels = c("Very Poor", "Poor", "Fair", "Good", "Very Good"))
+ords$liberalisme 
 
-ords$ati
-class(ords$ati)
-typeof(ords$ati)
-unclass(ords$ati)
+ords$liberalisme
+class(ords$liberalisme)
+typeof(ords$liberalisme)
+unclass(ords$liberalisme)
 
 
 ### 2.2.3. OPERATIONS
@@ -233,17 +232,23 @@ unclass(ords$ati)
 #    - Less than: <
 #    - Less or equal than: <=
 
+#Qui té un nivell de liberalisme mitjà o més alt?
+ords$liberalisme >= "Mitjà"
+ords[ ,c(1,5)]
 
-ords$regime_type >= "Hybrid Regime"
+#Qui va néixer abans dels 1980s?
+ords$naixement < 1980
+ords[ , 1:2]
 
-ords[ords$regime_type != "Full Democracy",]
-ords[ords$ati >= "Good",]
-ords[ords$ati < "Fair",]
+#Qui està en contra de la immigració?
+ords$immigracio == "En contra"
+ords[ , ]
+
 
 
 ### 2.2.4. FORCATS PACKAGE
 library(forcats)
-fct_relevel(ords$regime_type, "Hybrid Regime", "Full Democracy", "Flawed Democracy", "Authoritarian")
+fct_relevel(ords$liberalisme, "Hybrid Regime", "Full Democracy", "Flawed Democracy", "Authoritarian")
 fct_rev(ords$ati)
 fct_other(ords$ati, keep = c("Good", "Very Good"))
 plot(fct_infreq(ords$ati))
@@ -281,14 +286,17 @@ polity
 #    - Sometimes, sums and differences: +, -
 
 
-# Founded after 1900
-polity[polity$year > 1900,]
+# País fundat més tard de l'any 1950
+polity$year > 1950
+polity[,]
 
-# Difference between the foundation of the US and the foundation of the USSR
-polity$year[polity$country == "United States"] - polity$year[polity$country == "USSR"]
+# Quin país té el màxim de democràcia?
+polity$polity2 == max(polity$polity2)
+polity[,]
 
-# Which political regimes had more democracy than the US in the year of their foundation?
-polity$country[polity$polity2[polity$country == "United States"] > polity$polity2]
+#Diferència entre l'any mínim i l'any màxim de fundació (rang).
+max(polity$year) - min(polity$year)
+
 
 
 
@@ -299,11 +307,12 @@ polity$country[polity$polity2[polity$country == "United States"] > polity$polity
 
 ### 2.4.1. DATAFRAME
 ratio <- tibble(country = c("USA", "UKG", "FRN", "GMY", "ITA", "RUS", "JPN"),
-                milex = c(980000, 7895671, 1023651, 12000000, 669412, 5984123, 1699970),
-                milper = c(334, 394, 581, 2750, 581, 1789, 957),
-                tpop = c(131028, 47762, 41900, 79798, 44020, 170317, 71380),
-                cinc = c(0.182, 0.0997, 0.0396, 0.178, 0.0270, 0.138, 0.0591))
+                gdpcap = c(76329.32, 46126.12, 40886.34, 48718.02, 34776.90, 15270.2, 33823.24),
+                lifeexp = c(76.4, 81.1, 82.3, 81.5, 83.2, 69, 84.3),
+                tpop = c(333287564, 66971400, 67971316, 83797997, 58940431, 144236930, 125124992))
 ratio
+
+
 
 
 ### 2.4.2. STORAGE
@@ -334,39 +343,38 @@ options(scipen=0)
 
 
 
-## Which countries have military personnel above 1M?
-ratio[ratio$milper > 1000, ]
+## Quins països tenen una esperança de vida superior a 80 anys?
+ratio$lifeexp > 80
+ratio[, ]
 
-## How many times the military expenditure of Germany is superior to the other great powers?
-ratio$milex_gmy <- ratio$milex[ratio$country == "GMY"] / ratio$milex
-ratio
+## Població, en milions
+ratio$tpop / 1000000
 
-## Which country has a military personnel below 1 percent of its population?
-ratio[1 > ratio$milper / ratio$tpop * 100,]
+## Calculem PIB total (PIB per càpita * població)
+ratio$gdpcap * ratio$tpop
 
-## Which country had higher CINC index?
-ratio[ratio$cinc == max(ratio$cinc),]
+## Quina és la mitjana de PIB per càpita?
+mean(ratio$gdpcap)
 
-## Which country had less military expenditure?
-ratio[ratio$milex == min(ratio$milex),]
+## Quin és el país amb el mínim de població?
+ratio$tpop == min(ratio$tpop)
+ratio[,]
 
-## Which countries have military personnel above 1M?
-cinc[cinc$milper > 10000, ]
 
 
 ### 2.4.4. EXeRcIsE!!!!!
 
 #https://www.idescat.cat/indicadors/?id=aec&n=15903&t=202200
-id
-
-# Populations above 1000 mts
-id$
-
-# Populations "Osona"
 
 
-# Highest altitude
+# Poblacions per sobre els 1000 mts
 
 
-# Lowest surface
+# Poblacions d'"Osona"
+
+
+# Població amb major altitud
+
+
+# Població amb menys superfície
 
