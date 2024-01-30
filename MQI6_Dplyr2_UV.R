@@ -57,16 +57,16 @@ festivals
 #2.1. Frequency table
 
 ##2.1.1. Count (dplyr)
-count(festivals, ambit)
-count(festivals, ambit, sort = T)
+count(festivals, ambit) #sense ordenar
+count(festivals, ambit, sort = T) #ordenat
 
 ##2.1.2. Table (base)
 
-table(festivals$ambit) # Absolute numbers
-prop.table(table(festivals$ambit)) * 100 # In percentages
+table(festivals$ambit) # Nombres absoluts
+prop.table(table(festivals$ambit)) * 100 # En percentatges
 
-barplot(table(festivals$ambit)) # plot absolute numbers
-barplot(prop.table(table(festivals$ambit))) #plot percentages
+barplot(table(festivals$ambit)) # plot nombres absoluts
+barplot(prop.table(table(festivals$ambit))) #plot percentatges
 
 #ExErCiSe!!!!
 cens_gc
@@ -82,17 +82,16 @@ cens_gc
 # Summarizes data
 
 contractes_menors |>
-  summarize(import_total = sum(import_adjudicat))
+  summarize(import_total = sum(import_adjudicat)) #SEMPRE na.rm = T
 
-accidents |> #min, max...
-  glimpse()
+accidents |> #es poden fer varis sumaris, separats per comes
   summarize(edat_mitjana = mean(edat),
             n = n())
 
-cens_gc |> 
+cens_gc |> #molt útil amb variables binàries (1-0) per treure mitjanes
   summarize(es_afusellat = mean(es_afusellat)) #percentatges, en variables 1-0
 
-cens_gc |> 
+cens_gc |> #es pot binaritzar, si a dins de mean/sum posem una operació lògica
   summarize(tarragona = mean(provincia_desaparicio == "Tarragona", na.rm = T)) #percentatges, vectors lògics (TRUE-FALSE)
 
 

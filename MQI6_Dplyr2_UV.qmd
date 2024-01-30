@@ -28,6 +28,7 @@ editor_options:
 
 ```{r}
 library(dplyr)
+library(ggplot2)
 festivals <- readRDS("data/festivals.rds")
 lloguer_any <- readRDS("data/lloguer_any.rds")
 cens_gc <- readRDS("data/cens_gc.rds")
@@ -37,6 +38,7 @@ rlc <- tibble(class = 1:8,
 class <- 5
 plot(rlc$class, rlc$knowledge)
 points(rlc$class[class], rlc$knowledge[class], col = "red")
+theme_set(theme_minimal())
 ```
 
 ## RStudio workflow
@@ -66,7 +68,7 @@ festivals$ambit
 
 ## Variables categòriques {.scrollable}
 
-**Moda**: El valor més repetit.
+Quantificar (buscarem la **Moda**, el valor més repetit):
 
 - Count: `count(d, v, sort = T)` 
 
@@ -86,6 +88,9 @@ table(festivals$ambit)
 prop.table(table(festivals$ambit)) * 100
 ```
 
+## Variables categòriques {.scrollable}
+
+Visualitzar.
 
 - Diagrama de barres: `barplot(table(df$v))`
 
@@ -111,7 +116,7 @@ count(cens_gc, indret_desaparicio)
 
 ## Variables numèriques
 
-Valor central: On es troba el centre?
+Quantificar: On es troba el **centre**?
 
 ```{r echo = T, eval = T}
 lloguer_any$preu
@@ -121,68 +126,27 @@ lloguer_any$preu
 
 ## Variables numèriques
 
-Valor central: On es troba el centre? `median()`, `mean()`.
+Quantificar: On es troba el **centre**? `median()`, `mean()`.
 
 ![](img/uni-mean-median.png)
 
 ## Variables numèriques
 
-Valor central: On es troba el centre?
+Quantificar: On es troba el **centre**?
 
 [![](img/gdp-median-nyt.png)](https://www.nytimes.com/2014/09/17/upshot/you-cant-feed-a-family-with-gdp.html)
 
 ## Variables numèriques
 
-Valor central: On es troba el centre?
+Quantificar: On es troba el **centre**?
 
 ![](img/uni-mean-extreme.png)
 
 
 ## Variables numèriques
 
-Valor central: Moda? `hist(df$v)`.
 
-
-::: {.panel-tabset}
-
-## As. negativa
-```{r}
-hist(municipi$altitud_m)
-```
-
-## Normal
-```{r}
-hist(lloguer_any$preu_m2)
-```
-
-
-## As. positiva
-
-```{r}
-hist(c(rnorm(1:5, 35, 20), rnorm(1:50, 50, 15), rnorm(1:70, 70, 2)))
-```
-
-## Bimodal
-
-```{r}
-hist(c(rnorm(1:100, 30, 10), rnorm(1:100, 70, 10)))
-```
-
-:::
-
-## Variables numèriques
-
-Notes finals curs 2023
-
-![](img/notesfinals23.png)
-
-
-
-
-## Variables numèriques
-
-
-Dispersió: Com de dispersos estan els valors?
+Quantificar: Mesures de **dispersió**.
 
 :::: {.columns}
 
@@ -202,9 +166,32 @@ Dispersió: Com de dispersos estan els valors?
 ::::
 
 
+## Variables numèriques
+
+Quantificar: Mesures de **dispersió**.
+
+- **Desviació estàndard:** Com de lluny respecte la mitjana? `sd()`
+
+![](img/uni-dispersion-sd.png)
+
+
 ## Variables numèriques {.scrollable}
 
-Dispersió: Com de dispersos estan els valors?
+Les funcions, aplicades.
+
+Mitjana: `mean()`
+
+```{r echo = T, eval = T}
+mean(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+Mediana: `median()`
+
+```{r echo = T, eval = T}
+median(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+
 
 Min: `min()`
 
@@ -237,111 +224,77 @@ Rang Interquartílic: `IQR()`
 IQR(cens_gc$periode_desaparicio_1, na.rm = T)
 ```
 
+Desviació típica: `sd()`
+
+```{r echo = T, eval = T}
+sd(cens_gc$periode_desaparicio_1, na.rm = T)
+```
+
+
+
+
 
 
 
 ## Variables numèriques
 
-Dispersió: Com de dispersos estan els valors?
+Visualitzar: "Valor" més repetit (Moda) `hist(df$v)`.
 
-- **Desviació estàndard:** Com de lluny respecte la mitjana? `sd()`
+::: {.panel-tabset}
 
-![](img/uni-dispersion-sd.png)
-
-## Variables numèriques {.scrollable}
-
-Dispersió: Com de dispersos estan els valors?
-
-- Què és _exactament_ la desviació estàndard? Segueix l'exemple:
-
-A. Tenim un marc de dades, amb dos vectors numèrics.
-
-```{r echo = T, eval = T}
-devs <- tibble(vec1 = c(2, 6, 4, 8),
-               vec2 = c(1, 9, 3, 7))
+## As. negativa
+```{r}
+municipi |> 
+  ggplot(aes(x = altitud_m)) +
+  geom_histogram() +
+  geom_vline(xintercept = mean(municipi$altitud_m), col = "blue") +
+  geom_vline(xintercept = median(municipi$altitud_m), col = "green")
 ```
 
-B. Els dos vectors tenen la mateixa mitjana.
-
-```{r echo = T, eval = T}
-mean(devs$vec1)
-mean(devs$vec2)
-```
-
-C. Però com de lluny estan els valors de la mitjana? Visualment, observem que els valors a `vec2` estan, _de mitjana_, més lluny de la mitjana que els valors de `vec1`. Reprodueix aquest codi al teu ordinador:
-
-```{r echo = T, eval = T}
-devs |> 
-  pivot_longer(vec1:vec2) |> 
-  ggplot(aes(x = name, y = value)) +
-  geom_point(aes(col = name), size = 4) +
-  stat_summary(geom = "point", size = 4) +
-  theme_minimal()
-```
-
-D. La desviació estàndard calcula aquesta distància. Encara que no calcula exactament la _mitjana_. El què fa és el següent. Mirem el `vec1`:
-
-- Primer, calcula la distància de cada valor respecte la mitjana.
-
-```{r echo = T, eval = T}
-diff <- devs$vec1 - mean(devs$vec1)
-diff
-```
-
-- Després, eleva les diferències al quadrat (de manera que tots els valors es tornen positius i els valors més alts s'exageren).
-
-```{r echo = T, eval = T}
-sq_diff <- diff^2
-sq_diff
-```
-
-- A continuació, se sumen els valors i el resultat es divideix pel nombre de casos menys ú. Al valor resultant se'n diu **variància**.
-
-```{r echo = T, eval = T}
-variance <- sum(sq_diff) / (length(sq_diff) - 1)
-variance
-```
-
-- La **desviació estàndard** és l'arrel quadrada de la variància.
-
-```{r echo = T, eval = T}
-sqrt(variance)
+## Normal
+```{r}
+lloguer_any |> 
+  ggplot(aes(x = preu_m2)) +
+  geom_histogram() +
+  geom_vline(xintercept = mean(lloguer_any$preu_m2, na.rm = T), col = "blue") +
+  geom_vline(xintercept = median(lloguer_any$preu_m2, na.rm = T), col = "green")
 ```
 
 
-E. En resum:
+## As. positiva
 
-```{r echo = T, eval = T}
-devs |> 
-  mutate(across(vec1:vec2, ~ . - mean(.))) |> # distance from the mean
-  mutate(across(vec1:vec2, ~ .^2)) |> # square all values
-  summarize(across(vec1:vec2, ~ sum(.) / (length(.) - 1))) |> #sum and divide number of cases
-  mutate(across(vec1:vec2, ~ sqrt(.))) #square root
+```{r}
+c <- tibble(d = c(rnorm(1:5, 35, 20), rnorm(1:50, 50, 15), rnorm(1:70, 70, 2)))
+c |> 
+  ggplot(aes(x = d)) +
+  geom_histogram(bins = 10) +
+  geom_vline(xintercept = mean(c$d, na.rm = T), col = "blue") +
+  geom_vline(xintercept = median(c$d, na.rm = T), col = "green")
 ```
 
+## Bimodal
 
-F. O més senzill, amb `sd()`:
+```{r}
+r <- tibble(g = c(rnorm(1:100, 30, 10), rnorm(1:100, 70, 10)))
 
-```{r echo = T, eval = T}
-devs |> 
-  summarize(across(vec1:vec2, ~ sd(.)))
+r |> 
+  ggplot(aes(x = g)) +
+  geom_histogram(bins = 10) +
+  geom_vline(xintercept = mean(r$g, na.rm = T), col = "blue") +
+  geom_vline(xintercept = median(r$g, na.rm = T), col = "green")
 ```
 
-G. Què passaria si, enlloc de la desviació típica, calculem la distància mitjana respecte la mitjana? Primer calculem la distància absoluta dels valors en cada vector.
+:::
 
-```{r echo = T, eval = T, collapse=TRUE}
-abs_dist1 <- abs(devs$vec1 - mean(devs$vec1))
-abs_dist2 <- abs(devs$vec2 - mean(devs$vec2))
-```
+## Variables numèriques
 
-I després calculem la mitjana de les distàncies.
+Visualitzar: Notes finals curs 2023
 
-```{r echo = T, eval = T, collapse=TRUE}
-mean(abs_dist1)
-mean(abs_dist2)
-```
+![](img/notesfinals23.png)
 
-Com que la desviació estàndard primer eleva els valors al quadrat, els resultats seran majors que no pas si calculem la distància mitjana sobre la mitjana.
+
+
+
 
 
 # Summarize i group_by functions {background-color="#e8e8e8"}
@@ -378,3 +331,17 @@ df |>
 ```
 
 *Important!!! Amb group_by i summarize, canviem la __unitat d'observació__ del dataset.
+
+
+# Consells i trucs {background-color="#e8e8e8"}
+
+## Consells i trucs
+
+- Fer pregunta i respondre.
+- Il·luminar el codi, pas a pas.
+- Acabar amb `glimpse()` o `View()`.
+- Acabar amb `pull() |> unique()`.
+- [Cheat sheets](https://posit.co/resources/cheatsheets/){target="_blank"}
+
+
+

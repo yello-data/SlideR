@@ -31,6 +31,36 @@ library(forcats)
 theme_set(theme_minimal())
 
 
+
+# 2. LOAD FILES
+library(readxl)
+library(dplyr)
+library(janitor)
+
+# 3. DOWNLOAD DATA
+
+#-- Escollir 3.1 OR 3.2
+
+## 3.1. Descàrrega manual
+#Go to: https://infoelectoral.interior.gob.es/opencms/es/elecciones-celebradas/area-de-descargas/
+# Otras Descargas -> Datos de Municipios -> Congreso 2019 10 de Noviembre -> Descargar
+
+## 3.2. Descàrrega automàtica (potser no funciona)
+download.file("https://infoelectoral.interior.gob.es/estaticos/docxl/02_201911_1.zip",
+              "02_201911_1.zip")
+unzip("02_201911_1.zip")
+
+## 3.3. Llegir l'arxiu (ha d'estar al directori de treball, dins del projecte)
+elecc19 <- read_xlsx("02_201911_1.xlsx", skip = 5) |> 
+  clean_names()
+
+# 4. GLIMPSE DATA
+elecc19
+glimpse(elecc19)
+unique(elecc19$nombre_de_comunidad)
+unique(elecc19$nombre_de_provincia)
+
+
 # Let's load the datasets
 
 accidents #UO: Accident
@@ -53,6 +83,8 @@ elecc19 # <--------- NEW!!!!!!!!!!!!!!!
 rendacs$import_euros
 rendacs$index_gini
 rendacs$nom_districte
+
+#Diferenciar estètics i atributs
 
 
 

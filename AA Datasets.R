@@ -52,7 +52,7 @@ read_csv("data/Registre_de_casos_de_COVID-19_realitzats_a_Catalunya._Segregaci__
 #IDESCAT
 
 # Renda familiar disponible:
-# https://www.idescat.cat/pub/?id=rfdbc&n=13301&by=mun"
+# https://www.idescat.cat/pub/?id=rfdbc&n=13301&by=mun
 
 
 # Generació de residus per càpita

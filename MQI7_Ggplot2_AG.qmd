@@ -58,7 +58,7 @@ points(rlc$class[class], rlc$knowledge[class], col = "red")
 
 ## Capes bàsiques
 
-Gairebé sempre, una gràfica creada amb ggplot2 consisteix en **tres capes**^[Layers are separated by `+`, not by a pipe!!!!]:
+Gairebé sempre, una gràfica creada amb _ggplot2_ consisteix en **tres capes**^[Les capes es separen amb `+`, no amb pipe!!!!]:
 
 - 1. Marc de dades
 - 2. Estètics
@@ -67,7 +67,7 @@ Gairebé sempre, una gràfica creada amb ggplot2 consisteix en **tres capes**^[L
 ```{r echo = T, eval = F}
 df |> 
   ggplot(aes(estètics)) +
-  geometry()
+  geometria()
 ```
 
 
@@ -85,7 +85,7 @@ Opcionalment, afegim més capes com per exemple:
 
 ## Exemple amb capes
 
-Example of a full-equipped plot.
+Una gràfica totalment equipada amb capes.
 
 ```{r echo = T, eval = F}
 bins |> 
@@ -224,7 +224,7 @@ Tipus d'atributs:
 
 # Una variable categòrica {background-color="#e8e8e8"}
 
-## Bar plot (I) {.scrollable}
+## Diagrama de barres (I) {.scrollable}
 
 Counts, etc.: `geom_bar()`
 
@@ -244,7 +244,7 @@ Extra: `coord_flip()`
 
 ## Histograma {.scrollable}
 
-Nombre de barres: `geom_histogram()`
+Casos per interval de dades: `geom_histogram()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -257,7 +257,7 @@ accidents |>
 Extra: `fill`
 :::
 
-## Density plot {.scrollable}
+## Diagrama de densitat {.scrollable}
 
 Quan tenim molta info numèrica: `geom_density()`
 
@@ -292,7 +292,7 @@ Extra: `fill`.
 
 # Dues variables categòriques {background-color="#e8e8e8"}
 
-## Bar plot (II) {.scrollable}
+## Diagrama de barres (II) {.scrollable}
 
 Les barres s'omplen (fill) amb una variable Cat: `geom_bar()`
 
@@ -308,9 +308,9 @@ accidents |>
 # Una categòrica, una numèrica {background-color="#e8e8e8"}
 
 
-## Bar plot (III) {.scrollable}
+## Diagrama de barres (III) {.scrollable}
 
-A N variable (not a count) in the `y` axis: `geom_col()`
+Variable num. a les `y` (no un count): `geom_col()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -321,9 +321,9 @@ municipi |>
 
 
 
-## Boxplot (I) {.scrollable}
+## Diagrama de caixes (I) {.scrollable}
 
-Displays the median and IQR: `geom_boxplot()`
+Mostra la mediana i l'IQR: `geom_boxplot()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -336,7 +336,7 @@ accidents |>
 Extra: `x`, `fill`
 :::
 
-## Boxplot (II) {.scrollable}
+## Diagrama de caixes (II) {.scrollable}
 
 ```{r echo = T}
 #| code-fold: true
@@ -347,9 +347,9 @@ elecc19 |>
   geom_boxplot()
 ```
 
-## Violin plot (I) {.scrollable}
+## Diagrama de violins (I) {.scrollable}
 
-Similar to density plot: `geom_violin()`
+Semblant a un diagrama de densitat: `geom_violin()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -362,7 +362,7 @@ elecc19 |>
 ```
 
 
-## Violin plot (II) {.scrollable}
+## Diagrama de violins (II) {.scrollable}
 
 ```{r echo = T}
 #| code-fold: true
@@ -373,9 +373,9 @@ rendacs |>
 ```
 
 
-## Points and text {.scrollable}
+## Punts i text {.scrollable}
 
-For percentages: `geom_point() + geom_text()`
+Per percentatges: `geom_point() + geom_text()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -392,11 +392,11 @@ lloguer_any |>
 
 
 
-# Numerics in time {background-color="#e8e8e8"}
+# Variable numèrica i temps {background-color="#e8e8e8"}
 
-## Line plot (I) {.scrollable}
+## Diagrama de línies (I) {.scrollable}
 
-A timeline: `geom_line()`
+Línia temporal: `geom_line()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -408,7 +408,7 @@ lloguer_any |>
 ```
 
 
-## Line plot (II) {.scrollable}
+## Diagrama de línies (II) {.scrollable}
 
 ```{r echo = T}
 #| code-fold: true
@@ -424,15 +424,15 @@ Extra: `lty`
 :::
 
 
-## Line plot: Example 1
+## Diagrama de línies: Exemple 1
 
 ![](img/dcd-fem.png)
 
-All the code can be found [here](https://www.jordimas.cat/courses/fiiei_cat/politics/fonts_indicadors_cat_binaria/#fig:fem-world){target="_blank"}
+Tot el codi es pot trobar [aquí](https://www.jordimas.cat/courses/fiiei_cat/politics/fonts_indicadors_cat_binaria/#fig:fem-world){target="_blank"}.
 
 
 
-## Line plot: Example 2
+## Diagrama de línies: Exemple 1
 
 ![](img/demfall-gdp.png)
 Article [here](https://www.jordimas.cat/post/2022-03-10-vdemfall/){target="_blank"} | Code [here](https://www.jordimas.cat/post/2022-03-10-vdemfall/index_files/figure-html/gdp-1.png){target="_blank"}
@@ -441,7 +441,7 @@ Article [here](https://www.jordimas.cat/post/2022-03-10-vdemfall/){target="_blan
 
 ## Path (I) {.scrollable}
 
-Two numerics across time: `geom_path()`
+Dues variables numèriques en el temps: `geom_path()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -455,14 +455,14 @@ lloguer_any |>
 ```
 
 
-## Path. Example {.scrollable}
+## Path. Exemple {.scrollable}
 
 ![](img/kuznets-usa.png)
 
-The code can be found [here](https://www.jordimas.cat/courses/fiiei_cat/socioeconomics/fonts_indicadors_cat_kuznets/#fig:kuznets-usa){target="_blank"}
+El codi es pot trobar [aquí](https://www.jordimas.cat/courses/fiiei_cat/socioeconomics/fonts_indicadors_cat_kuznets/#fig:kuznets-usa){target="_blank"}.
 
 
-# Two numerics {background-color="#e8e8e8"}
+# Dues numèriques {background-color="#e8e8e8"}
 
 ## Points (I) {.scrollable}
 
@@ -470,9 +470,9 @@ Two numeric variables: `geom_point()`
 
 ```{r echo = T}
 #| code-fold: true
-municipi |> 
-  ggplot(aes(x = altitud_m, y = superficie_km2)) +
-  geom_point()
+rendacs |>  
+  ggplot(aes(x = import_euros, y = index_gini)) +
+  geom_point(col = "darkgreen")
 ```
 
 :::{.aside}
@@ -493,7 +493,7 @@ accidents |>
 
 ## Jitter {.scrollable}
 
-For discrete-numerics OR overplotting: `geom_jitter()` 
+Per nombres discrets o overplotting: `geom_jitter()` 
 
 ```{r echo = T}
 #| code-fold: true
@@ -506,7 +506,7 @@ accidents |>
 
 ## Text {.scrollable}
 
-Abbreviations: `geom_text()` or `geom_label()`
+Per abreviacions: `geom_text()` or `geom_label()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -521,11 +521,11 @@ festivals |>
   xlim(4000, 19000)
 ```
 
-# Three variables {background-color="#e8e8e8"}
+# Tres variables {background-color="#e8e8e8"}
 
 ## Tile {.scrollable}
 
-Two categoric, one numeric: `geom_tile()` 
+Dues categòriques, una numèrica: `geom_tile()` 
 
 ```{r echo = T}
 #| code-fold: true
@@ -535,11 +535,11 @@ accidents |>
   geom_tile()
 ```
 
-# Descriptive statistics {background-color="#e8e8e8"}
+# Estadística descriptiva {background-color="#e8e8e8"}
 
-## Mean and median {.scrollable}
+## Mitjana i mediana {.scrollable}
 
-Lines with info: `geom_vline()` or `geom_hline()`
+Línies amb informació: `geom_vline()` o `geom_hline()`
 
 ```{r echo = T}
 #| code-fold: true
@@ -550,5 +550,19 @@ municipi |>
              col = "blue") +
     geom_vline(xintercept = median(municipi$superficie_km2, na.rm = T),
              col = "green")
+```
+
+## Intervals de confiança
+
+Amb `stat_summary()`
+
+```{r echo = T}
+#| code-fold: true
+festivals |> 
+  ggplot(aes(x = ambit, y = assistents_a_barcelona)) +
+  geom_point(position = position_jitter(width = 0.1, height = 0)) +
+  stat_summary(geom = "pointrange", fun.data = mean_se, col= "red", size = 0.8,
+               fun.args = list(mult = 1.96)) +
+  coord_flip()
 ```
 
