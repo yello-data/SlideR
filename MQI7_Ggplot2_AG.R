@@ -19,42 +19,37 @@ points(rlc$class[class], rlc$knowledge[class], col = "red")
 
 
 #####################################################################
-# PART 1. SUMMARY
+# PART 1. LOAD
 #####################################################################
 
-# The dplyr package is THE R PACKAGE
-# So let's load it
+## 1. PACKAGES
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(forcats)
+library(readxl)
+library(janitor)
 theme_set(theme_minimal())
 
 
-
-# 2. LOAD FILES
-library(readxl)
-library(dplyr)
-library(janitor)
-
-# 3. DOWNLOAD DATA
+# 2. DOWNLOAD DATA
 
 #-- Escollir 3.1 OR 3.2
 
-## 3.1. Descàrrega manual
+## 2.1. Descàrrega manual
 #Go to: https://infoelectoral.interior.gob.es/opencms/es/elecciones-celebradas/area-de-descargas/
 # Otras Descargas -> Datos de Municipios -> Congreso 2019 10 de Noviembre -> Descargar
 
-## 3.2. Descàrrega automàtica (potser no funciona)
+## 2.2. Descàrrega automàtica (potser no funciona)
 download.file("https://infoelectoral.interior.gob.es/estaticos/docxl/02_201911_1.zip",
               "02_201911_1.zip")
 unzip("02_201911_1.zip")
 
-## 3.3. Llegir l'arxiu (ha d'estar al directori de treball, dins del projecte)
+## 2.3. Llegir l'arxiu (ha d'estar al directori de treball, dins del projecte)
 elecc19 <- read_xlsx("02_201911_1.xlsx", skip = 5) |> 
   clean_names()
 
-# 4. GLIMPSE DATA
+# 3. GLIMPSE DATA
 elecc19
 glimpse(elecc19)
 unique(elecc19$nombre_de_comunidad)
@@ -93,7 +88,7 @@ rendacs$nom_districte
 # PART 2. GEOMETRIES
 #####################################################################
 
-## 2.1. ONE CATEGORIC VARIABLE
+## 2.1. UNA VARIABLE CATEGÒRICA
 
 ### 2.1.1. BAR PLOT (I: bar)
 
@@ -108,13 +103,13 @@ accidents |>
 
 
 
-## 2.2. ONE NUMERIC VARIABLE
+## 2.2. UNA VARIABLE NUMÈRICA
 
 ### 2.2.1. HISTOGRAM
 
 accidents
 
-#number of bins
+#number of bins: binwidth / bins
 #Extra: fill
 
 
@@ -144,7 +139,7 @@ accidents |>
 
 
 
-## 2.3. TWO CATEGORIC VARIABLES
+## 2.3. DUES VARIABLES CATEGÒRIQUES
 
 ### 2.3.1. BAR PLOT (II: fill)
 
@@ -157,7 +152,7 @@ accidents
 
 
 
-## 2.4. ONE CATEGORIC, ONE NUMERIC
+## 2.4. UNA CATEGÒRICA, UNA NUMÈRICA
 
 ### 2.4.1. BAR PLOT (III: col)
 
@@ -186,7 +181,7 @@ rendacs |>
   coord_flip()
 
 
-# A Andalusia, percentatge de vot a Ciutadans als municipis
+# A Andalusia, quin percentatge de vot a Ciutadans als municipis, per províncies?
 elecc19
 
 
@@ -206,7 +201,7 @@ lloguer_any |>
 
 
 
-## 2.5. NUMERICS IN TIME
+## 2.5. NUMÈRIQUES EN EL TEMPS
 
 ### 2.5.1. LINE PLOT
 
@@ -286,12 +281,27 @@ accidents |>
 
 
 
-# 2.8. DESCRIPTIVE STATISTICS
+# 2.8. ESTADÍSTICA DESCRIPTIVA
 
-## Mean and median
+## Mitjana i mediana
 
 #geom_vline() or geom_hline()
 municipi |> 
   ggplot(aes(x = superficie_km2)) +
   geom_density()
+
+## Intervals de confiança (no va a examen)
+festivals |> 
+  ggplot(aes(x = ambit, y = assistents_a_barcelona)) +
+  geom_point(position = position_jitter(width = 0.1, height = 0)) +
+  stat_summary(geom = "pointrange", fun.data = mean_se, col= "red", size = 0.8,
+               fun.args = list(mult = 1.96)) +
+  coord_flip()
+
+accidents |> 
+  ggplot(aes(x = hora_dia, y = edat)) +
+  geom_point(position = position_jitter(width = 0.1, height = 0)) +
+  stat_summary(geom = "pointrange", fun.data = mean_se, col= "red", size = 0.8,
+               fun.args = list(mult = 1.96)) +
+  coord_flip()
 

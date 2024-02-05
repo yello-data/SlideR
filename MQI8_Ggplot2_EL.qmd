@@ -1,9 +1,9 @@
 ---
 title: "Ggplot2"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
@@ -19,9 +19,9 @@ editor_options:
 ## Summary
 
 - Facet
-- Coordinates
-- Scale
-- Labels and themes
+- Coordenades
+- Escales
+- Etiquetes i temes
 
 # Warm up {background-color="#e8e8e8"}
 
@@ -56,15 +56,15 @@ rlc |>
 
 
 
-# Layers {background-color="#e8e8e8"}
+# Capes {background-color="#e8e8e8"}
 
-## Basic layers
+## Capes bàsiques
 
-Almost always, a ggplot consists of three layers^[Layers are separated by `+`, not by a pipe!!!!]:
+Gairebé sempre, un ggplot consisteix en tres capes^[Les capes es separen amb `+`, no amb una pipe!!!!]:
 
-- 1. Dataframe
-- 2. Aesthetics
-- 3. Geometry
+- 1. Marc de dades 
+- 2. Estètics
+- 3. Geometria
 
 ```{r echo = T, eval = F}
 #| code-line-numbers: 4-7
@@ -79,14 +79,14 @@ df |>
 
 
 
-## Optional layers
+## Capes opcionals
 
-Optionally, we add more layers, such as:
+Opcionalment, afegim més capes, com :
 
 - 4. Facet
-- 5. Coordinates
-- 6. Scale
-- 7. Theme
+- 5. Coordenades
+- 6. Escales
+- 7. Temes
 - 8. Etc
 
 
@@ -109,7 +109,7 @@ elecc19 |>
 
 ## Facet {.scrollable}
 
-Row: `facet_wrap(facets=vars(v), nrow=1)`
+Files: `facet_wrap(facets=vars(v), nrow=1)`
 
 ```{r echo = T}
 #| code-fold: true
@@ -163,7 +163,7 @@ covid |>
 
 ## Facet {.scrollable}
 
-Rows and cols in a grid: `facet_grid()`
+Files i columnes en una graella: `facet_grid()`
 ```{r echo = T}
 #| code-fold: true
 accidents |>
@@ -175,11 +175,11 @@ accidents |>
 
 
 
-# Coordinates {background-color="#e8e8e8"}
+# Coordenades {background-color="#e8e8e8"}
 
-## Coordinates {.scrollable}
+## Coordenades {.scrollable}
 
-Flip axis: `coord_flip()`
+Girar eixos: `coord_flip()`
 
 :::: {.columns}
 
@@ -211,9 +211,9 @@ elecc19 |>
 ::::
 
 
-## Coordinates {.scrollable}
+## Coordenades {.scrollable}
 
-Change limits: `coord_cartesian(ylim = c(30,40))`
+Canviar límits: `coord_cartesian(ylim = c(30,40))`
 
 :::: {.columns}
 
@@ -239,26 +239,26 @@ rendacs |>
 
 ::::
 
-Easier: `ylim(30,40)` / `xlim(30000,70000)`
+Més fàcil: `ylim(30,40)` / `xlim(30000,70000)`
 
 
-# Scale {background-color="#e8e8e8"}
+# Escales {background-color="#e8e8e8"}
 
-## X and Y scales {.scrollable}
+## Escales X i Y {.scrollable}
 
-Scale function: 
+Funcions d'escala: 
 
 - `scale_x_` or `scale_y_`
 - `discrete()` or `continuous()` (and others).
 
-Arguments of the function:
+Arguments de la funció:
 
-- `breaks`: Position of the breaks.
-- `labels`: Label of the breaks.
-- `name`: Title of the axis.
-- `limits`: Limits of the scale.
+- `breaks`: Posició dels talls.
+- `labels`: Etiquetes dels talls.
+- `name`: Títol d'eix.
+- `limits`: Límits de l'escala.
 
-## X and Y scales {.scrollable}
+## Escales X i Y {.scrollable}
 
 Num: `scale_x_continuous()`
 
@@ -273,7 +273,7 @@ rendacs |>
   )
 ```
 
-## X and Y scales {.scrollable}
+## Escales X i Y {.scrollable}
 
 Cat: `scale_x_discrete()`
 
@@ -288,9 +288,9 @@ elecc19 |>
 ```
 
 
-## X and Y scales {.scrollable}
+## Escales X i Y {.scrollable}
 
-Percentages: Numeric variable from 0 to 1.
+Percentatges: Numèrica, de 0 a 1.
 
 ```{r echo = T}
 #| code-fold: true
@@ -306,23 +306,23 @@ elecc19 |>
 
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Brewer**.
+Funció d'escala: **Brewer**.
 
 - `scale_color_brewer()`
 - `scale_fill_brewer()`
 
-Arguments of the function (see help):
+Arguments de la funció (veure ajuda):
 
 - `type`: `"seq"`, `"div"` or `"qual"`.
 - `palette`: `"Greens"`, `"Set1"`, `"Spectral"` (1, 2...).
 - `direction`: `1` or `-1`.
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Brewer** ([see web](https://colorbrewer2.org){target="_blank"}).
+Funció d'escala: **Brewer** ([see web](https://colorbrewer2.org){target="_blank"}).
 
 ```{r echo = T}
 #| code-fold: true
@@ -335,23 +335,23 @@ elecc19 |>
 ```
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Gradient**^[`scale_xxx_gradient2()` includes `mid` and `midpoint`.].
+Funció d'escala: **Gradient**^[`scale_xxx_gradient2()` inclou `mid` i `midpoint`.].
 
 - `scale_color_gradient()`
 - `scale_fill_gradient()`
 
-Arguments of the function:
+Arguments de la funció:
 
 - `low`: color of the lowest value.
 - `high`: color of the highest value. 
 
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Gradient**.
+Funció d'escala: **Gradient**.
 
 
 ```{r echo = T}
@@ -367,22 +367,22 @@ elecc19 |>
 ```
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Manual**.
+Funció d'escala: **Manual**.
 
 - `scale_color_manual()`
 - `scale_fill_manual()`
 
-Arguments of the function:
+Arguments de la funció:
 
-- `values`: color of each category.
-- `labels`: name of each category.
+- `values`: color de cada categoria.
+- `labels`: nom de cada categoria.
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Scale function: **Manual**.
+Funció d'escala: **Manual**.
 
 ```{r echo = T}
 #| code-fold: true
@@ -399,16 +399,16 @@ elecc19 |>
 ```
 
 
-## Color and fill scales {.scrollable}
+## Escales de color i fill {.scrollable}
 
-Useful websites for colors:
+Webs útils pels colors:
 
 - [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"}
 - [Html color codes](https://htmlcolorcodes.com){target="_blank"}
 - [Color Hex](https://www.color-hex.com){target="_blank"}
 
 
-## Other scales {.scrollable}
+## Altres escales {.scrollable}
 
 - `scale_size()`
 - `scale_shape()`
@@ -417,9 +417,9 @@ Useful websites for colors:
 
 
 
-# Labels and themes
+# Etiquetes i temes
 
-## Labels
+## Etiquetes
 
 `labs()`
 
@@ -427,7 +427,7 @@ Useful websites for colors:
 - `x`, `y`, `col`, `fill`...
 
 
-## Ggplot themes {.scrollable}
+## Temes de ggplot2 {.scrollable}
 
 `theme_minimal()`, `theme_light()`...
 
@@ -440,7 +440,7 @@ rendacs |>
 ```
 
 
-## Ghibli themes {.scrollable}
+## Temes Ghibli {.scrollable}
 
 Totes les paletes a: `ghibli::ghibli_palettes`
 
@@ -455,7 +455,7 @@ rendacs |>
 ```
 
 
-## Other theme packages {.scrollable}
+## Altres paquetes de temes {.scrollable}
 
 WSJ, The Economist, Excel... `ggthemes`.
 
@@ -473,17 +473,17 @@ rendacs |>
 
 
 
-## Modifying themes {.scrollable}
+## Modificar temes {.scrollable}
 
-Very time consuming, at the beginning.
+Al principi, consumeix molt de temps.
 
-See [ggplot2](https://ggplot2.tidyverse.org/reference/theme.html){target="_blank"} info.
+Veure info a [ggplot2](https://ggplot2.tidyverse.org/reference/theme.html){target="_blank"}.
 
 
 
-# Full-equipped example {background-color="#e8e8e8"}
+# Exemple d'un ggplot complet {background-color="#e8e8e8"}
 
-## Example {.scrollable}
+## Exemple {.scrollable}
 
 ```{r echo = T}
 #| code-fold: true
@@ -512,7 +512,7 @@ elecc19 |>
 
 ## Important
 
-Use Cheat Sheet & Manuals:
+Feu servir Cheat Sheets & Manuals:
 
 - [Cheat Sheet](https://posit.co/resources/cheatsheets/){target="_blank"}
 - [R4DS: Data visualization](https://r4ds.hadley.nz/data-visualize.html){target="_blank"}
@@ -523,7 +523,7 @@ Use Cheat Sheet & Manuals:
 
 
 
-## More vizz
+## Més vizzs
 
 - [Datawrapper](https://xarxanet.org/informatic/recursos/com-fer-un-grafic-interactiu-amb-datawrapper)
 
