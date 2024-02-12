@@ -1,31 +1,32 @@
 ---
-title: "Recoding"
-subtitle: "Quantitative Methodology (UPF)"
+title: "Recodificar variables"
+subtitle: "Metodologia Quantitativa (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa (UPF)"
 logo: logo-upf.png
 format: 
   revealjs:
     embed-resources: true
-slide-number: true
-show-slide-number: print
-theme: simple
+    slide-number: true
+    show-slide-number: print
+    theme: simple
 editor: source
 editor_options: 
   chunk_output_type: console
 ---
+
   
-## Summary
+## Sumari
   
-- Boolean operations
+- Operadors booleans
 - Relabel functions
-- As factor
-- As functions
+- Funció factor
+- Funcions as.xxxx
 
 # Warm up {background-color="#e8e8e8"}
 
-## R learning curve
+## Corba d'aprenentatge d'R
 
 ```{r}
 library(dplyr)
@@ -50,17 +51,12 @@ rlc |>
   labs(x = "Class number", y = "Knowledge", title = "The R Knowledge curve")
 ```
 
-## Hall of fame
 
-Best plots!
+## RStudio workflow
   
+**Carreguem paquets**
   
-  
-  ## RStudio workflow
-  
-  **Load packages.**
-  
-  ```{r echo = T, message=F, warning=F}
+```{r echo = T, message=F, warning=F}
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -75,15 +71,14 @@ library(vdemdata)
 
 
 
-# Functions and operators {background-color="#e8e8e8"}
+# Funcions i operadors {background-color="#e8e8e8"}
 
 
-## Boolean operators
+## Operadors booleans
 
-
-- **AND** (`&`): TRUE if all conditions are met.
-- **OR** (`|`): TRUE if any condition is met.
-- **NOT** (`!`): TRUE if conditions are not met.
+- **AND** (`&`): TRUE si totes les condicions estan satisfetes.
+- **OR** (`|`): TRUE si alguna condició està satisfeta.
+- **NOT** (`!`): TRUE si la condició no està satisfeta.
 
 ```{r echo = FALSE}
 #| fig-column: margin
@@ -93,22 +88,22 @@ knitr::include_graphics("img/booleans.png")
 
 ## Recoding functions
 
-When we recode variables, we lose information^[Search here for the [dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}].
+Quan recodifiquem variables, perdem informació^[Busca aquí pel [dplyr cheatsheet](https://posit.co/resources/cheatsheets/){target="_blank"}.].
 
-| To      | Function                                          |
-  |------------|-------------------------------------------------|
-  | Binary    | `if_else()`                                     |
-  | Categorical | `case_when()`, `case_match()`                   |
-  | Ordinal    | `factor()`                                      |
-  | Others     | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
+| A           | Funció                                              |
+|-------------|-----------------------------------------------------|
+| Binària     | `if_else()`                                         |
+| Categòrica  | `case_when()`, `case_match()`                       |
+| Ordinal     | `factor()`                                          |
+| Altres      | `as.numeric()`, `as.character()`, `as.Date()`, etc. |
   
   
-# Relabel {background-color="#e8e8e8"}
+# Reetiquetar {background-color="#e8e8e8"}
   
   
 ## If_else
   
-- To a dichotomous / binary / dummy variable.
+- A variable dicotòmica / binària / dummy.
 
 ```{r echo = T, eval = F}
 df |> 
@@ -155,7 +150,7 @@ df |>
 ```
 
 
-## As functions
+## Funcions as.xxxxx
 
 - `as.numeric(vector)`
 - `as.factor(vector)`

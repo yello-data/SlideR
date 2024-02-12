@@ -16,7 +16,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
 - Facet
 - Coordenades
@@ -25,7 +25,7 @@ editor_options:
 
 # Warm up {background-color="#e8e8e8"}
 
-## R learning curve
+## Corba d'aprenentatge d'R
 
 ```{r}
 library(dplyr)
@@ -95,7 +95,7 @@ Opcionalment, afegim més capes, com :
 
 ## Facet {.scrollable}
 
-Col: `facet_wrap(facets=vars(v), ncol=1)`
+Columna: `facet_wrap(facets=vars(v),ncol=1)`
 
 ```{r echo = T}
 #| code-fold: true
@@ -127,7 +127,7 @@ elecc19 |>
 
 ## Facet {.scrollable}
 
-None: `facet_wrap(facets=vars(v))` ([CatSalut](https://analisi.transparenciacatalunya.cat/Salut/Dades-di-ries-de-COVID-19-per-comarca/c7sd-zy9j))
+Cap: `facet_wrap(facets=vars(v))` ([CatSalut](https://analisi.transparenciacatalunya.cat/Salut/Dades-di-ries-de-COVID-19-per-comarca/c7sd-zy9j))
 
 ```{r eval = F, echo = T}
 #| code-fold: true
@@ -523,7 +523,7 @@ Feu servir Cheat Sheets & Manuals:
 
 
 
-## Més vizzs
+## Més vizz
 
 - [Datawrapper](https://xarxanet.org/informatic/recursos/com-fer-un-grafic-interactiu-amb-datawrapper)
 

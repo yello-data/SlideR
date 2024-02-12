@@ -139,7 +139,8 @@ rendacs |>
   geom_point() +
   scale_x_continuous(
     breaks = c(20000, 50000, 80000), 
-    labels = c("20k", "50k", "80k")
+    labels = c("20k", "50k", "80k"),
+    name = "Mitjana ingrés (€)"
   )
 
 
@@ -164,7 +165,7 @@ elecc19 |>
 
 ## 2.3.4. COL/FILL
 
-#scale_fill_brewer(palette)
+#scale_fill_brewer(palette = 1, direction = 1)
 elecc19 |> 
   filter(nombre_de_comunidad == "Cataluña") |> 
   ggplot(aes(x = nombre_de_provincia, y = numero_de_mesas,
@@ -172,7 +173,7 @@ elecc19 |>
   geom_col() 
 
 
-#scale_color_gradient(low, high)
+#scale_color_gradient(low = "white", high = "black")
 elecc19 |> 
   filter(nombre_de_comunidad == "Cataluña") |> 
   mutate(erc_per = erc_sobiranistes / total_votantes,
@@ -197,7 +198,7 @@ elecc19 |>
 
 # 2.4. LABELS AND THEMES
 
-## Labels: labs()
+## Labels: labs(title, subtitle, caption, x, y)
 
 ## Themes: theme_classic(), theme_minimal()
 

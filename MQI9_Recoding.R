@@ -49,9 +49,9 @@ library(readxl)
 
 ## 2.1. BOOLEAN OPERATORS
 
-#    - AND: & (all conditions must be present)
-#    - OR: | (any condition can be present)
-#    - NOT: ! (returns the contrary of the condition)
+#    - AND: & (totes les condicions presents)
+#    - OR: | (qualsevol condició present)
+#    - NOT: ! (retorna el contrari de la condició)
 
 ctr_pov <- tibble(country = c("Armenia", "Austria", "Benin", "Bolivia",
                               "Brazil", "Colombia", "El Salvador",
@@ -97,8 +97,14 @@ ctr_pov |>
 #Ens hem adonat que no sabem si els accidents es van produir o no en cap de setmana
 accidents |> 
   glimpse()
-unique(accidents$descripcio_tipus_dia)
+
 unique(accidents$descripcio_dia_setmana)
+accidents$edat
+
+accidents |> 
+  select(nom_districte, nom_barri, descripcio_dia_setmana) |> 
+  ggplot(aes(x = descripcio_dia_setmana)) +
+  geom_bar()
 
 accidents |> 
   select(nom_districte, nom_barri, descripcio_dia_setmana) |> 
@@ -120,7 +126,7 @@ cens_gc |>
 
 
 
-#Una opció sempre és recodificar NOMÉS ALGUNES variables
+#Una opció sempre és recodificar NOMÉS ALGUNES variables (com a FALSE, indiquem la variable)
 cens_gc |>
   mutate(cat_desaparicio = if_else(provincia_desaparicio %in% c("Tarragona", "Barcelona",
                                                                 "Girona", "Lleida"), 
@@ -202,7 +208,6 @@ vdem_sub |>
 
 
 
-
 ## 3.3. CASE_MATCH (dplyr)
 # change a particular value of a variable
 
@@ -257,9 +262,11 @@ accidents |>
 
 ### ---- QUIN ÉS EL PARLAMENT NACIONAL DE CADA REGIÓ AMB MÉS DONES?
 
-#Web: https://www.sdgindex.org/reports/sustainable-development-report-2021/
 #Download Data
-
+#Web: https://www.sdgindex.org/reports/sustainable-development-report-2022/
+#Automatic, to the folder "data"
+download.file("https://github.com/sdsna/SDR2022/raw/main/SDR-2022-database.xlsx",
+              "data/SDR-2022-Database.xlsx")
 
 #Descarreguem Codebook, que es troba al Full 3
 sdg_codebook <- read_xlsx("data/SDR-2022-Database.xlsx", sheet = 3) |> 
@@ -294,11 +301,14 @@ sdg_data |>
 #Quina relació hi ha entre les dones al parlament i la mida del país? Cap
 sdg_data |> 
   ggplot(aes(x = log10(pop_2021), y = sdg5_parl)) +
-  geom_text(aes(label = id)) +
+  geom_text(aes(label = id), size = 2) +
   geom_smooth(method = "lm") +
   scale_x_continuous(labels = c("10k", "100k", "1M", 
                                 "10M", "100M", "1000M")) +
-  theme_minimal()
+  theme_minimal() +
+  labs(x = "Població (log10)",
+       y = "Dones al parlament (%)",
+       title = "Percentatge de dones als parlaments nacionals (2021)")
 
 
 

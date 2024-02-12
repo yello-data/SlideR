@@ -248,7 +248,7 @@ ords[ , ]
 
 ### 2.2.4. FORCATS PACKAGE
 library(forcats)
-fct_relevel(ords$liberalisme, "Hybrid Regime", "Full Democracy", "Flawed Democracy", "Authoritarian")
+fct_relevel(ords$liberalisme, "Molt baix", "Baix", "Mitjà", "Alt", "Molt alt")
 fct_rev(ords$liberalisme)
 fct_other(ords$liberalisme, keep = c("Molt alt", "Alt"))
 plot(fct_infreq(ords$liberalisme))
