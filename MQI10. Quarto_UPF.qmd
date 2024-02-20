@@ -1,9 +1,9 @@
 ---
-title: "RMarkdown"
-subtitle: "Quantitative Methodology (UPF)"
+title: "Quarto"
+subtitle: "Metodologia Quantitativa I (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa I (UPF)"
 logo: logo-upf.png
 params:
   country: "United States"
@@ -28,32 +28,19 @@ library(leaflet)
 library(vembedr)
 ```
 
-1.  Què és RMarkdown?
+1.  Què és Quarto?
 2.  Repàs primeres sessions
-3.  Tutorial RMarkdown
-4.  RMarkdown avançat
+3.  Tutorial Quarto
+4.  Quarto avançat
 5.  Consideracions finals
 
-# 1. Què és RMarkdown? {background-color="#e8e8e8"}
+# 1. Què és Quarto? {background-color="#e8e8e8"}
 
-## Un paquet d'R
-
-S'instal·la com qualsevol altre.
-
-![](img/rmd-package.png){style="float:right;" fig-alt="RMarkdown logo." width="300"}
-
-```{r echo = T, eval = F}
-install.packages(c("rmarkdown", "knitr", 
-                   "DT", "vembedr", "leaflet"))
-```
-
-![](img/r-packages.png){style="float:center;" width="650"}
-
-## Un llenguatge/prosa {.scrollable}
+## Orígens: Markdown {.scrollable}
 
 > "A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions"
 
-![](img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
+![](../img/gruber.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="300"}
 
 ::: columns
 ::: {.column width="50%"}
@@ -70,12 +57,13 @@ knitr::include_graphics("img/html-code.png")
 ```
 :::
 
-## Eina per a presentar resultats {.scrollable}
+## Orígens: RMarkdown {.scrollable}
 
 ::: columns
 ::: {.column width="50%"}
--   Imprescindible per a un bon analista de dades.
--   Permet transformar en un ampli rang de formats el codi d'R.
+-   S'adopta a RStudio.
+-   Permet alternar codi d'R amb text.
+-   Fàcilment exportable a varis formats
 -   Exemples:
 :::
 
@@ -87,10 +75,32 @@ knitr::include_graphics("img/rmd-formats.png")
 :::
 
 ::: aside
--   [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html){target="_blank"}
 -   [https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/){target="_blank"}
+-   [https://jmas.quarto.pub/analisi-bivariada-cat/](https://jmas.quarto.pub/analisi-bivariada-cat/){target="_blank"}
 -   [https://www.jordimas.cat/](https://www.jordimas.cat/){target="_blank"}
 :::
+
+
+
+## Orígens: RMarkdown {.scrollable}
+
+Crear un document: YAML - Text - Chunk
+
+![](../img/rmd.png){style="float:left;" fig-alt="Document Quarto." width="290"}
+
+## Orígens: Quarto {.scrollable}
+
+::: columns
+::: {.column width="50%"}
+[Quarto](www.quarto.org) ![](../img/quarto.png)
+:::
+
+::: {.column width="50%"}
+[Posit](www.posit.co) ![](../img/posit.png)
+:::
+:::
+
+
 
 # 2. Repàs primeres sessions {background-color="#e8e8e8"}
 
@@ -103,27 +113,26 @@ knitr::include_graphics("img/rmd-formats.png")
 -   Importar arxius: csv, csv2, xlsx, dta, sav...
 :::
 
-## RMarkdown
+## Quarto
 
 Crear un document: YAML - Text - Chunk
 
-![](img/rmd.png){style="float:left;" fig-alt="RMarkdown logo." width="290"}
+![](../img/rmd.png){style="float:left;" fig-alt="RMarkdown logo." width="290"}
 
 ## Descarregar tutorial
 
-<https://www.jordimas.cat/files/Tutorial_Rmd_Polity.zip>
+<https://www.jordimas.cat/files/Tutorial_Qmd_Polity.zip>
 
-![](img/polity-map.png)
+![](../img/polity-map.png)
 
-# 3. Tutorial RMarkdown {background-color="#e8e8e8"}
+# 3. Tutorial Quarto {background-color="#e8e8e8"}
 
-## Configurar RMarkdown
+## Configurar Quarto
 
--   `Preview in Viewer Pane`
--   `Chunk Output in Console`
--   Knit: `Ctrl + Shift + K`
--   Visualització Viewer o Web
 -   YAML - Text - Chunk
+-   Render: `Ctrl + Shift + K`
+-   Visualització: `Preview in Viewer Pane`
+-   Output: `Chunk Output in Console`
 
 ## YAML
 
@@ -139,8 +148,8 @@ Crear un document: YAML - Text - Chunk
 Provar amb:
 
 ``` {.r code-line-numbers="3"}
-output:
-  html_document:
+format: 
+  html:
     theme: cosmo
 ```
 :::
@@ -162,7 +171,7 @@ output:
 ::: {.callout-note icon="false"}
 ## Exercici 2: Text
 
-Llegir introducció i fins a la imatge de RMarkdown. Fer els canvis que es proposen en el text.
+Llegir introducció i fins a la imatge de Quarto. Fer els canvis que es proposen en el text.
 :::
 
 ## Chunks
@@ -177,15 +186,15 @@ Llegir introducció i fins a la imatge de RMarkdown. Fer els canvis que es propo
 ::: {.callout-note icon="false"}
 ## Exercici 3: Chunks
 
-Llegir l'apartat chunks i fer canvis que es proposen.
+Llegir fins a l'apartat Imatges i gràfics i fer canvis que es proposen.
 :::
 
 ## Taules, imatges i gràfics
 
--   Els posem a dins del chunk.
--   Marc de dades: tibble, kable, datatable.
+-   Posem aquests elements a dins del chunk.
+-   Marc de dades: tibble, kable^[La funció `kable()` publica totes les observacions del marc de dades. Per tallar les observacions, utilitzar sempre la funció `head()`.], datatable.
 -   Imatges: `![]()` o `include_graphics("__")`.
--   Gràfics: `fig.align = "center"`, `fig.width = 50%`.
+-   Gràfics: `fig.align = "center"`.
 
 . . .
 
@@ -199,8 +208,8 @@ Llegir l'últim apartat, modifica marc de dades i gràfic.
 
 És important diferenciar entre
 
--   Mode Knit
--   Mode R Script
+-   **Mode Render:** Llegeix el document Quarto de dalt a baix.
+-   **Mode R Script:** Utilitzem el que tenim guardat/carregat al Global Environment.
 
 ## Activitat
 
@@ -209,7 +218,7 @@ Llegir l'últim apartat, modifica marc de dades i gràfic.
 
 Crear una petita història amb [**Polity V**](https://www.jordimas.cat/files/polityV.xls){target="_blank"}:
 
--   Descarregar la base de dades Polity V a [Systemic Peace](https://www.systemicpeace.org/inscrdata.html){target="_blank"}
+-   Descarregar la base de dades sencera de Polity V a [Systemic Peace](https://www.systemicpeace.org/inscrdata.html){target="_blank"}
 -   **Text** amb tots els formats possibles.
 -   Un **marc de dades** i dos **plots**.
 :::
@@ -219,13 +228,13 @@ Variables d'interès:
 
 -   `country`: país.
 -   `year`: any.
--   `polity2`: democràcia (-10 + 10).
+-   `polity2`: de -10 (autocràcia) a + 10 (democràcia).
 -   `durable`: anys de durada del règim.
 :::
 
-# 4. RMarkdown avançat I {background-color="#e8e8e8"}
+# 4. Quarto avançat I {background-color="#e8e8e8"}
 
-# 4.1. RMarkdown avançat (YAML) {background-color="#e8e8e8"}
+# 4.1. Quarto avançat (YAML) {background-color="#e8e8e8"}
 
 ## Data automàtica
 
@@ -241,176 +250,79 @@ Sys.Date()
 
 . . .
 
-```{r eval = F, echo = T}
-date: "`r format(Sys.time(), '%d %B %Y')`"
-```
+Canviar l'idioma de la capçalera.
 
-```{r eval = T, echo = F}
-format(Sys.time(), '%d %B %Y')
+```{r eval = F, echo = T}
+author-title: Autor
+published-title: Última modificació
+lang: ca
 ```
 
 . . .
 
-```{r eval = F, echo = T}
-date: "Última edició `r format(Sys.time(), '%d %B %Y')`"
-```
-
-```{r eval = T, echo = F}
-paste0("Última edició ", format(Sys.time(), '%d %B %Y'))
-```
-
-## Foto d'encapçalament
-
-Posem una foto a la capçalera del document.
-
-```{r eval = F, echo = T}
-title: "![Posar nom de títol](polity-index.jpeg){width=2in}"
-```
-
-![](img/polity-index.jpeg){.absolute top="250" left="0" width="500"}
 
 ## Taula de continguts
 
 Customitzem elements de la taula de continguts.
 
-``` {.r code-line-numbers="3-8"}
-output:
-  html_document:
+``` {.r code-line-numbers="3-5"}
+format: 
+  html:
     toc: true
-    toc_depth: 2
-    number_sections: true
-    toc_float:
-      collapsed: false
-        smooth_scroll: false
+    toc-depth: 2
+    toc-title: Taula de continguts
 ```
 
 ::: aside
--   `toc:` volem taula de continguts?
--   `toc_depth:` de quina profunditat?
--   `number_sections:` les seccions han d'anar enumerades?
--   `toc_float:` la taula de continguts ha de ser flotant?
-    -   `collapsed:` s'amaga automàticament?
-    -   `smooth_scroll:` navegació suau.
+-   `toc:` volem taula de continguts? (T/F)
+-   `toc-depth:` de quina profunditat?
+-   `toc-title:` títol de la taula.
+-   `number-sections:` seccions enumerades? (T/F).
+-   `toc-location:` a quina part del document?
 :::
+
+
+## Plegar codi
+
+Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document^[Compte, això funcionarà només pels chunks que estiguin en `echo = TRUE`.].
+
+``` {.r code-line-numbers="3-4"}
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar codi."
+```
 
 ## Temes
 
 Seleccionem l'estil visual i el subratllat:
 
--   **Tema:** default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti, null.
+-   **Tema:** default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, vapor, null.
 
 ```{r eval = F, echo = T}
-theme: paper
+theme: journal
 ```
 
--   **Highlight:** default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate, null.
+-   **Highlight:** a11y, arrow, atom-one, ayu, breeze, github, gruvbox.
 
 ```{r eval = F, echo = T}
-highlight: tango
+highlight-style: ayu
 ```
 
 ::: aside
-Per una llista dels diferents estils de temes i subratllats veure [aquest enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style){target="_blank"} i per una llista amb contingut més avançat veure [aquesta llista](https://www.datadreaming.org/post/r-markdown-theme-gallery/){target="_blank"}.
+- Per una llista de **temes** veure [aquest enllaç](https://quarto.org/docs/output-formats/html-themes.html){target="_blank"}.
+- Per una llista d'estils de codi veure [aquest enllaç](https://quarto.org/docs/output-formats/html-code.html#highlighting){target="_blank"}. 
 :::
 
-## Plegar codi
 
-Creem un desplegable per cada chunk amb codi `(echo = T)` que tinguem al document.
 
-``` {.r code-line-numbers="4"}
-title: "Postgrau d'Analista de Dades (UB)"
-output:
-  html_document:
-    code_folding: hide
-```
-
-## Formats d'output
-
-Al YAML podem especificar el tipus de format[^2].
-
-[^2]: Per una visió general de totes les opcions que té el YAML, veure [el següent enllaç](https://bookdown.org/yihui/rmarkdown/html-document.html)
-
-``` {.r code-line-numbers="4,6,8"}
-title: "Postgrau d'Analista de Dades (UB)"
-author: "Nom de l'estudiant"
-output:
-  html_document:
-    code_folding: hide
-  pdf_document:
-    toc: yes
-  word_document:
-```
-
-I també podem crear [diapositives](https://quarto.org/docs/presentations/revealjs/){target="_blank"} en diversos formats.
-
-# 4.2. RMarkdown avançat (text) {background-color="#e8e8e8"}
-
-## Canviar mida de text
-
-Un dels deutes pendents de RMarkdown.
-
-```{r eval = F, echo = T}
-    <style>
-    body {
-    font-size: 13pt;
-    text-align: justify}
-    </style>
-```
-
-## Incloure codi al text {.scrollable}
-
-En qualsevol moment podem fer referència al text sobre qualsevol dada **ja carregada** en un chunk previ.
-
--   A. Carreguem les dades:
-
-```{r echo = T}
-polity <- read_excel("data/p5v2018.xls")
-```
-
--   B. Referenciem les dades al text:
-
-::: panel-tabset
-### Exemple 1
-
-En aquest gràfic veiem Estats Units en els darrers anys
-
-```{r echo = T, eval = T}
-p5_ctr <- polity |> 
-  filter(country == params$country, year > params$year) |> 
-  select(country, year, polity2)
-knitr::kable(p5_ctr)
-```
-
-Observem que en l'últim any de dades `` `r last(p5_ctr$year)` ``, `` `r params$country` `` tenia un nivell de democràcia de `` `r last(p5_ctr$polity2)` ``.
-
--   r last(p5_dk\$year)
--   r params\$country
--   r last(p5_dk\$polity2)
-
-### Exemple 2
-
-```{r echo = T}
-polity |> 
-  group_by(country) |> 
-  summarize(duration = max(durable, na.rm = T)) |> 
-  ggplot(aes(x = duration)) +
-  geom_density()
-```
-
-El règim amb més durada és `` `r polity$country[which(polity$durable == max(polity$durable, na.rm = T))]` `` amb `` `r max(polity$durable, na.rm = T)` `` anys:
-
-```{r eval = F, echo = T}
-polity$country[which(polity$durable == max(polity$durable, na.rm = T))]
-
-max(polity$durable, na.rm = T)
-```
-:::
+# 4.2. Quarto avançat (text) {background-color="#e8e8e8"}
 
 ## Referències al text
 
 Per referenciar la secció del document[^3]:
 
-[^3]: En aquest [enllaç](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
+[^3]: En aquest [enllaç](https://quarto.org/docs/authoring/cross-references.html){target="_blank"}, també podeu veure com es poden referenciar taules i marcs de dades
 
 ```{r eval = F, echo = T}
 # Introducció {#intro}
@@ -421,6 +333,211 @@ En qualsevol moment del text, introduïm:
 ```{r eval = F, echo = T}
 [text](#intro)
 ```
+
+## Taules {.scrollable}
+
+Una assignatura pendent de Markdown.
+
+```{r eval = F, echo = T}
+    | Funció       | Paquet    | Descripció                                           |
+    |--------------|-----------|------------------------------------------------------|
+    | `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+    | `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+    | `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+    | `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+
+```
+
+| Funció       | Paquet    | Descripció                                           |
+|------------------|------------------|-------------------------------------|
+| `filter()`   | `dplyr`   | Filtra les observacions d'un marc de dades           |
+| `separate()` | `tidyr`   | Separa els elements d'un vector en base a un criteri |
+| `read_csv()` | `readr`   | Llegeix els arxius CSV                               |
+| `ggplot()`   | `ggplot2` | Reprodueix elements gràfics                          |
+
+També podem utilitzar l'**Editor Visual** (següent).
+
+## Editor visual
+
+Interfície més semblant a Word per generar documents.
+
+![](../img/rmarkdown-visual-editor.png){.absolute top="300" left="0" width="500"}
+
+Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
+
+
+# 4.3. Quarto avançat (chunks) {background-color="#e8e8e8"}
+
+## Opcions globals
+
+Opcions per defecte als chunks de tot el document:
+
+```{r eval = F, echo = T}
+knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
+                      warning = FALSE, message = FALSE,
+                       fig.width = 6, fig.height = 6)
+```
+
+El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
+
+## Millorar les taules
+
+::: panel-tabset
+## Opció knitr::kable
+
+Tot tipus de taules amb el paquet [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html){target="_blank"}
+
+```{r echo = T, eval = F}
+polity |> 
+  filter(country %in% c("Angola", "Spain", "Vietnam"),
+         year == 2014) |> 
+  select(country, scode, polity2, durable) |> 
+  knitr::kable()
+```
+
+Arguments d'interès:
+
+::: aside
+-   `col.names = c("País", "Codi", "Democràcia", "Duració")`
+-   `align = c("llcc")`
+-   `caption = "Títol"`
+:::
+
+
+## Opció DT::data.table
+
+```{r echo = T, eval = F}
+polity |> 
+  select(country, scode, polity2, durable) |> 
+  DT::datatable()
+```
+:::
+
+## Figures
+
+Varis paràmetres per establir les dimensions^[Recomanable posar els elements dins del chunk mitjançant `#|` i separar amb `-` enlloc del `.`.]:
+
+-   `fig.width`: amplada en inches.
+-   `fig.height`: alçada en inches.
+-   `fig.align`: "left", "right", "center".
+-   `fig.dim`: primer width i després height, c(5,3)
+
+
+## Què evitar als chunks
+
+-   La funció `install.packages()`.
+-   La funció `download.file()`.
+-   La funció `View()`.
+-   Carregar bases de dades d'internet.
+-   Funcions que carreguen bases de dades (ex. `CEOdata`)
+
+
+# 4.4. Quarto avançat (publicar) {background-color="#e8e8e8"}
+
+## Exportar i publicar {#rmd-rpubs}
+
+Podem publicar documents Html, entre altres, amb [Quarto Pubs](https://quarto.org/docs/publishing/){target="_blank"}:
+
+-   Documents: El format més senzill.
+-   [Llibres](https://jmas.quarto.pub/r-en-ciencies-socials/40-quarto.html){target="_blank"} 
+-   [Pàgines web](https://www.jordimas.cat/){target="_blank"}
+
+## Activitat
+
+::: {.callout-note icon="false"}
+## Exercici 7: Prova final
+
+Proveu un **dataset anterior** i construiu de zero un document Quarto amb Html, procurant d'utilitzar també algunes de les funcions avançades. En particular:
+
+-   Marc de dades en knitr o DT.
+-   Temes i subratllats.
+-   Plegar codi.
+-   Mida gràfics.
+
+:::
+
+# 5. Quarto avançat II
+
+# 5.1. Quarto avançat (YAML)
+
+## Foto d'encapçalament
+
+Posem una foto a la capçalera del document^[Alternativament, es pot posar la foto a `abstract:`.].
+
+```{r eval = F, echo = T}
+subtitle: "Posar subtítol si s'escau![](polity-index.jpeg){width=30%}"
+```
+
+
+![](../img/polity-index.jpeg){.absolute top="180" left="0" width="350"}
+
+## Canviar la mida de tot el text
+
+Un dels deutes pendents de Markdown^[Més opcions a [aquí](https://quarto.org/docs/reference/formats/html.html#title-author){target="_blank"}].
+
+```{r eval = F, echo = T}
+fontsize: 18px
+mainfont: Arial
+```
+
+
+## Gràfics per defecte
+
+Els gràfics que apareixen al document han de tenir per defecte algunes dimensions determinades?
+
+``` {.r code-line-numbers="3-4"}
+format: 
+  html:
+    fig_width: 6 
+    fig_height: 4 
+```
+
+## Formats d'output
+
+Al YAML podem especificar el tipus de format[^2].
+
+[^2]: Per crear Html, PDFs i Words, veure [el següent enllaç](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}.
+
+``` {.r code-line-numbers="2-5"}
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+```
+
+I també podem crear [diapositives](https://quarto.org/docs/presentations/){target="_blank"} en diversos formats.
+
+
+## Paràmetres {.scrollable}
+
+Establim uns paràmetres al YAML que al llarg del document podrem utilitzar com a codi [^5].
+
+[^5]: Molt útil per fer [documents interactius](https://quarto.org/docs/interactive/){target="_blank"} per establir els paràmetres de base.
+
+``` {.r code-line-numbers="1-3"}
+params:
+  country: "United States"
+  year: 2014
+```
+
+::: aside
+En el document, accedim als paràmetres de dues maneres:
+
+-   A. Al text:
+
+```{r echo = T, eval = F}
+`r params$country`
+```
+
+-   B. Als chunks:
+
+```{r echo = T, eval = F}
+filter(polity, country == params$country)
+```
+:::
+
+# 5.2. Quarto avançat (text)
 
 ## Referències bibliogràfiques {.scrollable}
 
@@ -450,117 +567,160 @@ Ho farem normalment amb un document **BibTex** (`.bib`)[^4].
 -   Entre claudàtors `[@Marshall2020]`, ens posarà (Marshall 2020).
 -   Sense claudàtors `@Marshall2020`, ens posarà Marshall (2020).
 
-4.  En l'última línia del document de RMarkdown, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
+4.  En l'última línia del document de Quarto, posarem un títol `# Referències` per separar la bibliografia de la resta del text.
 
 ::: aside
-Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html) o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX).
+Per saber-ne més sobre l'estil de citació BibTex, podeu consultar [RMarkdown Cookbook: Bibliographies and Citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"}, [Reproducible Research in R: Section 10 Citations](https://monashdatafluency.github.io/r-rep-res/citations.html){target="_blank"} o [Wikibooks: LaTeX/Bibliography Management](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX){target="_blank"}.
 :::
 
-# 4.3. RMarkdown avançat (chunks) {background-color="#e8e8e8"}
-
-## Taules
+## Tabsets
 
 ::: panel-tabset
-## Opció knitr::kable
+### Codi
 
-Tot tipus de taules amb el paquet [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+```{r echo = T, eval=F}
+::: {.panel-tabset}
 
-```{r echo = T, eval = F}
-polity |> 
-  filter(country %in% c("Angola", "Spain", "Vietnam"),
-         year == 2014) |> 
-  select(country, scode, polity2, durable) |> 
-  knitr::kable()
+## Tab A
+
+Contingut de `Tab A`
+
+## Tab B
+
+Contingut de `Tab B`
+
+:::
 ```
 
-Arguments d'interès:
+### Gràfic
 
-::: aside
--   `col.names = c("País", "Codi", "Democràcia", "Duració")`
--   `align = c("llcc")`
--   `caption = "Títol"`
-:::
-
-## Opció DT::data.table
-
-```{r echo = T, eval = F}
-polity |> 
-  select(country, scode, polity2, durable) |> 
-  DT::datatable()
+```{r echo = F}
+hist(dplyr::starwars$height)
 ```
 :::
 
-## Figures
 
-Varis paràmetres per establir les dimensions:
 
--   `fig.width`: amplada en inches.
--   `fig.height`: alçada en inches.
--   `fig.align`: "left", "right", "center".
--   `fig.dim`: primer width i després height, c(5,3)
--   `out.width`: "50%" ocuparà el 50% de l'amplada del report
 
-## Opcions globals
+## Incloure codi al text {.scrollable}
 
-Opcions per defecte als chunks de tot el document:
+En qualsevol moment, al text podem referenciar qualsevol dada **ja carregada** en un chunk previ.
+
+-   A. Carreguem les dades:
+
+```{r echo = T}
+polity <- read_excel("data/p5v2018.xls")
+```
+
+-   B. Per referenciar al text:
 
 ```{r eval = F, echo = T}
-knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
-                      warning = FALSE, message = FALSE,
-                       fig.width = 6, fig.height = 6)
+`r data`
 ```
 
-El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
 
-## Què evitar als chunks
+::: panel-tabset
+### Exemple 1
 
--   La funció `install.packages()`.
--   La funció `download.file()`.
--   La funció `View()`.
--   Carregar bases de dades d'internet.
--   Funcions que carreguen bases de dades (ex. `CEOdata`)
+Estats Units en els darrers anys.
 
-# 4.4. RMarkdown avançat (publicar) {background-color="#e8e8e8"}
+```{r echo = T, eval = T}
+p5_ctr <- polity |> 
+  filter(country == "United States", year > 2012) |> 
+  select(country, year, polity2)
+```
 
-## Exportar i publicar {#rmd-rpubs}
+Observem que:
 
-Tres maneres de publicar en Html:
+- En l'últim any de dades ...
 
--   [RPubs](https://rpubs.com/){target="_blank"}: La forma més senzilla.
--   [Blogdown](https://bookdown.org/yihui/blogdown/){target="_blank"}: Blocs.
--   [Bookdown](https://bookdown.org/){target="_blank"}: Llibres.
+```{r eval = F, echo = T}
+`r last(p5_ctr$year)`
+```
 
-## Activitat
+- el país ...
+
+```{r eval = F, echo = T}
+`r p5_ctr$country[1]`
+```
+
+- tenia un nivell de democràcia de ...
+
+```{r eval = F, echo = T}
+`r last(p5_ctr$year)`
+```
+
+
+
+### Exemple 2
+
+```{r echo = T}
+polity |> 
+  group_by(country) |> 
+  summarize(duration = max(durable, na.rm = T)) |> 
+  ggplot(aes(x = duration)) +
+  geom_density()
+```
+
+El règim amb més durada és ...
+
+```{r eval = F, echo = T}
+`r polity$country[which(polity$durable == max(polity$durable, na.rm = T))]`
+```
+
+que ha durat X anys:
+
+```{r eval = F, echo = T}
+max(polity$durable, na.rm = T)
+```
+:::
+
+
+
+## Quadres de text
 
 ::: {.callout-note icon="false"}
-## Exercici 7: Prova final
+## Avís!
 
-Agafeu el treball d'un **dataset anterior** i construiu un document Html, procurant d'utilitzar també algunes de les funcions avançades. En particular:
-
--   Marc de dades en knitr o DT.
--   Temes i subratllats.
--   Plegar codi.
--   Mida gràfics.
-
-**Publiqueu-ho a [RPubs](https://rpubs.com/){target="_blank"}:** A dins d'RStudio, un cop l'Html s'hagi generat en el Viewer, cliqueu a l'icona blava del Viewer (Publish -\> Publish a Document), seleccioneu RPubs i seguiu les instruccions.
+Utilitzar quadres de text és una manera efectiva per dirigir l'atenció a determinat contingut.
 :::
 
+    ::: {.callout-note}
+    ## Títol
+    Text blablabla
+    :::
 
-## El món de l'endemà
+Tipus:
 
-::: columns
-::: {.column width="50%"}
-[Quarto](www.quarto.org) ![](img/quarto.png)
-:::
+-   `note`, `tip`, `warning`, `caution`, `important`.
 
-::: {.column width="50%"}
-[Posit](www.posit.co) ![](img/posit.png)
-:::
-:::
+# 5.3. Quarto avançat (chunk)
+
+## Incrustar vídeos i tuits
+
+```{r eval = F, echo = T}
+{{< video https://www.youtube.com/embed/hz3J6Wb5S_8 >}}
+{{< tweet 1229386394658836480 >}}
+```
+
+# 6. Consideracions finals {background-color="#e8e8e8"}
+
+## Interactius {.scrollable}
+
+-   Dashboards amb [flexdashboard](https://pkgs.rstudio.com/flexdashboard/){target="_blank"}
+
+-   Mapes amb [leaflet](https://leafletjs.com/){target="_blank"}
+
+```{r echo = T, eval = T}
+leaflet() %>% 
+  addProviderTiles(providers$Stamen.Toner) %>%
+    setView(lng = 139.753930, 
+          lat = 35.682170, 
+          zoom = 13)
+```
+
 
 ## Bibliografia principal
 
--   [Guia ràpida de RMarkdown a la web de RStudio.](https://rmarkdown.rstudio.com/lesson-1.html){target="_blank"}
--   [Cheatsheet RMarkdown.](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}
--   [Capítol de RMarkdown al llibre *R para ciencia de datos*](https://es.r4ds.hadley.nz/r-markdown.html){target="_blank"}.
--   [El llibre complet: *RMarkdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/html-document.html){target="_blank"}.
+-   [Quarto website](https://quarto.org/docs/guide/){target="_blank"}
+-   [Quarto UOC](https://jmas.quarto.pub/r-en-ciencies-socials/40-quarto.html){target="_blank"}
