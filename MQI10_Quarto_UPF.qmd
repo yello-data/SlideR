@@ -359,11 +359,11 @@ També podem utilitzar l'**Editor Visual** (següent).
 
 ## Editor visual
 
-Interfície més semblant a Word per generar documents.
+- Amb l'editor visual la interfície ens serà més familiar, perquè s'assembla més a la de Word. 
+- No obstant, es recomana no utilitzar-lo (o només puntualment).
 
 ![](../img/rmarkdown-visual-editor.png){.absolute top="300" left="0" width="500"}
 
-Amb l'editor visual veurem una interfície que ens serà molt més familiar. No obstant, recomanem utilitzar-lo només puntualment.
 
 
 # 4.3. Quarto avançat (chunks) {background-color="#e8e8e8"}

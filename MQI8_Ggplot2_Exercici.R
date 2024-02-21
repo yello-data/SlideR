@@ -41,7 +41,24 @@ library(haven)
 # https://www.idescat.cat/codis/?id=50&n=9
 
 
-# 3. STATES
+#3. CENTRE D'ESTUDIS D'OPINIÓ
+
+#Enquesta CEO febrer 2024
+#https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/estudis-dopinio-ceo/societat/detall/index.html?id=9088
+
+#Al qüestionari veiem les variables del marc de dades
+#https://upceo.ceo.gencat.cat/wsceop/9088/Qüestionari_1078.pdf
+
+#Descarregar dades CEO per PC
+ceo1078 <- read_csv2("https://upceo.ceo.gencat.cat/wsceop/9088/Microdades_anonimitzades_1078.csv")
+
+#Descarregar dades CEO per Mac
+ceo1078 <- read_csv2("https://upceo.ceo.gencat.cat/wsceop/9088/Microdades_anonimitzades_1078.csv",
+                     locale = locale(encoding = "ISO-8859-1"))
+
+
+
+# 4. ESTATS
 
 #Quality of Government Institute: https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset
 qog_cs <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_cs_jan23.csv") #cross-section
@@ -93,5 +110,8 @@ dplyr::starwars
 ggplot2::diamonds
 ggplot2::presidential
 tidyr::world_bank_pop
+
+
+
 
 

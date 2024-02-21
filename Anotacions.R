@@ -11,11 +11,10 @@
 # - Pensar en el recorregut que han de fer les dades a través de les pipe
 
 ## Pensar amb l'estructura de dades
-#- No anar a copiar i enganxar, sinó a entendre què esteu fent
-#- Empatitzar amb el programa: què heu de fer perquè us entengui
-#- Què entendrà? Estructura de dades!!!
-#- Perfectly interchangable: sum(df$v) /  summarize(df, v = sum(v))
-
+# - No anar a copiar i enganxar, sinó a entendre què esteu fent
+# - Empatitzar amb el programa: què fer perquè entengui en què diem.
+# - Què entendrà? Estructura de dades!!!
+# - Perfectly interchangable: sum(df$v) /  summarize(df, v = sum(v))
 
 
 # Cas estudi contractes menors
@@ -28,9 +27,9 @@
 # No s'ha de memoritzar
 
 # EN GENERAL
-#No copiar i enganxar el codi!!!!!!!!!!!
-#Minimal reproducible example
-#Mirar l'ajuda i els exemples
+# - No copiar i enganxar el codi!!!!!!!!!!!
+# - Minimal reproducible example
+# - Mirar l'ajuda i els exemples
 
 #FUN
 # Ensenyar coses de la web (visual aberrations, etc.)
