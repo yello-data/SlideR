@@ -1,6 +1,6 @@
 #EXERCICI GGPLOT2 (2024)
 
-# 1. ACTIVITAT: L'activitat consisteix a fer dos plots amb ggplot2:
+# 1. ACTIVITAT: L'activitat consisteix a fer un plot amb ggplot2:
 #- El plot es crea a partir d'un filtre o bé d'un resum previ de dades a través de les funcions group_by() i summarize().
 #- El plot ha de mostrar com a mínim dues variables.
 #- L'estudiant ha de fer una captura de pantalla.

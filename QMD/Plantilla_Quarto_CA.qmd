@@ -13,11 +13,15 @@ format:
     toc: true
     toc-depth: 2
     toc-title: Taula de continguts
-lang: es
+lang: ca
 editor_options: 
   chunk_output_type: console
 editor: source
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
 
 ## Apartat 1
 
@@ -29,7 +33,7 @@ Text
 
 ## Apartat 3
 
-Texto
+Text
 
 ```{r}
 1 + 1
