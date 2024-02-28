@@ -185,7 +185,7 @@ inner_join(df1, df2, by = c("code" = "cowc"))
 # https://www.idescat.cat/pub/?id=rfdbc&n=13301&by=mun
 
 # Generació de residus per càpita
-# https://www.idescat.cat/pub/?id=resmc&n=6997&by=mun&t=201900
+# https://www.idescat.cat/pub/?id=resmc&n=6997&by=mun
 
 
 
