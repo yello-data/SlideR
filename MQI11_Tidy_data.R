@@ -226,12 +226,15 @@ db1 |>
 
 #Option B: Without pipe
 df1$cowc <- countrycode(db1$code, "iso2c", "cowc")
-df_join <- full_join(db1, db2, by = c("cowc"))
+df_join <- left_join(df1, df2, by = c("cowc"))
 
 
 #Language
-db_join |> 
-  mutate(pais = countrycode(code, "iso2c", "cldr.short.ca"))
+db2 |> 
+  mutate(code = countrycode(cowc, "cowc", "iso2c")) |> 
+  full_join(db1, by = c("code")) |> 
+  mutate(pais = countrycode(code, "iso2c", "cldr.short.ca")) |> 
+  select(pais, gdpcap, pop, lang)
 
 
 
