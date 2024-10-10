@@ -1,9 +1,9 @@
 ---
 title: "Tidy data"
-subtitle: "Quantitative Methodology (UPF)"
+subtitle: "Metodologia Quantitativa I (UPF)"
 author: "Jordi Mas Elias"
 institute: "<https://www.jordimas.cat/>"
-footer: "Quantitative Methodology (UPF)"
+footer: "Metodologia Quantitativa I (UPF)"
 logo: logo-upf.png
 bibliography: [references.bib, packages.bib]
 format: 
@@ -17,13 +17,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Summary
+## Sumari
 
--   Introduction
--   Messy data
--   Missing data
--   Separate data
--   Codes and codebooks
+-   Introducció
+-   Dades desordenades
+-   Dades perdudes
+-   Dades separades
+-   Codis i llibres de codis
 
 ```{r echo = F, message=F, warning=F}
 library(tidyverse)
@@ -47,7 +47,7 @@ Data wrangling
 ![](img/minority.gif)
 
 
-## R learning curve
+## Corba d'aprenentatge d'R
 
 ```{r}
 library(dplyr)
@@ -87,7 +87,7 @@ rlc |>
 
 ## Warm up
 
-**Install packages**
+**Instal·lar paquets**
 
 ```{r eval = F, echo = T, message=F, warning=F}
 install.packages(c("dplyr", "ggplot2", "readr", "tidyr", 
@@ -98,7 +98,7 @@ install.packages(c("dplyr", "ggplot2", "readr", "tidyr",
 
 ## Warm up
 
-**Load packages**
+**Carregar packages**
 
 ```{.r code-line-numbers="4"}
 library(dplyr)
@@ -120,16 +120,16 @@ library(Hmisc)
 
 
 
-# Introduction {background-color="#e8e8e8"}
+# Introducció {background-color="#e8e8e8"}
 
-## Introduction
+## Introducció
 
 > "Data Scientists spend up to 80% of the time on data cleaning and 20% on actual data analysis".
 
 ![Source: R for Data Science](img/whole-game.png)
 
 
-## Introduction {.scrollable}
+## Introducció {.scrollable}
 
 A _df_ is *tidy* if it fulfills these requirements [@Wickham2014]:
 
@@ -152,9 +152,9 @@ A _df_ is *tidy* if it fulfills these requirements [@Wickham2014]:
 
 ## Introduction  {.smaller}
 
-But ...
+Però ...
 
-**Votes to parties in the 2019 Spanish elections**
+**Vots a partits polítics a les eleccions de 2019**
 
 ```{r}
 elecc19 |>
@@ -162,11 +162,11 @@ elecc19 |>
   head(15)
 ```
 
-## Introduction  {.smaller}
+## Introducció  {.smaller}
 
-But ...
+Però ...
 
-**Minor contracts granted in Barcelona**
+**Contractes menors a Barcelona**
 
 ```{r}
 contractes_menors |> 
@@ -176,15 +176,14 @@ contractes_menors |>
   head(15)
 ```
 
-## Introduction {.smaller}
+## Introducció {.smaller}
 
-
-But ...
+Però ...
 
 
 ::: columns
 ::: {.column width="50%"}
-**Price of rents**
+**Preu del lloguer**
 
 ```{r}
 lloguer_any |> 
@@ -198,7 +197,7 @@ lloguer_any |>
 :::
 
 ::: {.column width="40%"}
-**Income per capita**
+**Ingrés per càpita**
 ```{r}
 rendacs |> 
   select(nom_barri, sc = seccio_censal, import_euros) |> 
@@ -212,47 +211,46 @@ rendacs |>
 
 
 
-## Introduction
+## Introducció
 
-Often, data is not tidy because it's:
+Normalment, les dades no estan _netes_ perquè:
 
-- **Messy:** Variables are not represented in the columns.
-- **Missing:** Cells do not contain a value.
-- **Separated:** Observations are in many datasets.
-
-
+- **Desordenades:** Les variables no es troben a les columnes.
+- **Perdudes:** Les cel·les contenen un valor.
+- **Separades:** Les observacions es troben en varis _datasets_.
 
 
-# Messy data {background-color="#e8e8e8"}
 
+
+# Dades desordenades {background-color="#e8e8e8"}
 
 
 ## Tidy data? {.smaller}
 
-Number of TB cases documented by WHO in Afghanistan, Brazil, and China between 1999 & 2000 (cases & population) (example from @R-tidyr).
+Nombre de casos de tuberculosi documentats per la OMS a Afganistan, Brasil i la Xina entre 1999 i 2000 (casos de TB i població) (exemple extret de @R-tidyr).
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-Table A
+Taula A
 ```{r}
 table3
 ```
 
-Table B
+Taula B
 ```{r}
 table1
 ```
 :::
 
 ::: {.column width="50%"}
-Table C
+Taula C
 
 ```{r}
 table2
 ```
 
-Table D
+Taula D
 ```{r}
 table4a
 ```
@@ -261,9 +259,9 @@ table4a
 
 
 
-## Pivoting data
+## Pivotar dades
 
-We change the rows and columns of the dataframe keeping the same information.
+Canviem les files i les columnes del marc de dades, mantenint la mateixa informació.
 
 - Pivot longer: `pivot_longer(df, cols, names_to, values_to)`
 - Pivot wider: `pivot_wider(df, names_from, values_from)`
@@ -271,29 +269,29 @@ We change the rows and columns of the dataframe keeping the same information.
 - Unite: `unite(df, col, ..., sep)`
 
 
-## Why data is not tidy?
+## Per què les dades no estan netes?
 
-Three reasons, among others:
+Tres raons, entre altres:
 
-- Saves space (see [IGO dataset](https://correlatesofwar.org/data-sets/igos/){target="_blank"})
-- Spreadsheet mindset.
-- Tidyverse revolution^[More datasets examples available in the `tidyr::` package.].
-
-
+- Estalviar memòria (veure [IGO dataset](https://correlatesofwar.org/data-sets/igos/){target="_blank"})
+- Mentalitat 'Excel'.
+- Revolució _tidyverse_^[Més exemples disponibles al paquet `tidyr::`.].
 
 
-#  Missing data {background-color="#e8e8e8"}
 
-## What is missing data?
+
+#  Dades perdudes {background-color="#e8e8e8"}
+
+## Què són les dades perdudes?
 
 Zero vs. NA (Not Available)
 
 ![](https://preview.redd.it/3370lkxk56ny.jpg?width=960&crop=smart&auto=webp&s=61a1bae1128914c9c7fc1eb0b02cc44189e78a5f)
 
 
-## Why is data missing?
+## Per què les dades estan perdudes?
 
-Special categories: People do not answer.
+Categories especials: Fora de l'escala.
 
 ```{r}
 nig <-read_csv("data/nig.csv")
@@ -301,9 +299,9 @@ nig |>
   select(age, language, situation_country, situation_personal)
 ```
 
-## Why is data missing?
+## Per què les dades estan perdudes?
 
-Special categories: Hard to qualify.
+Categories especials: Difícil de classificar.
 
 ```{r}
 polity <- read_xls("data/p5v2018.xls")
@@ -312,10 +310,9 @@ polity |>
   filter(year > 1990, country == "South Africa")
 ```
 
+## Per què les dades estan perdudes?
 
-## Why is data missing?
-
-Not known (NA) or strange/extreme value.
+No les hem pogut recollir o valor estrany/extrem.
 
 ```{r}
 lloguer_any |> 
@@ -324,38 +321,36 @@ lloguer_any |>
 ```
 
 
-## Why is data missing?
+## Per què les dades estan perdudes?
 
-Data join typically produces `NA`.
+La unió de diferents marcs de dades tendeix a produir `NA`.
 
-- See next chapter
-
-## Dealing with missing data
-
-Some functions:
-
-- `summary()` for exploration.
-- `is.na()` is useful when filtering.
-- `na.rm = TRUE` argument in summary functions.
-- `replace_na()` assigns a value to NAs.
-- `naniar::vis_miss()` (be careful!!)
-
-## Dealing with missing data
-
-The real problem is when the reason why data is missing is related to what we are studying:
-
-- Why students don't come to class? 
-- Why is there poverty in the world? 
+- Ho veurem d'aquí una estona...
 
 
+## Què fer amb les dades perdudes?
+
+Algunes funcions:
+
+- `summary()` per explorar.
+- `is.na()` és útil quan filtrem dades.
+- `na.rm = TRUE` argument en funcions de sumari.
+- `replace_na()` assigna un valor als NAs.
+- `naniar::vis_miss()` (compte!!!)
+
+
+## Què fer amb les dades perdudes?
+
+El gran problema arriba quan la raó per la qual les dades estan perdues està relacionat amb allò que estem estudiant^[Justament, ens estem perdent la història que volem explicar]:
+
+- Per què els estudiants no venen a classe? 
+- Per què hi ha pobresa al món? 
 
 
 
+# Dades separades {background-color="#e8e8e8"}
 
-#  Join data {background-color="#e8e8e8"}
-
-## Join data
-
+## Dades separades
 
 ```{r echo = T, eval = F}
 xxxx_join(df1, 
@@ -370,25 +365,25 @@ xxxx_join(df1,
 
 
 
-## Join data
+## Dades separades
 
 ![](https://www.csestack.org/wp-content/uploads/2020/10/sql-table-joins.png)
 
-## Classification territorial units & parties
+## Unitats territorials i partits polítics
 
-- States: [Countrycode](https://www.rdocumentation.org/packages/countrycode/versions/1.4.0/topics/countrycode){target="_blank"}, [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html){target="_blank"}, [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Country_codes){target="_blank"}.
-- Regions: [UN](https://population.un.org/wpp/DefinitionOfRegions/){target="_blank"}.
-- Intergovernmental Organizations: [COW](https://correlatesofwar.org/data-sets/igos/){target="_blank"}
-- Political parties: [Party facts](https://partyfacts.herokuapp.com){target="_blank"}.
-- Regions: [NUTS](https://www.idescat.cat/codis/?id=52&n=1&lang=es){target="_blank"} / [ISO 3166-2](https://www.iso.org/obp/ui/es/#iso:code:3166:ES){target="_blank"}.
-- Municipalities: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=9){target="_blank"}, [INE](https://www.ine.es/daco/daco42/codmun/codmunmapa.htm){target="_blank"}.
-- Census sections: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=81).
+- Estats: [Countrycode](https://www.rdocumentation.org/packages/countrycode/versions/1.4.0/topics/countrycode){target="_blank"}, [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html){target="_blank"}, [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Country_codes){target="_blank"}.
+- Regions (supranacionals): [UN](https://population.un.org/wpp/DefinitionOfRegions/){target="_blank"}.
+- Organitzacions intergovernamentals: [COW](https://correlatesofwar.org/data-sets/igos/){target="_blank"}
+- Partits polítics: [Party facts](https://partyfacts.herokuapp.com){target="_blank"}.
+- Regions (subestatals): [NUTS](https://www.idescat.cat/codis/?id=52&n=1&lang=es){target="_blank"} / [ISO 3166-2](https://www.iso.org/obp/ui/es/#iso:code:3166:ES){target="_blank"}.
+- Municipis: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=9){target="_blank"}, [INE](https://www.ine.es/daco/daco42/codmun/codmunmapa.htm){target="_blank"}.
+- Seccions censals: [IDESCAT](https://www.idescat.cat/codis/?id=50&n=81).
 
 
 
-#  Codebooks {background-color="#e8e8e8"}
+# Llibres de codis {background-color="#e8e8e8"}
 
-##  Codebooks
+## Llibres de codis
 
 Examples:
 
@@ -398,5 +393,4 @@ Examples:
 
 
 
-
-##  Bibliography {background-color="#e8e8e8"}
+## Bibliografia {background-color="#e8e8e8"}

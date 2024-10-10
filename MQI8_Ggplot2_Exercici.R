@@ -1,26 +1,23 @@
-#EXERCICI GGPLOT2
+#EXERCICI GGPLOT2 (2024)
 
-# 1. ACTIVITAT: L'activitat consisteix a fer dos plots amb ggplot2:
-# - Un dels plots ha de sortir d'un group_by i summarize
-# - Un dels plots ha de mostrar la relació entre dues (o més) variables
-# - L'estudiant ha de fer una captura de pantalla on s'observi el seu nom, la pregunta ...
-# ... que pretén respondre el plot, el codi utilitzat, el resultat a la consola i el gràfic.
-# - Es valora la relació entre pregunta i gràfic, l'originalitat del tema i l'ús de capes extres.
+# 1. ACTIVITAT: L'activitat consisteix a fer un plot amb ggplot2:
+#- El plot es crea a partir d'un filtre o bé d'un resum previ de dades a través de les funcions group_by() i summarize().
+#- El plot ha de mostrar com a mínim dues variables.
+#- L'estudiant ha de fer una captura de pantalla.
+#- Es valora la relació entre pregunta i gràfic, l'originalitat del tema i l'ús de capes extres.
 
 
 
 # 2. PUNTUACIÓ: Puntuació de l'exercici (sobre 1.0):
-# 0.1 Compleix normes (captura, nom, pregunta, codi, consola, dos plot)
-# 0.2 Un dels plots surt d'un group_by() i summarize()
-# 0.2 Un dels plots mostra la relació entre dues (o més) variables
+# 0.2 Compleix normes (captura, nom, pregunta, codi vist a l'aula, consola)
+# 0.2 El plot conté un filtre o un group_by() i summarize()
+# 0.1 El plot dels inclou dues (o més) variables
 # 0.2 El gràfic permet donar resposta amb suficient nitidesa a la pregunta
 # 0.2 El tema és original
 # 0.1 S'utilitza alguna capa 'extra'
 
 
-
 # 3. DATASETS
-
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -44,7 +41,24 @@ library(haven)
 # https://www.idescat.cat/codis/?id=50&n=9
 
 
-# 3. STATES
+#3. CENTRE D'ESTUDIS D'OPINIÓ
+
+#Enquesta CEO febrer 2024
+#https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/estudis-dopinio-ceo/societat/detall/index.html?id=9088
+
+#Al qüestionari veiem les variables del marc de dades
+#https://upceo.ceo.gencat.cat/wsceop/9088/Qüestionari_1078.pdf
+
+#Descarregar dades CEO per PC
+ceo1078 <- read_csv2("https://upceo.ceo.gencat.cat/wsceop/9088/Microdades_anonimitzades_1078.csv")
+
+#Descarregar dades CEO per Mac
+ceo1078 <- read_csv2("https://upceo.ceo.gencat.cat/wsceop/9088/Microdades_anonimitzades_1078.csv",
+                     locale = locale(encoding = "ISO-8859-1"))
+
+
+
+# 4. ESTATS
 
 #Quality of Government Institute: https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset
 qog_cs <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_cs_jan23.csv") #cross-section
@@ -96,5 +110,8 @@ dplyr::starwars
 ggplot2::diamonds
 ggplot2::presidential
 tidyr::world_bank_pop
+
+
+
 
 

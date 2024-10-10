@@ -1,0 +1,76 @@
+---
+title: "Títol"
+author: 
+- "Estudiant"
+author-title: Autor
+published-title: Última modificació
+date: "`r Sys.Date()`"
+format: 
+  html:
+    embed-resources: true
+    code-fold: true
+    code-summary: "Mostrar codi."
+    toc: true
+    toc-depth: 2
+    toc-title: Taula de continguts
+lang: ca
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+## Introducció
+
+Parlar d'un tema en concret
+
+A CLASSE
+
+- Explicació de QoG.
+- Descarregar les dades.
+- Seleccionar les variables (pais, variable interès, + una per cada membre del grup).
+- head(10) |>  knitr::kable() amb la taula amb variables + descripció.
+- descripció de la taula.
+- viz distribució de la variable d'interès.
+- descricpió viz (gràfic de 10).
+- Indicar la variable que farà cada estudiant per casa
+
+Requisits:
+- tot el codi s'ha de poder veure (per tant, echo = T, que ja està per defecte).
+
+
+
+```{r}
+library(tidyverse)
+qog <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_cs_jan24.csv")
+```
+
+
+```{r}
+qog |>
+  select(1:4) |> 
+  head(10) |> 
+  knitr::kable()
+```
+
+
+
+INDIVIDUAL
+
+Utilitzar el codi següent, en què incorporem la variable continent amb el paquet countrycode.
+
+- Visualizació: Univariant + descripció
+- Viz: bivariant + continent estètic.
+- Puntuarà capes, ha de ser un gràfic de 10.
+
+```{r}
+library(countrycode)
+qog |> 
+  mutate(continent = countrycode(ccodecow, "cown", "continent"))
+```
+
+
+

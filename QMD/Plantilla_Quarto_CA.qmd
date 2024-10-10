@@ -13,7 +13,7 @@ format:
     toc: true
     toc-depth: 2
     toc-title: Taula de continguts
-lang: es
+lang: ca
 editor_options: 
   chunk_output_type: console
 editor: source
@@ -23,7 +23,10 @@ editor: source
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a1c6d1c4c7edb498c318bd04473146dca94368b6
 ## Apartat 1
 
 Info sobre Quarto: <https://quarto.org/docs/authoring/markdown-basics.html>

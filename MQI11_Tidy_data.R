@@ -43,7 +43,7 @@ library(Hmisc)
 
 
 #####################################################################
-# PART 1. TIDY DATA
+# PART 1. DADES DESORDENADES
 #####################################################################
 
 #- pivot_longer(df, cols, names_to, names_to)
@@ -51,8 +51,8 @@ library(Hmisc)
 #- separate(df, col, into, sep)
 #- unite(df, col, ..., sep)
 
-# 1.0 WHY DO WE NEED TIDY DATA??
-# A la província d'Almeria, distribució del percentatge de vots al pp, cs i vox
+# 1.0 PER QUÈ NECESSITEM TIDY DATA??
+# A la província d'Almeria, quina és la distribució del percentatge de vots al pp, cs i vox?
 elecc19
 
 
@@ -60,73 +60,76 @@ elecc19
 
 ### 1.1.1. Pivot longer
 #- pivot_longer(df, cols, names_to, values_to)
-pivot_longer(table4a) #cases
-pivot_longer(table4b) #population
+table4a #cases
+table4b #population
 
 ### 1.1.2. Pivot wider
 #- pivot_wider(df, names_from, values_from)
-pivot_wider(table2)
+table2
 
 
 ## 1.1.3. Separate
 #- separate(df, col, into, sep)
-separate(table3, rate, into = c("cases", "population"), sep = "/")
+table3_sep <- separate(table3, rate, into = c("cases", "population"), sep = "/")
 
 
 ## 1.1.4. Unite
 #- unite(df, col, ..., sep)
-table3 |> 
-  unite("country_year", country:year, sep = "-")
+table3_sep |> 
+  unite("numbers", cases:population, sep = "-")
 
 
-## 1.1.5. Exercises!!
+## 1.1.5. Exercici!!
 
-# IDESCAT: Geom_tile amb habitants, 
+# IDESCAT: Passa a "tidy data" la següent taula:
 #https://www.idescat.cat/indicadors/?id=aec&n=15225
 
 
-
-# WORLD BANK: combo
+# WORLD BANK
+#Combo! Algunes bases de dades poden estar doblement brutes:
+#- Alguns valors (anys) són títols de columna
+#- Alguns noms de variable (SP.URB, SP.POP...) són valors 
 ?world_bank_pop
 tidyr::world_bank_pop |> 
   pivot_longer(`2000`:`2017`, names_to = "year", values_to = "vals") |> 
   pivot_wider(names_from = indicator, values_from = vals)
 
-# Another example
+# Un altre exemple per practicar
 tidyr::relig_income
 
 
 
 
 #####################################################################
-# PART 2. MISSING DATA
+# PART 2. DADES PERDUDES (MISSING DATA)
 #####################################################################
 
 
-## 2.1. HOW TO DEAL WITH MISSING DATA
+## 2.1. QUÈ FER AMB LES DADES PERDUDES?
 
-### 2.1.1. EXPLORATORY
+### 2.1.1. Si estan categoritzats com a NA, els trobarem fent un sumari...
 # summary()
 summary(municipi)
 summary(lloguer_any)
 
 
-### 2.1.2. RETURNS 'TRUE' THE NA VALUES 
+### 2.1.2. La funció is.na() ens troba (TRUE) les dades perdudes d'un vector. 
 is.na(lloguer_any$preu)
 
-#... therefore ...
+#... per tant, a dins de filter podem excloure les dades perdudes ...
 lloguer_any |> 
   filter(!is.na(preu))
 
 
-### 2.1.3. REMOVES NA FROM SUMMARY OPERATIONS
-mean(vector, na.rm = T)
+### 2.1.3. Ja sabem que l'argument na.rm = T exclou els NA de les operacions de sumari
+# mean(vector, na.rm = T)
+# sum(vector, na.rm = T)
 
 
-### 2.1.4. ASSIGNS A VALUE TO NA
+### 2.1.4. I amb replace NA assignem un valor concret als NA
 replace_na(lloguer_any$preu, 150)
 
-### 2.1.5. VISUALIZES NA [TOP CHOICE]
+### 2.1.5. Per visualitzar NA [TOP CHOICE]
 naniar::vis_miss()
 
 
@@ -135,10 +138,10 @@ naniar::vis_miss()
 
 
 #####################################################################
-# PART 3. JOIN DATA
+# PART 3. DADES SEPARADES
 #####################################################################
 
-# 2.1. JOIN FUNCTIONS
+# 2.1. FUNCIONS JOIN
 
 # xxxx_join(df1, df2, by = c("join_variable_df1" = "join_variable_df2"))
 
@@ -147,7 +150,7 @@ naniar::vis_miss()
 #right_join
 #inner_join
 
-## 2.1. SITUATION 1: SAME JOINING COLUMN
+## 2.1. SITUACIÓ 1: ELS VALORS DE LA COLUMNA D'UNIÓ COINCIDEIXEN
 
 ### 2.1.1. Dataframe 1
 df1 <- tibble(country = c("France", "Germany", "Czechia", "Austria"),
@@ -161,7 +164,6 @@ df2 <- tibble(country = c("French Republic",
                           "Czech Republic", "United States of America"),
               cowc = c("FR", "DE", "CZ", "US"),
               lang = c("French", "German", "Czech", "English"))
-
 df1
 df2
 
@@ -176,31 +178,35 @@ inner_join(df1, df2, by = c("code" = "cowc"))
 
 ### EXERCICI: IDESCAT
 
+# Volem veure la relació entre renda familiar disponible i ...
+# ... la regeneració de residus per càpita dels municipis catalans
+
 # Renda familiar disponible:
 # https://www.idescat.cat/pub/?id=rfdbc&n=13301&by=mun
 
 # Generació de residus per càpita
-# https://www.idescat.cat/pub/?id=resmc&n=6997&by=mun&t=201900
+# https://www.idescat.cat/pub/?id=resmc&n=6997&by=mun
 
 
 
 
 
-## 2.2. SITUATION 2: DIFFERENT JOINING COLUMN
+## 2.2. SITUACIÓ 2: ELS VALORS DE LA COLUMNA D'UNIÓ NO COINCIDEIXEN
 
 ### 2.2.1. Dataframe 1
-df1 <- tibble(country = c("France", "Germany", "Czechia", "Austria"),
+db1 <- tibble(country = c("France", "Germany", "Czechia", "Austria"),
               code = c("FR", "DE", "CZ", "AT"),
               gdpcap = c(43518, 50801, 26378, NA),
               pop = c(67, 83, 11, 9))
 
 ### 2.2.2. Dataframe 2
-df2 <- tibble(country = c("French Republic", 
+db2 <- tibble(country = c("French Republic", 
                           "Federal Republic of Germany",
                           "Czech Republic", "United States of America"),
               cowc = c("FRN", "GMY", "CZR", "USA"),
               lang = c("French", "German", "Czech", "English"))
-
+db1
+db2
 
 ### 2.2.3. Countrycode package
 
@@ -214,18 +220,21 @@ countrycode::codelist_panel
 # countrycode(variable_with_code, "code_origin", "code_destination")
 
 #Option A: Pipe system
-df1 |> 
+db1 |> 
   mutate(cowc = countrycode(code, "iso2c", "cowc")) |> 
-  left_join(df2, by = c("cowc"))
+  left_join(db2, by = c("cowc"))
 
 #Option B: Without pipe
-df1$cowc <- countrycode(df1$code, "iso2c", "cowc")
-df_join <- full_join(df1, df2, by = c("cowc"))
+df1$cowc <- countrycode(db1$code, "iso2c", "cowc")
+df_join <- left_join(df1, df2, by = c("cowc"))
 
 
 #Language
-df_join |> 
-  mutate(pais = countrycode(code, "iso2c", "cldr.short.ca"))
+db2 |> 
+  mutate(code = countrycode(cowc, "cowc", "iso2c")) |> 
+  full_join(db1, by = c("code")) |> 
+  mutate(pais = countrycode(code, "iso2c", "cldr.short.ca")) |> 
+  select(pais, gdpcap, pop, lang)
 
 
 
@@ -268,7 +277,7 @@ dcd |>
   mutate(War = replace_na(War, 0)) |> 
   ggplot(aes(x = as.character(democracy), y = War)) +
   stat_summary(fun.data = "mean_cl_normal") +
-  scale_y_continuous()
+  scale_y_continuous(labels = scales::label_percent())
 
 
 #####################################################################
