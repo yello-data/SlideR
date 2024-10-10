@@ -73,9 +73,10 @@ knitr::include_graphics("../img/rmd-formats.png")
 :::
 
 ::: aside
--   [https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/){target="_blank"}
--   [https://jmas.quarto.pub/analisi-bivariada-cat/](https://jmas.quarto.pub/analisi-bivariada-cat/){target="_blank"}
--   [https://www.jordimas.cat/](https://www.jordimas.cat/){target="_blank"}
+- [Galeria Quarto](https://quarto.org/docs/gallery/){target="_blank"}
+- [Mòduls UOC R Ciències Socials](https://jmas.quarto.pub/r-ciencies-socials-ii/){target="_blank"}
+- [Bloc personal](https://www.jordimas.cat/){target="_blank"}
+- [Curs UB](https://github.com/yello-data/SlideR/tree/main/QMD){target="_blank"}
 :::
 
 
