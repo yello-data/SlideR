@@ -19,6 +19,11 @@ editor_options:
 editor: source
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+
 ## Apartat 1
 
 Info sobre Quarto: <https://quarto.org/docs/authoring/markdown-basics.html>
@@ -29,7 +34,7 @@ Text
 
 ## Apartat 3
 
-Texto
+Text
 
 ```{r}
 1 + 1
