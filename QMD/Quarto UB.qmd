@@ -157,7 +157,7 @@ format:
 
 -   **Negreta**, *cursives*, `codi`, [enllaços](www.jordimas.cat){target="_blank"}, nota al peu[^1].
 
--   Seccions i subseccions
+-   Seccions (#) i subseccions (##)
 
 -   Ítems i subítems.
 
@@ -233,11 +233,20 @@ Variables d'interès:
 
 # 4. Quarto avançat I {background-color="#e8e8e8"}
 
+
+## Important!!!!
+
+Guia de Quarto
+
+-   [Quarto Guide](https://quarto.org/docs/guide/){target="_blank"}
+
+
+
 # 4.1. Quarto avançat (YAML) {background-color="#e8e8e8"}
 
-## Data automàtica
+## Propietats del document
 
-Quan fem **Knit**, ens imprimeix automàticament el dia d'avui.
+Data automàtica.
 
 ```{r eval = F, echo = T}
 date: "`r Sys.Date()`"
@@ -258,6 +267,19 @@ lang: ca
 ```
 
 . . .
+
+Integrar els recursos a l'Html.
+
+```{r eval = F, echo = T}
+format: 
+  html:
+    embed-resources: true
+```
+
+. . .
+
+
+
 
 
 ## Foto d'encapçalament
