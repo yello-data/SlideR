@@ -17,6 +17,12 @@ format:
 editor: source
 ---
 
+## Diapositives
+
+<https://github.com/yello-data/SlideR/tree/main/QMD>
+
+Quarto.html
+
 ## Sumari
 
 ```{r}
