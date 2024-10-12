@@ -475,6 +475,32 @@ knitr::opts_chunk$set(fig.align = "center", echo = TRUE,
 
 El primer chunk també és útil per carregar els paquets i objectes que necessitarem.
 
+
+## Citar taules i figures
+
+**Taules**
+
+Al text: `@tbl-etiqueta`.
+
+``` {.r code-line-numbers="1-2"}
+#| tbl-cap: Títol de la taula
+#| label: tbl-etiqueta
+codi
+```
+
+**Figures**
+
+Al text: `@fig-etiqueta`.
+
+``` {.r code-line-numbers="1-2"}
+#| fig-cap: Títol de la figura
+#| label: fig-etiqueta
+codi
+```
+
+
+
+
 ## Figures
 
 Varis paràmetres per establir les dimensions^[Recomanable posar els elements dins del chunk mitjançant `#|` i separar amb `-` enlloc del `.`.]:
@@ -483,6 +509,8 @@ Varis paràmetres per establir les dimensions^[Recomanable posar els elements di
 -   `fig.height`: alçada en inches.
 -   `fig.align`: "left", "right", "center".
 -   `fig.dim`: primer width i després height, c(5,3)
+
+
 
 ## Millorar les taules
 
