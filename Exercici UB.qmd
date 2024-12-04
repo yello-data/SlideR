@@ -1,0 +1,38 @@
+---
+title: "Exercici"
+author: "Jordi Mas"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introducció
+
+En aquest exercici, practicarem amb [Quarto](www.quarto.org). En primer lloc, carregarem la llibreria _dplyr_. 
+
+- Amaga tots els missatges.
+
+```{r echo = T, eval = T, message=F, warning=F}
+library(dplyr)
+```
+
+Per comprovar que la llibreria està executada correctament, executarem un dels seus marcs de dades: `starwars`.
+
+```{r echo = F}
+starwars
+```
+
+Quina és la **mitjana** d'alçada dels personatges d'Star Wars?
+
+```{r}
+mean(starwars$height, na.rm = T)
+```
+
+Visualitzem la distribució:
+
+```{r echo = F}
+hist(starwars$height)
+```
+
+
+
