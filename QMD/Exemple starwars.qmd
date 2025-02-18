@@ -1,0 +1,63 @@
+---
+title: "Títol"
+author: 
+- "Estudiant"
+author-title: Autor
+published-title: Última modificació
+date: "`r Sys.Date()`"
+format: 
+  html:
+    embed-resources: true
+    code-fold: true
+    code-summary: "Mostrar codi."
+    toc: true
+    toc-depth: 2
+    toc-title: Taula de continguts
+lang: ca
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+library(dplyr)
+library(knitr)
+```
+
+## Introducció
+
+En aquest informe veurem les dades del paquet **Starwars**.
+
+## Les dades
+
+```{r}
+starwars |>
+  select(name:skin_color) |> 
+  head(10) |> 
+  kable()
+```
+
+
+## Estadístics descriptius
+
+Veiem alguns descriptius segons:
+
+- Alçada (`height`).
+- Pes (`mass`).
+
+```{r}
+starwars |> 
+  summarize(height = mean(height, na.rm = T),
+            mass = mean(mass, na.rm = T))
+```
+
+
+## Gràfic
+
+I visualitzem la distribució segons planeta:
+
+```{r}
+hist(starwars$height)
+```
+
